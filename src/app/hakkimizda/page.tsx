@@ -7,9 +7,9 @@ import { siteOperations } from "@/lib/site-operations";
 import { siteProfile } from "@/lib/site-profile";
 
 export const metadata: Metadata = {
-  title: "Hakkımızda | Misyon, Vizyon ve Çalışma Modeli",
+  title: "Hakkımızda | Misyon, Vizyon ve Kurucu Arka Plan",
   description:
-    "Sosyal Hak Rehberi'nin misyonu, vizyonu, uzmanlık zemini ve doğrudan iletişim kanalları.",
+    "Sosyal Hak Rehberi'nin misyonu, vizyonu, kurucu arka planı ve çalışma yaklaşımı.",
   alternates: {
     canonical: "/hakkimizda",
   },
@@ -21,7 +21,7 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
   { name: "Hakkımızda", url: new URL("/hakkimizda", siteUrl).toString() },
 ]);
 
-const focusCards = [
+const principleCards = [
   {
     eyebrow: "Amaç",
     title: "Kullanıcıyı doğru rehbere hızla ulaştırmak",
@@ -42,14 +42,26 @@ const focusCards = [
   },
 ];
 
-const credentials = [
+const backgroundCards = [
   {
-    title: "Uzmanlık alanları",
-    items: siteProfile.expertise,
+    title: "Kurucu notu",
+    items: [
+      siteProfile.founderSummary,
+      siteProfile.professionalSummary,
+    ],
   },
   {
-    title: "Eğitim ve sertifikalar",
-    items: [...siteProfile.education, ...siteProfile.certificates],
+    title: "Yayın yaklaşımı",
+    items: siteProfile.trustPoints,
+  },
+  {
+    title: "Kapsam",
+    items: [
+      "Sosyal hak uygunluk testleri",
+      "Başvuru ve hazırlık rehberleri",
+      "Mevzuatın sadeleştirilmiş özeti",
+      "Sonraki adım yönlendirmeleri",
+    ],
   },
 ];
 
@@ -67,12 +79,12 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen px-6 py-12 lg:px-10 lg:py-16">
       <div className="mx-auto max-w-6xl space-y-8">
-        <section className="grid gap-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.65fr)]">
+        <section className="grid gap-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(320px,0.75fr)]">
           <article className="card-panel relative overflow-hidden">
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent" />
             <p className="eyebrow">Hakkımızda</p>
             <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-[3.5rem]">
-              Sosyal hak bilgisini sade, güvenilir ve profesyonel bir rehber deneyimine
+              Sosyal hak bilgisini sade, ölçülü ve kullanılabilir bir rehber deneyimine
               dönüştürüyoruz
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
@@ -118,14 +130,14 @@ export default function AboutPage() {
           </article>
 
           <aside className="card-panel">
-            <p className="eyebrow">Kısa profil</p>
+            <p className="eyebrow">Kurucu profil</p>
             <h2 className="mt-4 text-2xl font-semibold text-slate-950">{siteProfile.founderName}</h2>
             <p className="mt-2 text-sm font-medium uppercase tracking-[0.18em] text-slate-500">
               {siteProfile.founderRole}
             </p>
             <p className="mt-5 text-sm leading-7 text-slate-700">{siteProfile.founderSummary}</p>
             <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
-              <p className="text-sm font-semibold text-slate-900">Profesyonel özet</p>
+              <p className="text-sm font-semibold text-slate-900">Arka plan özeti</p>
               <p className="mt-2 text-sm leading-7 text-slate-700">
                 {siteProfile.professionalSummary}
               </p>
@@ -134,7 +146,7 @@ export default function AboutPage() {
         </section>
 
         <section className="grid gap-6 lg:grid-cols-3">
-          {focusCards.map((card) => (
+          {principleCards.map((card) => (
             <article key={card.title} className="card-panel">
               <p className="eyebrow">{card.eyebrow}</p>
               <h2 className="mt-4 text-2xl font-semibold text-slate-950">{card.title}</h2>
@@ -181,8 +193,8 @@ export default function AboutPage() {
           </article>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-2">
-          {credentials.map((group) => (
+        <section className="grid gap-6 lg:grid-cols-3">
+          {backgroundCards.map((group) => (
             <article key={group.title} className="card-panel">
               <p className="eyebrow">{group.title}</p>
               <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-700">

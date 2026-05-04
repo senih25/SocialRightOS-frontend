@@ -32,13 +32,13 @@ export const siteProfile: SiteProfile = {
   vision:
     "Türkiye'de sosyal hak bilgisini erişilebilir, anlaşılır ve doğru adıma yönlendiren bir dijital rehber standardında sunmak.",
   founderName: "Senih Bayankulu",
-  founderRole: "Bireysel Sosyal Hizmet Danışmanı",
+  founderRole: "Dijital Sosyal Hak Rehberi Fikir Mimarı",
   founderSummary:
-    "Engelli, yaşlı ve kronik hastalara sosyal haklar, SGK işlemleri, sağlık raporu ve itiraz süreçlerinde destek sunan; evrak takibi, raporlama ve danışan iletişimi tarafında deneyimi olan bir uzman.",
+    "Sosyal hak başlıklarını sadeleştiren, başvuru ve değerlendirme süreçlerini kullanıcı açısından okunabilir hale getirmeyi hedefleyen bir çalışma yaklaşımına sahiptir.",
   professionalSummary:
-    "Adalet, kamu yönetimi, iktisat ve sosyal hizmet eğitimini birleştiren; sosyal hak başlıklarını dijital ortamda daha anlaşılır hale getirmeye odaklanan bir çalışma yaklaşımı.",
+    "Adalet, kamu yönetimi, iktisat ve sosyal hizmet ekseninde şekillenen bir akademik ve pratik arka planla, sosyal hak bilgisini daha anlaşılır ve düzenli bir sunuma taşımayı amaçlar.",
   expertise: [
-    "UYAP ve e-Devlet süreç takibi",
+    "UYAP ve e-Devlet süreçleri",
     "Evrak ve dosya düzeni",
     "Sosyal hak bilgilendirmesi",
     "SGK ve sağlık raporu süreçleri",
