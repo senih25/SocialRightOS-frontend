@@ -120,7 +120,7 @@ export default function Home() {
                 </span>
                 <div>
                   <p className="hero-kicker">{homepageHero.eyebrow}</p>
-                  <p className="text-sm text-slate-600">Sosyal Hak Rehberi</p>
+                  <p className="text-sm text-slate-600">D-SHR</p>
                 </div>
               </div>
 
@@ -296,7 +296,7 @@ export default function Home() {
       <section id="proje-bilgisi" className="section-shell">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
           <article className="panel-strong">
-            <p className="section-label">Danışmanlık yaklaşımı</p>
+              <p className="section-label">Danışmanlık yaklaşımı</p>
               <h2 className="section-heading mt-3 text-[2rem]">
                 Bu site, sosyal hak bilgisini anlaşılır ve güven veren bir deneyime dönüştürür
               </h2>

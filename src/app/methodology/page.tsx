@@ -9,7 +9,7 @@ import { siteProfile } from "@/lib/site-profile";
 export const metadata: Metadata = {
   title: "Yöntem ve Sınırlar | Çalışma İlkeleri",
   description:
-    "Sosyal Hak Rehberi'nin içerik ilkelerini, sonuç mantığını, kurucu yaklaşımını ve ön değerlendirme sınırlarını açıklar.",
+    "Dijital Sosyal Hak Rehberi'nin içerik ilkelerini, sonuç mantığını, kurucu yaklaşımını ve ön değerlendirme sınırlarını açıklar.",
   alternates: {
     canonical: "/methodology",
   },

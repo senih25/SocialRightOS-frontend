@@ -9,7 +9,7 @@ import { siteProfile } from "@/lib/site-profile";
 export const metadata: Metadata = {
   title: "Hakkımızda | Misyon, Vizyon ve Kurucu Arka Plan",
   description:
-    "Sosyal Hak Rehberi'nin misyonu, vizyonu, kurucu arka planı ve çalışma yaklaşımı.",
+    "Dijital Sosyal Hak Rehberi'nin misyonu, vizyonu, kurucu arka planı ve çalışma yaklaşımı.",
   alternates: {
     canonical: "/hakkimizda",
   },

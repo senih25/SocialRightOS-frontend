@@ -25,8 +25,8 @@ export type SiteProfile = {
 };
 
 export const siteProfile: SiteProfile = {
-  siteName: "Sosyal Hak Rehberi",
-  tagline: "Dijital Sosyal Hak Rehberi",
+  siteName: "Dijital Sosyal Hak Rehberi",
+  tagline: "D-SHR",
   mission:
     "Sosyal haklara erişimi sade, anlaşılır ve güven veren bir rehberlik deneyimine dönüştürmek.",
   vision:

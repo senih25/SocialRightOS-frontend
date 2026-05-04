@@ -10,12 +10,12 @@ const allowIndexing = isProductionSite(siteUrl);
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Sosyal Hak Rehberi",
-    template: "%s | Sosyal Hak Rehberi",
+    default: "Dijital Sosyal Hak Rehberi",
+    template: "%s | D-SHR",
   },
   description:
     "Sosyal hak testleri ve başvuru rehberleri için güven veren, sade ve açıklayıcı bir başlangıç deneyimi. Resmî karar vermez; yol gösterir.",
-  applicationName: "Sosyal Hak Rehberi",
+  applicationName: "Dijital Sosyal Hak Rehberi",
   keywords: [
     "sosyal hak testi",
     "sosyal yardım uygunluk testi",
@@ -29,17 +29,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Sosyal Hak Rehberi",
+    title: "Dijital Sosyal Hak Rehberi",
     description:
       "Sosyal hak testleri için açıklayıcı, güven veren ve anlaşılır bir rehber deneyimi.",
     type: "website",
     locale: "tr_TR",
-    siteName: "Sosyal Hak Rehberi",
+    siteName: "Dijital Sosyal Hak Rehberi",
     url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sosyal Hak Rehberi",
+    title: "Dijital Sosyal Hak Rehberi",
     description:
       "Sosyal hak testleri ve rehberleri için güven odaklı rehber deneyimi.",
   },
@@ -70,7 +70,7 @@ export default function RootLayout({
         <div className="site-shell">
           <header className="site-header">
             <div className="site-header-inner">
-              <Link href="/" className="site-brand" aria-label="Sosyal Hak Rehberi ana sayfa">
+              <Link href="/" className="site-brand" aria-label="Dijital Sosyal Hak Rehberi ana sayfa">
                 <span className="site-brand-mark">
                   <Image
                     src="/d-shr-logo.svg"
@@ -82,9 +82,9 @@ export default function RootLayout({
                   />
                 </span>
                 <span>
-                  <span className="block text-sm text-slate-900">Sosyal Hak Rehberi</span>
+                  <span className="block text-sm text-slate-900">Dijital Sosyal Hak Rehberi</span>
                   <span className="block text-[0.68rem] font-medium tracking-[0.28em] text-slate-500 uppercase">
-                    Güvenli rehber alanı
+                    D-SHR
                   </span>
                 </span>
               </Link>
