@@ -18,7 +18,7 @@ export type HomeCareApplicationGuideModel = {
 };
 
 export const homeCareApplicationGuide: HomeCareApplicationGuideModel = {
-  title: "Evde bakım maaşı için başvuru rehberi",
+  title: "Evde bakım maaşı başvuru hazırlık rehberi",
   intro:
     "Bu sayfa ön değerlendirme sonucundan sonra hangi kuruma nasıl hazırlanarak gitmeniz gerektiğini sade ve kurumsal bir dille özetler. Nihai belge listesi il veya ilçe uygulamasına göre değişebilir.",
   institutionNote:
