@@ -37,7 +37,7 @@ Evde Bakım Maaşı 2026: Gelir Testi, Bakım Kademeleri ve Başvuru Rehberi.
 Yazar: Senih Bayankulu.
 
 Evde bakım maaşı, 2022 sayılı Kanun kapsamında ağır engelli bireylerin bakım ihtiyacını karşılamak üzere hane halkına ödenen nakdi bir yardımdır.
-2026 yılında bu yardımın en kritik şartı hane içi kişi başına düşen gelirin net asgari ücretin iki katından az olmasıdır.
+2026 yılında bu yardımın en kritik şartı hane içi kişi başına düşen gelirin net asgari ücretin 2/3'ünden az olmasıdır.
 Bakım ihtiyacı ise Sağlık Bakanlığı Engelli Sağlık Kurulu raporu ile belgelenir.
 Raporda bakım muhtaçlığı oranı yüzde ellinin üzerinde olan bireyler ağır engelli kapsamında değerlendirilir.
 Başvurular ikametgah adresindeki Sosyal Yardımlaşma ve Dayanışma Vakfına yapılır.
@@ -178,7 +178,7 @@ export default function Page() {
                   Aile ve Sosyal Hizmetler Bakanlığı 2026 yılı uygulama
                   talimatına göre, evde bakım maaşı alabilmek için hane
                   içindeki kişi başına düşen aylık gelirin{" "}
-                  <strong>net asgari ücretin iki katından az</strong> olması
+                  <strong>net asgari ücretin 2/3&apos;ünden az</strong> olması
                   gerekmektedir. Bu hesaplamada hane halkındaki tüm bireylerin
                   gelirleri dikkate alınır.
                 </p>

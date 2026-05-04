@@ -44,7 +44,7 @@ Engelli aylığı, 2022 sayılı Kanun kapsamında çalışma gücü kaybı oran
 2026 yılında engelli aylığı hak değerlendirmesi, ağır engelli, orta engelli ve hafif engelli kategorilerine göre farklılaşmaktadır.
 Güncel hak bilgisini öğrenmek için e-Devlet üzerinden sorgulama yapabilir veya ikametinizdeki SYDV'ye danışabilirsiniz.
 Başvuru için Sağlık Bakanlığı Engelli Sağlık Kurulu tarafından düzenlenen raporda çalışma gücü kaybı oranının belirtilmesi zorunludur.
-Gelir testi şartı da aranır; hane içi kişi başına düşen gelir asgari ücretin iki katından az olmalıdır.
+Gelir testi şartı da aranır; hane içi kişi başına düşen gelir net asgari ücretin 1/3'ünden az olmalıdır.
 `;
 
 const ARTICLE_JSON_LD = {
@@ -311,7 +311,7 @@ export default function Page() {
                     </h3>
                     <p className="text-sm text-slate-700">
                       Hane içi kişi başına düşen aylık gelirin net asgari
-                      ücretin iki katından az olması gerekir. Engelli bireyin
+                      ücretin 1/3&apos;ünden az olması gerekir. Engelli bireyin
                       kendi geliri varsa bu gelir de hesaplamaya dahil edilir.
                     </p>
                   </div>

@@ -42,7 +42,7 @@ Yazar: Senih Bayankulu.
 
 65 yaş aylığı ve evde bakım maaşı birbirini engellemeyen iki ayrı sosyal yardımdır.
 2026 yılında her iki yardımı aynı anda almak mümkündür ancak her biri için ayrı başvuru ve ayrı değerlendirme yapılır.
-65 yaş aylığı için hane içi kişi başına düşen gelirin asgari ücretin üçte birinden az olması gerekirken, evde bakım maaşı için bu oran iki kattır.
+65 yaş aylığı için hane içi kişi başına düşen gelirin asgari ücretin üçte birinden az olması gerekirken, evde bakım maaşı için bu oran net asgari ücretin üçte ikisinden azdır.
 Her iki yardımın birlikte alınması durumunda toplam haklar, güncel mevzuat ve kurum değerlendirmesine göre şekillenir.
 `;
 
@@ -228,7 +228,7 @@ export default function Page() {
                           Asgari ücretin 1/3&apos;ü
                         </td>
                         <td className="py-3 px-2">
-                          Asgari ücretin 2 katı
+                          Net asgari ücretin 2/3&apos;ü
                         </td>
                       </tr>
                       <tr className="border-b border-teal-100">
@@ -283,7 +283,7 @@ export default function Page() {
                       <li>▸ Ağır engelli raporu (%50+ bakım muhtaçlığı)</li>
                       <li>▸ T.C. vatandaşı olmak</li>
                       <li>▸ SSK/Bağ-Kur/Emekli Sandığı geliri olmamak</li>
-                      <li>▸ Hane geliri kişi başı asgari ücretin 2 katından az</li>
+                      <li>▸ Hane geliri kişi başı net asgari ücretin 2/3&apos;ünden az</li>
                       <li>▸ Bakımın aile içinde yapılması</li>
                     </ul>
                   </div>
