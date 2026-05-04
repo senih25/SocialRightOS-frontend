@@ -5,7 +5,7 @@ import { getSiteUrl } from "@/lib/site";
 import { GssToolPageClient } from "./GssToolPageClient";
 
 export const metadata: Metadata = {
-  title: "GSS gelir testi uygunluk aracı",
+  title: "GSS gelir testi uygunluk aracı | D-SHR",
   description:
     "GSS gelir testi için anlaşılır, kolay kullanımlı ve ön değerlendirme odaklı bir sayfa.",
   alternates: {

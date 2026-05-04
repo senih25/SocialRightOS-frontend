@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
 const VOICE_TEXT = `
 GSS Prim Borcu Silinmesi 2026: Güncel Şartlar, Süreç ve Başvuru Rehberi.
-Yazar: Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu.
+Yazar: Senih Bayankulu.
 
 Genel Sağlık Sigortası prim borçları, 5510 sayılı Kanun'un 60. ve 61. maddeleri kapsamında belirli şartlar altında silinebilmektedir.
 2026 yılında en önemli gelişme, düşük gelirli bireylerin gelir testine başvurarak prim borçlarının tamamen veya kısmen silinmesi imkanıdır.
@@ -142,7 +142,7 @@ export default function Page() {
                 <span className="font-bold text-slate-700">
                   Yazar:{" "}
                   <span className="text-orange-600">
-                    Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu
+                    Senih Bayankulu
                   </span>
                 </span>
                 <span>|</span>
@@ -438,3 +438,4 @@ export default function Page() {
     </main>
   );
 }
+

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "Vatandaşlık Maaşı 2026: Başvuru Şartları, Tutarlar ve Uygulama Rehberi",
   description:
-    "2026 Vatandaşlık Maaşı başvuru şartları, ödenecek tutarlar ve uygulama süreci. Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu'nun akademik analizi.",
+    "2026 Vatandaşlık Maaşı başvuru şartları, ödenecek tutarlar ve uygulama süreci. Senih Bayankulu'nun akademik analizi.",
   keywords: [
     "vatandaşlık maaşı 2026",
     "vatandaşlık maaşı ne kadar",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 
 const VOICE_TEXT = `
 Vatandaşlık Maaşı 2026: Başvuru Şartları, Tutarlar ve Uygulama Rehberi.
-Yazar: Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu.
+Yazar: Senih Bayankulu.
 
 Vatandaşlık Maaşı, mevcut sosyal yardım programlarını tek bir çatı altında toplayarak daha düzenli ve erişilebilir bir hale getirmeyi hedefleyen yeni bir devlet desteğidir.
 2026 yılı itibarıyla yürürlüğe girmesi planlanmaktadır.
@@ -146,7 +146,7 @@ export default function Page() {
                 <span className="font-bold text-slate-700">
                   Yazar:{" "}
                   <span className="text-orange-600">
-                    Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu
+                    Senih Bayankulu
                   </span>
                 </span>
                 <span>|</span>
@@ -413,3 +413,4 @@ export default function Page() {
     </main>
   );
 }
+

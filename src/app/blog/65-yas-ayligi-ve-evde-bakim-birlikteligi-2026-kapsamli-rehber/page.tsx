@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "65 Yaş Aylığı ve Evde Bakım Maaşı Birlikteliği 2026: Kapsamlı Rehber ve Uygulama İpuçları",
   description:
-    "2026'da 65 yaş aylığı ve evde bakım maaşı birlikte alınabilir mi? Gelir testi, başvuru şartları ve pratik uygulama rehberi. Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu'nun akademik analizi.",
+    "2026'da 65 yaş aylığı ve evde bakım maaşı birlikte alınabilir mi? Gelir testi, başvuru şartları ve pratik uygulama rehberi. Senih Bayankulu'nun akademik analizi.",
   keywords: [
     "65 yaş aylığı evde bakım birlikte",
     "yaşlılık maaşı bakım parası 2026",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 
 const VOICE_TEXT = `
 65 Yaş Aylığı ve Evde Bakım Maaşı Birlikteliği 2026: Kapsamlı Rehber ve Uygulama İpuçları.
-Yazar: Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu.
+Yazar: Senih Bayankulu.
 
 65 yaş aylığı ve evde bakım maaşı birbirini engellemeyen iki ayrı sosyal yardımdır.
 2026 yılında her iki yardımı aynı anda almak mümkündür ancak her biri için ayrı başvuru ve ayrı değerlendirme yapılır.
@@ -145,7 +145,7 @@ export default function Page() {
                 <span className="font-bold text-slate-700">
                   Yazar:{" "}
                   <span className="text-orange-600">
-                    Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu
+                    Senih Bayankulu
                   </span>
                 </span>
                 <span>|</span>
@@ -445,3 +445,4 @@ export default function Page() {
     </main>
   );
 }
+

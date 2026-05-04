@@ -6,7 +6,7 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Blog ve rehber yazıları",
+  title: "Blog ve rehber yazıları | D-SHR",
   description:
     "Sosyal hak testlerinden yönlendirebileceğiniz rehber yazıları, temel açıklamalar ve başvuru öncesi bilgi sayfaları.",
   alternates: {
@@ -137,3 +137,4 @@ export default function BlogPage() {
     </main>
   );
 }
+

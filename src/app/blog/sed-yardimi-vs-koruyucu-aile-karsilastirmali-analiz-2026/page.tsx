@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "SED Yardımı vs. Koruyucu Aile 2026: Karşılaştırmalı Analiz ve Aile Rehberi",
   description:
-    "2026 SED yardımı ve koruyucu aile hizmeti arasındaki farklar, hangi durumda hangi hizmet tercih edilmeli? Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu'nun akademik analizi.",
+    "2026 SED yardımı ve koruyucu aile hizmeti arasındaki farklar, hangi durumda hangi hizmet tercih edilmeli? Senih Bayankulu'nun akademik analizi.",
   keywords: [
     "sed yardımı koruyucu aile farkı",
     "sed mi koruyucu aile mi",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 
 const VOICE_TEXT = `
 SED Yardımı vs. Koruyucu Aile 2026: Karşılaştırmalı Analiz ve Aile Rehberi.
-Yazar: Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu.
+Yazar: Senih Bayankulu.
 
 SED yardımı ve koruyucu aile, çocuk koruma sisteminin farklı basamaklarında yer alan iki ayrı sosyal hizmettir.
 SED, çocuğun kendi ailesinde kalmasını desteklerken; koruyucu aile, çocuğun geçici olarak başka bir aileye yerleştirilmesini sağlar.
@@ -145,7 +145,7 @@ export default function Page() {
                 <span className="font-bold text-slate-700">
                   Yazar:{" "}
                   <span className="text-orange-600">
-                    Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu
+                    Senih Bayankulu
                   </span>
                 </span>
                 <span>|</span>
@@ -472,3 +472,4 @@ export default function Page() {
     </main>
   );
 }
+

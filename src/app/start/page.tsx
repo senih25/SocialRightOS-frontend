@@ -6,7 +6,7 @@ import { buildBreadcrumbJsonLd, buildHowToJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Başlangıç",
+  title: "Başlangıç | D-SHR",
   description:
     "Evde bakım maaşı ön değerlendirmesine başlamadan önce hangi bilgilerin gerektiğini ve akışın sınırlarını açıklar.",
   alternates: {

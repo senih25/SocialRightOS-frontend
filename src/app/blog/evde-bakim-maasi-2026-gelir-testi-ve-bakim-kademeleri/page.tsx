@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 
 const VOICE_TEXT = `
 Evde Bakım Maaşı 2026: Gelir Testi, Bakım Kademeleri ve Başvuru Rehberi.
-Yazar: Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu.
+Yazar: Senih Bayankulu.
 
 Evde bakım maaşı, 2022 sayılı Kanun kapsamında ağır engelli bireylerin bakım ihtiyacını karşılamak üzere hane halkına ödenen nakdi bir yardımdır.
 2026 yılında bu yardımın en kritik şartı hane içi kişi başına düşen gelirin net asgari ücretin iki katından az olmasıdır.
@@ -141,7 +141,7 @@ export default function Page() {
                 <span className="font-bold text-slate-700">
                   Yazar:{" "}
                   <span className="text-orange-600">
-                    Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu
+                    Senih Bayankulu
                   </span>
                 </span>
                 <span>|</span>
@@ -406,3 +406,4 @@ export default function Page() {
     </main>
   );
 }
+

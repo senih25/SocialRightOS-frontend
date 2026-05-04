@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "Engelli Raporu İtiraz Süreci 2026: Hukuki Yol Haritası ve Başvuru Rehberi",
   description:
-    "2026 engelli sağlık kurulu raporu itiraz süreci, hastane başhekimliği ve il sağlık müdürlüğü başvuru adımları. Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu'nun akademik analizi.",
+    "2026 engelli sağlık kurulu raporu itiraz süreci, hastane başhekimliği ve il sağlık müdürlüğü başvuru adımları. Senih Bayankulu'nun akademik analizi.",
   keywords: [
     "engelli raporu itiraz 2026",
     "sağlık kurulu raporu itiraz",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 
 const VOICE_TEXT = `
 Engelli Raporu İtiraz Süreci 2026: Hukuki Yol Haritası ve Başvuru Rehberi.
-Yazar: Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu.
+Yazar: Senih Bayankulu.
 
 Engelli Sağlık Kurulu raporundaki çalışma gücü kaybı oranını yetersiz bulan bireylerin itiraz hakkı vardır.
 İtiraz süreci iki aşamadan oluşur: Birinci aşamada hastane başhekimliğine, ikinci aşamada il sağlık müdürlüğüne başvuru yapılır.
@@ -145,7 +145,7 @@ export default function Page() {
                 <span className="font-bold text-slate-700">
                   Yazar:{" "}
                   <span className="text-orange-600">
-                    Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu
+                    Senih Bayankulu
                   </span>
                 </span>
                 <span>|</span>
@@ -474,3 +474,4 @@ export default function Page() {
     </main>
   );
 }
+

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "Sosyal Hizmetler ve KVKK 2026: Kişisel Veri Koruması Rehberi ve Hasta Hakları",
   description:
-    "2026 sosyal hizmetlerde KVKK uyumu, kişisel veri koruma hakları, aydınlatma metni ve rıza süreçleri. Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu'nun akademik analizi.",
+    "2026 sosyal hizmetlerde KVKK uyumu, kişisel veri koruma hakları, aydınlatma metni ve rıza süreçleri. Senih Bayankulu'nun akademik analizi.",
   keywords: [
     "sosyal hizmetler kvkk 2026",
     "kişisel veri koruma sosyal hizmet",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 
 const VOICE_TEXT = `
 Sosyal Hizmetler ve KVKK 2026: Kişisel Veri Koruması Rehberi ve Hasta Hakları.
-Yazar: Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu.
+Yazar: Senih Bayankulu.
 
 Sosyal hizmetler alanında kişisel veri işleme faaliyetleri, 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında düzenlenmektedir.
 Sosyal hizmet uzmanları, danışanların sağlık durumu, gelir bilgisi, aile yapısı ve diğer hassas verilerini işlerken amaçla sınırlılık ilkesine uymak zorundadır.
@@ -145,7 +145,7 @@ export default function Page() {
                 <span className="font-bold text-slate-700">
                   Yazar:{" "}
                   <span className="text-orange-600">
-                    Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu
+                    Senih Bayankulu
                   </span>
                 </span>
                 <span>|</span>
@@ -474,3 +474,4 @@ export default function Page() {
     </main>
   );
 }
+

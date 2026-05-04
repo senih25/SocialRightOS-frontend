@@ -5,7 +5,7 @@ import { getSiteUrl } from "@/lib/site";
 import { OldAgeToolPageClient } from "./OldAgeToolPageClient";
 
 export const metadata: Metadata = {
-  title: "65 yaş aylığı uygunluk testi",
+  title: "65 yaş aylığı uygunluk testi | D-SHR",
   description:
     "65 yaş aylığı için daha büyük yazı, sade form ve anlaşılır ön değerlendirme sunan sayfa.",
   alternates: {

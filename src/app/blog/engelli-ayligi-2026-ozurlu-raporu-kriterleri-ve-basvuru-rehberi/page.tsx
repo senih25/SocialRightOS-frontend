@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 
 const VOICE_TEXT = `
 Engelli Aylığı 2026: Özürlü Raporu Kriterleri ve Başvuru Rehberi.
-Yazar: Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu.
+Yazar: Senih Bayankulu.
 
 Engelli aylığı, 2022 sayılı Kanun kapsamında çalışma gücü kaybı oranı yüzde 40 ve üzerinde olan bireylere ödenen nakdi bir sosyal yardımdır.
 2026 yılında engelli aylığı hak değerlendirmesi, ağır engelli, orta engelli ve hafif engelli kategorilerine göre farklılaşmaktadır.
@@ -145,7 +145,7 @@ export default function Page() {
                 <span className="font-bold text-slate-700">
                   Yazar:{" "}
                   <span className="text-orange-600">
-                    Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu
+                    Senih Bayankulu
                   </span>
                 </span>
                 <span>|</span>
@@ -463,3 +463,4 @@ export default function Page() {
     </main>
   );
 }
+

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "Doğum Yardımı 2026: İkiz ve Üçüz Doğum Ödemeleri, Başvuru Rehberi ve Güncel Tutarlar",
   description:
-    "2026 doğum yardımı güncel tutarları, ikiz/üçüz doğum ödemeleri, e-Devlet başvuru süreci ve ödeme takvimi. Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu'nun akademik analizi.",
+    "2026 doğum yardımı güncel tutarları, ikiz/üçüz doğum ödemeleri, e-Devlet başvuru süreci ve ödeme takvimi. Senih Bayankulu'nun akademik analizi.",
   keywords: [
     "doğum yardımı 2026",
     "doğum yardımı ne kadar 2026",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 
 const VOICE_TEXT = `
 Doğum Yardımı 2026: İkiz ve Üçüz Doğum Ödemeleri, Başvuru Rehberi ve Güncel Tutarlar.
-Yazar: Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu.
+Yazar: Senih Bayankulu.
 
 Doğum yardımı, 2022 sayılı Kanun kapsamında Türkiye'de doğan çocuklar için verilen nakdi bir sosyal yardımdır.
 2026 yılında tek çocuk, ikiz ve üçüz doğumlar için farklı ödeme tutarları uygulanmaktadır.
@@ -143,7 +143,7 @@ export default function Page() {
                 <span className="font-bold text-slate-700">
                   Yazar:{" "}
                   <span className="text-orange-600">
-                    Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu
+                    Senih Bayankulu
                   </span>
                 </span>
                 <span>|</span>
@@ -427,3 +427,4 @@ export default function Page() {
     </main>
   );
 }
+
