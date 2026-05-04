@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
@@ -34,21 +35,6 @@ const heroStats = [
     label: "Güven",
     value: "Sakin",
     detail: "Yalnızca gerekli bilgiler alınır.",
-  },
-];
-
-const trustCards = [
-  {
-    title: "Nasıl çalışır?",
-    body: "Ziyaretçiyi ilgili teste taşır, sonucu sade bir dille gösterir ve sonraki adımı netleştirir.",
-  },
-  {
-    title: "Sınırı nedir?",
-    body: "Resmî karar vermez, kullanıcıyı gereksiz veri toplamaya zorlamaz ve kurum yerine geçmez.",
-  },
-  {
-    title: "Neden güven verir?",
-    body: "Yalnızca bir form değil; açıklama, yönlendirme ve güven hissini birlikte verir.",
   },
 ];
 
@@ -122,8 +108,23 @@ export default function Home() {
         <div className="hero-grid">
           <article className="hero-copy">
             <div className="space-y-8">
+              <div className="inline-flex items-center gap-4 rounded-full border border-[rgba(27,40,50,0.10)] bg-white/70 px-4 py-3 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(27,40,50,0.12)] bg-white">
+                  <Image
+                    src="/d-shr-logo.svg"
+                    alt=""
+                    width={28}
+                    height={28}
+                    aria-hidden="true"
+                  />
+                </span>
+                <div>
+                  <p className="hero-kicker">{homepageHero.eyebrow}</p>
+                  <p className="text-sm text-slate-600">Sosyal Hak Rehberi</p>
+                </div>
+              </div>
+
               <div className="space-y-4">
-                <p className="hero-kicker">Dijital Sosyal Hak Rehberi</p>
                 <h1 className="hero-title max-w-3xl text-[clamp(2.9rem,5vw,5.8rem)] text-slate-950">
                   {homepageHero.title}
                 </h1>
@@ -134,19 +135,26 @@ export default function Home() {
 
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link href="/start" className="primary-link">
-                  Evde bakım testini başlat
+                  {homepageHero.primaryCtaLabel}
                 </Link>
                 <Link href="/hakkimizda" className="secondary-link">
                   Rehberin vizyonunu gör
                 </Link>
               </div>
+
+              <div className="flex flex-wrap gap-3">
+                <span className="status-pill">Sade akış</span>
+                <span className="status-pill">Güvenli yönlendirme</span>
+                <span className="status-pill">Resmî karar vermez</span>
+              </div>
             </div>
 
-            <div className="hero-note-grid mt-10">
-              {trustCards.map((card) => (
-                <article key={card.title} className="hero-note">
-                  <p className="hero-note-title">{card.title}</p>
-                  <p className="hero-note-body">{card.body}</p>
+            <div className="mt-10 grid gap-3 sm:grid-cols-3">
+              {heroStats.map((stat) => (
+                <article key={stat.label} className="hero-note">
+                  <p className="hero-note-title">{stat.label}</p>
+                  <p className="hero-note-body mt-2 font-semibold">{stat.value}</p>
+                  <p className="hero-note-body">{stat.detail}</p>
                 </article>
               ))}
             </div>
@@ -154,29 +162,22 @@ export default function Home() {
 
           <aside className="hero-aside">
             <div className="panel-soft">
-              <span className="status-pill">Canlı rehber deneyimi</span>
+              <span className="status-pill">Bugün nereden başlayayım?</span>
               <p className="mt-4 text-sm leading-7 text-slate-700">
-                Önce doğru yönlendirme, sonra sade açıklama gelir. Bu yapı sosyal hak bilgisini
-                tek bakışta kullanılabilir hale getirmek için kuruldu.
+                En sık kullanılan girişleri burada topladık. İhtiyacınıza en yakın karttan başlayıp
+                gereksiz veri toplamadan ilgili rehbere geçebilirsiniz.
               </p>
-            </div>
-
-            <div className="metric-grid mt-4">
-              {heroStats.map((stat) => (
-                <article key={stat.label} className="metric-card">
-                  <p className="metric-label">{stat.label}</p>
-                  <p className="metric-value">{stat.value}</p>
-                  <p className="metric-small">{stat.detail}</p>
-                </article>
-              ))}
-            </div>
-
-            <div className="panel mt-4">
-              <p className="section-label">Bu sayfada ne var?</p>
-              <div className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
-                <p>Canlı test girişleri</p>
-                <p>Sonuç açıklaması ve rehber notları</p>
-                <p>Sonraki adım için güvenli yönlendirme</p>
+              <div className="mt-5 space-y-3">
+                {homepageChooseItems.slice(0, 4).map((item) => (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    className="block rounded-2xl border border-[rgba(27,40,50,0.08)] bg-white/80 px-4 py-4 transition hover:border-[rgba(15,118,110,0.22)] hover:shadow-[0_10px_25px_rgba(15,118,110,0.10)]"
+                  >
+                    <p className="text-sm font-semibold text-slate-950">{item.title}</p>
+                    <p className="mt-1 text-sm leading-6 text-slate-700">{item.body}</p>
+                  </Link>
+                ))}
               </div>
             </div>
 
@@ -199,17 +200,15 @@ export default function Home() {
           <div className="section-header">
             <div>
               <p className="section-label">Canlı rehber</p>
-              <h2 className="section-heading mt-3">
-                Sade açıklama, güvenli yönlendirme ve net adımlar aynı yerde
-              </h2>
+              <h2 className="section-heading mt-3">Sade açıklama ve net yönlendirme aynı yerde</h2>
             </div>
             <p className="section-copy max-w-2xl">
-              Kullanıcı önce birkaç temel bilgi verir, sonra açıklamalı sonucu görür ve gerekirse
+              Kullanıcı önce kısa bir akışla ilerler, sonra açıklamalı sonucu görür ve gerekirse
               ilgili rehbere yönelir. Bu sayfa da aynı mantığı giriş seviyesinde görünür kılar.
             </p>
           </div>
 
-            <div className="mt-6 grid gap-4 lg:grid-cols-3">
+          <div className="mt-6 grid gap-4 lg:grid-cols-3">
             {liveExperienceCards.map((card) => (
               <article key={card.title} className="tool-card">
                 <p className="status-pill">{card.badge}</p>
@@ -237,9 +236,7 @@ export default function Home() {
           <div className="section-header">
             <div>
               <p className="section-label">Başlangıç alanları</p>
-              <h2 className="section-heading mt-3">
-                En ilgili uygunluk testine tek adımda girin
-              </h2>
+              <h2 className="section-heading mt-3">En ilgili uygunluk testine tek adımda girin</h2>
             </div>
             <p className="section-copy max-w-2xl">
               Hangi başlık size daha yakınsa oradan başlayın. Her kart sizi doğrudan ilgili test
@@ -278,9 +275,9 @@ export default function Home() {
 
           <article className="panel-strong">
             <p className="section-label">Hak bilgilendirme modülleri</p>
-            <h2 className="section-heading mt-3 text-[2rem]">
-              Testten önce veya sonra açılabilecek temel rehberler
-            </h2>
+              <h2 className="section-heading mt-3 text-[2rem]">
+                Testten önce veya sonra açılabilecek temel rehberler
+              </h2>
             <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {homepageGuideLinks.map((guide) => (
                 <article key={guide.href} className="panel-soft">
@@ -300,9 +297,9 @@ export default function Home() {
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
           <article className="panel-strong">
             <p className="section-label">Danışmanlık yaklaşımı</p>
-            <h2 className="section-heading mt-3 text-[2rem]">
-              Bu site, sosyal hak bilgisini anlaşılır ve güven veren bir deneyime dönüştürür
-            </h2>
+              <h2 className="section-heading mt-3 text-[2rem]">
+                Bu site, sosyal hak bilgisini anlaşılır ve güven veren bir deneyime dönüştürür
+              </h2>
             <p className="section-copy mt-4">
               {siteProfile.trustPoints[0]} {siteProfile.professionalSummary}
             </p>
