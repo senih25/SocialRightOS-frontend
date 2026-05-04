@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getSiteUrl, isProductionSite } from "@/lib/site";
 import "./globals.css";
@@ -46,6 +47,9 @@ export const metadata: Metadata = {
     index: allowIndexing,
     follow: allowIndexing,
   },
+  icons: {
+    icon: "/d-shr-logo.svg",
+  },
 };
 
 const quickLinks = [
@@ -67,11 +71,20 @@ export default function RootLayout({
           <header className="site-header">
             <div className="site-header-inner">
               <Link href="/" className="site-brand" aria-label="Sosyal Hak Rehberi ana sayfa">
-                <span className="site-brand-mark">SHR</span>
+                <span className="site-brand-mark">
+                  <Image
+                    src="/d-shr-logo.svg"
+                    alt=""
+                    width={34}
+                    height={34}
+                    aria-hidden="true"
+                    priority
+                  />
+                </span>
                 <span>
                   <span className="block text-sm text-slate-900">Sosyal Hak Rehberi</span>
                   <span className="block text-[0.68rem] font-medium tracking-[0.28em] text-slate-500 uppercase">
-                    Açık rehber alanı
+                    Güvenli rehber alanı
                   </span>
                 </span>
               </Link>

@@ -428,7 +428,7 @@ export default function EvdeBakimHesaplamaClient() {
                     <h3 className="font-bold mb-3">Resmî Yol Haritası</h3>
                     <p className="text-sm text-slate-400 leading-relaxed mb-5">
                       Ön değerlendirme olumlu olsa dahi, belgelerinizle en yakın
-                      Sosyal Hizmet Merkezi'ne müracaat etmelisiniz.
+                    Sosyal Hizmet Merkezi&apos;ne müracaat etmelisiniz.
                     </p>
                     <Link
                       href="/evde-bakim-maasi/basvuru-rehberi"
@@ -457,11 +457,11 @@ export default function EvdeBakimHesaplamaClient() {
                 <ul className="space-y-3 text-sm font-semibold text-slate-700">
                   <li className="flex gap-2">
                     <span className="text-[var(--accent)]" aria-hidden="true">1.</span>
-                    Engel oranı en az %50 ve rapor "Tam Bağımlı" olmalıdır.
+                    Engel oranı en az %50 ve rapor &ldquo;Tam Bağımlı&rdquo; olmalıdır.
                   </li>
                   <li className="flex gap-2">
                     <span className="text-[var(--accent)]" aria-hidden="true">2.</span>
-                    Kişi başı gelir asgari ücretin 2/3'ünden az olmalıdır.
+                    Kişi başı gelir asgari ücretin 2/3&apos;ünden az olmalıdır.
                   </li>
                   <li className="flex gap-2">
                     <span className="text-[var(--accent)]" aria-hidden="true">3.</span>

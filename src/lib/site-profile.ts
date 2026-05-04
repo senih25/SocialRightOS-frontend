@@ -30,20 +30,20 @@ export const siteProfile: SiteProfile = {
   mission:
     "Sosyal haklara erişimi sade, anlaşılır ve güven veren bir rehberlik deneyimine dönüştürmek.",
   vision:
-    "Türkiye'de sosyal hak bilgisini erişilebilir, anlaşılır ve kullanıcıyı doğru adıma yönlendiren bir dijital rehber standardına taşımak.",
+    "Türkiye'de sosyal hak bilgisini erişilebilir, anlaşılır ve doğru adıma yönlendiren bir dijital rehber standardında sunmak.",
   founderName: "Senih Bayankulu",
   founderRole: "Bireysel Sosyal Hizmet Danışmanı",
   founderSummary:
-    "Engelli, yaşlı ve kronik hastalara sosyal haklar, SGK işlemleri, sağlık raporu ve itiraz süreçlerinde danışmanlık sunan; evrak takibi, raporlama ve danışan iletişimi tarafında deneyim sahibi bir uzman.",
+    "Engelli, yaşlı ve kronik hastalara sosyal haklar, SGK işlemleri, sağlık raporu ve itiraz süreçlerinde destek sunan; evrak takibi, raporlama ve danışan iletişimi tarafında deneyimi olan bir uzman.",
   professionalSummary:
-    "Adalet, kamu yönetimi, iktisat ve sosyal hizmet çizgisini birleştiren; sosyal hak başlıklarını dijital ortamda daha anlaşılır hale getirmeye odaklanan profesyonel rehberlik yaklaşımı.",
+    "Adalet, kamu yönetimi, iktisat ve sosyal hizmet eğitimini birleştiren; sosyal hak başlıklarını dijital ortamda daha anlaşılır hale getirmeye odaklanan bir çalışma yaklaşımı.",
   expertise: [
-    "UYAP ve e-Devlet süreçleri",
-    "Evrak ve dosya takibi",
-    "Sosyal hak bilgisi",
+    "UYAP ve e-Devlet süreç takibi",
+    "Evrak ve dosya düzeni",
+    "Sosyal hak bilgilendirmesi",
     "SGK ve sağlık raporu süreçleri",
-    "Müzakere ve danışan iletişimi",
-    "Analitik düşünme ve raporlama",
+    "Danışan iletişimi",
+    "Analitik değerlendirme ve raporlama",
   ],
   education: [
     "Dokuz Eylül Üniversitesi - Adalet MYO",
