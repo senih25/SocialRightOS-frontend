@@ -28,7 +28,7 @@ export type BirthGrantScenarioItem = {
 export const birthGrantGuideIntro = {
   title: "Doğum yardımı rehberi - ön değerlendirme",
   summary:
-    "Bu rehber, doğum yardımı ön değerlendirmesinden önce veya sonra başvuru yolunu düzenli biçimde gözden geçirmek için hazırlanmıştır. Resmî karar vermez; yalnızca yön gösterir.",
+    "Bu rehber, doğum yardımı ön değerlendirmesinden önce veya sonra başvuru yolunu düzenli biçimde gözden geçirmek için hazırlanmıştır. Resmi karar vermez; yalnızca yön gösterir.",
 };
 
 export const birthGrantGuideSections: BirthGrantGuideSection[] = [
