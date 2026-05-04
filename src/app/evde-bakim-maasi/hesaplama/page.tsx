@@ -238,7 +238,7 @@ export default function HesaplamaPage() {
         <section className="card-panel">
           <p className="eyebrow">Hesaplama Aracı</p>
           <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-            Evde bakım maaşı için ön değerlendirme
+            Evde bakım maaşı için kurumsal ön değerlendirme
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-8 text-slate-700">
             Bu araç resmî karar vermez. Tam bağımlı bakım ihtiyacına yönelik sorularla ön
@@ -470,7 +470,7 @@ export default function HesaplamaPage() {
               disabled={isSubmitting}
               className="primary-button"
             >
-              {isSubmitting ? "Değerlendiriliyor..." : "Ön değerlendirmeyi çalıştır"}
+              {isSubmitting ? "Değerlendiriliyor..." : "Ön değerlendirmeyi başlat"}
             </button>
             <button
               type="button"

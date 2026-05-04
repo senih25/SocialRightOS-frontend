@@ -26,16 +26,16 @@ export type BirthGrantScenarioItem = {
 };
 
 export const birthGrantGuideIntro = {
-  title: "Doğum yardımı rehberi",
+  title: "Doğum yardımı ön değerlendirme rehberi",
   summary:
-    "Bu rehber, doğum yardımı testinden önce veya sonra temel başvuru yolunu gözden geçirmek için hazırlanmıştır. Resmi karar vermez; yalnızca başvuru öncesi yön gösterir.",
+    "Bu rehber, doğum yardımı ön değerlendirmesinden önce veya sonra başvuru yolunu düzenli biçimde gözden geçirmek için hazırlanmıştır. Resmî karar vermez; yalnızca yön gösterir.",
 };
 
 export const birthGrantGuideSections: BirthGrantGuideSection[] = [
   {
     title: "Bu test neyi anlamanıza yardım eder?",
     body:
-      "Bu akış, başvurunun ilk bakışta açık görünüp görünmediğini, hangi bilgi nedeniyle durduğunu ve hangi başvuru yoluna bakmanız gerektiğini anlamanıza yardım eder.",
+      "Bu akış, başvurunun ilk bakışta açık görünüp görünmediğini, hangi bilgi nedeniyle durduğunu ve hangi başvuru yoluna bakmanız gerektiğini anlamanıza yardımcı olur.",
   },
   {
     title: "Bu testte hangi bilgiler sorulur?",
@@ -45,7 +45,7 @@ export const birthGrantGuideSections: BirthGrantGuideSection[] = [
   {
     title: "Sonuç ekranı nasıl okunmalı?",
     body:
-      "Olumlu görünen sonuç resmi onay değildir. Olumsuz veya eksik bilgi sonucu ise hangi bilginin etkili olduğunu gösterir. Son adımda resmi başvuru yolunu ayrıca kontrol etmek gerekir.",
+      "Olumlu görünen sonuç resmî onay değildir. Olumsuz veya eksik bilgi sonucu ise hangi bilginin etkili olduğunu gösterir. Son adımda resmî başvuru yolunu ayrıca kontrol etmek gerekir.",
   },
   {
     title: "Başvuru öncesi hangi bilgiler faydalıdır?",
@@ -63,7 +63,7 @@ export const birthGrantPageInfoBlocks: BirthGrantPageInfoBlock[] = [
   {
     title: "Bu test ne yapmaz?",
     body:
-      "Resmi karar vermez. Ödeme garantisi vermez. Kurum incelemesinin yerine geçmez.",
+      "Resmî karar vermez. Ödeme garantisi vermez. Kurum incelemesinin yerine geçmez.",
   },
   {
     title: "Hangi bilgiler gerekir?",
@@ -116,7 +116,7 @@ export const birthGrantFaqItems: BirthGrantFaqItem[] = [
 export const birthGrantEdevletGuide: BirthGrantActionPageModel = {
   title: "e-Devlet doğum yardımı başvurusu",
   summary:
-    "Bu sayfa, e-Devlet üzerinden başvuru düşünen kişiler için kısa bir hazırlık özeti sunar. Resmi ekranların görünümü zamanla değişebilir.",
+    "Bu sayfa, e-Devlet üzerinden başvuru düşünen kişiler için kısa bir hazırlık özeti sunar. Resmî ekranların görünümü zamanla değişebilir.",
   steps: [
     "Kimlik ve iletişim bilgilerinizin güncel olduğundan emin olun.",
     "Doğum bilgisi ve KPS kaydı görünüyorsa e-Devlet içinde ilgili hizmeti arayın.",
@@ -138,4 +138,3 @@ export const birthGrantPaymentCalendarGuide: BirthGrantActionPageModel = {
   note:
     "Ödeme günü kurum yoğunluğu ve resmi işlem sırasına göre değişebilir. Bu sayfa yalnızca yön gösterir.",
 };
-

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Evde Bakım Maaşı İçin Gelir ve Hane Bilgisi",
+  title: "Evde Bakım Maaşı gelir ve hane bilgisi | D-SHR",
   description:
     "Evde bakım maaşı ön değerlendirmesinde toplam hane geliri ve kişi sayısının neden istendiğini açıklayan yardımcı rehber sayfası.",
   alternates: {
@@ -28,8 +28,8 @@ export default function HomeCareIncomeGuidePage() {
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
             Hesaplama ekranında toplam hane geliri ve kişi sayısı istenir; çünkü bu bilgiler ön
-            değerlendirme için temel giriş alanları arasındadır. Ancak burada görülen özetler resmî
-            gelir kararı değildir.
+            değerlendirme için temel giriş alanları arasındadır. Ancak burada görülen özetler
+            resmî gelir kararı değildir.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/start" className="primary-link">
@@ -72,4 +72,3 @@ export default function HomeCareIncomeGuidePage() {
     </main>
   );
 }
-

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { birthGrantPaymentCalendarGuide } from "@/lib/birth-grant-content";
 
 export const metadata: Metadata = {
-  title: "Doğum yardımı ödeme takvimi",
+    title: "Doğum yardımı ödeme takvimi | D-SHR",
   description:
     "Doğum yardımı başvurusu sonrası ödeme sürecini ve takibin nasıl yapılacağını açıklayan kısa rehber.",
   alternates: {
@@ -50,4 +50,3 @@ export default function BirthGrantPaymentCalendarPage() {
     </main>
   );
 }
-

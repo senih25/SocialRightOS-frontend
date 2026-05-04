@@ -21,10 +21,10 @@ export type StartContent = {
 
 export const homeCareStartContent: StartContent = {
   eyebrow: "Başlangıç",
-  title: "Evde bakım maaşı başvuru öncesi kısa kontrol",
+  title: "Evde bakım maaşı için ön değerlendirme hazırlığı",
   subtitle:
-    "Birkaç temel bilgiyle sonucu, kısa gerekçeleri ve sonraki adımı görebilirsiniz.",
-  checklistHeading: "Hazır tutmanız iyi olur",
+    "Temel bilgileri netleştirerek ön değerlendirme akışını daha düzenli ve anlaşılır biçimde kullanabilirsiniz.",
+  checklistHeading: "Kontrol etmeniz gereken temel başlıklar",
   checklist: [
     {
       title: "Hane bilgisi",
@@ -42,15 +42,15 @@ export const homeCareStartContent: StartContent = {
   durationHeading: "Bu akış ne kadar sürer?",
   durationBody: [
     "Genelde 3–6 dakika sürer.",
-    "Tahmini bilgilerle başlayabilirsiniz; resmî inceleme için belge gerekebilir.",
+    "Tahmini bilgilerle başlayabilirsiniz; resmî inceleme için ayrıca belge gerekebilir.",
   ],
-  disclaimerHeading: "Önemli not",
+  disclaimerHeading: "Kapsam notu",
   disclaimerBody: [
     "Bu araç resmî karar vermez.",
     "Girdiğiniz bilgilere dayalı ön bakış ve yönlendirme sunar.",
   ],
   primaryHref: "/evde-bakim-maasi/hesaplama",
-  primaryLabel: "Kontrole başla",
+  primaryLabel: "Ön değerlendirmeyi aç",
   secondaryHref: "/methodology",
-  secondaryLabel: "Nasıl çalıştığını gör",
+  secondaryLabel: "Yöntemi incele",
 };

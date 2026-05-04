@@ -88,7 +88,7 @@ function resultPrimaryAction(status: EligibilityStatus) {
   }
 
   return {
-    label: "Diğer testlere dön",
+    label: "Diğer ön değerlendirmelere dön",
     href: "/#hangi-testi-secmeliyim",
   };
 }
@@ -157,9 +157,9 @@ export function OldAgeToolPageClient() {
     <main className="min-h-screen px-6 py-12 lg:px-10 lg:py-16">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
         <section className="card-panel">
-          <p className="eyebrow">65 Yaş Aylığı Testi</p>
+          <p className="eyebrow">D-SHR Ön Değerlendirme Aracı</p>
           <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-            65 yaş aylığı için sade ve okunması kolay ön değerlendirme
+            65 yaş aylığı için kurumsal ve okunması kolay ön değerlendirme
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-9 text-slate-700">
             Bu araç resmî karar vermez. Yaş, gelir ve sosyal güvence bilgilerinizle ön
@@ -421,7 +421,7 @@ export function OldAgeToolPageClient() {
             <h2 className="text-xl font-semibold text-slate-950">Sonra nereye gitmeli?</h2>
             <div className="mt-4 flex flex-col gap-3">
               <Link href="/" className="secondary-link inline-flex text-base">
-                Diğer testlere dön
+              Diğer ön değerlendirmelere dön
               </Link>
               <Link href="/gss-gelir-testi" className="secondary-link inline-flex text-base">
                 GSS testini de gör
@@ -433,4 +433,3 @@ export function OldAgeToolPageClient() {
     </main>
   );
 }
-

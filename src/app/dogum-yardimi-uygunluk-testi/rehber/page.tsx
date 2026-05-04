@@ -6,7 +6,7 @@ import {
 } from "@/lib/birth-grant-content";
 
 export const metadata: Metadata = {
-  title: "Doğum yardımı başvuru rehberi",
+  title: "Doğum yardımı başvuru rehberi | D-SHR",
   description:
     "Doğum yardımı için temel koşulları, testte hangi bilgilerin sorulduğunu ve başvuru öncesi hazırlık mantığını açıklayan kısa rehber.",
   alternates: {
@@ -54,4 +54,3 @@ export default function BirthGrantGuidePage() {
     </main>
   );
 }
-

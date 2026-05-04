@@ -5,9 +5,9 @@ import { getSiteUrl } from "@/lib/site";
 import { OldAgeToolPageClient } from "./OldAgeToolPageClient";
 
 export const metadata: Metadata = {
-  title: "65 yaş aylığı uygunluk testi | D-SHR",
+  title: "65 yaş aylığı ön değerlendirme | D-SHR",
   description:
-    "65 yaş aylığı için daha büyük yazı, sade form ve anlaşılır ön değerlendirme sunan sayfa.",
+    "65 yaş aylığı için daha büyük yazı, sade form ve kurumsal ön değerlendirme sunan sayfa.",
   alternates: {
     canonical: "/65-yas-ayligi-uygunluk-testi",
   },
@@ -17,7 +17,7 @@ const siteUrl = getSiteUrl();
 const breadcrumbJsonLd = buildBreadcrumbJsonLd([
   { name: "Ana sayfa", url: new URL("/", siteUrl).toString() },
   {
-    name: "65 yaş aylığı uygunluk testi",
+  name: "65 yaş aylığı ön değerlendirme",
     url: new URL("/65-yas-ayligi-uygunluk-testi", siteUrl).toString(),
   },
 ]);

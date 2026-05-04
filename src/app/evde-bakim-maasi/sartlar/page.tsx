@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Evde Bakım Maaşı Şartları",
+  title: "Evde bakım maaşı şartları | D-SHR",
   description:
-    "Evde bakım maaşı için temel uygunluk başlıklarını, vatandaşlık, ikamet, gelir ve hane bilgisi açısından sade bir dille özetleyen rehber sayfa.",
+    "Evde bakım maaşı için temel uygunluk başlıklarını, vatandaşlık, ikamet, gelir ve hane bilgisi açısından sade ve kurumsal dille özetleyen rehber sayfa.",
   alternates: {
     canonical: "/evde-bakim-maasi/sartlar",
   },
@@ -82,4 +82,3 @@ export default function HomeCareConditionsPage() {
     </main>
   );
 }
-

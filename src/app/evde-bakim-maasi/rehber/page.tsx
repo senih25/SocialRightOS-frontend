@@ -3,7 +3,7 @@ import Link from "next/link";
 import { homeCareApplicationGuide } from "@/lib/home-care-application-guide";
 
 export const metadata: Metadata = {
-  title: "Evde Bakım Maaşı Rehberi",
+  title: "Evde Bakım Maaşı rehberi | D-SHR",
   description:
     "Evde bakım maaşı için başvuru öncesi kısa rehber ve hazırlık adımlarını özetleyen sayfa.",
   alternates: {
@@ -22,7 +22,8 @@ export default function HomeCareRehberPage() {
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
             Bu sayfa evde bakım maaşı akışı için kısa bir okuma noktası sunar. Başvuru
-            hazırlığından önce hangi bilgileri kontrol etmeniz gerektiğini sade biçimde özetler.
+            hazırlığından önce hangi bilgileri kontrol etmeniz gerektiğini sade ve kurumsal
+            bir dille özetler.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/evde-bakim-maasi" className="primary-link">

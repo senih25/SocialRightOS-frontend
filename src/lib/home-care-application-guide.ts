@@ -18,11 +18,11 @@ export type HomeCareApplicationGuideModel = {
 };
 
 export const homeCareApplicationGuide: HomeCareApplicationGuideModel = {
-  title: "Evde bakım maaşı için başvuru hazırlık rehberi",
+  title: "Evde bakım maaşı için başvuru rehberi",
   intro:
-    "Bu sayfa ön bakış sonucundan sonra hangi kuruma nasıl hazırlanarak gitmeniz gerektiğini sade bir dille özetler. Nihai belge listesi il veya ilçe uygulamasına göre değişebilir.",
+    "Bu sayfa ön değerlendirme sonucundan sonra hangi kuruma nasıl hazırlanarak gitmeniz gerektiğini sade ve kurumsal bir dille özetler. Nihai belge listesi il veya ilçe uygulamasına göre değişebilir.",
   institutionNote:
-    "Başvuru süreci çoğunlukla Aile ve Sosyal Hizmetler il müdürlüğü, sosyal hizmet merkezi veya sizi yönlendiren resmî sosyal hizmet birimi üzerinden yürür. Gitmeden önce bulunduğunuz yerdeki güncel başvuru kanalını telefonla teyit etmeniz güvenlidir.",
+    "Başvuru süreci çoğunlukla Aile ve Sosyal Hizmetler il müdürlüğü, sosyal hizmet merkezi veya sizi yönlendiren resmî sosyal hizmet birimi üzerinden yürür. Gitmeden önce bulunduğunuz yerdeki güncel başvuru kanalını telefonla teyit etmeniz yararlı olur.",
   caution:
     "Bu ekran resmî karar vermez ve tam belge otomasyonu sunmaz. Belgeleri toplamadan önce resmî kanaldan güncel listeyi doğrulayın.",
   steps: [

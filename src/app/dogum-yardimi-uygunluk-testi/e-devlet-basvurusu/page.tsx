@@ -3,7 +3,7 @@ import Link from "next/link";
 import { birthGrantEdevletGuide } from "@/lib/birth-grant-content";
 
 export const metadata: Metadata = {
-  title: "e-Devlet doğum yardımı başvurusu",
+  title: "e-Devlet doğum yardımı başvurusu | D-SHR",
   description:
     "Doğum yardımı için e-Devlet başvurusu öncesinde hangi bilgilere bakılması gerektiğini açıklayan kısa rehber.",
   alternates: {
@@ -16,7 +16,7 @@ export default function BirthGrantEdevletPage() {
     <main className="min-h-screen px-6 py-12 lg:px-10 lg:py-16">
       <div className="mx-auto max-w-5xl space-y-8">
         <section className="card-panel">
-          <p className="eyebrow">Doğum Yardımı</p>
+          <p className="eyebrow">D-SHR Ön Değerlendirme Aracı</p>
           <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
             {birthGrantEdevletGuide.title}
           </h1>
@@ -50,4 +50,3 @@ export default function BirthGrantEdevletPage() {
     </main>
   );
 }
-

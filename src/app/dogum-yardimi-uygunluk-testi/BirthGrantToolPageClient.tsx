@@ -714,12 +714,12 @@ export function BirthGrantToolPageClient() {
     <main className="min-h-screen px-6 py-12 lg:px-10 lg:py-16">
       <div className="mx-auto max-w-6xl space-y-8">
         <section className="card-panel">
-          <p className="eyebrow">Doğum Yardımı</p>
+          <p className="eyebrow">D-SHR Ön Değerlendirme Aracı</p>
           <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-            Doğum yardımı için adım adım ön değerlendirme
+            Doğum yardımı için kurumsal ön değerlendirme
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-9 text-slate-700">
-            Bu sayfa, başvurunun ilk bakışta açık görünüp görünmediğini anlamanıza yardım eder.
+            Bu sayfa, başvurunun ilk bakışta açık görünüp görünmediğini anlamanıza yardımcı olur.
             Resmi karar vermez; hangi bilgiye bakmanız gerektiğini ve sıradaki adımı anlatır.
           </p>
 
@@ -796,7 +796,7 @@ export function BirthGrantToolPageClient() {
                         disabled={isSubmitting}
                         className="primary-button text-base"
                       >
-                        {isSubmitting ? "Değerlendiriliyor..." : "Ön değerlendirmeyi çalıştır"}
+                        {isSubmitting ? "Değerlendiriliyor..." : "Ön değerlendirmeyi başlat"}
                       </button>
                     ) : (
                       <button type="button" onClick={handleNext} className="primary-button text-base">
@@ -996,10 +996,10 @@ export function BirthGrantToolPageClient() {
               <h2 className="text-xl font-semibold text-slate-950">Diğer testler</h2>
               <div className="mt-4 flex flex-col gap-3">
                 <Link href="/" className="secondary-link inline-flex text-base">
-                  Diğer testlere dön
+                  Ana sayfaya dön
                 </Link>
                 <Link href="/gss-gelir-testi" className="secondary-link inline-flex text-base">
-                  GSS testini aç
+                  GSS ön değerlendirmesini aç
                 </Link>
               </div>
             </div>
@@ -1009,4 +1009,3 @@ export function BirthGrantToolPageClient() {
     </main>
   );
 }
-

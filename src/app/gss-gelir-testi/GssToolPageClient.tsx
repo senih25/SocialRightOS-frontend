@@ -157,9 +157,9 @@ export function GssToolPageClient() {
     <main className="min-h-screen px-6 py-12 lg:px-10 lg:py-16">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
         <section className="card-panel">
-          <p className="eyebrow">GSS Gelir Testi</p>
+          <p className="eyebrow">D-SHR Ön Değerlendirme Aracı</p>
           <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-            GSS gelir testi için hızlı ve açıklayıcı ön değerlendirme
+            GSS gelir testi için kurumsal ve açıklayıcı ön değerlendirme
           </h1>
           <p className="mt-4 max-w-3xl text-base leading-8 text-slate-700">
             Bu sayfa resmî karar vermez. Girdiğiniz bilgiler değerlendirilir, sonuç size sade bir
@@ -265,7 +265,7 @@ export function GssToolPageClient() {
               disabled={isSubmitting}
               className="primary-button"
             >
-              {isSubmitting ? "Değerlendiriliyor..." : "GSS ön değerlendirmesini çalıştır"}
+              {isSubmitting ? "Değerlendiriliyor..." : "GSS ön değerlendirmesini başlat"}
             </button>
             <button
               type="button"
@@ -418,4 +418,3 @@ export function GssToolPageClient() {
     </main>
   );
 }
-
