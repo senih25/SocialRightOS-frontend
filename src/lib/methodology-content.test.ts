@@ -7,10 +7,8 @@ test("home care methodology content remains guidance-only and Turkish-first", ()
   assert.equal(homeCareMethodologyContent.sections.length >= 4, true);
   assert.match(homeCareMethodologyContent.disclaimer, /resmî karar vermez/i);
   assert.equal(
-    homeCareMethodologyContent.links.some(
-      (link) => link.href === "/evde-bakim-maasi/hesaplama",
-    ),
+    homeCareMethodologyContent.links.some((link) => link.href === "/hakkimizda"),
     true,
   );
+  assert.match(homeCareMethodologyContent.title, /Sosyal Hak Rehberi/i);
 });
-

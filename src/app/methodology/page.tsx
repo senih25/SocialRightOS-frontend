@@ -7,9 +7,9 @@ import { getSiteUrl } from "@/lib/site";
 import { siteProfile } from "@/lib/site-profile";
 
 export const metadata: Metadata = {
-  title: "Yöntem ve Sınırlar",
+  title: "Yöntem ve Sınırlar | Çalışma İlkeleri",
   description:
-    "Evde bakım maaşı ön değerlendirme aracının nasıl çalıştığını, sınırlarını ve neden ön değerlendirme sunduğunu açıklar.",
+    "Sosyal Hak Rehberi'nin içerik ilkelerini, sonuç mantığını, kurucu yaklaşımını ve ön değerlendirme sınırlarını açıklar.",
   alternates: {
     canonical: "/methodology",
   },
@@ -24,15 +24,58 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 export default function MethodologyPage() {
   return (
     <main className="min-h-screen px-6 py-12 lg:px-10 lg:py-16">
-      <div className="mx-auto max-w-4xl space-y-8">
-        <section className="card-panel">
-          <p className="eyebrow">Yöntem ve Sınırlar</p>
-          <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-            {homeCareMethodologyContent.title}
-          </h1>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-slate-700">
-            {homeCareMethodologyContent.subtitle} {siteProfile.trustPoints[1]}
-          </p>
+      <div className="mx-auto max-w-6xl space-y-8">
+        <section className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)]">
+          <article className="card-panel">
+            <p className="eyebrow">{homeCareMethodologyContent.eyebrow}</p>
+            <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-[3.25rem]">
+              {homeCareMethodologyContent.title}
+            </h1>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-slate-700">
+              {homeCareMethodologyContent.subtitle}
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-slate-200/70 bg-slate-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                  Misyon
+                </p>
+                <p className="mt-2 text-sm leading-7 text-slate-700">{siteProfile.mission}</p>
+              </div>
+              <div className="rounded-2xl border border-slate-200/70 bg-slate-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                  Vizyon
+                </p>
+                <p className="mt-2 text-sm leading-7 text-slate-700">{siteProfile.vision}</p>
+              </div>
+              <div className="rounded-2xl border border-slate-200/70 bg-slate-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                  Sınır
+                </p>
+                <p className="mt-2 text-sm leading-7 text-slate-700">
+                  Resmî karar yok; ön değerlendirme ve yönlendirme var.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <aside className="card-panel">
+            <p className="eyebrow">Kurucu notu</p>
+            <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+              Senih Bayankulu
+            </h2>
+            <p className="mt-2 text-sm font-medium uppercase tracking-[0.18em] text-slate-500">
+              {siteProfile.founderRole}
+            </p>
+            <p className="mt-5 text-sm leading-7 text-slate-700">
+              {siteProfile.founderSummary}
+            </p>
+            <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <p className="text-sm font-semibold text-slate-900">Kurucu yaklaşımı</p>
+              <p className="mt-2 text-sm leading-7 text-slate-700">
+                {siteProfile.professionalSummary}
+              </p>
+            </div>
+          </aside>
         </section>
 
         <section className="grid gap-5">
