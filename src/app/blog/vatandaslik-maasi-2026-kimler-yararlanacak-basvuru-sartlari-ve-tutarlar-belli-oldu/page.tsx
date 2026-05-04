@@ -7,9 +7,9 @@ import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title:
-    "Vatandaşlık Maaşı 2026: Başvuru Şartları, Tutarlar ve Uygulama Rehberi",
+    "Vatandaşlık Maaşı 2026: Resmî Durum, Taslak Çerçeve ve Uygulama Notları",
   description:
-    "2026 Vatandaşlık Maaşı başvuru şartları, ödenecek tutarlar ve uygulama süreci. Senih Bayankulu'nun akademik analizi.",
+    "2026 Vatandaşlık Maaşı hakkında resmî durum, taslak çerçeve ve olası uygulama notları. Senih Bayankulu'nun akademik analizi.",
   keywords: [
     "vatandaşlık maaşı 2026",
     "vatandaşlık maaşı ne kadar",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Vatandaşlık Maaşı 2026: Başvuru Şartları, Tutarlar ve Uygulama Rehberi",
+      "Vatandaşlık Maaşı 2026: Resmî Durum, Taslak Çerçeve ve Uygulama Notları",
     description:
-      "2026 Vatandaşlık Maaşı başvuru şartları, ödenecek tutarlar ve uygulama süreci. Akademik mevzuat analizi.",
+      "2026 Vatandaşlık Maaşı hakkında resmî durum, taslak çerçeve ve olası uygulama notları.",
     type: "article",
     authors: ["Senih Bayankulu"],
     publishedTime: "2026-05-04",
@@ -37,21 +37,21 @@ export const metadata: Metadata = {
 };
 
 const VOICE_TEXT = `
-Vatandaşlık Maaşı 2026: Başvuru Şartları, Tutarlar ve Uygulama Rehberi.
+Vatandaşlık Maaşı 2026: Resmî Durum, Taslak Çerçeve ve Uygulama Notları.
 Yazar: Senih Bayankulu.
 
-Vatandaşlık Maaşı, mevcut sosyal yardım programlarını tek bir çatı altında toplayarak daha düzenli ve erişilebilir bir hale getirmeyi hedefleyen yeni bir devlet desteğidir.
-2026 yılı itibarıyla yürürlüğe girmesi planlanmaktadır.
-Başvuru şartları arasında T.C. vatandaşı olmak ve hane halkı gelirinin asgari ücretin belirli bir oranının altında olması yer almaktadır.
-Kesin tutarlar Resmî Gazete'de yayımlandığında güncellenecektir.
-Başvurular e-Devlet üzerinden veya Sosyal Yardımlaşma ve Dayanışma Vakıfları aracılığıyla yapılabilecektir.
+Vatandaşlık Maaşı, bu sayfada yalnızca kamuoyunda tartışılan bir sosyal politika taslağı olarak ele alınmaktadır.
+Şu an için yürürlüğe girmiş resmî bir program bulunmamaktadır.
+Bu nedenle aşağıdaki içerik, kesin hak anlatımı değil, olası bir çerçeveye ilişkin notlandırmadır.
+Kesin şartlar ve tutarlar ancak resmî düzenleme yayımlandığında geçerli olur.
+Şimdilik vatandaşların mevcut sosyal yardım programları için resmî kurum duyurularını esas alması gerekir.
 `;
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
   headline:
-    "Vatandaşlık Maaşı 2026: Başvuru Şartları, Tutarlar ve Uygulama Rehberi",
+    "Vatandaşlık Maaşı 2026: Resmî Durum, Taslak Çerçeve ve Uygulama Notları",
   author: {
     "@type": "Person",
     name: "Senih Bayankulu",
@@ -139,8 +139,8 @@ export default function Page() {
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 leading-tight mb-5">
-                Vatandaşlık Maaşı 2026: Başvuru Şartları, Tutarlar ve Uygulama
-                Rehberi
+                Vatandaşlık Maaşı 2026: Resmî Durum, Taslak Çerçeve ve
+                Uygulama Notları
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="font-bold text-slate-700">
@@ -170,42 +170,41 @@ export default function Page() {
                   hedefleyen yeni bir sosyal politika aracıdır. Bu model,
                   özellikle yoksulluk riski altındaki hane halklarını korumayı,
                   sosyal yardım harcamalarının etkinliğini artırmayı ve
-                  bürokratik süreçleri basitleştirmeyi amaçlamaktadır. 2026
-                  yılı itibarıyla yasal altyapısının tamamlanması ve pilot
-                  uygulamaların başlatılması planlanmaktadır.
+                  bürokratik süreçleri basitleştirmeyi amaçlayan bir taslak
+                  fikir olarak tartışılmaktadır. Resmî yürürlükten söz etmek
+                  için ilgili mevzuatın yayımlanması gerekir.
                 </p>
               </section>
 
-              {/* Beklenen Tutarlar */}
+              {/* Resmî Durum */}
               <section className="bg-purple-50/60 p-6 md:p-8 rounded-2xl border border-purple-100">
                 <h2 className="text-xl font-black text-slate-950 mb-4">
-                  2026 Beklenen Tutarlar ve Kademeler
+                  2026 Resmî Durum ve Taslak Çerçeve
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Vatandaşlık Maaşı&apos;nın kesin tutarları henüz Resmî
-                  Gazete&apos;de yayımlanmamıştır. Mevcut sosyal yardım
-                  programlarının birleştirilmesi ve bütçe projeksiyonları
-                  doğrultusunda tutarlar belirlenecektir.
+                  Vatandaşlık Maaşı&apos;nın kesin tutarları, kapsamı ve başvuru
+                  mekanizması hakkında yürürlükte bir mevzuat yoktur. Bu
+                  nedenle herhangi bir ödeme tutarı veya hak sahipliği bilgisi
+                  resmî kabul edilemez.
                 </p>
                 <div className="bg-amber-50/60 p-6 rounded-2xl border border-amber-100 text-center">
-                  <h3 className="font-black text-amber-800 mb-2">ℹ️ Güncel Tutar Bilgisi</h3>
+                  <h3 className="font-black text-amber-800 mb-2">ℹ️ Resmî Uyarı</h3>
                   <p className="text-sm text-amber-700">
-                    Vatandaşlık Maaşı henüz yasalaşmamıştır. Kesin tutarlar Resmî Gazete&apos;de
-                    yayımlandığında güncellenecektir. Mevcut sosyal yardım programlarına
-                    başvurmaya devam edin. Yeni sistem devreye girdiğinde otomatik geçiş sağlanacaktır.
+                    Vatandaşlık Maaşı henüz yasalaşmamıştır. Yeni bir düzenleme
+                    yayımlanıncaya kadar mevcut sosyal yardım programlarına
+                    ilişkin resmî kurum duyurularını esas alın.
                   </p>
                 </div>
               </section>
 
-              {/* Beklenen Şartlar */}
+              {/* Taslakta Konuşulan Kriterler */}
               <section>
                 <h2 className="text-2xl font-black text-slate-950 mb-4">
-                  Beklenen Başvuru Şartları
+                  Taslakta Konuşulan Kriterler
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Vatandaşlık Maaşı&apos;nın başvuru şartları, mevcut sosyal
-                  yardım programlarının kesişim kümesi olarak
-                  tasarlanmaktadır. Beklenen temel şartlar şunlardır:
+                  Taslak seviyesinde konuşulan bazı yaklaşım başlıkları
+                  şunlardır; bunlar resmî hak veya başvuru şartı değildir:
                 </p>
                 <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
@@ -224,8 +223,7 @@ export default function Page() {
                     </span>
                     <span>
                       <strong>Gelir kriteri:</strong> Hane halkı kişi başına
-                      düşen aylık gelirin asgari ücretin belirli bir oranının
-                      (tahmini 1/2&apos;si) altında olması
+                      düşen aylık gelirin belirli bir eşik altında olması
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -250,16 +248,15 @@ export default function Page() {
                 </ul>
               </section>
 
-              {/* Mevcut Yardımlarla İlişki */}
+              {/* Olası İlişki */}
               <section>
                 <h2 className="text-2xl font-black text-slate-950 mb-4">
-                  Mevcut Yardımlarla İlişki ve Birleştirme Modeli
+                  Mevcut Yardımlarla Olası İlişki
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Vatandaşlık Maaşı&apos;nın en kritik özelliği, mevcut sosyal
-                  yardım programlarını tek çatı altında birleştirmesidir. Bu
-                  durum, hak sahiplerinin mevcut durumunu şu şekilde
-                  etkileyecektir:
+                  Taslak çerçevede, mevcut sosyal yardım programlarıyla
+                  ilişkilendirme fikri konuşulabilir. Ancak resmî düzenleme
+                  olmadan bu başlıkların hiçbiri hak doğurmaz:
                 </p>
                 <div className="space-y-4">
                   <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100">
@@ -268,9 +265,8 @@ export default function Page() {
                     </h3>
                     <p className="text-sm text-slate-700">
                       65 yaş aylığı, engelli aylığı, evde bakım maaşı gibi
-                      kategorik yardımlar ayrı kalacak; ancak SYDV&apos;den
-                      alınan düzenli nakdi yardımlar (gıda, yakacak, eğitim
-                      yardımı vb.) Vatandaşlık Maaşı&apos;na dahil edilecektir.
+                      mevcut yardımların nasıl konumlandırılacağı ancak resmî
+                      düzenlemeyle netleşebilir.
                     </p>
                   </div>
                   <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100">
@@ -280,43 +276,40 @@ export default function Page() {
                     <p className="text-sm text-slate-700">
                       Sağlık hizmetleri (GSS), eğitim bursları, barınma
                       desteği, istihdam teşvikleri gibi fonksiyonel yardımlar
-                      Vatandaşlık Maaşı dışında tutulacak ve ayrı
-                      değerlendirilecektir.
+                      ile ilişki ancak ayrı bir düzenleme ile belirlenebilir.
                     </p>
                   </div>
                 </div>
               </section>
 
-              {/* Pratik İpuçları */}
+              {/* Uyarı Notları */}
               <section className="bg-orange-50/60 p-6 md:p-8 rounded-2xl border border-orange-100">
                 <h2 className="text-xl font-black text-slate-950 mb-4">
-                  Pratik İpuçları ve Beklenen Süreç
+                  Uyarı Notları ve Beklenen Süreç Değil
                 </h2>
                 <div className="space-y-3 text-slate-700">
                   <p>
                     <strong className="text-orange-700">
                       Yasal süreç takibi:
                     </strong>{" "}
-                    Vatandaşlık Maaşı henüz yasalaşmamıştır. Resmî Gazete&apos;de
+                    Vatandaşlık Maaşı henüz yasalaşmamıştır. Yeni bir düzenleme
                     yayımlanana kadar mevcut sosyal yardım programlarına
-                    başvurmaya devam edin. Yeni sistem devreye girdiğinde
-                    otomatik geçiş sağlanacaktır.
+                    başvurmaya devam edin. Otomatik geçiş varsaymayın.
                   </p>
                   <p>
                     <strong className="text-orange-700">
                       e-Devlet entegrasyonu:
                     </strong>{" "}
-                    Başvuruların büyük ölçüde e-Devlet üzerinden alınması
-                    planlanmaktadır. e-Devlet şifrenizin ve mobil imzanızın
-                    aktif olduğundan emin olun.
+                    Başvuru mekanizması resmî düzenlemeyle belirlenir. Şimdilik
+                    e-Devlet üzerinden başvuru varmış gibi işlem yapmayın.
                   </p>
                   <p>
                     <strong className="text-orange-700">
                       Gelir testi güncelliği:
                     </strong>{" "}
-                    Mevcut gelir testi sonuçlarınızın güncel olması, yeni
-                    sisteme geçişte hızlı değerlendirilmenizi sağlayacaktır.
-                    Süresi dolan testleri yenileyin.
+                    Mevcut gelir testi sonuçlarınız bugün yürürlükte olan
+                    sosyal yardımlar için önemlidir. Ancak resmîleşmemiş bir
+                    program için otomatik geçiş anlamına gelmez.
                   </p>
                 </div>
               </section>

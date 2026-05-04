@@ -7,7 +7,7 @@ import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title:
-    "GSS Prim Borcu Silinmesi 2026: Güncel Şartlar, Süreç ve Başvuru Rehberi",
+    "GSS Gelir Testi 2026: Güncel Şartlar, Prim Durumu ve Başvuru Rehberi",
   description:
     "2026 GSS prim borcu silinmesi şartları, 5510 sayılı Kanun kapsamında af süreci ve e-Devlet başvuru adımları. Akademik mevzuat analizi ile hazırlanmış kapsamlı rehber.",
   keywords: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "GSS Prim Borcu Silinmesi 2026: Güncel Şartlar, Süreç ve Başvuru Rehberi",
+      "GSS Gelir Testi 2026: Güncel Şartlar, Prim Durumu ve Başvuru Rehberi",
     description:
       "2026 GSS prim borcu silinmesi şartları, 5510 sayılı Kanun kapsamında af süreci ve e-Devlet başvuru adımları.",
     type: "article",
@@ -36,20 +36,20 @@ export const metadata: Metadata = {
 };
 
 const VOICE_TEXT = `
-GSS Prim Borcu Silinmesi 2026: Güncel Şartlar, Süreç ve Başvuru Rehberi.
+GSS Gelir Testi 2026: Güncel Şartlar, Prim Durumu ve Başvuru Rehberi.
 Yazar: Senih Bayankulu.
 
-Genel Sağlık Sigortası prim borçları, 5510 sayılı Kanun'un 60. ve 61. maddeleri kapsamında belirli şartlar altında silinebilmektedir.
-2026 yılında en önemli gelişme, düşük gelirli bireylerin gelir testine başvurarak prim borçlarının tamamen veya kısmen silinmesi imkanıdır.
+Genel Sağlık Sigortası primleri, 5510 sayılı Kanun'un 60. ve 61. maddeleri kapsamında gelir testine göre sınıflandırılır.
+2026 yılında en önemli uygulama, düşük gelirli bireylerin gelir testine başvurarak G0 kategorisine alınması ve primlerinin devlet tarafından karşılanmasıdır.
 Gelir testi sonucunda kişi başına düşen gelir asgari ücretin üçte birinin altında çıkanlar GSS primlerinden muaf tutulur.
-Borç silinmesi için e-Devlet üzerinden SGK hizmetleri menüsünden başvuru yapılabilir.
+Geçmiş prim borçlarının silinmesi ise genel bir hak değil, yalnızca özel kanun ve yapılandırma düzenlemeleriyle mümkündür.
 `;
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
   headline:
-    "GSS Prim Borcu Silinmesi 2026: Güncel Şartlar, Süreç ve Başvuru Rehberi",
+    "GSS Gelir Testi 2026: Güncel Şartlar, Prim Durumu ve Başvuru Rehberi",
   author: {
     "@type": "Person",
     name: "Senih Bayankulu",
@@ -87,7 +87,7 @@ export default function Page() {
     { name: "Ana sayfa", url: new URL("/", siteUrl).toString() },
     { name: "Blog ve Analiz", url: new URL("/blog", siteUrl).toString() },
     {
-      name: "GSS Prim Borcu Silinmesi 2026",
+      name: "GSS Gelir Testi 2026",
       url: new URL(
         "/blog/gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec",
         siteUrl,
@@ -113,7 +113,7 @@ export default function Page() {
             </Link>
             <span className="mx-2">/</span>
             <span className="text-slate-900 font-bold">
-              GSS Prim Borcu Silinmesi 2026
+              GSS Gelir Testi 2026
             </span>
           </div>
           <div className="flex items-center gap-3">
@@ -135,7 +135,7 @@ export default function Page() {
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 leading-tight mb-5">
-                GSS Prim Borcu Silinmesi 2026: Güncel Şartlar, Süreç ve Başvuru
+                GSS Gelir Testi 2026: Güncel Şartlar, Prim Durumu ve Başvuru
                 Rehberi
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
@@ -160,27 +160,26 @@ export default function Page() {
                   Giriş ve Hukuki Çerçeve
                 </h2>
                 <p className="text-slate-700">
-                  Genel Sağlık Sigortası (GSS) prim borçları, 5510 sayılı Sosyal
+                  Genel Sağlık Sigortası (GSS) primleri, 5510 sayılı Sosyal
                   Sigortalar ve Genel Sağlık Sigortası Kanunu&apos;nun 60. ve
                   61. maddeleri ile düzenlenmektedir. 2026 yılı itibarıyla
-                  milyonlarca vatandaşın sağlık hizmetlerine erişimini
-                  engelleyen bu borçlar, gelir testine dayalı düzenlemeler
-                  kapsamında kısmen veya tamamen silinebilmektedir. Bu makale,
-                  güncel mevzuat çerçevesinde borç silinmesi şartlarını,
-                  başvuru sürecini ve pratik yol haritasını akademik düzeyde
-                  analiz etmektedir.
+                  gelir testi sonucuna göre G0 ve G1 sınıflandırması yapılır;
+                  bu sınıflandırma primin kim tarafından karşılanacağını
+                  belirler. Bu makale, güncel mevzuat çerçevesinde gelir testi
+                  sürecini, prim durumunu ve pratik yol haritasını akademik
+                  düzeyde analiz etmektedir.
                 </p>
               </section>
 
-              {/* Borç Silinmesi Şartları */}
+              {/* Gelir Testi ve Prim Durumu */}
               <section className="bg-emerald-50/60 p-6 md:p-8 rounded-2xl border border-emerald-100">
                 <h2 className="text-xl font-black text-slate-950 mb-4">
-                  2026 Borç Silinmesi Şartları
+                  2026 Gelir Testi ve Prim Durumu
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  SGK 2026 yılı uygulama tebliğine göre, GSS prim borcu
-                  silinmesi için başvuru sahibinin aşağıdaki şartları taşıması
-                  gerekmektedir:
+                  SGK 2026 yılı uygulamasına göre, GSS gelir testi sonucunda
+                  başvuru sahibinin aşağıdaki şartlara göre G0 veya G1
+                  kategorisine yerleştirilmesi gerekir:
                 </p>
                 <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
@@ -216,8 +215,9 @@ export default function Page() {
                       ▸
                     </span>
                     <span>
-                      <strong>Borç süresi:</strong> Borcun en az 12 ay ödenmemiş
-                      olması (son dönem düzenlemelerinde bu süre esnetilebilir)
+                      <strong>Prim durumu:</strong> G0 kategorisinde primler
+                      devlet tarafından karşılanır; G1 kategorisinde kişi
+                      prim öder
                     </span>
                   </li>
                 </ul>
@@ -229,39 +229,29 @@ export default function Page() {
                   Gelir Testi ve Muafiyet Kategorileri
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Gelir testi sonucuna göre GSS prim borçluları üç kategoriye
-                  ayrılır. Her kategori için farklı muafiyet oranları
-                  uygulanmaktadır:
+                  Gelir testi sonucuna göre GSS iki ana kategoriye ayrılır:
+                  G0 ve G1. Bu ayrım primin kim tarafından karşılanacağını
+                  belirler:
                 </p>
-                <div className="grid gap-4 md:grid-cols-3">
+                <div className="grid gap-4 md:grid-cols-2">
                   <div className="bg-green-50 p-5 rounded-2xl border border-green-100">
                     <h3 className="font-black text-green-800 mb-2 text-sm">
-                      Tam Muafiyet (%0 Gelir)
+                      G0 - Devlet Tarafından Karşılanan
                     </h3>
                     <p className="text-xs text-green-700 leading-relaxed">
-                      Geliri olmayan veya asgari ücretin altıda birinden az
-                      geliri olanlar. Tüm GSS prim borcu silinir, gelecek
-                      dönemde de prim ödenmez.
+                      Aile içindeki kişi başına düşen gelir, brüt asgari
+                      ücretin üçte birinin altındadır. Prim devlet tarafından
+                      karşılanır.
                     </p>
                   </div>
                   <div className="bg-blue-50 p-5 rounded-2xl border border-blue-100">
                     <h3 className="font-black text-blue-800 mb-2 text-sm">
-                      Kısmi Muafiyet (%50 İndirim)
+                      G1 - Kişi Tarafından Ödenen
                     </h3>
                     <p className="text-xs text-blue-700 leading-relaxed">
-                      Asgari ücretin altıda biri ile üçte biri arasında geliri
-                      olanlar. Borçların yarısı silinir, kalanı taksitle
+                      Aile içindeki kişi başına düşen gelir, brüt asgari
+                      ücretin üçte biri ve üzerindedir. Prim kişi tarafından
                       ödenir.
-                    </p>
-                  </div>
-                  <div className="bg-amber-50 p-5 rounded-2xl border border-amber-100">
-                    <h3 className="font-black text-amber-800 mb-2 text-sm">
-                      Standart Ödeme
-                    </h3>
-                    <p className="text-xs text-amber-700 leading-relaxed">
-                      Asgari ücretin üçte birinden fazla geliri olanlar. Borç
-                      silinmez, yapılandırma veya taksit imkanından
-                      yararlanabilir.
                     </p>
                   </div>
                 </div>
