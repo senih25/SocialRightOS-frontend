@@ -12,7 +12,7 @@ export const contentRegistry: ContentRegistryEntry[] = [
     section: "homepage",
     title: "Ana sayfa",
     body: "Dijital Sosyal Hak Rehberi konumlandırması, test seçimi ve hızlı yönlendirme akışı.",
-    seo_title: "Dijital Sosyal Hak Rehberi",
+    seo_title: "D-SHR",
     seo_description:
       "Sosyal hak testlerine ve rehberlere hızlı ulaşmak için sade, güven veren ve açıklayıcı bir başlangıç sayfası.",
     canonical_path: "/",

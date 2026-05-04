@@ -58,7 +58,7 @@ const ARTICLE_JSON_LD = {
   },
   publisher: {
     "@type": "Organization",
-    name: "D-SHR | Dijital Sosyal Hak Rehberi — SocialRightLabs",
+    name: "D-SHR",
     logo: {
       "@type": "ImageObject",
       url: "https://sosyalhakrehberi.com/d-shr-logo.svg",
