@@ -42,8 +42,8 @@ Yazar: Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu.
 
 65 yaş aylığı ve evde bakım maaşı birbirini engellemeyen iki ayrı sosyal yardımdır.
 2026 yılında her iki yardımı aynı anda almak mümkündür ancak her biri için ayrı başvuru ve ayrı değerlendirme yapılır.
-65 yaş aylığı için hane içi kişi başına düşen gelirin asgari ücretin üçte birinden (yaklaşık 9.358 TL) az olması gerekirken, evde bakım maaşı için bu oran iki katıdır (yaklaşık 56.151 TL).
-Her iki yardımın birlikte alınması durumunda toplam aylık gelir, güncel ödeme tutarlarına göre değişmektedir.
+65 yaş aylığı için hane içi kişi başına düşen gelirin asgari ücretin üçte birinden az olması gerekirken, evde bakım maaşı için bu oran iki kattır.
+Her iki yardımın birlikte alınması durumunda toplam haklar, güncel mevzuat ve kurum değerlendirmesine göre şekillenir.
 `;
 
 const ARTICLE_JSON_LD = {
@@ -81,7 +81,7 @@ const HASHTAGS = [
   "#2026Güncel",
   "#SosyalHaklar",
   "#SYDV",
-  "#SosyalYardımTutarları",
+  "#SosyalYardımHakları",
 ];
 
 export default function Page() {
@@ -197,14 +197,14 @@ export default function Page() {
                       </tr>
                     </thead>
                     <tbody className="text-slate-700">
-                      <tr className="border-b border-teal-100">
-                        <td className="py-3 px-2 font-bold">Aylık Tutar</td>
+                    <tr className="border-b border-teal-100">
+                        <td className="py-3 px-2 font-bold">Aylık Bilgi</td>
                         <td className="py-3 px-2" colSpan={2}>
                           <div className="bg-amber-50/60 p-4 rounded-2xl border border-amber-100 text-center">
-                            <h3 className="font-black text-amber-800 mb-2">ℹ️ Güncel Tutar Bilgisi</h3>
+                            <h3 className="font-black text-amber-800 mb-2">ℹ️ Güncel Bilgi</h3>
                             <p className="text-sm text-amber-700">
-                              Sosyal yardım tutarları yıl içinde enflasyon farkı ve diğer düzenlemelerle değişebilir.
-                              Güncel ödeme tutarlarınızı öğrenmek için <strong>e-Devlet</strong> üzerinden sorgulama yapabilir
+                              Sosyal yardım hakları yıl içinde enflasyon farkı ve diğer düzenlemelerle değişebilir.
+                              Güncel durumu öğrenmek için <strong>e-Devlet</strong> üzerinden sorgulama yapabilir
                               veya ikametinizdeki <strong>SYDV</strong>&apos;ye danışabilirsiniz.
                             </p>
                           </div>
@@ -225,10 +225,10 @@ export default function Page() {
                       <tr className="border-b border-teal-100">
                         <td className="py-3 px-2 font-bold">Gelir Sınırı</td>
                         <td className="py-3 px-2">
-                          Asgari ücretin 1/3&apos;ü (~6.700 TL)
+                          Asgari ücretin 1/3&apos;ü
                         </td>
                         <td className="py-3 px-2">
-                          Asgari ücretin 2 katı (~40.000 TL)
+                          Asgari ücretin 2 katı
                         </td>
                       </tr>
                       <tr className="border-b border-teal-100">
@@ -283,9 +283,7 @@ export default function Page() {
                       <li>▸ Ağır engelli raporu (%50+ bakım muhtaçlığı)</li>
                       <li>▸ T.C. vatandaşı olmak</li>
                       <li>▸ SSK/Bağ-Kur/Emekli Sandığı geliri olmamak</li>
-                      <li>
-                        ▸ Hane geliri kişi başı asgari ücretin 2 katından (yaklaşık 56.151 TL) az
-                      </li>
+                      <li>▸ Hane geliri kişi başı asgari ücretin 2 katından az</li>
                       <li>▸ Bakımın aile içinde yapılması</li>
                     </ul>
                   </div>
@@ -298,14 +296,14 @@ export default function Page() {
                   Toplam Aylık Gelir Hesaplama
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Her iki yardımı birlikte alan bir bireyin aylık toplam
-                  geliri, güncel ödeme tutarlarına göre değişmektedir:
+                  Her iki yardımı birlikte alan bir bireyin aylık toplam hak
+                  durumu, güncel mevzuat ve kurum incelemesine göre değişebilir:
                 </p>
                 <div className="bg-amber-50/60 p-6 rounded-2xl border border-amber-100 text-center">
-                  <h3 className="font-black text-amber-800 mb-2">ℹ️ Güncel Tutar Bilgisi</h3>
+                  <h3 className="font-black text-amber-800 mb-2">ℹ️ Güncel Bilgi</h3>
                   <p className="text-sm text-amber-700">
-                    Sosyal yardım tutarları yıl içinde enflasyon farkı ve diğer düzenlemelerle değişebilir.
-                    Güncel ödeme tutarlarınızı öğrenmek için <strong>e-Devlet</strong> üzerinden sorgulama yapabilir
+                    Sosyal yardım hakları yıl içinde mevzuat değişiklikleri ve kurum değerlendirmeleriyle güncellenebilir.
+                    Güncel durumu öğrenmek için <strong>e-Devlet</strong> üzerinden sorgulama yapabilir
                     veya ikametinizdeki <strong>SYDV</strong>&apos;ye danışabilirsiniz.
                   </p>
                 </div>

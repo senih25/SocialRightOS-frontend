@@ -189,8 +189,8 @@ export default function Page() {
                     </span>
                     <span>
                       <strong>Gelir testi şartı:</strong> Hane içi kişi başına
-                      düşen aylık gelirin asgari ücretin üçte birinden (yaklaşık
-                      9.358 TL) az olması
+                      düşen aylık gelirin asgari ücretin üçte birinden az
+                      olması
                     </span>
                   </li>
                   <li className="flex items-start gap-3">

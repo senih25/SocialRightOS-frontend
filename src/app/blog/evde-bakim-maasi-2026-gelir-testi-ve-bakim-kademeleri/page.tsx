@@ -8,7 +8,7 @@ import { getSiteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Evde Bakım Maaşı 2026: Gelir Testi, Bakım Kademeleri ve Başvuru Rehberi",
   description:
-    "2026 evde bakım maaşı güncel gelir sınırı, ağır-hafif engelli bakım kademeleri ve SYDV başvuru süreci. Akademik mevzuat analizi ile hazırlanmış kapsamlı rehber.",
+    "2026 evde bakım maaşı gelir oranı, ağır-hafif engelli bakım kademeleri ve SYDV başvuru süreci. Akademik mevzuat analizi ile hazırlanmış kapsamlı rehber.",
   keywords: [
     "evde bakım maaşı 2026",
     "evde bakım gelir sınırı 2026",
@@ -178,12 +178,9 @@ export default function Page() {
                   Aile ve Sosyal Hizmetler Bakanlığı 2026 yılı uygulama
                   talimatına göre, evde bakım maaşı alabilmek için hane
                   içindeki kişi başına düşen aylık gelirin{" "}
-                  <strong>
-                    net asgari ücretin iki katından (yaklaşık 56.151 TL)
-                    az
-                  </strong>{" "}
-                  olması gerekmektedir. Bu hesaplamada hane halkındaki tüm
-                  bireylerin gelirleri dikkate alınır.
+                  <strong>net asgari ücretin iki katından az</strong> olması
+                  gerekmektedir. Bu hesaplamada hane halkındaki tüm bireylerin
+                  gelirleri dikkate alınır.
                 </p>
                 <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
@@ -197,7 +194,8 @@ export default function Page() {
                     <span className="text-cyan-600 font-black mt-0.5">▸</span>
                     <span>
                       <strong>Gelir kapsamı:</strong> Ücret, maaş, kira, tarım,
-                      hayvancılık ve benzeri tüm düzenli gelirler
+                      hayvancılık ve benzeri tüm düzenli gelirler oran
+                      değerlendirmesine dahil edilir
                     </span>
                   </li>
                   <li className="flex items-start gap-3">

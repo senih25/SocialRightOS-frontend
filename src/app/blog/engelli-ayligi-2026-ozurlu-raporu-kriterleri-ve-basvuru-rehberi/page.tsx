@@ -7,15 +7,15 @@ import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title:
-    "Engelli Aylığı 2026: Özürlü Raporu Kriterleri, Başvuru Rehberi ve Güncel Tutarlar",
+    "Engelli Aylığı 2026: Özürlü Raporu Kriterleri ve Başvuru Rehberi",
   description:
-    "2026 engelli aylığı güncel tutarları, Sağlık Bakanlığı Özürlü Sağlık Kurulu raporu kriterleri ve SYDV başvuru süreci. Akademik mevzuat analizi.",
+    "2026 engelli aylığı oran temelli şartlar, Sağlık Bakanlığı Özürlü Sağlık Kurulu raporu kriterleri ve SYDV başvuru süreci. Akademik mevzuat analizi.",
   keywords: [
     "engelli aylığı 2026",
     "engelli maaşı 2026 ne kadar",
     "özürlü raporu kriterleri 2026",
     "engelli aylığı başvuru şartları",
-    "ağır engelli maaşı tutarı 2026",
+    "ağır engelli maaşı hak kriterleri 2026",
     "sağlık kurulu raporu engelli oranı",
     "engelli aylığı e-devlet başvuru",
     "2026 engelli maaşı gelir sınırı",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Engelli Aylığı 2026: Özürlü Raporu Kriterleri, Başvuru Rehberi ve Güncel Tutarlar",
+      "Engelli Aylığı 2026: Özürlü Raporu Kriterleri ve Başvuru Rehberi",
     description:
-      "2026 engelli aylığı güncel tutarları, Sağlık Bakanlığı Özürlü Sağlık Kurulu raporu kriterleri ve SYDV başvuru süreci.",
+      "2026 engelli aylığı oran temelli şartlar, Sağlık Bakanlığı Özürlü Sağlık Kurulu raporu kriterleri ve SYDV başvuru süreci.",
     type: "article",
     authors: ["Senih Bayankulu"],
     publishedTime: "2026-05-04",
@@ -37,21 +37,21 @@ export const metadata: Metadata = {
 };
 
 const VOICE_TEXT = `
-Engelli Aylığı 2026: Özürlü Raporu Kriterleri, Başvuru Rehberi ve Güncel Tutarlar.
+Engelli Aylığı 2026: Özürlü Raporu Kriterleri ve Başvuru Rehberi.
 Yazar: Dijital Sosyal Hak Rehberi Mimarı Senih Bayankulu.
 
 Engelli aylığı, 2022 sayılı Kanun kapsamında çalışma gücü kaybı oranı yüzde 40 ve üzerinde olan bireylere ödenen nakdi bir sosyal yardımdır.
-2026 yılında engelli aylığı tutarları, ağır engelli, orta engelli ve hafif engelli kategorilerine göre farklılaşmaktadır.
-Güncel tutarları öğrenmek için e-Devlet üzerinden sorgulama yapabilir veya ikametinizdeki SYDV'ye danışabilirsiniz.
+2026 yılında engelli aylığı hak değerlendirmesi, ağır engelli, orta engelli ve hafif engelli kategorilerine göre farklılaşmaktadır.
+Güncel hak bilgisini öğrenmek için e-Devlet üzerinden sorgulama yapabilir veya ikametinizdeki SYDV'ye danışabilirsiniz.
 Başvuru için Sağlık Bakanlığı Engelli Sağlık Kurulu tarafından düzenlenen raporda çalışma gücü kaybı oranının belirtilmesi zorunludur.
-Gelir testi şartı da aranır; hane içi kişi başına düşen gelir asgari ücretin iki katından (yaklaşık 56.151 TL) az olmalıdır.
+Gelir testi şartı da aranır; hane içi kişi başına düşen gelir asgari ücretin iki katından az olmalıdır.
 `;
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
   headline:
-    "Engelli Aylığı 2026: Özürlü Raporu Kriterleri, Başvuru Rehberi ve Güncel Tutarlar",
+    "Engelli Aylığı 2026: Özürlü Raporu Kriterleri ve Başvuru Rehberi",
   author: {
     "@type": "Person",
     name: "Senih Bayankulu",
@@ -138,8 +138,8 @@ export default function Page() {
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 leading-tight mb-5">
-                Engelli Aylığı 2026: Özürlü Raporu Kriterleri, Başvuru Rehberi
-                ve Güncel Tutarlar
+                Engelli Aylığı 2026: Özürlü Raporu Kriterleri ve Başvuru
+                Rehberi
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="font-bold text-slate-700">
@@ -176,14 +176,14 @@ export default function Page() {
                 </p>
               </section>
 
-              {/* 2026 Güncel Tutarlar */}
+              {/* 2026 Güncel Bilgi */}
               <section className="bg-purple-50/60 p-6 md:p-8 rounded-2xl border border-purple-100">
                 <h2 className="text-xl font-black text-slate-950 mb-4">
-                  2026 Yılı Engelli Aylığı Tutarları
+                  2026 Yılı Engelli Aylığı Hak Kategorileri
                 </h2>
                 <p className="text-slate-700 mb-4">
                   Aile ve Sosyal Hizmetler Bakanlığı 2026 yılı bütçe
-                  uygulamalarına göre engelli aylığı tutarları kategorilere göre
+                  uygulamalarına göre engelli aylığı hakları kategorilere göre
                   belirlenmektedir:
                 </p>
                 <div className="grid gap-4 md:grid-cols-3">
@@ -192,7 +192,7 @@ export default function Page() {
                       Ağır Engelli
                     </h3>
                     <p className="text-sm text-purple-700 font-bold">
-                      Güncel tutarı öğreniniz
+                      Güncel hak bilgisini öğreniniz
                     </p>
                     <p className="text-xs text-slate-500 mt-1">
                       (%70+ çalışma gücü kaybı)
@@ -203,7 +203,7 @@ export default function Page() {
                       Orta Engelli
                     </h3>
                     <p className="text-sm text-purple-700 font-bold">
-                      Güncel tutarı öğreniniz
+                      Güncel hak bilgisini öğreniniz
                     </p>
                     <p className="text-xs text-slate-500 mt-1">
                       (%50-69 çalışma gücü kaybı)
@@ -214,7 +214,7 @@ export default function Page() {
                       Hafif Engelli
                     </h3>
                     <p className="text-sm text-purple-700 font-bold">
-                      Güncel tutarı öğreniniz
+                      Güncel hak bilgisini öğreniniz
                     </p>
                     <p className="text-xs text-slate-500 mt-1">
                       (%40-49 çalışma gücü kaybı)
@@ -222,10 +222,10 @@ export default function Page() {
                   </div>
                 </div>
                 <div className="bg-amber-50/60 p-4 rounded-2xl border border-amber-100 mt-4">
-                  <h3 className="font-black text-amber-800 mb-2 text-sm text-center">ℹ️ Güncel Tutar Bilgisi</h3>
+                  <h3 className="font-black text-amber-800 mb-2 text-sm text-center">ℹ️ Güncel Bilgi</h3>
                   <p className="text-sm text-amber-700 text-center">
-                    Sosyal yardım tutarları yıl içinde enflasyon farkı ve diğer düzenlemelerle değişebilir.
-                    Güncel ödeme tutarlarınızı öğrenmek için <strong>e-Devlet</strong> üzerinden sorgulama yapabilir
+                    Sosyal yardım hakları yıl içinde enflasyon farkı ve diğer düzenlemelerle değişebilir.
+                    Güncel durumu öğrenmek için <strong>e-Devlet</strong> üzerinden sorgulama yapabilir
                     veya ikametinizdeki <strong>SYDV</strong>&apos;ye danışabilirsiniz.
                   </p>
                 </div>
@@ -312,7 +312,7 @@ export default function Page() {
                     <p className="text-sm text-slate-700">
                       Hane içi kişi başına düşen aylık gelirin net asgari
                       ücretin iki katından az olması gerekir. Engelli bireyin
-                      kendi geliri varsa bu tutar da hesaplamaya dahil edilir.
+                      kendi geliri varsa bu gelir de hesaplamaya dahil edilir.
                     </p>
                   </div>
                   <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100">
