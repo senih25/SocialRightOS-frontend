@@ -8,7 +8,7 @@ import { siteProfile } from "@/lib/site-profile";
 export const metadata: Metadata = {
   title: "İletişim",
   description:
-    "Sosyal Hak Rehberi için doğrudan iletişim kanalları, kısa yönlendirme ve geri dönüş beklentisi.",
+    "Dijital Sosyal Hak Rehberi için doğrudan iletişim kanalları, kısa yönlendirme ve geri dönüş beklentisi.",
   alternates: {
     canonical: "/iletisim",
   },

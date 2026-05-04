@@ -10,5 +10,5 @@ test("home care methodology content remains guidance-only and Turkish-first", ()
     homeCareMethodologyContent.links.some((link) => link.href === "/hakkimizda"),
     true,
   );
-  assert.match(homeCareMethodologyContent.title, /Sosyal Hak Rehberi/i);
+  assert.match(homeCareMethodologyContent.title, /Dijital Sosyal Hak Rehberi/i);
 });

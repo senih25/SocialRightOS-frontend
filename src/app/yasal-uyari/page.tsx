@@ -9,7 +9,7 @@ import { siteProfile } from "@/lib/site-profile";
 export const metadata: Metadata = {
   title: "Yasal Uyarı",
   description:
-    "Sosyal Hak Rehberi'nin resmî karar vermediğini, rehber niteliğini ve kullanım sınırlarını açıklayan sayfa.",
+    "Dijital Sosyal Hak Rehberi'nin resmî karar vermediğini, rehber niteliğini ve kullanım sınırlarını açıklayan sayfa.",
   alternates: {
     canonical: "/yasal-uyari",
   },

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "İç Panel",
+  title: "İç Panel | D-SHR",
   description: "İç yönetim, içerik taslağı, onay ve yayın akışı.",
   robots: {
     index: false,
@@ -31,7 +31,7 @@ export default function AdminLayout({
           <div className="section-header mt-4">
             <div>
               <h1 className="section-heading text-[clamp(2rem,3vw,3.2rem)]">
-                Sosyal Hak Rehberi İç Panel
+                D-SHR İç Panel
               </h1>
               <p className="section-copy mt-3 max-w-3xl">
                 İçerik taslağı, sayfa düzeni, yayın onayı ve analitik kaydının toplandığı iç

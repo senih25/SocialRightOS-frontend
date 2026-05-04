@@ -19,7 +19,7 @@ export type MethodologyContent = {
 
 export const homeCareMethodologyContent: MethodologyContent = {
   eyebrow: "Yöntem ve Sınırlar",
-  title: "Sosyal Hak Rehberi nasıl çalışır?",
+  title: "Dijital Sosyal Hak Rehberi nasıl çalışır?",
   subtitle:
     "Bu sayfa, sitenin hangi ilkelere göre içerik ürettiğini, nasıl sonuç gösterdiğini ve neden ön değerlendirme yaklaşımı kullandığını açıklar.",
   sections: [

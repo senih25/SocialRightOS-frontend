@@ -10,7 +10,7 @@ const initialDraft: ContentDraft = {
   slug: "yeni-icerik-basligi",
   section: "guide",
   canonical_path: "/",
-  seo_title: "Yeni içerik başlığı | Sosyal Hak Rehberi",
+  seo_title: "Yeni içerik başlığı | D-SHR",
   seo_description: "Sosyal hak rehberi için kısa ve açıklayıcı giriş metni.",
   body: "İlk paragrafta doğrudan cevap, ikinci bölümde açıklama, son bölümde aksiyon.",
   layout_focus: "Hero + kısa cevap + rehber kutusu + sonraki adım",
@@ -136,11 +136,11 @@ export default function AdminStudioPage() {
           </label>
 
           <label className="grid gap-2 md:col-span-2">
-            <span className="text-sm font-medium text-slate-800">SEO bçŗık</span>
+            <span className="text-sm font-medium text-slate-800">SEO başlık</span>
             <input
               value={draft.seo_title}
               onChange={(event) => update("seo_title", event.target.value)}
-              className="rounded-22xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500"
+              className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500"
             />
           </label>
 
@@ -155,8 +155,7 @@ export default function AdminStudioPage() {
           </label>
 
           <label className="grid gap-2 md:col-span-2">
-            <span className="text-sm font-medium text-slate-800">Ana icçirek
-            </span>
+            <span className="text-sm font-medium text-slate-800">Ana içerik</span>
             <textarea
               value={draft.body}
               onChange={(event) => update("body", event.target.value)}

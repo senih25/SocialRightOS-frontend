@@ -10,7 +10,7 @@ import {
 import { siteOperations } from "@/lib/site-operations";
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard",
+  title: "Admin Dashboard | D-SHR",
   description: "İç yönetim özeti, içerik kayıtları, yayın kuyruğu ve iş dağılımı.",
   robots: {
     index: false,

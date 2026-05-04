@@ -2,7 +2,7 @@ export const homepageHero = {
   eyebrow: "Uygunluk Testleri",
   title: "Size uygun testi hızla bulun ve ilk adımı rahatça atın",
   body:
-    "Sosyal Hak Rehberi, sizi en ilgili teste ve en doğru rehbere yönlendirir. Kısa soru akışı, sade sonuç ve sonraki adım önerisi tek bir yerde sunulur.",
+    "Dijital Sosyal Hak Rehberi, sizi en ilgili teste ve en doğru rehbere yönlendirir. Kısa soru akışı, sade sonuç ve sonraki adım önerisi tek bir yerde sunulur.",
   primaryCtaLabel: "Uygunluk testine başla",
   primaryCtaHref: "#durumunu-sec",
 };
