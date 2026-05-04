@@ -304,10 +304,10 @@ export default function Page() {
                     <strong className="text-orange-700">
                       Sağlık hizmeti kesintisi:
                     </strong>{" "}
-                    Borçlu olduğunuz dönemde sağlık hizmetlerinden
-                    yararlanamazsınız. Acil durumlar dışında özel hastaneler
-                    ücret talep eder. Borç silinene kadar devlet hastanelerinde
-                    ücretli muayene uygulanır.
+                    Gelir testi sonucunuz G0 değilse ve priminizi kendiniz
+                    ödemeniz gerekiyorsa sağlık hizmetlerinden yararlanma
+                    durumunuz prim tesciline bağlıdır. G0 olarak tespit edilen
+                    kişilerin primi devlet tarafından karşılanır.
                   </p>
                   <p>
                     <strong className="text-orange-700">
@@ -321,17 +321,17 @@ export default function Page() {
                     <strong className="text-orange-700">
                       Gelir testi yenileme:
                     </strong>{" "}
-                    Gelir testi sonuçları 2 yıl geçerlidir. Gelir durumunuz
-                    değişirse (işe girme, miras vb.) 30 gün içinde yeniden test
-                    yaptırmanız gerekir.
+                    Gelir durumunuz değişirse bir ay içinde vakfa başvurmanız
+                    gerekir. Vakıf ve SGK, gerekli hallerde gelir testini
+                    yeniden değerlendirir.
                   </p>
                   <p>
                     <strong className="text-orange-700">
                       Borç yapılandırma alternatifi:
                     </strong>{" "}
-                    Gelir testi sonucu olumlu çıkmazsa, 6183 sayılı Kanun
-                    kapsamında borç yapılandırma (taksitlendirme) başvurusu
-                    yapılabilir.
+                    GSS prim borçları varsa, yapılandırma veya taksitlendirme
+                    için SGK duyurularını takip edin. Bu, gelir testinden ayrı
+                    bir idari işlemdir.
                   </p>
                 </div>
               </section>
