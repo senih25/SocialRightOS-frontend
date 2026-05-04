@@ -7,9 +7,9 @@ import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title:
-    "Doğum Yardımı 2026: İkiz ve Üçüz Doğum Ödemeleri, Başvuru Rehberi ve Güncel Tutarlar",
+    "Doğum Yardımı 2026: 1 Ocak 2025 Sonrası Doğumlar, Başvuru Rehberi ve Güncel Tutarlar",
   description:
-    "2026 doğum yardımı güncel tutarları, ikiz/üçüz doğum ödemeleri, e-Devlet başvuru süreci ve ödeme takvimi. Senih Bayankulu'nun akademik analizi.",
+    "2026 doğum yardımı, 01.01.2025 sonrası canlı doğan çocuklar için güncel tutarlar, ikiz/üçüz doğum ödemeleri ve e-Devlet başvuru süreci. Senih Bayankulu'nun akademik analizi.",
   keywords: [
     "doğum yardımı 2026",
     "doğum yardımı ne kadar 2026",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Doğum Yardımı 2026: İkiz ve Üçüz Doğum Ödemeleri, Başvuru Rehberi ve Güncel Tutarlar",
+      "Doğum Yardımı 2026: 1 Ocak 2025 Sonrası Doğumlar, Başvuru Rehberi ve Güncel Tutarlar",
     description:
-      "2026 doğum yardımı güncel tutarları, ikiz/üçüz doğum ödemeleri, e-Devlet başvuru süreci ve ödeme takvimi.",
+      "2026 doğum yardımı, 01.01.2025 sonrası canlı doğan çocuklar için güncel tutarlar, ikiz/üçüz doğum ödemeleri ve e-Devlet başvuru süreci.",
     type: "article",
     authors: ["Senih Bayankulu"],
     publishedTime: "2026-05-04",
@@ -37,10 +37,10 @@ export const metadata: Metadata = {
 };
 
 const VOICE_TEXT = `
-Doğum Yardımı 2026: İkiz ve Üçüz Doğum Ödemeleri, Başvuru Rehberi ve Güncel Tutarlar.
+Doğum Yardımı 2026: 1 Ocak 2025 Sonrası Doğumlar, Başvuru Rehberi ve Güncel Tutarlar.
 Yazar: Senih Bayankulu.
 
-Doğum yardımı, 2022 sayılı Kanun kapsamında Türkiye'de doğan çocuklar için verilen nakdi bir sosyal yardımdır.
+Doğum yardımı, 01.01.2025 tarihi ve sonrasında canlı doğan çocuklar için verilen nakdi bir sosyal yardımdır.
 2026 yılında tek çocuk, ikiz ve üçüz doğumlar için farklı ödeme tutarları uygulanmaktadır.
 Güncel tutarları öğrenmek için e-Devlet üzerinden sorgulama yapabilir veya Aile ve Sosyal Hizmetler İl Müdürlüklerine danışabilirsiniz.
 Ödeme çocuğun doğumundan sonra bir defaya mahsus olarak yapılır.
@@ -50,7 +50,7 @@ const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
   headline:
-    "Doğum Yardımı 2026: İkiz ve Üçüz Doğum Ödemeleri, Başvuru Rehberi ve Güncel Tutarlar",
+    "Doğum Yardımı 2026: 1 Ocak 2025 Sonrası Doğumlar, Başvuru Rehberi ve Güncel Tutarlar",
   author: {
     "@type": "Person",
     name: "Senih Bayankulu",
@@ -136,8 +136,8 @@ export default function Page() {
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 leading-tight mb-5">
-                Doğum Yardımı 2026: İkiz ve Üçüz Doğum Ödemeleri, Başvuru Rehberi
-                ve Güncel Tutarlar
+                Doğum Yardımı 2026: 1 Ocak 2025 Sonrası Doğumlar, Başvuru
+                Rehberi ve Güncel Tutarlar
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="font-bold text-slate-700">
@@ -161,9 +161,9 @@ export default function Page() {
                   Giriş ve Hukuki Çerçeve
                 </h2>
                 <p className="text-slate-700">
-                  Doğum yardımı, 2022 sayılı Kanun&apos;un 19. maddesi
-                  kapsamında düzenlenen, Türkiye&apos;de doğan her çocuk için
-                  aileye bir defaya mahsus ödenen nakdi bir sosyal yardımdır.
+                  Doğum yardımı, 01.01.2025 tarihi ve sonrasında canlı doğan
+                  çocuklar için aileye bir defaya mahsus ödenen nakdi bir
+                  sosyal yardımdır.
                   Bu yardım, nüfus politikasının sosyal politika araçlarıyla
                   desteklenmesi, çocuk yoksulluğunun önlenmesi ve ailelerin
                   doğum sonrası ilk dönemdeki ekonomik yükünün hafifletilmesi
@@ -225,8 +225,8 @@ export default function Page() {
                     <span className="text-pink-600 font-black mt-0.5">▸</span>
                     <span>
                       <strong>T.C. vatandaşlığı:</strong> Çocuğun Türkiye
-                      Cumhuriyeti vatandaşı olması ve Türkiye&apos;de doğmuş
-                      olması
+                      Cumhuriyeti vatandaşı olması ve 01.01.2025 tarihi
+                      sonrasında canlı doğmuş olması
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
