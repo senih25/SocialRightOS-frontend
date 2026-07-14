@@ -6,10 +6,14 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title:
     "GSS Gelir Testi 2026: Güncel Şartlar, Prim Durumu ve Başvuru Rehberi",
   description:
-    "2026 GSS prim borcu silinmesi şartları, 5510 sayılı Kanun kapsamında af süreci ve e-Devlet başvuru adımları. Akademik mevzuat analizi ile hazırlanmış kapsamlı rehber.",
+    "2026 GSS prim borcu silinmesi şartları, 5510 sayılı Kanun kapsamında af süreci ve e-Devlet başvuru adımları. Bilgilendirme amacıyla hazırlanmış kapsamlı rehber.",
   keywords: [
     "gss prim borcu silinmesi 2026",
     "gss borç affı 2026",
@@ -47,7 +51,7 @@ Geçmiş prim borçlarının silinmesi ise genel bir hak değil, yalnızca özel
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
+  "@type": "Article",
   headline:
     "GSS Gelir Testi 2026: Güncel Şartlar, Prim Durumu ve Başvuru Rehberi",
   author: {
@@ -128,7 +132,7 @@ export default function Page() {
             <header className="mb-10">
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="inline-block px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full text-xs font-black uppercase tracking-wider">
-                  Akademik Analiz
+                  Bilgilendirme Rehberi
                 </span>
                 <span className="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-black uppercase tracking-wider">
                   SGK Mevzuatı
@@ -353,7 +357,7 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Akademik Kaynakça ve Mevzuat
+                  Doğrulama Bekleyen Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
@@ -381,14 +385,7 @@ export default function Page() {
                     . Sayı: 33750.
                   </li>
                   <li>
-                    [4] Kılıç, M., &amp; Demir, A. (2024). Türkiye&apos;de genel
-                    sağlık sigortası prim borçları ve sosyal devlet ilkesi:
-                    Bir değerlendirme.{" "}
-                    <em>Çalışma ve Toplum Dergisi</em>, 72(3), 89-112.
-                    https://doi.org/10.xxxx/ctd.2024.0072
-                  </li>
-                  <li>
-                    [5] SGK. (2026). <em>GSS Gelir Testi Başvuru Kılavuzu ve Sık
+                    [4] SGK. (2026). <em>GSS Gelir Testi Başvuru Kılavuzu ve Sık
                     Sorulan Sorular</em>. e-Devlet entegre başvuru sistemi
                     kullanım kılavuzu.
                   </li>

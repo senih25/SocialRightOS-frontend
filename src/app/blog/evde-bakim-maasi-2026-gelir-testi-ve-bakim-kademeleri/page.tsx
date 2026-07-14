@@ -6,9 +6,13 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title: "Evde Bakım Maaşı 2026: Gelir Testi, Bakım Kademeleri ve Başvuru Rehberi",
   description:
-    "2026 evde bakım maaşı gelir oranı, ağır-hafif engelli bakım kademeleri ve SYDV başvuru süreci. Akademik mevzuat analizi ile hazırlanmış kapsamlı rehber.",
+    "2026 evde bakım maaşı gelir oranı, ağır-hafif engelli bakım kademeleri ve SYDV başvuru süreci. Bilgilendirme amacıyla hazırlanmış kapsamlı rehber.",
   keywords: [
     "evde bakım maaşı 2026",
     "evde bakım gelir sınırı 2026",
@@ -24,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Evde Bakım Maaşı 2026: Gelir Testi, Bakım Kademeleri ve Başvuru Rehberi",
     description:
-      "2026 evde bakım maaşı güncel gelir sınırı, ağır-hafif engelli bakım kademeleri ve SYDV başvuru süreci. Akademik mevzuat analizi.",
+      "2026 evde bakım maaşı güncel gelir sınırı, ağır-hafif engelli bakım kademeleri ve SYDV başvuru süreci. Bilgilendirme rehberi.",
     type: "article",
     authors: ["Senih Bayankulu"],
     publishedTime: "2026-05-04",
@@ -45,7 +49,7 @@ Başvurular ikametgah adresindeki Sosyal Yardımlaşma ve Dayanışma Vakfına y
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
+  "@type": "Article",
   headline:
     "Evde Bakım Maaşı 2026: Gelir Testi, Bakım Kademeleri ve Başvuru Rehberi",
   author: {
@@ -127,7 +131,7 @@ export default function Page() {
             <header className="mb-10">
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="inline-block px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full text-xs font-black uppercase tracking-wider">
-                  Akademik Analiz
+                  Bilgilendirme Rehberi
                 </span>
                 <span className="inline-block px-3 py-1 bg-orange-50 text-orange-700 rounded-full text-xs font-black uppercase tracking-wider">
                   Mevzuat Rehberi
@@ -330,7 +334,7 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Akademik Kaynakça ve Mevzuat
+                  Doğrulama Bekleyen Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
@@ -357,13 +361,7 @@ export default function Page() {
                     . Resmî Gazete, Sayı: 32344.
                   </li>
                   <li>
-                    [4] Çavuşoğlu, N., &amp; Yılmaz, S. (2024). Türkiye&apos;de
-                    evde bakım hizmetlerinin hukuki çerçevesi ve uygulama
-                    sorunları. <em>Sosyal Hizmet Araştırmaları Dergisi</em>,
-                    26(2), 145-168. https://doi.org/10.xxxx/shad.2024.0026
-                  </li>
-                  <li>
-                    [5] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    [4] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
                       2026 Yılı Sosyal Yardım Programları Bütçe Raporu ve
                       Ödeme Takvimi

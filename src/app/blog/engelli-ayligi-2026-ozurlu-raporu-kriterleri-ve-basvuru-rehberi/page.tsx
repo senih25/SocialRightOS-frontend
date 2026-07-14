@@ -6,10 +6,14 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title:
     "Engelli Aylığı 2026: Özürlü Raporu Kriterleri ve Başvuru Rehberi",
   description:
-    "2026 engelli aylığı oran temelli şartlar, Sağlık Bakanlığı Özürlü Sağlık Kurulu raporu kriterleri ve SYDV başvuru süreci. Akademik mevzuat analizi.",
+    "2026 engelli aylığı oran temelli şartlar, Sağlık Bakanlığı Özürlü Sağlık Kurulu raporu kriterleri ve SYDV başvuru süreci. Bilgilendirme rehberi.",
   keywords: [
     "engelli aylığı 2026",
     "engelli maaşı 2026 ne kadar",
@@ -49,7 +53,7 @@ Gelir testi şartı da aranır; hane içi kişi başına düşen gelir net asgar
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
+  "@type": "Article",
   headline:
     "Engelli Aylığı 2026: Özürlü Raporu Kriterleri ve Başvuru Rehberi",
   author: {
@@ -131,7 +135,7 @@ export default function Page() {
             <header className="mb-10">
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="inline-block px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full text-xs font-black uppercase tracking-wider">
-                  Akademik Analiz
+                  Bilgilendirme Rehberi
                 </span>
                 <span className="inline-block px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-black uppercase tracking-wider">
                   Sağlık Raporu Rehberi
@@ -387,7 +391,7 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Akademik Kaynakça ve Mevzuat
+                  Doğrulama Bekleyen Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
@@ -414,13 +418,7 @@ export default function Page() {
                     . SYGM Yayınları, Ankara.
                   </li>
                   <li>
-                    [4] Özdemir, S. (2025). Engelli aylığı uygulamalarında
-                    çalışma gücü kaybı oranının belirlenmesi ve hukuki
-                    sorunlar. <em>Toplum ve Sosyal Hizmet</em>, 36(1), 78-95.
-                    https://doi.org/10.xxxx/tsh.2025.0036
-                  </li>
-                  <li>
-                    [5] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    [4] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
                       Engelli Bireylere Yönelik Sosyal Yardım Programları
                       Değerlendirme Raporu

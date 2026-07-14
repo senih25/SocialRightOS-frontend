@@ -6,10 +6,14 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title:
     "65 Yaş Aylığı ve Evde Bakım Maaşı Birlikteliği 2026: Kapsamlı Rehber ve Uygulama İpuçları",
   description:
-    "2026'da 65 yaş aylığı ve evde bakım maaşı birlikte alınabilir mi? Gelir testi, başvuru şartları ve pratik uygulama rehberi. Senih Bayankulu'nun akademik analizi.",
+    "2026'da 65 yaş aylığı ve evde bakım maaşı birlikte alınabilir mi? Gelir testi, başvuru şartları ve pratik uygulama rehberi. Bilgilendirme amacıyla hazırlanmış rehber.",
   keywords: [
     "65 yaş aylığı evde bakım birlikte",
     "yaşlılık maaşı bakım parası 2026",
@@ -48,7 +52,7 @@ Her iki yardımın birlikte alınması durumunda toplam haklar, güncel mevzuat 
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
+  "@type": "Article",
   headline:
     "65 Yaş Aylığı ve Evde Bakım Maaşı Birlikteliği 2026: Kapsamlı Rehber ve Uygulama İpuçları",
   author: {
@@ -131,7 +135,7 @@ export default function Page() {
             <header className="mb-10">
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="inline-block px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full text-xs font-black uppercase tracking-wider">
-                  Akademik Analiz
+                  Bilgilendirme Rehberi
                 </span>
                 <span className="inline-block px-3 py-1 bg-teal-50 text-teal-700 rounded-full text-xs font-black uppercase tracking-wider">
                   Karşılaştırmalı Rehber
@@ -369,7 +373,7 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Akademik Kaynakça ve Mevzuat
+                  Doğrulama Bekleyen Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
@@ -396,14 +400,7 @@ export default function Page() {
                     . Ankara.
                   </li>
                   <li>
-                    [4] Çelik, H., &amp; Demirtaş, N. (2024). Türkiye&apos;de
-                    yaşlı ve engelli bireylerin sosyal yardım erişimi:
-                    Birlikteliğin hukuki çerçevesi.{" "}
-                    <em>Yaşlı Sorunları Araştırma Dergisi</em>, 15(2), 67-84.
-                    https://doi.org/10.xxxx/ysad.2024.0015
-                  </li>
-                  <li>
-                    [5] Sağlık Bakanlığı. (2023).{" "}
+                    [4] Sağlık Bakanlığı. (2023).{" "}
                     <em>
                       Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği
                     </em>

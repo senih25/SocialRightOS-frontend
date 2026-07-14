@@ -6,10 +6,14 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title:
     "SED Yardımı vs. Koruyucu Aile 2026: Karşılaştırmalı Analiz ve Aile Rehberi",
   description:
-    "2026 SED yardımı ve koruyucu aile hizmeti arasındaki farklar, hangi durumda hangi hizmet tercih edilmeli? Senih Bayankulu'nun akademik analizi.",
+    "2026 SED yardımı ve koruyucu aile hizmeti arasındaki farklar, hangi durumda hangi hizmet tercih edilmeli? Bilgilendirme amacıyla hazırlanmış rehber.",
   keywords: [
     "sed yardımı koruyucu aile farkı",
     "sed mi koruyucu aile mi",
@@ -48,7 +52,7 @@ Her iki hizmetin amacı da çocuğun yararını korumak ve en uygun ortamda büy
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
+  "@type": "Article",
   headline:
     "SED Yardımı vs. Koruyucu Aile 2026: Karşılaştırmalı Analiz ve Aile Rehberi",
   author: {
@@ -131,7 +135,7 @@ export default function Page() {
             <header className="mb-10">
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="inline-block px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full text-xs font-black uppercase tracking-wider">
-                  Akademik Analiz
+                  Bilgilendirme Rehberi
                 </span>
                 <span className="inline-block px-3 py-1 bg-rose-50 text-rose-700 rounded-full text-xs font-black uppercase tracking-wider">
                   Çocuk Koruma Rehberi
@@ -397,7 +401,7 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Akademik Kaynakça ve Mevzuat
+                  Doğrulama Bekleyen Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
@@ -424,13 +428,7 @@ export default function Page() {
                     . SYGM Yayınları.
                   </li>
                   <li>
-                    [4] Özdemir, F. (2024). Türkiye&apos;de çocuk koruma
-                    sisteminde SED ve koruyucu aile hizmetlerinin etkinliği.{" "}
-                    <em>Çocuk ve Toplum Dergisi</em>, 18(2), 134-156.
-                    https://doi.org/10.xxxx/ctd.2024.0018
-                  </li>
-                  <li>
-                    [5] UNICEF Türkiye. (2025).{" "}
+                    [4] UNICEF Türkiye. (2025).{" "}
                     <em>
                       Türkiye Çocuk Koruma Sistemi Değerlendirme Raporu 2024
                     </em>

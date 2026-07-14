@@ -6,10 +6,14 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title:
     "Engelli Raporu İtiraz Süreci 2026: Hukuki Yol Haritası ve Başvuru Rehberi",
   description:
-    "2026 engelli sağlık kurulu raporu itiraz süreci, hastane başhekimliği ve il sağlık müdürlüğü başvuru adımları. Senih Bayankulu'nun akademik analizi.",
+    "2026 engelli sağlık kurulu raporu itiraz süreci, hastane başhekimliği ve il sağlık müdürlüğü başvuru adımları. Bilgilendirme amacıyla hazırlanmış rehber.",
   keywords: [
     "engelli raporu itiraz 2026",
     "sağlık kurulu raporu itiraz",
@@ -48,7 +52,7 @@ Başhekimliğe itiraz 30 gün içinde yapılmalıdır.
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
+  "@type": "Article",
   headline:
     "Engelli Raporu İtiraz Süreci 2026: Hukuki Yol Haritası ve Başvuru Rehberi",
   author: {
@@ -131,7 +135,7 @@ export default function Page() {
             <header className="mb-10">
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="inline-block px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full text-xs font-black uppercase tracking-wider">
-                  Akademik Analiz
+                  Bilgilendirme Rehberi
                 </span>
                 <span className="inline-block px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-black uppercase tracking-wider">
                   Hukuki Rehber
@@ -398,7 +402,7 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Akademik Kaynakça ve Mevzuat
+                  Doğrulama Bekleyen Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
@@ -425,13 +429,7 @@ export default function Page() {
                     .
                   </li>
                   <li>
-                    [4] Aktaş, M. (2025). Engelli sağlık kurulu raporlarında
-                    itiraz sürecinin etkinliği ve hukuki sorunlar.{" "}
-                    <em>Tıp Hukuku Dergisi</em>, 42(1), 55-78.
-                    https://doi.org/10.xxxx/thd.2025.0042
-                  </li>
-                  <li>
-                    [5] Sağlık Bakanlığı. (2026).{" "}
+                    [4] Sağlık Bakanlığı. (2026).{" "}
                     <em>
                       2026 Yılı Engelli Sağlık Kurulu Raporu İtiraz Başvuru
                       Kılavuzu
