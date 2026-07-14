@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu-source-3",
+  "blog_slug": "vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu",
+  "file": "src/app/blog/vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu/page.tsx",
+  "displayed_number": 3,
+  "current_reference": "T.C. Resmî Gazete. (2025). 2022 Sayılı Kanun'a Eklenmesi Planlanan Geçici Maddeler Taslağı . Sayı: 33700 (Taslak aşamasında).",
+  "flags": [
+    "LEGAL_OR_REGULATORY",
+    "DRAFT_OR_SPECULATIVE",
+    "NO_DIRECT_URL"
+  ],
+  "risk_score": 150,
+  "priority": "P0",
+  "decision": "PENDING",
+  "verification_status": "COMPLETED",
+  "research_questions": [
+    "Does the cited document exist under the stated title?",
+    "Was it officially published, or is it only a draft or proposal?",
+    "Is there a direct official source URL?",
+    "Does the source support the associated blog claim?",
+    "Should the source be kept, replaced, or removed?"
+  ],
+  "official_domains_to_check": [
+    "resmigazete.gov.tr",
+    "mevzuat.gov.tr",
+    "aile.gov.tr",
+    "sgk.gov.tr",
+    "sbb.gov.tr",
+    "tbmm.gov.tr",
+    "turkiye.gov.tr"
+  ],
+  "verified_url": null,
+  "verified_title": null,
+  "verified_publisher": null,
+  "verified_date": null,
+  "supports_blog_claim": false,
+  "final_decision": "REMOVE",
+  "review_notes": "The cited Resmi Gazete reference could not be verified on the identified official domains. No official publication matching the stated title, year, issue number, and draft description was located. A draft or planned amendment must not be represented as a published Resmi Gazete source. Remove this bibliography entry. The article may retain clearly qualified discussion of a public-policy proposal only when it does not attribute the proposal to an unverified official publication.",
+  "evidence": {
+    "research_date": "2026-07-14",
+    "official_domains_checked": [
+      "resmigazete.gov.tr",
+      "mevzuat.gov.tr",
+      "aile.gov.tr",
+      "sgk.gov.tr",
+      "sbb.gov.tr",
+      "tbmm.gov.tr",
+      "turkiye.gov.tr"
+    ],
+    "queries": [
+      "33700 2025 Resmi Gazete",
+      "2022 Sayılı Kanun geçici madde 2025",
+      "2022 Sayılı Kanun'a Eklenmesi Planlanan Geçici Maddeler Taslağı"
+    ],
+    "official_match_found": false,
+    "direct_primary_source_found": false,
+    "reason_codes": [
+      "UNVERIFIED_PUBLICATION",
+      "UNVERIFIED_ISSUE_NUMBER",
+      "DRAFT_PRESENTED_AS_OFFICIAL_SOURCE",
+      "NO_DIRECT_PRIMARY_SOURCE"
+    ]
+  },
+  "editorial_action": {
+    "bibliography_entry": "REMOVE",
+    "associated_blog_claim": "REVIEW_AND_QUALIFY",
+    "replacement_source_required": false,
+    "instructions": "Delete source number 3. Do not replace it unless a direct official publication supporting the exact claim is found. Keep any policy discussion explicitly framed as unconfirmed or proposed."
+  }
+}
