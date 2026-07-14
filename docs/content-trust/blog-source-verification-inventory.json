@@ -1,0 +1,717 @@
+{
+  "schema_version": "1.0.0",
+  "generated_on": "2026-07-14",
+  "scope": {
+    "blog_page_count": 9,
+    "source_record_count": 36,
+    "production_status": "QUARANTINED_NOINDEX"
+  },
+  "decision_values": [
+    "PENDING",
+    "KEEP",
+    "REPLACE",
+    "REMOVE"
+  ],
+  "records": [
+    {
+      "id": "65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber-source-1",
+      "blog_slug": "65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber",
+      "file": "src/app/blog/65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber/page.tsx",
+      "displayed_number": 1,
+      "reference": "T.C. Resmî Gazete. (2022). 2022 Sayılı Kanun: Sosyal Hizmetler Kanunu, Md. 14 ve Md. 16 . Sayı: 31857.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber-source-2",
+      "blog_slug": "65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber",
+      "file": "src/app/blog/65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber/page.tsx",
+      "displayed_number": 2,
+      "reference": "Aile ve Sosyal Hizmetler Bakanlığı. (2026). 2026 Yılı Sosyal Yardım Programları Uygulama Talimatı . SYGM Yayınları, Ankara.",
+      "current_url": null,
+      "flags": [
+        "CURRENT_YEAR_CLAIM",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber-source-3",
+      "blog_slug": "65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber",
+      "file": "src/app/blog/65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber/page.tsx",
+      "displayed_number": 3,
+      "reference": "Aile ve Sosyal Hizmetler Bakanlığı. (2025). Birden Fazla Sosyal Yardım Alma Durumları ve Değerlendirme Kılavuzu . Ankara.",
+      "current_url": null,
+      "flags": [
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber-source-4",
+      "blog_slug": "65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber",
+      "file": "src/app/blog/65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber/page.tsx",
+      "displayed_number": 4,
+      "reference": "Sağlık Bakanlığı. (2023). Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği . Resmî Gazete, Sayı: 32344.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "dogum-yardimi-2026-ikiz-ucuz-dogum-odemeleri-ve-basvuru-rehberi-source-1",
+      "blog_slug": "dogum-yardimi-2026-ikiz-ucuz-dogum-odemeleri-ve-basvuru-rehberi",
+      "file": "src/app/blog/dogum-yardimi-2026-ikiz-ucuz-dogum-odemeleri-ve-basvuru-rehberi/page.tsx",
+      "displayed_number": 1,
+      "reference": "T.C. Resmî Gazete. (2022). 2022 Sayılı Kanun: Sosyal Hizmetler Kanunu, Md. 19 — Doğum Yardımı . Sayı: 31857.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "dogum-yardimi-2026-ikiz-ucuz-dogum-odemeleri-ve-basvuru-rehberi-source-2",
+      "blog_slug": "dogum-yardimi-2026-ikiz-ucuz-dogum-odemeleri-ve-basvuru-rehberi",
+      "file": "src/app/blog/dogum-yardimi-2026-ikiz-ucuz-dogum-odemeleri-ve-basvuru-rehberi/page.tsx",
+      "displayed_number": 2,
+      "reference": "Aile ve Sosyal Hizmetler Bakanlığı. (2026). 2026 Yılı Doğum Yardımı Uygulama Talimatı ve Ödeme Cetveli . SYGM Yayınları, Ankara.",
+      "current_url": null,
+      "flags": [
+        "CURRENT_YEAR_CLAIM",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "dogum-yardimi-2026-ikiz-ucuz-dogum-odemeleri-ve-basvuru-rehberi-source-3",
+      "blog_slug": "dogum-yardimi-2026-ikiz-ucuz-dogum-odemeleri-ve-basvuru-rehberi",
+      "file": "src/app/blog/dogum-yardimi-2026-ikiz-ucuz-dogum-odemeleri-ve-basvuru-rehberi/page.tsx",
+      "displayed_number": 3,
+      "reference": "Aile ve Sosyal Hizmetler Bakanlığı. (2025). Doğum Yardımı Başvuru Kılavuzu. e-Devlet entegre başvuru sistemi.",
+      "current_url": null,
+      "flags": [
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "dogum-yardimi-2026-ikiz-ucuz-dogum-odemeleri-ve-basvuru-rehberi-source-4",
+      "blog_slug": "dogum-yardimi-2026-ikiz-ucuz-dogum-odemeleri-ve-basvuru-rehberi",
+      "file": "src/app/blog/dogum-yardimi-2026-ikiz-ucuz-dogum-odemeleri-ve-basvuru-rehberi/page.tsx",
+      "displayed_number": 4,
+      "reference": "TÜİK. (2025). Türkiye'de Çocuk İstatistikleri 2024. Ankara.",
+      "current_url": null,
+      "flags": [
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi-source-1",
+      "blog_slug": "engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi",
+      "file": "src/app/blog/engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi/page.tsx",
+      "displayed_number": 1,
+      "reference": "T.C. Resmî Gazete. (2022). 2022 Sayılı Kanun: Sosyal Hizmetler Kanunu, Md. 17 — Engelli Aylığı . Sayı: 31857.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi-source-2",
+      "blog_slug": "engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi",
+      "file": "src/app/blog/engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi/page.tsx",
+      "displayed_number": 2,
+      "reference": "Sağlık Bakanlığı. (2023). Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği . Resmî Gazete, Sayı: 32344.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi-source-3",
+      "blog_slug": "engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi",
+      "file": "src/app/blog/engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi/page.tsx",
+      "displayed_number": 3,
+      "reference": "Aile ve Sosyal Hizmetler Bakanlığı. (2026). 2026 Yılı Engelli Aylığı Ödeme Cetveli ve Uygulama Talimatı . SYGM Yayınları, Ankara.",
+      "current_url": null,
+      "flags": [
+        "CURRENT_YEAR_CLAIM",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi-source-4",
+      "blog_slug": "engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi",
+      "file": "src/app/blog/engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi/page.tsx",
+      "displayed_number": 4,
+      "reference": "Aile ve Sosyal Hizmetler Bakanlığı. (2026). Engelli Bireylere Yönelik Sosyal Yardım Programları Değerlendirme Raporu . Ankara.",
+      "current_url": null,
+      "flags": [
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026-source-1",
+      "blog_slug": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026",
+      "file": "src/app/blog/engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026/page.tsx",
+      "displayed_number": 1,
+      "reference": "Sağlık Bakanlığı. (2023). Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği . Resmî Gazete, Sayı: 32344.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026-source-2",
+      "blog_slug": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026",
+      "file": "src/app/blog/engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026/page.tsx",
+      "displayed_number": 2,
+      "reference": "Sağlık Bakanlığı. (2024). Engelli Sağlık Kurulu Raporu İtiraz ve Değerlendirme Usulü Tebliği . Resmî Gazete, Sayı: 33100.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026-source-3",
+      "blog_slug": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026",
+      "file": "src/app/blog/engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026/page.tsx",
+      "displayed_number": 3,
+      "reference": "T.C. Anayasa Mahkemesi. (2024). Engelli Raporu İtiraz Sürecine İlişkin Karar (E. 2024/123) .",
+      "current_url": null,
+      "flags": [
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026-source-4",
+      "blog_slug": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026",
+      "file": "src/app/blog/engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026/page.tsx",
+      "displayed_number": 4,
+      "reference": "Sağlık Bakanlığı. (2026). 2026 Yılı Engelli Sağlık Kurulu Raporu İtiraz Başvuru Kılavuzu . Ankara.",
+      "current_url": null,
+      "flags": [
+        "CURRENT_YEAR_CLAIM",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri-source-1",
+      "blog_slug": "evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri",
+      "file": "src/app/blog/evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri/page.tsx",
+      "displayed_number": 1,
+      "reference": "T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026). Evde Bakım Yardımı Uygulama Talimatı ve 2026 Yılı Gelir Kriterleri . Ankara.",
+      "current_url": null,
+      "flags": [
+        "CURRENT_YEAR_CLAIM",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri-source-2",
+      "blog_slug": "evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri",
+      "file": "src/app/blog/evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri/page.tsx",
+      "displayed_number": 2,
+      "reference": "T.C. Resmî Gazete. (2022). 2022 Sayılı Kanun: Sosyal Hizmetler Kanunu, Md. 14 — Evde Bakım Yardımı . Sayı: 31857.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri-source-3",
+      "blog_slug": "evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri",
+      "file": "src/app/blog/evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri/page.tsx",
+      "displayed_number": 3,
+      "reference": "Sağlık Bakanlığı. (2023). Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği . Resmî Gazete, Sayı: 32344.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri-source-4",
+      "blog_slug": "evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri",
+      "file": "src/app/blog/evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri/page.tsx",
+      "displayed_number": 4,
+      "reference": "Aile ve Sosyal Hizmetler Bakanlığı. (2026). 2026 Yılı Sosyal Yardım Programları Bütçe Raporu ve Ödeme Takvimi . SYGM Yayınları.",
+      "current_url": null,
+      "flags": [
+        "CURRENT_YEAR_CLAIM",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec-source-1",
+      "blog_slug": "gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec",
+      "file": "src/app/blog/gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec/page.tsx",
+      "displayed_number": 1,
+      "reference": "T.C. Resmî Gazete. (2006). 5510 Sayılı Kanun: Sosyal Sigortalar ve Genel Sağlık Sigortası Kanunu, Md. 60-61 . Sayı: 26200.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec-source-2",
+      "blog_slug": "gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec",
+      "file": "src/app/blog/gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec/page.tsx",
+      "displayed_number": 2,
+      "reference": "Sosyal Güvenlik Kurumu. (2026). 2026 Yılı Genel Sağlık Sigortası Prim Tarifesi ve Gelir Testi Uygulama Tebliği . Ankara.",
+      "current_url": null,
+      "flags": [
+        "CURRENT_YEAR_CLAIM",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec-source-3",
+      "blog_slug": "gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec",
+      "file": "src/app/blog/gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec/page.tsx",
+      "displayed_number": 3,
+      "reference": "T.C. Resmî Gazete. (2025). GSS Prim Borçlarının Yeniden Yapılandırılmasına İlişkin Kanun Hükmünde Kararname . Sayı: 33750.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec-source-4",
+      "blog_slug": "gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec",
+      "file": "src/app/blog/gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec/page.tsx",
+      "displayed_number": 4,
+      "reference": "SGK. (2026). GSS Gelir Testi Başvuru Kılavuzu ve Sık Sorulan Sorular. e-Devlet entegre başvuru sistemi kullanım kılavuzu.",
+      "current_url": null,
+      "flags": [
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "sed-yardimi-vs-koruyucu-aile-karsilastirmali-analiz-2026-source-1",
+      "blog_slug": "sed-yardimi-vs-koruyucu-aile-karsilastirmali-analiz-2026",
+      "file": "src/app/blog/sed-yardimi-vs-koruyucu-aile-karsilastirmali-analiz-2026/page.tsx",
+      "displayed_number": 1,
+      "reference": "T.C. Resmî Gazete. (2022). 2022 Sayılı Kanun: Sosyal Hizmetler Kanunu, Md. 18 ve Md. 23 . Sayı: 31857.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "sed-yardimi-vs-koruyucu-aile-karsilastirmali-analiz-2026-source-2",
+      "blog_slug": "sed-yardimi-vs-koruyucu-aile-karsilastirmali-analiz-2026",
+      "file": "src/app/blog/sed-yardimi-vs-koruyucu-aile-karsilastirmali-analiz-2026/page.tsx",
+      "displayed_number": 2,
+      "reference": "Aile ve Sosyal Hizmetler Bakanlığı. (2025). SED Hizmetleri ve Koruyucu Aile Uygulama Yönergeleri . SHÇEK Yayınları, Ankara.",
+      "current_url": null,
+      "flags": [
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "sed-yardimi-vs-koruyucu-aile-karsilastirmali-analiz-2026-source-3",
+      "blog_slug": "sed-yardimi-vs-koruyucu-aile-karsilastirmali-analiz-2026",
+      "file": "src/app/blog/sed-yardimi-vs-koruyucu-aile-karsilastirmali-analiz-2026/page.tsx",
+      "displayed_number": 3,
+      "reference": "Aile ve Sosyal Hizmetler Bakanlığı. (2026). 2026 Yılı Koruyucu Aile Bakım Ücreti ve Değerlendirme Kriterleri . SYGM Yayınları.",
+      "current_url": null,
+      "flags": [
+        "CURRENT_YEAR_CLAIM",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "sed-yardimi-vs-koruyucu-aile-karsilastirmali-analiz-2026-source-4",
+      "blog_slug": "sed-yardimi-vs-koruyucu-aile-karsilastirmali-analiz-2026",
+      "file": "src/app/blog/sed-yardimi-vs-koruyucu-aile-karsilastirmali-analiz-2026/page.tsx",
+      "displayed_number": 4,
+      "reference": "UNICEF Türkiye. (2025). Türkiye Çocuk Koruma Sistemi Değerlendirme Raporu 2024 . Ankara.",
+      "current_url": null,
+      "flags": [
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "sosyal-hizmetler-ve-kvkk-kisisel-veri-korumasi-rehberi-2026-source-1",
+      "blog_slug": "sosyal-hizmetler-ve-kvkk-kisisel-veri-korumasi-rehberi-2026",
+      "file": "src/app/blog/sosyal-hizmetler-ve-kvkk-kisisel-veri-korumasi-rehberi-2026/page.tsx",
+      "displayed_number": 1,
+      "reference": "T.C. Resmî Gazete. (2016). 6698 Sayılı Kanun: Kişisel Verilerin Korunması Kanunu . Sayı: 29677.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "sosyal-hizmetler-ve-kvkk-kisisel-veri-korumasi-rehberi-2026-source-2",
+      "blog_slug": "sosyal-hizmetler-ve-kvkk-kisisel-veri-korumasi-rehberi-2026",
+      "file": "src/app/blog/sosyal-hizmetler-ve-kvkk-kisisel-veri-korumasi-rehberi-2026/page.tsx",
+      "displayed_number": 2,
+      "reference": "Kişisel Verileri Koruma Kurumu. (2024). Sosyal Hizmet Kurumları İçin Kişisel Veri Koruması Rehberi . Ankara.",
+      "current_url": null,
+      "flags": [
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "sosyal-hizmetler-ve-kvkk-kisisel-veri-korumasi-rehberi-2026-source-3",
+      "blog_slug": "sosyal-hizmetler-ve-kvkk-kisisel-veri-korumasi-rehberi-2026",
+      "file": "src/app/blog/sosyal-hizmetler-ve-kvkk-kisisel-veri-korumasi-rehberi-2026/page.tsx",
+      "displayed_number": 3,
+      "reference": "Kişisel Verileri Koruma Kurumu. (2025). Özel Nitelikli Kişisel Verilerin İşlenmesinde Alınacak Tedbirler Tebliği . Resmî Gazete, Sayı: 33600.",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "sosyal-hizmetler-ve-kvkk-kisisel-veri-korumasi-rehberi-2026-source-4",
+      "blog_slug": "sosyal-hizmetler-ve-kvkk-kisisel-veri-korumasi-rehberi-2026",
+      "file": "src/app/blog/sosyal-hizmetler-ve-kvkk-kisisel-veri-korumasi-rehberi-2026/page.tsx",
+      "displayed_number": 4,
+      "reference": "Aile ve Sosyal Hizmetler Bakanlığı. (2026). Sosyal Hizmet Kurumları Veri Güvenliği ve KVKK Uyum Kılavuzu . SYGM Yayınları, Ankara.",
+      "current_url": null,
+      "flags": [
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu-source-1",
+      "blog_slug": "vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu",
+      "file": "src/app/blog/vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu/page.tsx",
+      "displayed_number": 1,
+      "reference": "Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı. (2025). 2026 Yılı Cumhurbaşkanlığı Yıllık Programı. Sosyal politikalar bölümü, Ankara.",
+      "current_url": null,
+      "flags": [
+        "CURRENT_YEAR_CLAIM",
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu-source-2",
+      "blog_slug": "vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu",
+      "file": "src/app/blog/vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu/page.tsx",
+      "displayed_number": 2,
+      "reference": "Aile ve Sosyal Hizmetler Bakanlığı. (2025). Sosyal Yardım Reformu ve Vatandaşlık Maaşı Modeli Çalışma Raporu . SYGM Yayınları.",
+      "current_url": null,
+      "flags": [
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu-source-3",
+      "blog_slug": "vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu",
+      "file": "src/app/blog/vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu/page.tsx",
+      "displayed_number": 3,
+      "reference": "T.C. Resmî Gazete. (2025). 2022 Sayılı Kanun'a Eklenmesi Planlanan Geçici Maddeler Taslağı . Sayı: 33700 (Taslak aşamasında).",
+      "current_url": null,
+      "flags": [
+        "LEGAL_OR_REGULATORY",
+        "DRAFT_OR_SPECULATIVE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "REMOVE_OR_REWRITE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    },
+    {
+      "id": "vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu-source-4",
+      "blog_slug": "vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu",
+      "file": "src/app/blog/vatandaslik-maasi-2026-kimler-yararlanacak-basvuru-sartlari-ve-tutarlar-belli-oldu/page.tsx",
+      "displayed_number": 4,
+      "reference": "Dünya Bankası. (2024). Turkey Social Protection System Review: Consolidation and Efficiency Report . Washington DC.",
+      "current_url": null,
+      "flags": [
+        "INSTITUTIONAL_SOURCE",
+        "NO_DIRECT_URL"
+      ],
+      "decision": "PENDING",
+      "recommended_action": "VERIFY_PRIMARY_SOURCE",
+      "verified_title": null,
+      "verified_publisher": null,
+      "verified_date": null,
+      "verified_url": null,
+      "verification_notes": null
+    }
+  ]
+}
