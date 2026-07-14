@@ -1,4 +1,4 @@
-export type ContactChannelKind = "instagram" | "email" | "whatsapp" | "linkedin";
+export type ContactChannelKind = "instagram" | "email" | "whatsapp" | "linkedin" | "facebook";
 
 export type ContactChannel = {
   kind: ContactChannelKind;
@@ -61,9 +61,16 @@ export const siteProfile: SiteProfile = {
     {
       kind: "instagram",
       label: "Instagram",
+      href: "https://www.instagram.com/senihbayankulu/",
+      value: "@senihbayankulu",
+      note: "Kişisel çalışmalar, projeler ve güncel paylaşımlar için.",
+    },
+    {
+      kind: "instagram",
+      label: "Sosyal Hizmet Danışmanlığı Instagram",
       href: "https://www.instagram.com/sosyalhizmet.danismanligi/",
       value: "@sosyalhizmet.danismanligi",
-      note: "Kısa duyurular ve güncel yönlendirmeler için.",
+      note: "Sosyal haklar ve sosyal hizmet odaklı bilgilendirmeler için.",
     },
     {
       kind: "email",
@@ -85,6 +92,13 @@ export const siteProfile: SiteProfile = {
       href: "https://www.linkedin.com/in/senih25/",
       value: "senih25",
       note: "Profesyonel geçmiş ve deneyim özeti için.",
+    },
+    {
+      kind: "facebook",
+      label: "Facebook",
+      href: "https://www.facebook.com/senih.bayankul",
+      value: "senih.bayankul",
+      note: "Kişisel ve kamusal paylaşımlar için.",
     },
   ],
   trustPoints: [
