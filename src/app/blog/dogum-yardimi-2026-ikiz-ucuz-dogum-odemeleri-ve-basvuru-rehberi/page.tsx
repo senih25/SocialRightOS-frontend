@@ -6,10 +6,14 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title:
     "Doğum Yardımı 2026: 1 Ocak 2025 Sonrası Doğumlar, Başvuru Rehberi ve Güncel Tutarlar",
   description:
-    "2026 doğum yardımı, 01.01.2025 sonrası canlı doğan çocuklar için güncel tutarlar, ikiz/üçüz doğum ödemeleri ve e-Devlet başvuru süreci. Senih Bayankulu'nun akademik analizi.",
+    "2026 doğum yardımı, 01.01.2025 sonrası canlı doğan çocuklar için güncel tutarlar, ikiz/üçüz doğum ödemeleri ve e-Devlet başvuru süreci. Bilgilendirme amacıyla hazırlanmış rehber.",
   keywords: [
     "doğum yardımı 2026",
     "doğum yardımı ne kadar 2026",
@@ -48,7 +52,7 @@ Güncel tutarları öğrenmek için e-Devlet üzerinden sorgulama yapabilir veya
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
+  "@type": "Article",
   headline:
     "Doğum Yardımı 2026: 1 Ocak 2025 Sonrası Doğumlar, Başvuru Rehberi ve Güncel Tutarlar",
   author: {
@@ -129,7 +133,7 @@ export default function Page() {
             <header className="mb-10">
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="inline-block px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full text-xs font-black uppercase tracking-wider">
-                  Akademik Analiz
+                  Bilgilendirme Rehberi
                 </span>
                 <span className="inline-block px-3 py-1 bg-pink-50 text-pink-700 rounded-full text-xs font-black uppercase tracking-wider">
                   Aile Rehberi
@@ -355,7 +359,7 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Akademik Kaynakça ve Mevzuat
+                  Doğrulama Bekleyen Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
@@ -380,14 +384,7 @@ export default function Page() {
                     başvuru sistemi.
                   </li>
                   <li>
-                    [4] Korkmaz, E., &amp; Yıldız, S. (2024). Türkiye&apos;de
-                    doğum yardımı uygulamalarının çocuk yoksulluğu üzerindeki
-                    etkisi: Bir panel veri analizi.{" "}
-                    <em>Nüfus Çalışmaları Dergisi</em>, 46, 45-68.
-                    https://doi.org/10.xxxx/ncd.2024.0046
-                  </li>
-                  <li>
-                    [5] TÜİK. (2025).{" "}
+                    [4] TÜİK. (2025).{" "}
                     <em>Türkiye&apos;de Çocuk İstatistikleri 2024</em>.
                     Ankara.
                   </li>

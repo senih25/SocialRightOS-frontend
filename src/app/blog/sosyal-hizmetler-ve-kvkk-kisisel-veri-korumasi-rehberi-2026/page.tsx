@@ -6,10 +6,14 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title:
     "Sosyal Hizmetler ve KVKK 2026: Kişisel Veri Koruması Rehberi ve Hasta Hakları",
   description:
-    "2026 sosyal hizmetlerde KVKK uyumu, kişisel veri koruma hakları, aydınlatma metni ve rıza süreçleri. Senih Bayankulu'nun akademik analizi.",
+    "2026 sosyal hizmetlerde KVKK uyumu, kişisel veri koruma hakları, aydınlatma metni ve rıza süreçleri. Bilgilendirme amacıyla hazırlanmış rehber.",
   keywords: [
     "sosyal hizmetler kvkk 2026",
     "kişisel veri koruma sosyal hizmet",
@@ -48,7 +52,7 @@ Danışanlar, kişisel verilerine erişme, düzeltme ve silme haklarına sahipti
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
+  "@type": "Article",
   headline:
     "Sosyal Hizmetler ve KVKK 2026: Kişisel Veri Koruması Rehberi ve Hasta Hakları",
   author: {
@@ -131,7 +135,7 @@ export default function Page() {
             <header className="mb-10">
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="inline-block px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full text-xs font-black uppercase tracking-wider">
-                  Akademik Analiz
+                  Bilgilendirme Rehberi
                 </span>
                 <span className="inline-block px-3 py-1 bg-lime-50 text-lime-700 rounded-full text-xs font-black uppercase tracking-wider">
                   Hukuki Rehber
@@ -398,7 +402,7 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Akademik Kaynakça ve Mevzuat
+                  Doğrulama Bekleyen Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
@@ -425,13 +429,7 @@ export default function Page() {
                     . Resmî Gazete, Sayı: 33600.
                   </li>
                   <li>
-                    [4] Yılmaz, S., &amp; Kaya, A. (2025). Sosyal hizmet
-                    uygulamalarında KVKK uyumu: Danışan gizliliği ve veri
-                    güvenliği. <em>Sosyal Hizmet Dergisi</em>, 39(1), 45-62.
-                    https://doi.org/10.xxxx/shd.2025.0039
-                  </li>
-                  <li>
-                    [5] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    [4] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
                       Sosyal Hizmet Kurumları Veri Güvenliği ve KVKK Uyum
                       Kılavuzu

@@ -6,10 +6,14 @@ import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title:
     "Vatandaşlık Maaşı 2026: Resmî Durum, Taslak Çerçeve ve Uygulama Notları",
   description:
-    "2026 Vatandaşlık Maaşı hakkında resmî durum, taslak çerçeve ve olası uygulama notları. Senih Bayankulu'nun akademik analizi.",
+    "2026 Vatandaşlık Maaşı hakkında resmî durum, taslak çerçeve ve olası uygulama notları. Bilgilendirme amacıyla hazırlanmış rehber.",
   keywords: [
     "vatandaşlık maaşı 2026",
     "vatandaşlık maaşı ne kadar",
@@ -49,7 +53,7 @@ Kesin şartlar ve tutarlar ancak resmî düzenleme yayımlandığında geçerli 
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
+  "@type": "Article",
   headline:
     "Vatandaşlık Maaşı 2026: Resmî Durum, Taslak Çerçeve ve Uygulama Notları",
   author: {
@@ -132,7 +136,7 @@ export default function Page() {
             <header className="mb-10">
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="inline-block px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full text-xs font-black uppercase tracking-wider">
-                  Akademik Analiz
+                  Bilgilendirme Rehberi
                 </span>
                 <span className="inline-block px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-black uppercase tracking-wider">
                   Yeni Sosyal Model
@@ -331,7 +335,7 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Akademik Kaynakça ve Mevzuat
+                  Doğrulama Bekleyen Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
@@ -356,14 +360,7 @@ export default function Page() {
                     . Sayı: 33700 (Taslak aşamasında).
                   </li>
                   <li>
-                    [4] Atalay, M. (2024). Türkiye&apos;de sosyal yardım
-                    sistemlerinin birleştirilmesi: Vatandaşlık geliri
-                    modellerinin karşılaştırmalı analizi.{" "}
-                    <em>Sosyal Güvenlik Dergisi</em>, 14(3), 201-225.
-                    https://doi.org/10.xxxx/sgd.2024.0014
-                  </li>
-                  <li>
-                    [5] Dünya Bankası. (2024).{" "}
+                    [4] Dünya Bankası. (2024).{" "}
                     <em>
                       Turkey Social Protection System Review: Consolidation
                       and Efficiency Report
