@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { brandProfile } from "@/lib/brand-profile";
+import { buildBrandGraphJsonLd } from "@/lib/seo-json";
+import { JsonLd } from "@/components/seo/json-ld";
 import { getSiteUrl, isProductionSite } from "@/lib/site";
 import "./globals.css";
 
 const siteUrl = getSiteUrl();
 const allowIndexing = isProductionSite(siteUrl);
+
+const brandGraphJsonLd = buildBrandGraphJsonLd({
+  siteUrl,
+  founder: brandProfile.founder,
+  organization: brandProfile.organization,
+  product: brandProfile.product,
+  socialProfiles: brandProfile.socialProfiles,
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -54,8 +65,9 @@ export const metadata: Metadata = {
 
 const quickLinks = [
   { href: "/blog", label: "Rehber yazıları" },
-  { href: "/hakkimizda", label: "Misyon ve vizyon" },
-  { href: "/methodology", label: "Yöntem ve sınırlar" },
+  { href: "/hakkimizda", label: "Hakkımızda" },
+  { href: brandProfile.organization.profilePath, label: "SocialRightLabs" },
+  { href: brandProfile.founder.profilePath, label: "Kurucu" },
   { href: "/iletisim", label: "İletişim" },
 ];
 
@@ -67,6 +79,7 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body>
+        <JsonLd id="brand-graph-jsonld" data={brandGraphJsonLd} />
         <div className="site-shell">
           <header className="site-header">
             <div className="site-header-inner">
@@ -82,9 +95,11 @@ export default function RootLayout({
                   />
                 </span>
                 <span>
-                  <span className="block text-sm text-slate-900">Dijital Sosyal Hak Rehberi</span>
-                  <span className="block text-[0.68rem] font-medium tracking-[0.28em] text-slate-500 uppercase">
-                    D-SHR
+                  <span className="block text-sm text-slate-900">
+                    {brandProfile.product.name}
+                  </span>
+                  <span className="block text-[0.68rem] font-medium tracking-[0.18em] text-slate-500">
+                    by {brandProfile.organization.name}
                   </span>
                 </span>
               </Link>
@@ -151,6 +166,28 @@ export default function RootLayout({
                 <Link href="/yasal-uyari" className="secondary-link compact-link">
                   Yasal uyarı
                 </Link>
+              </div>
+
+              <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-600">
+                <p>
+                  {brandProfile.product.name}, {" "}
+                  <Link
+                    href={brandProfile.organization.profilePath}
+                    className="font-semibold text-slate-900 underline underline-offset-4"
+                  >
+                    {brandProfile.organization.name}
+                  </Link>
+                  {" "}tarafından geliştirilmektedir.
+                </p>
+                <p className="mt-2">
+                  Kurucu: {" "}
+                  <Link
+                    href={brandProfile.founder.profilePath}
+                    className="font-semibold text-slate-900 underline underline-offset-4"
+                  >
+                    {brandProfile.founder.name}
+                  </Link>
+                </p>
               </div>
             </div>
           </footer>

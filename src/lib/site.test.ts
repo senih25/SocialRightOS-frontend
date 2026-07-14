@@ -1,26 +1,51 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { getSiteUrl, isProductionSite } from "./site.ts";
+import {
+  getCanonicalPublicSiteUrl,
+  getSiteUrl,
+  isProductionSite,
+} from "./site.ts";
 
-test("isProductionSite returns true for the canonical public hostname", () => {
-  const url = new URL("https://sosyalhakrehberi.com");
+test("isProductionSite returns true for the canonical www hostname", () => {
+  assert.equal(
+    isProductionSite(new URL("https://www.sosyalhakrehberi.com")),
+    true,
+  );
+});
 
-  assert.equal(isProductionSite(url), true);
+test("isProductionSite returns true for the bare public hostname", () => {
+  assert.equal(
+    isProductionSite(new URL("https://sosyalhakrehberi.com")),
+    true,
+  );
 });
 
 test("isProductionSite returns false for localhost", () => {
-  const url = new URL("http://localhost:3000");
+  assert.equal(isProductionSite(new URL("http://localhost:3000")), false);
+});
 
-  assert.equal(isProductionSite(url), false);
+test("isProductionSite returns false for Cloud Run staging", () => {
+  assert.equal(
+    isProductionSite(
+      new URL(
+        "https://socialrightos-web-staging-oi5mbdh6lq-ew.a.run.app",
+      ),
+    ),
+    false,
+  );
 });
 
 test("getSiteUrl prefers NEXT_PUBLIC_SITE_URL when present", () => {
   const previous = process.env.NEXT_PUBLIC_SITE_URL;
-  process.env.NEXT_PUBLIC_SITE_URL = "https://sosyalhakrehberi.com/some/path?x=1";
+
+  process.env.NEXT_PUBLIC_SITE_URL =
+    "https://www.sosyalhakrehberi.com/some/path?x=1";
 
   try {
-    const siteUrl = getSiteUrl();
-    assert.equal(siteUrl.toString(), "https://sosyalhakrehberi.com/");
+    assert.equal(
+      getSiteUrl().toString(),
+      "https://www.sosyalhakrehberi.com/",
+    );
   } finally {
     if (previous === undefined) {
       delete process.env.NEXT_PUBLIC_SITE_URL;
@@ -30,3 +55,9 @@ test("getSiteUrl prefers NEXT_PUBLIC_SITE_URL when present", () => {
   }
 });
 
+test("getCanonicalPublicSiteUrl returns the www production origin", () => {
+  assert.equal(
+    getCanonicalPublicSiteUrl().toString(),
+    "https://www.sosyalhakrehberi.com/",
+  );
+});

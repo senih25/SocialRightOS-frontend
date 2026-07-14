@@ -2,7 +2,10 @@ FROM node:22-bookworm-slim AS builder
 
 WORKDIR /app
 
-ENV NEXT_TELEMETRY_DISABLED=1
+ARG NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+ENV NEXT_TELEMETRY_DISABLED=1 \
+    NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL}
 
 COPY package.json package-lock.json ./
 RUN npm ci --include=dev
@@ -15,8 +18,11 @@ FROM node:22-bookworm-slim AS runner
 
 WORKDIR /app
 
+ARG NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
 ENV NODE_ENV=production \
     NEXT_TELEMETRY_DISABLED=1 \
+    NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL} \
     HOSTNAME=0.0.0.0 \
     PORT=8080
 

@@ -28,6 +28,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/evde-bakim-maasi/sartlar",
     "/evde-bakim-maasi/gelir-ve-hane-bilgisi",
     "/methodology",
+    "/socialrightlabs",
+    "/senih-bayankulu",
     "/yasal-uyari",
   ];
 
