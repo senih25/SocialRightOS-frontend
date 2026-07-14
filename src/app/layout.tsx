@@ -2,11 +2,21 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { brandProfile } from "@/lib/brand-profile";
+import { buildBrandGraphJsonLd } from "@/lib/seo-json";
+import { JsonLd } from "@/components/seo/json-ld";
 import { getSiteUrl, isProductionSite } from "@/lib/site";
 import "./globals.css";
 
 const siteUrl = getSiteUrl();
 const allowIndexing = isProductionSite(siteUrl);
+
+const brandGraphJsonLd = buildBrandGraphJsonLd({
+  siteUrl,
+  founder: brandProfile.founder,
+  organization: brandProfile.organization,
+  product: brandProfile.product,
+  socialProfiles: brandProfile.socialProfiles,
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -69,6 +79,7 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body>
+        <JsonLd id="brand-graph-jsonld" data={brandGraphJsonLd} />
         <div className="site-shell">
           <header className="site-header">
             <div className="site-header-inner">
