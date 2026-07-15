@@ -18,7 +18,7 @@ test("unverified P0 Resmi Gazete citation is removed", () => {
   assert.doesNotMatch(page, /Sayı:\s*33700/i);
   assert.doesNotMatch(
     page,
-    /2022 Sayılı Kanun.*Eklenmesi Planlanan/s,
+    /2022 Sayılı Kanun[\s\S]*Eklenmesi Planlanan/,
   );
   assert.doesNotMatch(
     page,
