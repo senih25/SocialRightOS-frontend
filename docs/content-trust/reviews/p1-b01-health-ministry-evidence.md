@@ -23,14 +23,14 @@ Bu aşamada kaynak kararı, blog içeriği, envanter, öncelik kuyruğu veya ind
 - İddia edilen yıl: 2023
 - İddia edilen Resmî Gazete sayısı: 32344
 - Kayıt sayısı: 4
-- Araştırma durumu: NOT_STARTED
+- Araştırma durumu: COMPLETED
 
 #### Zorunlu kontroller
 
-- [ ] Exact title search in Resmî Gazete archive
-- [ ] Issue number 32344 publication inventory check
-- [ ] Search for the governing disability assessment regulation
-- [ ] Compare official title, date, publisher and scope
+- [x] Exact title search in Resmî Gazete archive
+- [x] Issue number 32344 publication inventory check
+- [x] Search for the governing disability assessment regulation
+- [x] Compare official title, date, publisher and scope
 - [ ] Determine whether the official instrument supports each blog claim
 
 #### Bağlı kayıtlar
@@ -52,12 +52,42 @@ Bu aşamada kaynak kararı, blog içeriği, envanter, öncelik kuyruğu veya ind
   - Kaynak numarası: 3
   - Mevcut referans: Sağlık Bakanlığı. (2023). Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği . Resmî Gazete, Sayı: 32344.
 
-#### Araştırma sonucu
+#### Doğrulanan bulgular
 
-- Doğrudan resmî kaynak: Henüz araştırılmadı
-- Kesin başlık eşleşmesi: Henüz araştırılmadı
-- İddia desteği: Henüz araştırılmadı
-- Önerilen karar: PENDING
+- 32344 sayılı Resmî Gazete tarihi: **19 Ekim 2023**
+- Resmî arşivde listelenen kayıt sayısı: **14**
+- İncelenen sonuç sayfası: **2 / 2**
+- İddia edilen tam başlık: **Bulunmadı**
+- İlgili eşdeğer düzenleme: **32344 sayısında bulunmadı**
+- Mevcut referansın doğruluğu: **Yanlış**
+- Kaynağın atıf yapıldığı biçimde varlığı: **Doğrulanmadı**
+
+#### Doğrulanan resmî kaynak adayı
+
+- Başlık: **Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik**
+- Tarih: **20 Şubat 2019**
+- Resmî Gazete sayısı: **30692**
+- Yayımlayan kurumlar:
+  - Aile, Çalışma ve Sosyal Hizmetler Bakanlığı
+  - Sağlık Bakanlığı
+- Belge türü: **Yönetmelik**
+- Resmî kaynak:
+  `https://www.resmigazete.gov.tr/eskiler/2019/02/20190220-2.htm`
+
+#### Araştırma değerlendirmesi
+
+- Kesin başlık eşleşmesi: **Yok**
+- Doğrudan resmî kaynak: **Var**
+- Önerilen kaynak işlemi: **REPLACE**
+- Nihai editoryal karar: **PENDING**
+- Blog iddialarının kaynak desteği: **Henüz incelenmedi**
+
+İddia edilen 2023 tarihli ve 32344 sayılı kaynak,
+Resmî Gazete arşivinde yer almamaktadır. 2019 tarihli
+30692 sayılı yönetmelik ilgili resmî kaynak adayı olarak
+doğrulanmıştır. Ancak dört bağlı blog kaydındaki iddialar,
+yönetmelik maddeleriyle ayrı ayrı karşılaştırılmadan içerik
+ve kaynak değişikliği uygulanmayacaktır.
 
 ### P1-B01-T02 — Engelli Sağlık Kurulu Raporu İtiraz ve Değerlendirme Usulü Tebliği
 

@@ -3,7 +3,7 @@
   "batch_id": "P1-B01",
   "institution": "Sağlık Bakanlığı",
   "scope": "PRIMARY_SOURCE_EVIDENCE_COLLECTION",
-  "research_status": "NOT_STARTED",
+  "research_status": "IN_PROGRESS",
   "decision_status": "PENDING",
   "decision_boundary": "This evidence package records primary-source research only. No source, blog, inventory, queue or indexing decision is changed by this file.",
   "allowed_official_domains": [
@@ -14,9 +14,9 @@
   "summary": {
     "record_count": 6,
     "research_target_count": 3,
-    "completed_target_count": 0,
+    "completed_target_count": 1,
     "exact_match_count": 0,
-    "replacement_candidate_count": 0,
+    "replacement_candidate_count": 1,
     "decision_count": 0
   },
   "research_protocol": {
@@ -50,29 +50,90 @@
         "Compare official title, date, publisher and scope",
         "Determine whether the official instrument supports each blog claim"
       ],
-      "research_status": "NOT_STARTED",
-      "search_log": [],
-      "candidate_sources": [],
+      "research_status": "COMPLETED",
+      "search_log": [
+        {
+          "sequence": 1,
+          "method": "OFFICIAL_ARCHIVE_MANUAL_BROWSER_REVIEW",
+          "official_domain": "resmigazete.gov.tr",
+          "query_or_target": "Resmî Gazete sayı 32344",
+          "result": "Issue 32344 was verified as dated 19 October 2023. All 14 listed records across both result pages were reviewed.",
+          "evidence_status": "VERIFIED_BY_PRIMARY_SOURCE_SCREENSHOTS"
+        },
+        {
+          "sequence": 2,
+          "method": "EXACT_TITLE_REVIEW",
+          "official_domain": "resmigazete.gov.tr",
+          "query_or_target": "Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği",
+          "result": "The claimed title was not present among the 14 records published in issue 32344.",
+          "evidence_status": "NOT_FOUND_IN_VERIFIED_ISSUE_INVENTORY"
+        },
+        {
+          "sequence": 3,
+          "method": "OFFICIAL_PRIMARY_DOCUMENT_REVIEW",
+          "official_domain": "resmigazete.gov.tr",
+          "query_or_target": "https://www.resmigazete.gov.tr/eskiler/2019/02/20190220-2.htm",
+          "result": "A relevant official instrument was verified: Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik, dated 20 February 2019, Resmî Gazete issue 30692.",
+          "evidence_status": "VERIFIED_PRIMARY_SOURCE"
+        }
+      ],
+      "candidate_sources": [
+        {
+          "candidate_id": "P1-B01-T01-C01",
+          "source_type": "OFFICIAL_REGULATION",
+          "title": "Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik",
+          "publishers": [
+            "Aile, Çalışma ve Sosyal Hizmetler Bakanlığı",
+            "Sağlık Bakanlığı"
+          ],
+          "publication_date": "2019-02-20",
+          "resmi_gazete_number": "30692",
+          "url": "https://www.resmigazete.gov.tr/eskiler/2019/02/20190220-2.htm",
+          "verification_status": "VERIFIED",
+          "relationship_to_claimed_source": "Relevant official replacement candidate; claim-level support review remains pending."
+        }
+      ],
       "official_source_result": {
-        "exact_match_found": null,
-        "direct_primary_source_found": null,
-        "verified_title": null,
-        "verified_publisher": null,
-        "verified_publication_date": null,
-        "verified_resmi_gazete_number": null,
-        "verified_url": null,
-        "document_type": null,
-        "effective_status": null,
-        "scope_summary": null
+        "exact_match_found": false,
+        "direct_primary_source_found": true,
+        "verified_title": "Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik",
+        "verified_publisher": "Aile, Çalışma ve Sosyal Hizmetler Bakanlığı ve Sağlık Bakanlığı",
+        "verified_publication_date": "2019-02-20",
+        "verified_resmi_gazete_number": "30692",
+        "verified_url": "https://www.resmigazete.gov.tr/eskiler/2019/02/20190220-2.htm",
+        "document_type": "YÖNETMELİK",
+        "effective_status": "OFFICIAL_SOURCE_VERIFIED",
+        "scope_summary": "The official regulation governs adult disability assessment, disability health board reports, assessment criteria, report preparation and related procedures.",
+        "claimed_issue_verification": {
+          "claimed_resmi_gazete_number": "32344",
+          "verified_issue_date": "2023-10-19",
+          "verified_record_count": 14,
+          "all_result_pages_reviewed": true,
+          "claimed_title_present": false,
+          "related_instrument_present": false,
+          "verification_method": "Manual review of the official Resmî Gazete archive result inventory"
+        }
       },
       "assessment": {
-        "citation_is_accurate": null,
-        "source_exists_as_cited": null,
+        "citation_is_accurate": false,
+        "source_exists_as_cited": false,
         "source_supports_claims": null,
-        "recommended_decision": null,
-        "replacement_source": null,
-        "reason_codes": [],
-        "notes": null
+        "recommended_decision": "REPLACE",
+        "replacement_source": {
+          "candidate_id": "P1-B01-T01-C01",
+          "title": "Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik",
+          "publication_date": "2019-02-20",
+          "resmi_gazete_number": "30692",
+          "url": "https://www.resmigazete.gov.tr/eskiler/2019/02/20190220-2.htm"
+        },
+        "reason_codes": [
+          "CLAIMED_TITLE_NOT_FOUND",
+          "CLAIMED_YEAR_INACCURATE",
+          "CLAIMED_ISSUE_DOES_NOT_CONTAIN_INSTRUMENT",
+          "OFFICIAL_REPLACEMENT_CANDIDATE_VERIFIED",
+          "CLAIM_LEVEL_SUPPORT_REVIEW_PENDING"
+        ],
+        "notes": "The claimed 2023 citation does not exist as cited. Issue 32344 was verified and does not contain the claimed instrument. The 2019 regulation is a verified replacement candidate, but each linked blog claim must be reviewed before editorial replacement is applied."
       },
       "records": [
         {
@@ -88,11 +149,11 @@
             "NO_DIRECT_URL"
           ],
           "claim_support_review": {
-            "status": "NOT_STARTED",
+            "status": "PENDING",
             "blog_claims_reviewed": false,
             "supports_blog_claim": null,
             "support_scope": null,
-            "notes": null
+            "notes": "Source-level replacement recommendation recorded. Claim-level comparison with the verified 2019 regulation has not yet been completed."
           }
         },
         {
@@ -108,11 +169,11 @@
             "NO_DIRECT_URL"
           ],
           "claim_support_review": {
-            "status": "NOT_STARTED",
+            "status": "PENDING",
             "blog_claims_reviewed": false,
             "supports_blog_claim": null,
             "support_scope": null,
-            "notes": null
+            "notes": "Source-level replacement recommendation recorded. Claim-level comparison with the verified 2019 regulation has not yet been completed."
           }
         },
         {
@@ -128,11 +189,11 @@
             "NO_DIRECT_URL"
           ],
           "claim_support_review": {
-            "status": "NOT_STARTED",
+            "status": "PENDING",
             "blog_claims_reviewed": false,
             "supports_blog_claim": null,
             "support_scope": null,
-            "notes": null
+            "notes": "Source-level replacement recommendation recorded. Claim-level comparison with the verified 2019 regulation has not yet been completed."
           }
         },
         {
@@ -148,11 +209,11 @@
             "NO_DIRECT_URL"
           ],
           "claim_support_review": {
-            "status": "NOT_STARTED",
+            "status": "PENDING",
             "blog_claims_reviewed": false,
             "supports_blog_claim": null,
             "support_scope": null,
-            "notes": null
+            "notes": "Source-level replacement recommendation recorded. Claim-level comparison with the verified 2019 regulation has not yet been completed."
           }
         }
       ]
