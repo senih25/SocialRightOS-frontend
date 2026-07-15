@@ -1,0 +1,289 @@
+{
+  "schema_version": "1.0.0",
+  "batch_id": "P1-B01",
+  "institution": "Sağlık Bakanlığı",
+  "scope": "PRIMARY_SOURCE_EVIDENCE_COLLECTION",
+  "research_status": "NOT_STARTED",
+  "decision_status": "PENDING",
+  "decision_boundary": "This evidence package records primary-source research only. No source, blog, inventory, queue or indexing decision is changed by this file.",
+  "allowed_official_domains": [
+    "resmigazete.gov.tr",
+    "saglik.gov.tr"
+  ],
+  "secondary_sources_allowed": false,
+  "summary": {
+    "record_count": 6,
+    "research_target_count": 3,
+    "completed_target_count": 0,
+    "exact_match_count": 0,
+    "replacement_candidate_count": 0,
+    "decision_count": 0
+  },
+  "research_protocol": {
+    "minimum_searches_per_target": 3,
+    "exact_title_search_required": true,
+    "issue_number_search_required_when_claimed": true,
+    "official_domain_only": true,
+    "direct_document_required_for_keep": true,
+    "claim_level_support_review_required": true,
+    "negative_search_is_not_proof_of_nonexistence": true,
+    "human_review_required_before_decision": true
+  },
+  "targets": [
+    {
+      "target_id": "P1-B01-T01",
+      "claimed_title": "Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği",
+      "claimed_publisher": "Sağlık Bakanlığı",
+      "claimed_year": 2023,
+      "claimed_resmi_gazete_number": "32344",
+      "source_ids": [
+        "65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber-source-4",
+        "engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi-source-2",
+        "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026-source-1",
+        "evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri-source-3"
+      ],
+      "search_priority": 1,
+      "required_checks": [
+        "Exact title search in Resmî Gazete archive",
+        "Issue number 32344 publication inventory check",
+        "Search for the governing disability assessment regulation",
+        "Compare official title, date, publisher and scope",
+        "Determine whether the official instrument supports each blog claim"
+      ],
+      "research_status": "NOT_STARTED",
+      "search_log": [],
+      "candidate_sources": [],
+      "official_source_result": {
+        "exact_match_found": null,
+        "direct_primary_source_found": null,
+        "verified_title": null,
+        "verified_publisher": null,
+        "verified_publication_date": null,
+        "verified_resmi_gazete_number": null,
+        "verified_url": null,
+        "document_type": null,
+        "effective_status": null,
+        "scope_summary": null
+      },
+      "assessment": {
+        "citation_is_accurate": null,
+        "source_exists_as_cited": null,
+        "source_supports_claims": null,
+        "recommended_decision": null,
+        "replacement_source": null,
+        "reason_codes": [],
+        "notes": null
+      },
+      "records": [
+        {
+          "source_id": "65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber-source-4",
+          "blog_slug": "65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber",
+          "file": "src/app/blog/65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber/page.tsx",
+          "displayed_number": 4,
+          "original_reference": "Sağlık Bakanlığı. (2023). Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği . Resmî Gazete, Sayı: 32344.",
+          "risk_score": 70,
+          "flags": [
+            "LEGAL_OR_REGULATORY",
+            "INSTITUTIONAL_SOURCE",
+            "NO_DIRECT_URL"
+          ],
+          "claim_support_review": {
+            "status": "NOT_STARTED",
+            "blog_claims_reviewed": false,
+            "supports_blog_claim": null,
+            "support_scope": null,
+            "notes": null
+          }
+        },
+        {
+          "source_id": "engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi-source-2",
+          "blog_slug": "engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi",
+          "file": "src/app/blog/engelli-ayligi-2026-ozurlu-raporu-kriterleri-ve-basvuru-rehberi/page.tsx",
+          "displayed_number": 2,
+          "original_reference": "Sağlık Bakanlığı. (2023). Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği . Resmî Gazete, Sayı: 32344.",
+          "risk_score": 70,
+          "flags": [
+            "LEGAL_OR_REGULATORY",
+            "INSTITUTIONAL_SOURCE",
+            "NO_DIRECT_URL"
+          ],
+          "claim_support_review": {
+            "status": "NOT_STARTED",
+            "blog_claims_reviewed": false,
+            "supports_blog_claim": null,
+            "support_scope": null,
+            "notes": null
+          }
+        },
+        {
+          "source_id": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026-source-1",
+          "blog_slug": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026",
+          "file": "src/app/blog/engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026/page.tsx",
+          "displayed_number": 1,
+          "original_reference": "Sağlık Bakanlığı. (2023). Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği . Resmî Gazete, Sayı: 32344.",
+          "risk_score": 70,
+          "flags": [
+            "LEGAL_OR_REGULATORY",
+            "INSTITUTIONAL_SOURCE",
+            "NO_DIRECT_URL"
+          ],
+          "claim_support_review": {
+            "status": "NOT_STARTED",
+            "blog_claims_reviewed": false,
+            "supports_blog_claim": null,
+            "support_scope": null,
+            "notes": null
+          }
+        },
+        {
+          "source_id": "evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri-source-3",
+          "blog_slug": "evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri",
+          "file": "src/app/blog/evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri/page.tsx",
+          "displayed_number": 3,
+          "original_reference": "Sağlık Bakanlığı. (2023). Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği . Resmî Gazete, Sayı: 32344.",
+          "risk_score": 70,
+          "flags": [
+            "LEGAL_OR_REGULATORY",
+            "INSTITUTIONAL_SOURCE",
+            "NO_DIRECT_URL"
+          ],
+          "claim_support_review": {
+            "status": "NOT_STARTED",
+            "blog_claims_reviewed": false,
+            "supports_blog_claim": null,
+            "support_scope": null,
+            "notes": null
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "P1-B01-T02",
+      "claimed_title": "Engelli Sağlık Kurulu Raporu İtiraz ve Değerlendirme Usulü Tebliği",
+      "claimed_publisher": "Sağlık Bakanlığı",
+      "claimed_year": 2024,
+      "claimed_resmi_gazete_number": "33100",
+      "source_ids": [
+        "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026-source-2"
+      ],
+      "search_priority": 2,
+      "required_checks": [
+        "Exact title search in Resmî Gazete archive",
+        "Issue number 33100 publication inventory check",
+        "Search Sağlık Bakanlığı legislation and announcement pages",
+        "Identify the actual legal basis for report objections",
+        "Determine whether the claimed tebliğ exists as cited"
+      ],
+      "research_status": "NOT_STARTED",
+      "search_log": [],
+      "candidate_sources": [],
+      "official_source_result": {
+        "exact_match_found": null,
+        "direct_primary_source_found": null,
+        "verified_title": null,
+        "verified_publisher": null,
+        "verified_publication_date": null,
+        "verified_resmi_gazete_number": null,
+        "verified_url": null,
+        "document_type": null,
+        "effective_status": null,
+        "scope_summary": null
+      },
+      "assessment": {
+        "citation_is_accurate": null,
+        "source_exists_as_cited": null,
+        "source_supports_claims": null,
+        "recommended_decision": null,
+        "replacement_source": null,
+        "reason_codes": [],
+        "notes": null
+      },
+      "records": [
+        {
+          "source_id": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026-source-2",
+          "blog_slug": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026",
+          "file": "src/app/blog/engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026/page.tsx",
+          "displayed_number": 2,
+          "original_reference": "Sağlık Bakanlığı. (2024). Engelli Sağlık Kurulu Raporu İtiraz ve Değerlendirme Usulü Tebliği . Resmî Gazete, Sayı: 33100.",
+          "risk_score": 70,
+          "flags": [
+            "LEGAL_OR_REGULATORY",
+            "INSTITUTIONAL_SOURCE",
+            "NO_DIRECT_URL"
+          ],
+          "claim_support_review": {
+            "status": "NOT_STARTED",
+            "blog_claims_reviewed": false,
+            "supports_blog_claim": null,
+            "support_scope": null,
+            "notes": null
+          }
+        }
+      ]
+    },
+    {
+      "target_id": "P1-B01-T03",
+      "claimed_title": "2026 Yılı Engelli Sağlık Kurulu Raporu İtiraz Başvuru Kılavuzu",
+      "claimed_publisher": "Sağlık Bakanlığı",
+      "claimed_year": 2026,
+      "claimed_resmi_gazete_number": null,
+      "source_ids": [
+        "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026-source-4"
+      ],
+      "search_priority": 3,
+      "required_checks": [
+        "Exact title search on Sağlık Bakanlığı domains",
+        "Search ministry publications, guides and announcements",
+        "Check publication date and document ownership",
+        "Locate a direct PDF or official HTML source",
+        "Determine whether the guide supports the cited objection process"
+      ],
+      "research_status": "NOT_STARTED",
+      "search_log": [],
+      "candidate_sources": [],
+      "official_source_result": {
+        "exact_match_found": null,
+        "direct_primary_source_found": null,
+        "verified_title": null,
+        "verified_publisher": null,
+        "verified_publication_date": null,
+        "verified_resmi_gazete_number": null,
+        "verified_url": null,
+        "document_type": null,
+        "effective_status": null,
+        "scope_summary": null
+      },
+      "assessment": {
+        "citation_is_accurate": null,
+        "source_exists_as_cited": null,
+        "source_supports_claims": null,
+        "recommended_decision": null,
+        "replacement_source": null,
+        "reason_codes": [],
+        "notes": null
+      },
+      "records": [
+        {
+          "source_id": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026-source-4",
+          "blog_slug": "engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026",
+          "file": "src/app/blog/engelli-raporu-itiraz-sureci-hukuki-yol-haritasi-2026/page.tsx",
+          "displayed_number": 4,
+          "original_reference": "Sağlık Bakanlığı. (2026). 2026 Yılı Engelli Sağlık Kurulu Raporu İtiraz Başvuru Kılavuzu . Ankara.",
+          "risk_score": 80,
+          "flags": [
+            "CURRENT_YEAR_CLAIM",
+            "INSTITUTIONAL_SOURCE",
+            "NO_DIRECT_URL"
+          ],
+          "claim_support_review": {
+            "status": "NOT_STARTED",
+            "blog_claims_reviewed": false,
+            "supports_blog_claim": null,
+            "support_scope": null,
+            "notes": null
+          }
+        }
+      ]
+    }
+  ]
+}
