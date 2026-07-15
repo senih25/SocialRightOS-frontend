@@ -11,9 +11,9 @@ export const metadata: Metadata = {
     follow: false,
   },
   title:
-    "Vatandaşlık Maaşı 2026: Resmî Durum, Taslak Çerçeve ve Uygulama Notları",
+    "Vatandaşlık Maaşı 2026: Resmî Durum ve Kamuoyundaki Politika Önerileri",
   description:
-    "2026 Vatandaşlık Maaşı hakkında resmî durum, taslak çerçeve ve olası uygulama notları. Bilgilendirme amacıyla hazırlanmış rehber.",
+    "2026 Vatandaşlık Maaşı hakkında resmî durum ve kamuoyundaki politika önerilerine ilişkin açıklamalar. Bilgilendirme amacıyla hazırlanmış rehber.",
   keywords: [
     "vatandaşlık maaşı 2026",
     "vatandaşlık maaşı ne kadar",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Vatandaşlık Maaşı 2026: Resmî Durum, Taslak Çerçeve ve Uygulama Notları",
+      "Vatandaşlık Maaşı 2026: Resmî Durum ve Kamuoyundaki Politika Önerileri",
     description:
-      "2026 Vatandaşlık Maaşı hakkında resmî durum, taslak çerçeve ve olası uygulama notları.",
+      "2026 Vatandaşlık Maaşı hakkında resmî durum ve kamuoyundaki politika önerilerine ilişkin açıklamalar.",
     type: "article",
     authors: ["Senih Bayankulu"],
     publishedTime: "2026-05-04",
@@ -41,12 +41,12 @@ export const metadata: Metadata = {
 };
 
 const VOICE_TEXT = `
-Vatandaşlık Maaşı 2026: Resmî Durum, Taslak Çerçeve ve Uygulama Notları.
+Vatandaşlık Maaşı 2026: Resmî Durum ve Kamuoyundaki Politika Önerileri.
 Yazar: Senih Bayankulu.
 
-Vatandaşlık Maaşı, bu sayfada yalnızca kamuoyunda tartışılan bir sosyal politika taslağı olarak ele alınmaktadır.
+Vatandaşlık Maaşı, bu sayfada yalnızca kamuoyundaki sosyal politika tartışmaları ve önerileri kapsamında ele alınmaktadır.
 Şu an için yürürlüğe girmiş resmî bir program bulunmamaktadır.
-Bu nedenle aşağıdaki içerik, kesin hak anlatımı değil, olası bir çerçeveye ilişkin notlandırmadır.
+Bu nedenle aşağıdaki içerik, kesin hak veya resmî taslak anlatımı değil, kamuoyundaki olası politika yaklaşımlarına ilişkin bilgilendirmedir.
 Kesin şartlar ve tutarlar ancak resmî düzenleme yayımlandığında geçerli olur.
 Şimdilik vatandaşların mevcut sosyal yardım programları için resmî kurum duyurularını esas alması gerekir.
 `;
@@ -55,7 +55,7 @@ const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline:
-    "Vatandaşlık Maaşı 2026: Resmî Durum, Taslak Çerçeve ve Uygulama Notları",
+    "Vatandaşlık Maaşı 2026: Resmî Durum ve Kamuoyundaki Politika Önerileri",
   author: {
     "@type": "Person",
     name: "Senih Bayankulu",
@@ -174,8 +174,8 @@ export default function Page() {
                   hedefleyen yeni bir sosyal politika aracıdır. Bu model,
                   özellikle yoksulluk riski altındaki hane halklarını korumayı,
                   sosyal yardım harcamalarının etkinliğini artırmayı ve
-                  bürokratik süreçleri basitleştirmeyi amaçlayan bir taslak
-                  fikir olarak tartışılmaktadır. Resmî yürürlükten söz etmek
+                  bürokratik süreçleri basitleştirmeyi amaçlayan bir politika
+                  önerisi olarak tartışılmaktadır. Resmî yürürlükten söz etmek
                   için ilgili mevzuatın yayımlanması gerekir.
                 </p>
               </section>
@@ -183,7 +183,7 @@ export default function Page() {
               {/* Resmî Durum */}
               <section className="bg-purple-50/60 p-6 md:p-8 rounded-2xl border border-purple-100">
                 <h2 className="text-xl font-black text-slate-950 mb-4">
-                  2026 Resmî Durum ve Taslak Çerçeve
+                  2026 Resmî Durum ve Kamuoyundaki Öneriler
                 </h2>
                 <p className="text-slate-700 mb-4">
                   Vatandaşlık Maaşı&apos;nın kesin tutarları, kapsamı ve başvuru
@@ -201,14 +201,14 @@ export default function Page() {
                 </div>
               </section>
 
-              {/* Taslakta Konuşulan Kriterler */}
+              {/* Kamuoyunda Konuşulan Yaklaşım Başlıkları */}
               <section>
                 <h2 className="text-2xl font-black text-slate-950 mb-4">
-                  Taslakta Konuşulan Kriterler
+                  Kamuoyunda Konuşulan Yaklaşım Başlıkları
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Taslak seviyesinde konuşulan bazı yaklaşım başlıkları
-                  şunlardır; bunlar resmî hak veya başvuru şartı değildir:
+                  Kamuoyundaki tartışmalarda geçen bazı yaklaşım başlıkları
+                  şunlardır; bunlar resmî hak, resmî taslak veya başvuru şartı değildir:
                 </p>
                 <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
@@ -258,7 +258,7 @@ export default function Page() {
                   Mevcut Yardımlarla Olası İlişki
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Taslak çerçevede, mevcut sosyal yardım programlarıyla
+                  Kamuoyundaki önerilerde, mevcut sosyal yardım programlarıyla
                   ilişkilendirme fikri konuşulabilir. Ancak resmî düzenleme
                   olmadan bu başlıkların hiçbiri hak doğurmaz:
                 </p>
@@ -352,15 +352,7 @@ export default function Page() {
                     . SYGM Yayınları.
                   </li>
                   <li>
-                    [3] T.C. Resmî Gazete. (2025).{" "}
-                    <em>
-                      2022 Sayılı Kanun&apos;a Eklenmesi Planlanan Geçici
-                      Maddeler Taslağı
-                    </em>
-                    . Sayı: 33700 (Taslak aşamasında).
-                  </li>
-                  <li>
-                    [4] Dünya Bankası. (2024).{" "}
+                    [3] Dünya Bankası. (2024).{" "}
                     <em>
                       Turkey Social Protection System Review: Consolidation
                       and Efficiency Report
