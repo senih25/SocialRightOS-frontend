@@ -14,9 +14,9 @@
   "summary": {
     "record_count": 6,
     "research_target_count": 3,
-    "completed_target_count": 1,
+    "completed_target_count": 2,
     "exact_match_count": 0,
-    "replacement_candidate_count": 1,
+    "replacement_candidate_count": 2,
     "decision_count": 0
   },
   "research_protocol": {
@@ -235,29 +235,127 @@
         "Identify the actual legal basis for report objections",
         "Determine whether the claimed tebliğ exists as cited"
       ],
-      "research_status": "NOT_STARTED",
-      "search_log": [],
-      "candidate_sources": [],
+      "research_status": "COMPLETED",
+      "search_log": [
+        {
+          "sequence": 1,
+          "method": "OFFICIAL_ARCHIVE_MANUAL_BROWSER_REVIEW",
+          "official_domain": "resmigazete.gov.tr",
+          "query_or_target": "Resmî Gazete sayı 33100",
+          "result": "Issue 33100 was verified as dated 7 December 2025. The five listed records were reviewed and the claimed communiqué title was not present.",
+          "evidence_status": "VERIFIED_BY_PRIMARY_SOURCE_SCREENSHOT"
+        },
+        {
+          "sequence": 2,
+          "method": "EXACT_TITLE_OFFICIAL_DOMAIN_SEARCH",
+          "official_domain": "resmigazete.gov.tr",
+          "query_or_target": "Engelli Sağlık Kurulu Raporu İtiraz ve Değerlendirme Usulü Tebliği",
+          "result": "The exact claimed title was not located in the official-domain search evidence.",
+          "evidence_status": "NOT_FOUND_IN_OFFICIAL_DOMAIN_SEARCH"
+        },
+        {
+          "sequence": 3,
+          "method": "OFFICIAL_PRIMARY_DOCUMENT_REVIEW",
+          "official_domain": "resmigazete.gov.tr",
+          "query_or_target": "https://www.resmigazete.gov.tr/eskiler/2019/02/20190220-2.htm",
+          "result": "Article 12 of the 2019 adult disability assessment regulation was verified as the primary normative source governing objections to adult disability health board reports.",
+          "evidence_status": "VERIFIED_PRIMARY_SOURCE"
+        },
+        {
+          "sequence": 4,
+          "method": "OFFICIAL_MINISTRY_DOCUMENT_REVIEW",
+          "official_domain": "saglik.gov.tr",
+          "query_or_target": "Sağlık Raporları Usul ve Esasları Hakkında Yönerge, Madde 36, Ek-12 ve Ek-13",
+          "result": "The Ministry directive was verified as a supporting administrative source describing the provincial health directorate, referee hospital and regional referee hospital workflow.",
+          "evidence_status": "VERIFIED_OFFICIAL_ADMINISTRATIVE_SOURCE"
+        }
+      ],
+      "candidate_sources": [
+        {
+          "candidate_id": "P1-B01-T02-C01",
+          "source_type": "OFFICIAL_REGULATION",
+          "title": "Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik",
+          "publishers": [
+            "Aile, Çalışma ve Sosyal Hizmetler Bakanlığı",
+            "Sağlık Bakanlığı"
+          ],
+          "publication_date": "2019-02-20",
+          "resmi_gazete_number": "30692",
+          "relevant_article": "12",
+          "url": "https://www.resmigazete.gov.tr/eskiler/2019/02/20190220-2.htm",
+          "verification_status": "VERIFIED",
+          "relationship_to_claimed_source": "Primary normative replacement candidate for the objection procedure."
+        },
+        {
+          "candidate_id": "P1-B01-T02-C02",
+          "source_type": "OFFICIAL_MINISTRY_ADMINISTRATIVE_DIRECTIVE",
+          "title": "Sağlık Raporları Usul ve Esasları Hakkında Yönerge",
+          "publisher": "Sağlık Bakanlığı",
+          "relevant_article": "36",
+          "related_annexes": [
+            "Ek-12 Hakem Hastane Listesi",
+            "Ek-13 Bölge Hakem Hastaneler Listesi"
+          ],
+          "url": "https://shgmsgudb.saglik.gov.tr/TR-85392/saglik-raporlari-usul-ve-esaslari-hakkinda-yonerge--ve-hakem-hastane-listeleri.html",
+          "verification_status": "VERIFIED",
+          "relationship_to_claimed_source": "Supporting administrative source; it is not a Resmî Gazete communiqué and does not replace the 2019 regulation."
+        }
+      ],
       "official_source_result": {
-        "exact_match_found": null,
-        "direct_primary_source_found": null,
-        "verified_title": null,
-        "verified_publisher": null,
-        "verified_publication_date": null,
-        "verified_resmi_gazete_number": null,
-        "verified_url": null,
-        "document_type": null,
-        "effective_status": null,
-        "scope_summary": null
+        "exact_match_found": false,
+        "direct_primary_source_found": true,
+        "verified_title": "Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik",
+        "verified_publisher": "Aile, Çalışma ve Sosyal Hizmetler Bakanlığı ve Sağlık Bakanlığı",
+        "verified_publication_date": "2019-02-20",
+        "verified_resmi_gazete_number": "30692",
+        "verified_url": "https://www.resmigazete.gov.tr/eskiler/2019/02/20190220-2.htm",
+        "document_type": "YÖNETMELİK",
+        "effective_status": "OFFICIAL_SOURCE_VERIFIED",
+        "relevant_article": "12",
+        "scope_summary": "Article 12 governs objections to adult disability health board reports. The Ministry directive Article 36 supports the administrative implementation through provincial health directorates, referee hospitals and regional referee hospitals.",
+        "claimed_issue_verification": {
+          "claimed_resmi_gazete_number": "33100",
+          "verified_issue_date": "2025-12-07",
+          "verified_record_count": 5,
+          "all_result_pages_reviewed": true,
+          "claimed_title_present": false,
+          "related_instrument_present": false,
+          "verification_method": "Manual review of the official Resmî Gazete issue inventory"
+        },
+        "supporting_administrative_source": {
+          "title": "Sağlık Raporları Usul ve Esasları Hakkında Yönerge",
+          "relevant_article": "36",
+          "official_domain": "saglik.gov.tr",
+          "source_classification": "MINISTRY_ADMINISTRATIVE_DIRECTIVE_NOT_OFFICIAL_GAZETTE_COMMUNIQUE"
+        }
       },
       "assessment": {
-        "citation_is_accurate": null,
-        "source_exists_as_cited": null,
+        "citation_is_accurate": false,
+        "source_exists_as_cited": false,
         "source_supports_claims": null,
-        "recommended_decision": null,
-        "replacement_source": null,
-        "reason_codes": [],
-        "notes": null
+        "recommended_decision": "REPLACE",
+        "replacement_source": {
+          "candidate_id": "P1-B01-T02-C01",
+          "title": "Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik",
+          "publication_date": "2019-02-20",
+          "resmi_gazete_number": "30692",
+          "relevant_article": "12",
+          "url": "https://www.resmigazete.gov.tr/eskiler/2019/02/20190220-2.htm"
+        },
+        "supporting_source": {
+          "candidate_id": "P1-B01-T02-C02",
+          "title": "Sağlık Raporları Usul ve Esasları Hakkında Yönerge",
+          "relevant_article": "36"
+        },
+        "reason_codes": [
+          "CLAIMED_TITLE_NOT_VERIFIED",
+          "CLAIMED_YEAR_INACCURATE",
+          "CLAIMED_ISSUE_DOES_NOT_CONTAIN_INSTRUMENT",
+          "PRIMARY_NORMATIVE_REPLACEMENT_VERIFIED",
+          "SUPPORTING_ADMINISTRATIVE_SOURCE_VERIFIED",
+          "CLAIM_LEVEL_SUPPORT_REVIEW_PENDING"
+        ],
+        "notes": "The claimed 2024 communiqué and issue 33100 citation do not exist as cited. Article 12 of the 2019 regulation is the verified primary normative source. Article 36 of the Ministry directive is a supporting administrative source and must not be represented as a Resmî Gazete communiqué."
       },
       "records": [
         {
@@ -273,11 +371,11 @@
             "NO_DIRECT_URL"
           ],
           "claim_support_review": {
-            "status": "NOT_STARTED",
+            "status": "PENDING",
             "blog_claims_reviewed": false,
             "supports_blog_claim": null,
             "support_scope": null,
-            "notes": null
+            "notes": "Source-level replacement recommendation recorded. Claim-level comparison and editorial application remain pending."
           }
         }
       ]
