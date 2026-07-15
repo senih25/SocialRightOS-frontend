@@ -148,3 +148,23 @@ ve kaynak değişikliği uygulanmayacaktır.
 - Kesin başlık eşleşmesi: Henüz araştırılmadı
 - İddia desteği: Henüz araştırılmadı
 - Önerilen karar: PENDING
+
+## P1-B01-T02 — İtiraz Tebliği Kaynak Doğrulaması
+
+**Araştırma durumu:** COMPLETED
+**Kaynak düzeyi öneri:** REPLACE
+**Editoryal karar durumu:** PENDING
+
+İddia edilen “Engelli Sağlık Kurulu Raporu İtiraz ve Değerlendirme Usulü Tebliği” başlığı, 2024 yılı ve 33100 sayılı Resmî Gazete atfıyla doğrulanmamıştır. 33100 sayılı Resmî Gazete 7 Aralık 2025 tarihlidir ve incelenen beş kayıt arasında iddia edilen belge bulunmamaktadır.
+
+Erişkin engelli sağlık kurulu raporlarına itirazın doğrulanmış temel normatif kaynağı, 20 Şubat 2019 tarihli ve 30692 sayılı Resmî Gazete’de yayımlanan **Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik Madde 12**’dir.
+
+Sağlık Bakanlığının **Sağlık Raporları Usul ve Esasları Hakkında Yönerge Madde 36** hükmü; il sağlık müdürlüğü, Ek-12 hakem hastane ve Ek-13 bölge hakem hastane üzerinden yürütülen idari uygulama sürecini açıklayan destekleyici kaynaktır. Bu yönerge, Resmî Gazete’de yayımlanmış bir tebliğ veya 2019 Yönetmeliğinin yerine geçen normatif kaynak olarak gösterilmemelidir.
+
+Blog iddialarının madde bazında desteklenip desteklenmediğine ilişkin inceleme henüz yapılmadığından içerik ve kaynakça değişikliği bu aşamada uygulanmamıştır.
+
+### Doğrulanmış kaynaklar
+
+1. Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik, Madde 12, 20 Şubat 2019, Resmî Gazete sayı 30692.
+2. Sağlık Raporları Usul ve Esasları Hakkında Yönerge, Madde 36, Ek-12 ve Ek-13.
+3. Nihai araştırma karar paketi: `p1-b01-t02-final-decision.json`.

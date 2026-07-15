@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "research_id": "P1-B01-T02",
+  "generated_at": "2026-07-15T22:20:57.279Z",
+  "claimed_source": {
+    "title": "Engelli Sağlık Kurulu Raporu İtiraz ve Değerlendirme Usulü Tebliği",
+    "claimed_year": 2024,
+    "claimed_official_gazette_number": 33100
+  },
+  "verification_result": {
+    "source_exists_as_cited": false,
+    "claimed_title_verified": false,
+    "claimed_year_verified": false,
+    "claimed_official_gazette_number_verified": false,
+    "source_level_decision": "REPLACE",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik",
+      "publication_date": "2019-02-20",
+      "official_gazette_number": 30692,
+      "relevant_article": 12,
+      "relevant_heading": "Raporlara itiraz",
+      "role": "Erişkin engelli sağlık kurulu raporlarına itirazın temel normatif kaynağı"
+    },
+    "supporting_administrative_source": {
+      "title": "Sağlık Raporları Usul ve Esasları Hakkında Yönerge",
+      "relevant_article": 36,
+      "relevant_heading": "Raporlara itiraz",
+      "related_annexes": [
+        "Ek-12 Hakem Hastane Listesi",
+        "Ek-13 Bölge Hakem Hastaneler Listesi"
+      ],
+      "role": "İl sağlık müdürlüğü, hakem hastane ve bölge hakem hastane üzerinden yürütülen idari uygulama sürecini ayrıntılandıran destekleyici kaynak",
+      "source_classification": "MINISTRY_ADMINISTRATIVE_DIRECTIVE_NOT_OFFICIAL_GAZETTE_COMMUNIQUE"
+    }
+  },
+  "material_findings": [
+    "İddia edilen tebliğ başlığı, araştırılan Resmî Gazete ve Sağlık Bakanlığı kaynaklarında doğrulanmadı.",
+    "33100 sayılı Resmî Gazete atfı doğrulanmadı.",
+    "Sağlık Bakanlığı kaynaklarında gerçek idari düzenleme olarak Sağlık Raporları Usul ve Esasları Hakkında Yönerge tespit edildi.",
+    "Yönergenin Madde 12 hükmü sağlık raporu şablonuna ilişkindir; itiraz hükmü değildir.",
+    "Yönergedeki genel rapor itiraz mekanizması Madde 36'da düzenlenmiştir.",
+    "Madde 36 il sağlık müdürlüğü, Ek-12 hakem hastane ve Ek-13 bölge hakem hastane aşamalarını içerir.",
+    "2025 değişiklik yönergesindeki itiraz değişikliği gemi adamı sağlık raporlarına ilişkindir.",
+    "2025 değişikliği erişkin engelli sağlık kurulu raporlarının genel itiraz usulünü değiştiren bir hüküm olarak doğrulanmadı."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": true,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "Sağlık Raporları Usul ve Esasları Hakkında Yönerge, Resmî Gazete'de yayımlanmış bir tebliğ veya 2019 Yönetmeliğinin yerine geçen kaynak olarak sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Erişkin engelli sağlık kurulu raporlarına itirazın temel hukuki dayanağı, 20 Şubat 2019 tarihli ve 30692 sayılı Resmî Gazete’de yayımlanan Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmeliğin 12. maddesidir. Sağlık Bakanlığının Sağlık Raporları Usul ve Esasları Hakkında Yönergesinin 36. maddesi ise il sağlık müdürlüğü, hakem hastane ve bölge hakem hastane üzerinden yürütülen idari uygulama sürecini ayrıntılandırmaktadır.",
+  "evidence_inventory": {
+    "exactSearchEvidence": {
+      "path": "C:\\Users\\YeniKullanici\\firecrawl-mevzuat-research\\t02-official-research\\01-resmigazete-exact-change-title-evidence.json",
+      "bytes": 1334,
+      "sha256": "c685ca0713b671e3547e80b01660208b279bf6ba8df039ef4550167e7419e544"
+    },
+    "searchManifest": {
+      "path": "C:\\Users\\YeniKullanici\\firecrawl-mevzuat-research\\t02-official-research\\t02-search-batch-manifest.json",
+      "bytes": 5774,
+      "sha256": "0e8ca05e9015f42ad1155741a9081188ef1ea50ac260f21a7acd0dc38e704c02"
+    },
+    "selectedSourceManifest": {
+      "path": "C:\\Users\\YeniKullanici\\firecrawl-mevzuat-research\\t02-official-research\\selected-source-scrapes\\selected-source-scrape-manifest.json",
+      "bytes": 7693,
+      "sha256": "bae0600fe974294b30c5d9d2d95c8fcb05af2abe0925d904bf0b86748f2c6237"
+    },
+    "secondarySourceManifest": {
+      "path": "C:\\Users\\YeniKullanici\\firecrawl-mevzuat-research\\t02-official-research\\secondary-source-scrapes\\secondary-source-manifest.json",
+      "bytes": 3849,
+      "sha256": "3a4853363b0e0fba750bd82162a2269b0e5bc4cea01cddd14254beae9bf8dc72"
+    },
+    "directiveManifest": {
+      "path": "C:\\Users\\YeniKullanici\\firecrawl-mevzuat-research\\t02-official-research\\directive-pdf-scrapes\\directive-pdf-manifest.json",
+      "bytes": 9407,
+      "sha256": "60d3413da407d589e2300f27e750df02f0e5c058ae13575ef1e95407132845ad"
+    },
+    "contextComparison": {
+      "path": "C:\\Users\\YeniKullanici\\firecrawl-mevzuat-research\\t02-official-research\\directive-pdf-scrapes\\y05-y06-context-comparison.json",
+      "bytes": 233650,
+      "sha256": "ac68df5006c6265cc8606b5eb7ff6129a5f2511cd13c6758be30e822a0f0d1af"
+    },
+    "directiveArticle36": {
+      "path": "C:\\Users\\YeniKullanici\\firecrawl-mevzuat-research\\t02-official-research\\directive-pdf-scrapes\\y06-article-36-full-text.json",
+      "bytes": 3997,
+      "sha256": "74cc2da44f79266f81037d25a7366a7edf5bbd3625856b3d8c8b9dc131a0f8c0"
+    }
+  },
+  "validation_checks": {
+    "exact_title_search_usable": true,
+    "search_batch_complete": true,
+    "selected_ministry_sources_available": true,
+    "secondary_sources_complete": true,
+    "directive_documents_complete": true,
+    "context_comparison_complete": true,
+    "article_36_is_complete": true,
+    "article_36_mentions_objection": true,
+    "article_36_mentions_health_directorate": true,
+    "article_36_mentions_referee_hospital": true,
+    "article_36_mentions_regional_referee": true,
+    "article_36_mentions_lists": true,
+    "article_36_does_not_claim_teblig": true,
+    "article_36_does_not_claim_33100": true
+  },
+  "limitations": [
+    "Arama motoru veya Firecrawl sonucunda belge bulunmaması tek başına mutlak hukuki yokluk kanıtı değildir.",
+    "Nihai karar, birden fazla bağımsız resmî kaynak, Resmî Gazete kaydı, Bakanlık yönergesi ve tam madde metni birlikte değerlendirilerek verilmiştir.",
+    "Bu karar T02 kaynak kaydına ilişkindir; kişisel hukuki danışmanlık veya somut dosya sonucu oluşturmaz."
+  ]
+}

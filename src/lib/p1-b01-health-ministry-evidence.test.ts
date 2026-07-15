@@ -88,7 +88,7 @@ test("P1-B01 contains three deduplicated targets", () => {
   assert.deepEqual(recordCounts, [4, 1, 1]);
 });
 
-test("T01 records evidence without applying an editorial decision", () => {
+test("P1-B01 records completed T01 and T02 research without applying an editorial decision", () => {
   assert.equal(
     evidence.research_status,
     "IN_PROGRESS",
@@ -101,12 +101,12 @@ test("T01 records evidence without applying an editorial decision", () => {
 
   assert.equal(
     evidence.summary.completed_target_count,
-    1,
+    2,
   );
 
   assert.equal(
     evidence.summary.replacement_candidate_count,
-    1,
+    2,
   );
 
   assert.equal(
@@ -191,7 +191,6 @@ test("T01 records evidence without applying an editorial decision", () => {
   }
 
   for (const targetId of [
-    "P1-B01-T02",
     "P1-B01-T03",
   ]) {
     const target = evidence.targets.find(
