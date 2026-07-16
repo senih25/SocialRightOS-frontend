@@ -213,7 +213,7 @@ test("preserves route, endpoint, payload, analytics and accessible result markup
   assert.match(page, /buildAssessmentErrorViewModel\(err\)/);
   assert.match(page, /getGssResultPrimaryAction\(displayStatus\)/);
   assert.match(api, /\/api\/v1\/eligibility-check/);
-  assert.match(analytics, /name: "result_received"/);
+  assert.match(analytics, /name: "assessment_completed"/);
   assert.deepEqual(buildGssPayload(initialGssFormState, "request-1"), {
     benefit_code: "TR_GSS",
     facts: { gross_household_income: null, household_size: null },

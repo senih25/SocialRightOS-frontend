@@ -11,6 +11,8 @@ export type ToolAnalyticsSession = {
   trackFormStarted: () => void;
   trackFormSubmitted: () => void;
   trackResultReceived: (decisionId: string, status: EligibilityStatus) => void;
+  trackValidationFailed: () => void;
+  trackApiFailed: () => void;
   trackLinkClick: (
     surface: ToolAnalyticsSurface,
     targetKind: ToolAnalyticsTargetKind,
@@ -36,7 +38,7 @@ export function createToolAnalyticsSession(
 
       hasTrackedOpen = true;
       tracker({
-        name: "tool_opened",
+        name: "page_view",
         tool,
         surface: "tool-page",
       });
@@ -49,18 +51,17 @@ export function createToolAnalyticsSession(
 
       hasTrackedFormStart = true;
       tracker({
-        name: "form_started",
+        name: "assessment_started",
         tool,
         surface: "tool-page",
       });
     },
 
     trackFormSubmitted() {
-      tracker({
-        name: "form_submitted",
-        tool,
-        surface: "tool-page",
-      });
+      if (!hasTrackedFormStart) {
+        hasTrackedFormStart = true;
+        tracker({ name: "assessment_started", tool, surface: "tool-page" });
+      }
     },
 
     trackResultReceived(decisionId, status) {
@@ -70,22 +71,31 @@ export function createToolAnalyticsSession(
 
       lastDecisionId = decisionId;
       tracker({
-        name: "result_received",
+        name: "assessment_completed",
         tool,
         surface: "result",
         status,
       });
     },
 
+    trackValidationFailed() {
+      tracker({ name: "assessment_validation_failed", tool, surface: "tool-page" });
+    },
+
+    trackApiFailed() {
+      tracker({ name: "assessment_api_failed", tool, surface: "tool-page" });
+    },
+
     trackLinkClick(surface, targetKind, targetHref) {
-      tracker({
-        name: "guide_link_clicked",
-        tool,
-        surface,
-        target_kind: targetKind,
-        target_href: targetHref,
-      });
+      if (surface === "result" && targetKind === "primary-action") {
+        tracker({
+          name: "result_cta_clicked",
+          tool,
+          surface: "result",
+          target_kind: "primary-action",
+          target_href: targetHref,
+        });
+      }
     },
   };
 }
-

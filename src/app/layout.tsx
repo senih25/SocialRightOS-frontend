@@ -5,10 +5,12 @@ import { brandProfile } from "@/lib/brand-profile";
 import { buildBrandGraphJsonLd } from "@/lib/seo-json";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getSiteUrl, isProductionSite } from "@/lib/site";
+import { getRuntimeMarker } from "@/lib/observability";
 import "./globals.css";
 
 const siteUrl = getSiteUrl();
 const allowIndexing = isProductionSite(siteUrl);
+const runtimeMarker = getRuntimeMarker();
 
 const brandGraphJsonLd = buildBrandGraphJsonLd({
   siteUrl,
@@ -78,7 +80,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body>
+      <body
+        data-release={runtimeMarker.release}
+        data-environment={runtimeMarker.environment}
+        data-observability-provider={runtimeMarker.provider}
+      >
         <JsonLd id="brand-graph-jsonld" data={brandGraphJsonLd} />
         <div className="site-shell">
           <header className="site-header">

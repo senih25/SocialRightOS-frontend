@@ -6,32 +6,37 @@ export type ToolAnalyticsTargetKind = "guide" | "tool" | "primary-action";
 
 export type ToolAnalyticsEvent =
   | {
-      name: "tool_opened";
+      name: "page_view";
       tool: ToolAnalyticsTool;
       surface: "tool-page";
     }
   | {
-      name: "form_started";
+      name: "assessment_started";
       tool: ToolAnalyticsTool;
       surface: "tool-page";
     }
   | {
-      name: "form_submitted";
-      tool: ToolAnalyticsTool;
-      surface: "tool-page";
-    }
-  | {
-      name: "result_received";
+      name: "assessment_completed";
       tool: ToolAnalyticsTool;
       surface: "result";
       status: EligibilityStatus;
     }
   | {
-      name: "guide_link_clicked";
+      name: "assessment_validation_failed" | "assessment_api_failed";
+      tool: ToolAnalyticsTool;
+      surface: "tool-page";
+    }
+  | {
+      name: "result_cta_clicked";
+      tool: ToolAnalyticsTool;
+      surface: "result";
+      target_kind: "primary-action";
+      target_href: string;
+    }
+  | {
+      name: "feedback_opened";
       tool: ToolAnalyticsTool;
       surface: ToolAnalyticsSurface;
-      target_kind: ToolAnalyticsTargetKind;
-      target_href: string;
     };
 
 export type AnalyticsEnvelope = {
@@ -47,6 +52,18 @@ type AnalyticsWindow = Window & {
   dataLayer?: Array<Record<string, string>>;
 };
 
+function safeTargetHref(value: string): string {
+  if (!value.startsWith("/")) {
+    return "/";
+  }
+
+  try {
+    return new URL(value, "https://local.invalid").pathname;
+  } catch {
+    return "/";
+  }
+}
+
 export function buildAnalyticsEnvelope(event: ToolAnalyticsEvent): AnalyticsEnvelope {
   const baseEnvelope: AnalyticsEnvelope = {
     event: event.name,
@@ -54,18 +71,18 @@ export function buildAnalyticsEnvelope(event: ToolAnalyticsEvent): AnalyticsEnve
     surface: event.surface,
   };
 
-  if (event.name === "result_received") {
+  if (event.name === "assessment_completed") {
     return {
       ...baseEnvelope,
       status: event.status,
     };
   }
 
-  if (event.name === "guide_link_clicked") {
+  if (event.name === "result_cta_clicked") {
     return {
       ...baseEnvelope,
       target_kind: event.target_kind,
-      target_href: event.target_href,
+      target_href: safeTargetHref(event.target_href),
     };
   }
 
@@ -97,4 +114,3 @@ export function trackAnalyticsEvent(event: ToolAnalyticsEvent): void {
     );
   }
 }
-

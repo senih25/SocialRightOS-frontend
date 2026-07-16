@@ -2,33 +2,45 @@ import type { AnalyticsRegistryEntry } from "@/lib/admin-types";
 
 export const analyticsRegistry: AnalyticsRegistryEntry[] = [
   {
-    id: "event-tool-opened",
-    event_name: "tool_opened",
+    id: "event-page-view",
+    event_name: "page_view",
     surface: "tool-page",
     enabled: true,
   },
   {
-    id: "event-form-started",
-    event_name: "form_started",
+    id: "event-assessment-started",
+    event_name: "assessment_started",
     surface: "tool-page",
     enabled: true,
   },
   {
-    id: "event-form-submitted",
-    event_name: "form_submitted",
-    surface: "tool-page",
-    enabled: true,
-  },
-  {
-    id: "event-result-received",
-    event_name: "result_received",
+    id: "event-assessment-completed",
+    event_name: "assessment_completed",
     surface: "result",
     enabled: true,
   },
   {
-    id: "event-guide-link-clicked",
-    event_name: "guide_link_clicked",
-    surface: "guidance",
+    id: "event-assessment-validation-failed",
+    event_name: "assessment_validation_failed",
+    surface: "tool-page",
+    enabled: true,
+  },
+  {
+    id: "event-assessment-api-failed",
+    event_name: "assessment_api_failed",
+    surface: "tool-page",
+    enabled: true,
+  },
+  {
+    id: "event-result-cta-clicked",
+    event_name: "result_cta_clicked",
+    surface: "result",
+    enabled: true,
+  },
+  {
+    id: "event-feedback-opened",
+    event_name: "feedback_opened",
+    surface: "tool-page",
     enabled: true,
   },
 ];
