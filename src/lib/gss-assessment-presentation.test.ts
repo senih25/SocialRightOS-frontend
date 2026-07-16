@@ -209,7 +209,8 @@ test("preserves route, endpoint, payload, analytics and accessible result markup
   assert.match(page, /data-presentation-section="missing-information"/);
   assert.match(page, /presentation\.ruleCriteria\.length > 0/);
   assert.match(page, /Değerlendiriliyor\.\.\./);
-  assert.match(page, /İstek tamamlanamadı/);
+  assert.match(page, /<SafeErrorPanel error=\{error\} focusRef=\{errorRef\}/);
+  assert.match(page, /buildAssessmentErrorViewModel\(err\)/);
   assert.match(page, /getGssResultPrimaryAction\(displayStatus\)/);
   assert.match(api, /\/api\/v1\/eligibility-check/);
   assert.match(analytics, /name: "result_received"/);

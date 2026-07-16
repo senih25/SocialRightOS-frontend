@@ -20,7 +20,7 @@ export default function AccessibleButton({
   ...rest
 }: AccessibleButtonProps) {
   const base =
-    "inline-flex items-center justify-center rounded-lg font-semibold disabled:opacity-60 transition-shadow focus:outline-none focus-visible:ring-0 min-h-14 min-w-44 px-6 py-3";
+    "inline-flex items-center justify-center rounded-lg font-semibold disabled:opacity-60 transition-shadow focus:outline-none focus-visible:ring-4 focus-visible:ring-teal-300 focus-visible:ring-offset-2 min-h-14 min-w-44 px-6 py-3";
 
   return (
     <button

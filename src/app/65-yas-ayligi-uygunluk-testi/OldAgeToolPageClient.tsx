@@ -3,7 +3,13 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ToolGuidanceSurface } from "@/components/ToolGuidanceSurface";
-import { ApiClientError, checkEligibility } from "@/lib/api";
+import { SafeErrorPanel } from "@/components/ui/SafeErrorPanel";
+import { checkEligibility } from "@/lib/api";
+import {
+  buildAssessmentErrorViewModel,
+  findFieldError,
+  type AssessmentErrorViewModel,
+} from "@/lib/assessment-error";
 import { buildOldAgePilotPresentationViewModel } from "@/lib/old-age-assessment-presentation";
 import { getOldAgeResultPrimaryAction } from "@/lib/old-age-explanations";
 import { createToolAnalyticsSession } from "@/lib/tool-analytics";
@@ -45,11 +51,12 @@ type TriStateFieldProps = {
   name: string;
   value: TriStateAttestation;
   onChange: (value: TriStateAttestation) => void;
+  errorId?: string;
 };
 
-function TriStateField({ legend, name, value, onChange }: TriStateFieldProps) {
+function TriStateField({ legend, name, value, onChange, errorId }: TriStateFieldProps) {
   return (
-    <fieldset>
+    <fieldset aria-invalid={Boolean(errorId)} aria-describedby={errorId}>
       <legend className="text-base font-semibold text-slate-950">{legend}</legend>
       <div className="mt-3 flex flex-wrap gap-3">
         {triStateOptions.map((option) => {
@@ -83,10 +90,10 @@ function TriStateField({ legend, name, value, onChange }: TriStateFieldProps) {
 export function OldAgeToolPageClient() {
   const [form, setForm] = useState<OldAgeFormState>(initialOldAgeFormState);
   const [result, setResult] = useState<EligibilityCheckResponse | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [fieldErrors, setFieldErrors] = useState<Record<string, string[]> | null>(null);
+  const [error, setError] = useState<AssessmentErrorViewModel | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const analyticsRef = useRef(createToolAnalyticsSession("old-age"));
+  const errorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     analyticsRef.current.trackOpened();
@@ -100,33 +107,36 @@ export function OldAgeToolPageClient() {
     analyticsRef.current.trackResultReceived(result.decision_id, result.status);
   }, [result]);
 
+  useEffect(() => {
+    if (error) {
+      errorRef.current?.focus();
+    }
+  }, [error]);
+
   const markFormStarted = () => {
     analyticsRef.current.trackFormStarted();
   };
 
   const handleSubmit = async () => {
+    if (isSubmitting) {
+      return;
+    }
+
     analyticsRef.current.trackFormSubmitted();
     setIsSubmitting(true);
     setError(null);
-    setFieldErrors(null);
     setResult(null);
 
     try {
       const response = await checkEligibility(buildOldAgePayload(form, crypto.randomUUID()));
       setResult(response);
     } catch (err) {
-      if (err instanceof ApiClientError) {
-        setError(err.message);
-        setFieldErrors(err.details ?? null);
-      } else {
-        setError("Beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyin.");
-      }
+      setError(buildAssessmentErrorViewModel(err));
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const hasConfigError = Boolean(error?.includes("NEXT_PUBLIC_API_BASE_URL"));
   const pilotView = result
     ? buildOldAgePilotPresentationViewModel(
         result,
@@ -142,9 +152,12 @@ export function OldAgeToolPageClient() {
     : "border-slate-200 bg-slate-50 text-slate-950";
   const primaryAction = displayStatus ? getOldAgeResultPrimaryAction(displayStatus) : null;
   const guidanceModel = getToolGuidanceModel("old-age");
-  const displayError = hasConfigError
-    ? "Değerlendirme sistemi şu anda hazır değil. Lütfen daha sonra tekrar deneyin."
-    : error;
+  const ageError = findFieldError(error, "age");
+  const spouseError = findFieldError(error, "hasSpouse", "has_spouse");
+  const selfIncomeError = findFieldError(error, "selfMonthlyIncome", "self_monthly_income");
+  const spouseIncomeError = findFieldError(error, "spouseMonthlyIncome", "spouse_monthly_income");
+  const socialSecurityError = findFieldError(error, "hasSocialSecurity", "has_social_security");
+  const pensionError = findFieldError(error, "receivesPension", "receives_pension");
 
   return (
     <main className="min-h-screen px-6 py-12 lg:px-10 lg:py-16">
@@ -172,6 +185,8 @@ export function OldAgeToolPageClient() {
                 type="number"
                 id="age"
                 name="age"
+                aria-invalid={Boolean(ageError)}
+                aria-describedby={ageError?.descriptionId}
                 min="0"
                 max="120"
                 value={form.age}
@@ -189,6 +204,7 @@ export function OldAgeToolPageClient() {
             <TriStateField
               legend="Eşiniz var mı?"
               name="hasSpouse"
+              errorId={spouseError?.descriptionId}
               value={form.hasSpouse}
               onChange={(value) => {
                 markFormStarted();
@@ -206,6 +222,8 @@ export function OldAgeToolPageClient() {
                 type="number"
                 id="selfMonthlyIncome"
                 name="selfMonthlyIncome"
+                aria-invalid={Boolean(selfIncomeError)}
+                aria-describedby={selfIncomeError?.descriptionId}
                 min="0"
                 value={form.selfMonthlyIncome}
                 onChange={(event) => {
@@ -227,6 +245,8 @@ export function OldAgeToolPageClient() {
                   type="number"
                   id="spouseMonthlyIncome"
                   name="spouseMonthlyIncome"
+                  aria-invalid={Boolean(spouseIncomeError)}
+                  aria-describedby={spouseIncomeError?.descriptionId}
                   min="0"
                   value={form.spouseMonthlyIncome}
                   onChange={(event) => {
@@ -244,6 +264,7 @@ export function OldAgeToolPageClient() {
             <TriStateField
               legend="Herhangi bir sosyal güvenceniz var mı?"
               name="hasSocialSecurity"
+              errorId={socialSecurityError?.descriptionId}
               value={form.hasSocialSecurity}
               onChange={(value) => {
                 markFormStarted();
@@ -257,6 +278,7 @@ export function OldAgeToolPageClient() {
             <TriStateField
               legend="Hâlen emekli aylığı alıyor musunuz?"
               name="receivesPension"
+              errorId={pensionError?.descriptionId}
               value={form.receivesPension}
               onChange={(value) => {
                 markFormStarted();
@@ -273,6 +295,7 @@ export function OldAgeToolPageClient() {
               type="button"
               onClick={handleSubmit}
               disabled={isSubmitting}
+              aria-busy={isSubmitting}
               className="primary-button text-lg"
             >
               {isSubmitting ? "Değerlendiriliyor..." : "65 yaş aylığı testini çalıştır"}
@@ -283,34 +306,15 @@ export function OldAgeToolPageClient() {
                 setForm(initialOldAgeFormState);
                 setResult(null);
                 setError(null);
-                setFieldErrors(null);
               }}
+              disabled={isSubmitting}
               className="secondary-button text-lg"
             >
               Formu temizle
             </button>
           </div>
 
-          {error ? (
-            <div className="mt-6 rounded-3xl border border-rose-200 bg-rose-50 p-5 text-base text-rose-900">
-              <p className="font-semibold">İstek tamamlanamadı</p>
-              <p className="mt-3 leading-8">{displayError}</p>
-              {fieldErrors ? (
-                <ul className="mt-4 space-y-2">
-                  {Object.entries(fieldErrors).map(([field, messages]) => (
-                    <li key={field}>
-                      <span className="font-medium">{field}</span>: {messages.join(" ")}
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-              {hasConfigError ? (
-                <p className="mt-3 leading-8">
-                  Sistem bağlantısı kurulmadan bu araç canlıya alınmamalı.
-                </p>
-              ) : null}
-            </div>
-          ) : null}
+          {error ? <SafeErrorPanel error={error} focusRef={errorRef} /> : null}
 
           {result && presentation ? (
             <section

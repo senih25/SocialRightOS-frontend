@@ -187,7 +187,8 @@ test("preserves route endpoint payload analytics loading and API error paths", (
   assert.match(page, /createToolAnalyticsSession\("old-age"\)/);
   assert.match(page, /trackResultReceived\(result\.decision_id, result\.status\)/);
   assert.match(page, /Değerlendiriliyor\.\.\./);
-  assert.match(page, /err instanceof ApiClientError/);
+  assert.match(page, /buildAssessmentErrorViewModel\(err\)/);
+  assert.match(page, /<SafeErrorPanel error=\{error\} focusRef=\{errorRef\}/);
   assert.match(page, /aria-live="polite"/);
   assert.match(page, /aria-label=\{presentation\.title\}/);
   assert.match(page, /data-presentation-section="reasons"/);
