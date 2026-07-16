@@ -166,6 +166,15 @@ export default function RootLayout({
                 <Link href="/yasal-uyari" className="secondary-link compact-link">
                   Yasal uyarı
                 </Link>
+                <Link href="/gizlilik-ve-kvkk" className="secondary-link compact-link">
+                  Gizlilik ve KVKK
+                </Link>
+                <Link href="/kullanim-kosullari" className="secondary-link compact-link">
+                  Kullanım koşulları
+                </Link>
+                <Link href="/kaynak-ve-guncellik-politikasi" className="secondary-link compact-link">
+                  Kaynak ve güncellik
+                </Link>
               </div>
 
               <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-600">
