@@ -524,6 +524,19 @@ a,
   opacity: 0.75;
 }
 
+.primary-link:focus-visible,
+.secondary-link:focus-visible,
+.primary-button:focus-visible,
+.secondary-button:focus-visible {
+  outline: 3px solid #0f766e;
+  outline-offset: 3px;
+}
+
+.secondary-button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
 .form-field {
   display: flex;
   flex-direction: column;

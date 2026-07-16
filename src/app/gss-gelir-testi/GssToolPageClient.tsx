@@ -3,7 +3,13 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ToolGuidanceSurface } from "@/components/ToolGuidanceSurface";
-import { ApiClientError, checkEligibility } from "@/lib/api";
+import { SafeErrorPanel } from "@/components/ui/SafeErrorPanel";
+import { checkEligibility } from "@/lib/api";
+import {
+  buildAssessmentErrorViewModel,
+  findFieldError,
+  type AssessmentErrorViewModel,
+} from "@/lib/assessment-error";
 import { buildGssPilotPresentationViewModel } from "@/lib/gss-assessment-presentation";
 import { getGssResultPrimaryAction } from "@/lib/gss-explanations";
 import { createToolAnalyticsSession } from "@/lib/tool-analytics";
@@ -45,11 +51,12 @@ type TriStateFieldProps = {
   name: string;
   value: TriStateAttestation;
   onChange: (value: TriStateAttestation) => void;
+  errorId?: string;
 };
 
-function TriStateField({ legend, name, value, onChange }: TriStateFieldProps) {
+function TriStateField({ legend, name, value, onChange, errorId }: TriStateFieldProps) {
   return (
-    <fieldset>
+    <fieldset aria-invalid={Boolean(errorId)} aria-describedby={errorId}>
       <legend className="text-sm font-medium text-slate-900">{legend}</legend>
       <div className="mt-3 flex flex-wrap gap-2">
         {triStateOptions.map((option) => {
@@ -83,10 +90,10 @@ function TriStateField({ legend, name, value, onChange }: TriStateFieldProps) {
 export function GssToolPageClient() {
   const [form, setForm] = useState<GssFormState>(initialGssFormState);
   const [result, setResult] = useState<EligibilityCheckResponse | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [fieldErrors, setFieldErrors] = useState<Record<string, string[]> | null>(null);
+  const [error, setError] = useState<AssessmentErrorViewModel | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const analyticsRef = useRef(createToolAnalyticsSession("gss"));
+  const errorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     analyticsRef.current.trackOpened();
@@ -100,33 +107,36 @@ export function GssToolPageClient() {
     analyticsRef.current.trackResultReceived(result.decision_id, result.status);
   }, [result]);
 
+  useEffect(() => {
+    if (error) {
+      errorRef.current?.focus();
+    }
+  }, [error]);
+
   const markFormStarted = () => {
     analyticsRef.current.trackFormStarted();
   };
 
   const handleSubmit = async () => {
+    if (isSubmitting) {
+      return;
+    }
+
     analyticsRef.current.trackFormSubmitted();
     setIsSubmitting(true);
     setError(null);
-    setFieldErrors(null);
     setResult(null);
 
     try {
       const response = await checkEligibility(buildGssPayload(form, crypto.randomUUID()));
       setResult(response);
     } catch (err) {
-      if (err instanceof ApiClientError) {
-        setError(err.message);
-        setFieldErrors(err.details ?? null);
-      } else {
-        setError("Beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyin.");
-      }
+      setError(buildAssessmentErrorViewModel(err));
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const hasConfigError = Boolean(error?.includes("NEXT_PUBLIC_API_BASE_URL"));
   const pilotView = result
     ? buildGssPilotPresentationViewModel(
         result,
@@ -144,9 +154,11 @@ export function GssToolPageClient() {
   const displayBadgeCopy = displayStatus ? statusBadgeCopy[displayStatus] : null;
   const primaryAction = displayStatus ? getGssResultPrimaryAction(displayStatus) : null;
   const guidanceModel = getToolGuidanceModel("gss");
-  const displayError = hasConfigError
-    ? "Değerlendirme sistemi şu anda hazır değil. Lütfen daha sonra tekrar deneyin."
-    : error;
+  const grossIncomeError = findFieldError(error, "grossHouseholdIncome", "gross_household_income");
+  const householdSizeError = findFieldError(error, "householdSize", "household_size");
+  const socialSecurityError = findFieldError(error, "hasSocialSecurity", "has_social_security");
+  const activeInsuranceError = findFieldError(error, "hasActiveInsurance", "has_active_insurance");
+  const dependentCoverageError = findFieldError(error, "isCoveredAsDependent", "is_covered_as_dependent");
 
   return (
     <main className="min-h-screen px-6 py-12 lg:px-10 lg:py-16">
@@ -173,6 +185,8 @@ export function GssToolPageClient() {
                 type="number"
                 id="grossHouseholdIncome"
                 name="grossHouseholdIncome"
+                aria-invalid={Boolean(grossIncomeError)}
+                aria-describedby={grossIncomeError?.descriptionId}
                 min="0"
                 value={form.grossHouseholdIncome}
                 onChange={(event) => {
@@ -192,6 +206,8 @@ export function GssToolPageClient() {
                 type="number"
                 id="householdSize"
                 name="householdSize"
+                aria-invalid={Boolean(householdSizeError)}
+                aria-describedby={householdSizeError?.descriptionId}
                 min="1"
                 value={form.householdSize}
                 onChange={(event) => {
@@ -217,6 +233,7 @@ export function GssToolPageClient() {
               <TriStateField
                 legend="Herhangi bir sosyal güvenceniz var mı?"
                 name="hasSocialSecurity"
+                errorId={socialSecurityError?.descriptionId}
                 value={form.hasSocialSecurity}
                 onChange={(value) => {
                   markFormStarted();
@@ -229,6 +246,7 @@ export function GssToolPageClient() {
               <TriStateField
                 legend="Aktif sigortanız var mı?"
                 name="hasActiveInsurance"
+                errorId={activeInsuranceError?.descriptionId}
                 value={form.hasActiveInsurance}
                 onChange={(value) => {
                   markFormStarted();
@@ -241,6 +259,7 @@ export function GssToolPageClient() {
               <TriStateField
                 legend="Bir yakın üzerinden sağlık kapsamında mısınız?"
                 name="isCoveredAsDependent"
+                errorId={dependentCoverageError?.descriptionId}
                 value={form.isCoveredAsDependent}
                 onChange={(value) => {
                   markFormStarted();
@@ -258,6 +277,7 @@ export function GssToolPageClient() {
               type="button"
               onClick={handleSubmit}
               disabled={isSubmitting}
+              aria-busy={isSubmitting}
               className="primary-button"
             >
               {isSubmitting ? "Değerlendiriliyor..." : "GSS ön değerlendirmesini başlat"}
@@ -268,34 +288,15 @@ export function GssToolPageClient() {
                 setForm(initialGssFormState);
                 setResult(null);
                 setError(null);
-                setFieldErrors(null);
               }}
+              disabled={isSubmitting}
               className="secondary-button"
             >
               Formu temizle
             </button>
           </div>
 
-          {error ? (
-            <div className="mt-6 rounded-2xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-900">
-              <p className="font-semibold">İstek tamamlanamadı</p>
-              <p className="mt-2 leading-7">{displayError}</p>
-              {fieldErrors ? (
-                <ul className="mt-3 space-y-1">
-                  {Object.entries(fieldErrors).map(([field, messages]) => (
-                    <li key={field}>
-                      <span className="font-medium">{field}</span>: {messages.join(" ")}
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-              {hasConfigError ? (
-                <p className="mt-3 leading-7">
-                  Sistem bağlantısı kurulmadan bu araç canlıya alınmamalı.
-                </p>
-              ) : null}
-            </div>
-          ) : null}
+          {error ? <SafeErrorPanel error={error} focusRef={errorRef} /> : null}
 
           {result && presentation ? (
             <section
