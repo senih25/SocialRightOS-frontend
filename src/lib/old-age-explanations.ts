@@ -1,4 +1,5 @@
 import type { DecisionReason, EligibilityStatus, MissingFact } from "@/lib/types";
+import type { AssessmentPresentationCopyProfile } from "./assessment-presentation.ts";
 
 export type OldAgeExplanationItem = {
   title: string;
@@ -92,6 +93,48 @@ const fallbackByStatus: Record<EligibilityStatus, OldAgeExplanationItem> = {
     body: "Sistem güvenli bir ön karar vermek için ilave bilgi istiyor.",
   },
 };
+
+export const oldAgePresentationCopyProfile: AssessmentPresentationCopyProfile = {
+  outcomes: {
+    POSITIVE: {
+      title: "65 yaş aylığı için uygun görünüyorsunuz",
+      summary:
+        "Ön değerlendirme aracı mevcut bilgilerle olumlu bir sonuç döndürdü. Bu sonuç resmî karar yerine geçmez.",
+      disclaimer: "",
+    },
+    NEGATIVE: {
+      title: "65 yaş aylığı için uygun görünmüyorsunuz",
+      summary:
+        "Ön değerlendirme aracı girilen bilgilerle olumsuz bir sonuç döndürdü. Bu sonuç resmî kurum kararı yerine geçmez.",
+      disclaimer: "",
+    },
+    INCOMPLETE: {
+      title: "Daha fazla bilgi gerekli",
+      summary:
+        "Sistem mevcut bilgilerle güvenli bir ön karar üretemedi. Eksik alanları tamamlayıp tekrar deneyebilirsiniz.",
+      disclaimer: "",
+    },
+    UNAVAILABLE: {
+      title: "İstek tamamlanamadı",
+      summary: "Değerlendirme sistemi şu anda hazır değil. Lütfen daha sonra tekrar deneyin.",
+      disclaimer: "",
+    },
+  },
+};
+
+export function getOldAgeResultPrimaryAction(status: EligibilityStatus) {
+  if (status === "NEEDS_INFO") {
+    return {
+      label: "Eksik bilgileri tamamla",
+      href: "#form-start",
+    };
+  }
+
+  return {
+    label: "Diğer ön değerlendirmelere dön",
+    href: "/#hangi-testi-secmeliyim",
+  };
+}
 
 function normalizeCode(code: string): string {
   return code.trim().toLowerCase();
