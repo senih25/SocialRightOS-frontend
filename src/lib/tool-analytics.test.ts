@@ -11,14 +11,14 @@ test("tool analytics session tracks open only once", () => {
 
   assert.deepEqual(trackedEvents, [
     {
-      name: "tool_opened",
+      name: "page_view",
       tool: "gss",
       surface: "tool-page",
     },
   ]);
 });
 
-test("tool analytics session tracks form start only once and submits every time", () => {
+test("tool analytics session tracks assessment start only once", () => {
   const trackedEvents: unknown[] = [];
   const session = createToolAnalyticsSession("old-age", (event) => trackedEvents.push(event));
 
@@ -29,24 +29,14 @@ test("tool analytics session tracks form start only once and submits every time"
 
   assert.deepEqual(trackedEvents, [
     {
-      name: "form_started",
-      tool: "old-age",
-      surface: "tool-page",
-    },
-    {
-      name: "form_submitted",
-      tool: "old-age",
-      surface: "tool-page",
-    },
-    {
-      name: "form_submitted",
+      name: "assessment_started",
       tool: "old-age",
       surface: "tool-page",
     },
   ]);
 });
 
-test("tool analytics session deduplicates result_received by decision id", () => {
+test("tool analytics session deduplicates assessment completion by decision id", () => {
   const trackedEvents: unknown[] = [];
   const session = createToolAnalyticsSession("home-care", (event) => trackedEvents.push(event));
 
@@ -56,13 +46,13 @@ test("tool analytics session deduplicates result_received by decision id", () =>
 
   assert.deepEqual(trackedEvents, [
     {
-      name: "result_received",
+      name: "assessment_completed",
       tool: "home-care",
       surface: "result",
       status: "NEEDS_INFO",
     },
     {
-      name: "result_received",
+      name: "assessment_completed",
       tool: "home-care",
       surface: "result",
       status: "ELIGIBLE",
@@ -70,20 +60,33 @@ test("tool analytics session deduplicates result_received by decision id", () =>
   ]);
 });
 
-test("tool analytics session tracks link clicks with surface metadata", () => {
+test("tool analytics session emits only result primary CTA clicks", () => {
   const trackedEvents: unknown[] = [];
   const session = createToolAnalyticsSession("gss", (event) => trackedEvents.push(event));
 
   session.trackLinkClick("guidance", "guide", "/gss-gelir-testi/rehber");
+  session.trackLinkClick("result", "primary-action", "/gss-gelir-testi/rehber");
 
   assert.deepEqual(trackedEvents, [
     {
-      name: "guide_link_clicked",
+      name: "result_cta_clicked",
       tool: "gss",
-      surface: "guidance",
-      target_kind: "guide",
+      surface: "result",
+      target_kind: "primary-action",
       target_href: "/gss-gelir-testi/rehber",
     },
   ]);
 });
 
+test("tool analytics session exposes minimized failure events", () => {
+  const trackedEvents: unknown[] = [];
+  const session = createToolAnalyticsSession("gss", (event) => trackedEvents.push(event));
+
+  session.trackValidationFailed();
+  session.trackApiFailed();
+
+  assert.deepEqual(trackedEvents, [
+    { name: "assessment_validation_failed", tool: "gss", surface: "tool-page" },
+    { name: "assessment_api_failed", tool: "gss", surface: "tool-page" },
+  ]);
+});

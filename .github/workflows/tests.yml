@@ -30,3 +30,15 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Production build
+        run: npm run build
+
+      - name: Diff hygiene
+        run: npm run check:diff
+
+      - name: Secret pattern scan
+        run: npm run check:secrets
+
+      - name: Unexpected tracked artifact check
+        run: npm run check:clean

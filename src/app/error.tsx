@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { reportSafeError } from "@/lib/observability";
 
 export default function GlobalError({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {
+    reportSafeError("GLOBAL_RENDER_ERROR");
     document.querySelector<HTMLElement>("[data-global-error]")?.focus();
   }, []);
 

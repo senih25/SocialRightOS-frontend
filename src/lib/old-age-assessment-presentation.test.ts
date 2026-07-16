@@ -196,7 +196,7 @@ test("preserves route endpoint payload analytics loading and API error paths", (
   assert.match(page, /data-presentation-section="missing-information"/);
   assert.match(page, /presentation\.ruleCriteria\.length > 0/);
   assert.match(api, /\/api\/v1\/eligibility-check/);
-  assert.match(analytics, /name: "result_received"/);
+  assert.match(analytics, /name: "assessment_completed"/);
   assert.deepEqual(buildOldAgePayload(initialOldAgeFormState, "request-1"), {
     benefit_code: "TR_OLD_AGE_PENSION",
     facts: { age: null, self_monthly_income: null },

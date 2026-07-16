@@ -131,7 +131,13 @@ export function GssToolPageClient() {
       const response = await checkEligibility(buildGssPayload(form, crypto.randomUUID()));
       setResult(response);
     } catch (err) {
-      setError(buildAssessmentErrorViewModel(err));
+      const safeError = buildAssessmentErrorViewModel(err);
+      setError(safeError);
+      if (safeError.kind === "VALIDATION") {
+        analyticsRef.current.trackValidationFailed();
+      } else {
+        analyticsRef.current.trackApiFailed();
+      }
     } finally {
       setIsSubmitting(false);
     }
