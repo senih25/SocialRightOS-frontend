@@ -36,17 +36,19 @@ export default function ContactPage() {
           </p>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-2">
+        <section className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-2">
           {siteProfile.contactChannels.map((channel) => (
             <a
               key={channel.kind}
               href={channel.href}
               target={channel.kind === "email" ? undefined : "_blank"}
               rel={channel.kind === "email" ? undefined : "noopener noreferrer"}
-              className="card-panel transition hover:-translate-y-0.5"
+              className="card-panel min-w-0 transition hover:-translate-y-0.5"
             >
               <p className="eyebrow">{channel.label}</p>
-              <h2 className="mt-4 text-2xl font-semibold text-slate-950">{channel.value}</h2>
+              <h2 className="mt-4 break-words text-2xl font-semibold text-slate-950">
+                {channel.value}
+              </h2>
               <p className="mt-3 text-sm leading-7 text-slate-700">{channel.note}</p>
             </a>
           ))}

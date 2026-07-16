@@ -167,8 +167,8 @@ export function OldAgeToolPageClient() {
 
   return (
     <main className="min-h-screen px-6 py-12 lg:px-10 lg:py-16">
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
-        <section className="card-panel">
+      <div className="mx-auto grid w-full min-w-0 max-w-6xl grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
+        <section className="card-panel min-w-0">
           <p className="eyebrow">D-SHR Ön Değerlendirme Aracı</p>
           <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
             65 yaş aylığı için kurumsal ve okunması kolay ön değerlendirme
@@ -439,7 +439,7 @@ export function OldAgeToolPageClient() {
           ) : null}
         </section>
 
-        <aside className="space-y-6">
+        <aside className="min-w-0 space-y-6">
           <div className="card-panel">
             <h2 className="text-xl font-semibold text-slate-950">Ön değerlendirme notu</h2>
             <p className="mt-3 text-base leading-8 text-slate-700">

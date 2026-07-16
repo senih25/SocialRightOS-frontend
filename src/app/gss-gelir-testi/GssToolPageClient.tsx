@@ -168,8 +168,8 @@ export function GssToolPageClient() {
 
   return (
     <main className="min-h-screen px-6 py-12 lg:px-10 lg:py-16">
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
-        <section className="card-panel">
+      <div className="mx-auto grid w-full min-w-0 max-w-6xl grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
+        <section className="card-panel min-w-0">
           <p className="eyebrow">D-SHR Ön Değerlendirme Aracı</p>
           <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
             GSS gelir testi için kurumsal ve açıklayıcı ön değerlendirme
@@ -426,7 +426,7 @@ export function GssToolPageClient() {
           ) : null}
         </section>
 
-        <aside className="space-y-6">
+        <aside className="min-w-0 space-y-6">
           <div className="card-panel">
             <h2 className="text-lg font-semibold text-slate-950">Ön değerlendirme notu</h2>
             <p className="mt-3 text-sm leading-7 text-slate-700">
