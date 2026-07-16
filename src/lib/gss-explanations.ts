@@ -1,4 +1,5 @@
 import type { DecisionReason, EligibilityStatus, MissingFact } from "@/lib/types";
+import type { AssessmentPresentationCopyProfile } from "@/lib/assessment-presentation";
 
 export type GssExplanationItem = {
   title: string;
@@ -20,6 +21,58 @@ export type GssDecisionViewModel = {
   nextStepBody: string;
   helperLinks: GssLink[];
 };
+
+export const gssPresentationCopyProfile: AssessmentPresentationCopyProfile = {
+  outcomes: {
+    POSITIVE: {
+      title: "GSS gelir testi için uygun görünüyorsunuz",
+      summary: "Ön değerlendirme aracı mevcut bilgilerle olumlu bir sonuç üretti.",
+      disclaimer: "Bu sonuç resmî karar yerine geçmez.",
+    },
+    NEGATIVE: {
+      title: "GSS gelir testi için uygun görünmüyorsunuz",
+      summary: "Ön değerlendirme aracı girilen bilgilerle olumsuz bir ön değerlendirme üretti.",
+      disclaimer: "Bu sonuç resmî kurum kararı yerine geçmez.",
+    },
+    INCOMPLETE: {
+      title: "Karar için ek bilgi gerekli",
+      summary:
+        "Sistem, mevcut bilgilerle güvenli bir GSS gelir testi sonucu üretemedi. Eksik veya emin olmadığınız alanları tamamlayın.",
+      disclaimer: "",
+    },
+    UNAVAILABLE: {
+      title: "İstek tamamlanamadı",
+      summary: "Değerlendirme sistemi şu anda hazır değil. Lütfen daha sonra tekrar deneyin.",
+      disclaimer: "",
+    },
+  },
+};
+
+export function getGssResultPrimaryAction(status: EligibilityStatus): GssLink {
+  if (status === "NEEDS_INFO") {
+    return { label: "Eksik bilgileri tamamla", href: "#form-start" };
+  }
+
+  return {
+    label: "Ana sayfada diğer testleri gör",
+    href: "/#hangi-testi-secmeliyim",
+  };
+}
+
+function visibleCopy(status: EligibilityStatus): { title: string; summary: string } {
+  const outcome =
+    status === "ELIGIBLE"
+      ? "POSITIVE"
+      : status === "NOT_ELIGIBLE"
+        ? "NEGATIVE"
+        : "INCOMPLETE";
+  const copy = gssPresentationCopyProfile.outcomes[outcome];
+
+  return {
+    title: copy.title,
+    summary: [copy.summary, copy.disclaimer].filter(Boolean).join(" "),
+  };
+}
 
 const reasonMap: Array<{
   matcher: (code: string) => boolean;
@@ -129,12 +182,12 @@ export function buildGssDecisionViewModel(input: {
   const mappedReasons = reasons.map((reason) => mapReason(reason, status));
   const [primaryReason, ...secondaryReasons] = mappedReasons;
   const missingInformation = missingFacts.map(mapMissingFact);
+  const copy = visibleCopy(status);
 
   if (status === "ELIGIBLE") {
     return {
-      title: "GSS gelir testi için uygun görünüyorsunuz",
-      summary:
-        "Ön değerlendirme aracı mevcut bilgilerle olumlu bir sonuç üretti. Bu sonuç resmî karar yerine geçmez.",
+      title: copy.title,
+      summary: copy.summary,
       primaryReason: primaryReason ?? fallbackByStatus[status],
       secondaryReasons,
       missingInformation,
@@ -150,9 +203,8 @@ export function buildGssDecisionViewModel(input: {
 
   if (status === "NEEDS_INFO") {
     return {
-      title: "Karar için ek bilgi gerekli",
-      summary:
-        "Sistem, mevcut bilgilerle güvenli bir GSS gelir testi sonucu üretemedi. Eksik veya emin olmadığınız alanları tamamlayın.",
+      title: copy.title,
+      summary: copy.summary,
       primaryReason: primaryReason ?? fallbackByStatus[status],
       secondaryReasons,
       missingInformation,
@@ -167,9 +219,8 @@ export function buildGssDecisionViewModel(input: {
   }
 
   return {
-    title: "GSS gelir testi için uygun görünmüyorsunuz",
-    summary:
-      "Ön değerlendirme aracı girilen bilgilerle olumsuz bir ön değerlendirme üretti. Bu sonuç resmî kurum kararı yerine geçmez.",
+    title: copy.title,
+    summary: copy.summary,
     primaryReason: primaryReason ?? fallbackByStatus[status],
     secondaryReasons,
     missingInformation,
