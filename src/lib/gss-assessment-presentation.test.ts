@@ -71,6 +71,51 @@ test("fails closed for unsupported and malformed runtime results", () => {
   assert.equal(unsupported.presentation.title, "İstek tamamlanamadı");
 });
 
+test("malformed eligible result suppresses raw positive UI decoration", () => {
+  const model = buildGssPilotPresentationViewModel(
+    response({
+      status: "ELIGIBLE",
+      reasons: null as unknown as EligibilityCheckResponse["reasons"],
+    }),
+    "local-1",
+  );
+  const page = readFileSync(
+    new URL("../app/gss-gelir-testi/GssToolPageClient.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.equal(model.presentation.outcome, "UNAVAILABLE");
+  assert.equal(model.presentation.status, null);
+  assert.equal(model.presentation.title, "İstek tamamlanamadı");
+  assert.equal(model.decisionView, null);
+  assert.doesNotMatch(page, /statusTone\[result\.status\]/);
+  assert.doesNotMatch(page, /statusLabelCopy\[result\.status\]/);
+  assert.doesNotMatch(page, /statusBadgeCopy\[result\.status\]/);
+  assert.doesNotMatch(page, /getGssResultPrimaryAction\(result\.status\)/);
+  assert.match(page, /!isUnavailable && decisionView/);
+});
+
+test("malformed not-eligible result suppresses raw negative UI decoration", () => {
+  const model = buildGssPilotPresentationViewModel(
+    response({
+      status: "NOT_ELIGIBLE",
+      missing_facts: null as unknown as EligibilityCheckResponse["missing_facts"],
+    }),
+    "local-1",
+  );
+  const page = readFileSync(
+    new URL("../app/gss-gelir-testi/GssToolPageClient.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.equal(model.presentation.outcome, "UNAVAILABLE");
+  assert.equal(model.presentation.status, null);
+  assert.equal(model.decisionView, null);
+  assert.match(page, /const displayStatus = presentation\?\.status \?\? null/);
+  assert.match(page, /aria-label=\{presentation\.title\}/);
+  assert.match(page, /const primaryAction = displayStatus/);
+});
+
 test("preserves identity, evidence separation, validity and empty GSS extension", () => {
   const model = buildGssPilotPresentationViewModel(response(), "local-1");
 
@@ -165,7 +210,7 @@ test("preserves route, endpoint, payload, analytics and accessible result markup
   assert.match(page, /presentation\.ruleCriteria\.length > 0/);
   assert.match(page, /Değerlendiriliyor\.\.\./);
   assert.match(page, /İstek tamamlanamadı/);
-  assert.match(page, /getGssResultPrimaryAction\(result\.status\)/);
+  assert.match(page, /getGssResultPrimaryAction\(displayStatus\)/);
   assert.match(api, /\/api\/v1\/eligibility-check/);
   assert.match(analytics, /name: "result_received"/);
   assert.deepEqual(buildGssPayload(initialGssFormState, "request-1"), {

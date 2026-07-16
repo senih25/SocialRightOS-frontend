@@ -135,7 +135,14 @@ export function GssToolPageClient() {
     : null;
   const decisionView = pilotView?.decisionView ?? null;
   const presentation = pilotView?.presentation ?? null;
-  const primaryAction = result ? getGssResultPrimaryAction(result.status) : null;
+  const displayStatus = presentation?.status ?? null;
+  const isUnavailable = presentation?.outcome === "UNAVAILABLE";
+  const displayTone = displayStatus
+    ? statusTone[displayStatus]
+    : "border-slate-200 bg-slate-50 text-slate-950";
+  const displayStatusLabel = displayStatus ? statusLabelCopy[displayStatus] : null;
+  const displayBadgeCopy = displayStatus ? statusBadgeCopy[displayStatus] : null;
+  const primaryAction = displayStatus ? getGssResultPrimaryAction(displayStatus) : null;
   const guidanceModel = getToolGuidanceModel("gss");
   const displayError = hasConfigError
     ? "Değerlendirme sistemi şu anda hazır değil. Lütfen daha sonra tekrar deneyin."
@@ -292,31 +299,43 @@ export function GssToolPageClient() {
 
           {result && presentation ? (
             <section
-              className={`mt-6 rounded-3xl border p-6 ${statusTone[result.status]}`}
+              className={`mt-6 rounded-3xl border p-6 ${displayTone}`}
               aria-live="polite"
               aria-atomic="true"
+              aria-label={presentation.title}
               data-presentation-outcome={presentation.outcome}
             >
               <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em]">
-                    {statusLabelCopy[result.status]}
-                  </p>
+                  {displayStatusLabel ? (
+                    <p className="text-sm font-semibold uppercase tracking-[0.22em]">
+                      {displayStatusLabel}
+                    </p>
+                  ) : null}
                   <h2 className="mt-3 text-2xl font-semibold">
                     {decisionView?.title ?? presentation.title}
                   </h2>
                   <p className="mt-3 max-w-2xl text-sm leading-7">
                     {decisionView?.summary ?? presentation.summary}
                   </p>
+                  {isUnavailable && presentation.disclaimer ? (
+                    <p className="mt-3 max-w-2xl text-sm leading-7">
+                      {presentation.disclaimer}
+                    </p>
+                  ) : null}
                 </div>
 
-                <div className="rounded-2xl bg-white/80 px-4 py-3 text-sm font-medium">
-                  {statusBadgeCopy[result.status]}
-                </div>
+                {displayBadgeCopy ? (
+                  <div className="rounded-2xl bg-white/80 px-4 py-3 text-sm font-medium">
+                    {displayBadgeCopy}
+                  </div>
+                ) : null}
               </div>
 
-              <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-                <div className="rounded-2xl bg-white/70 p-5">
+              {!isUnavailable && decisionView ? (
+                <>
+                  <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+                    <div className="rounded-2xl bg-white/70 p-5">
                   <h3 className="font-semibold">Bu sonuç ne anlatıyor?</h3>
                   {decisionView?.primaryReason ? (
                     <ul
@@ -364,9 +383,9 @@ export function GssToolPageClient() {
                       </ul>
                     </div>
                   ) : null}
-                </div>
+                    </div>
 
-                <div className="rounded-2xl bg-white/70 p-5">
+                    <div className="rounded-2xl bg-white/70 p-5">
                   {decisionView ? (
                     <>
                       <h3 className="font-semibold">{decisionView.nextStepTitle}</h3>
@@ -386,10 +405,12 @@ export function GssToolPageClient() {
                       </Link>
                     ))}
                   </div>
-                </div>
-              </div>
+                    </div>
+                  </div>
 
-              <ToolGuidanceSurface model={guidanceModel} tool="gss" />
+                  <ToolGuidanceSurface model={guidanceModel} tool="gss" />
+                </>
+              ) : null}
             </section>
           ) : null}
         </section>
