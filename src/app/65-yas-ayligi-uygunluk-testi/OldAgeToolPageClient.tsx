@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ToolGuidanceSurface } from "@/components/ToolGuidanceSurface";
 import { ApiClientError, checkEligibility } from "@/lib/api";
-import { buildOldAgeDecisionViewModel } from "@/lib/old-age-explanations";
+import { buildOldAgePilotPresentationViewModel } from "@/lib/old-age-assessment-presentation";
+import { getOldAgeResultPrimaryAction } from "@/lib/old-age-explanations";
 import { createToolAnalyticsSession } from "@/lib/tool-analytics";
 import { getToolGuidanceModel } from "@/lib/tool-guidance";
 import {
@@ -79,20 +80,6 @@ function TriStateField({ legend, name, value, onChange }: TriStateFieldProps) {
   );
 }
 
-function resultPrimaryAction(status: EligibilityStatus) {
-  if (status === "NEEDS_INFO") {
-    return {
-      label: "Eksik bilgileri tamamla",
-      href: "#form-start",
-    };
-  }
-
-  return {
-    label: "Diğer ön değerlendirmelere dön",
-    href: "/#hangi-testi-secmeliyim",
-  };
-}
-
 export function OldAgeToolPageClient() {
   const [form, setForm] = useState<OldAgeFormState>(initialOldAgeFormState);
   const [result, setResult] = useState<EligibilityCheckResponse | null>(null);
@@ -140,14 +127,20 @@ export function OldAgeToolPageClient() {
   };
 
   const hasConfigError = Boolean(error?.includes("NEXT_PUBLIC_API_BASE_URL"));
-  const decisionView = result
-    ? buildOldAgeDecisionViewModel({
-        status: result.status,
-        reasons: result.reasons,
-        missingFacts: result.missing_facts,
-      })
+  const pilotView = result
+    ? buildOldAgePilotPresentationViewModel(
+        result,
+        result.request_id || result.decision_id,
+      )
     : null;
-  const primaryAction = result ? resultPrimaryAction(result.status) : null;
+  const presentation = pilotView?.presentation ?? null;
+  const decisionView = pilotView?.decisionView ?? null;
+  const displayStatus = presentation?.status ?? null;
+  const isUnavailable = presentation?.outcome === "UNAVAILABLE";
+  const resultTone = displayStatus
+    ? statusTone[displayStatus]
+    : "border-slate-200 bg-slate-50 text-slate-950";
+  const primaryAction = displayStatus ? getOldAgeResultPrimaryAction(displayStatus) : null;
   const guidanceModel = getToolGuidanceModel("old-age");
   const displayError = hasConfigError
     ? "Değerlendirme sistemi şu anda hazır değil. Lütfen daha sonra tekrar deneyin."
@@ -319,27 +312,48 @@ export function OldAgeToolPageClient() {
             </div>
           ) : null}
 
-          {result && decisionView ? (
-            <section className={`mt-6 rounded-3xl border p-6 ${statusTone[result.status]}`}>
+          {result && presentation ? (
+            <section
+              className={`mt-6 rounded-3xl border p-6 ${resultTone}`}
+              aria-live="polite"
+              aria-atomic="true"
+              aria-label={presentation.title}
+              data-presentation-outcome={presentation.outcome}
+            >
               <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em]">
-                    {statusLabelCopy[result.status]}
+                  {displayStatus ? (
+                    <p className="text-sm font-semibold uppercase tracking-[0.22em]">
+                      {statusLabelCopy[displayStatus]}
+                    </p>
+                  ) : null}
+                  <h2 className="mt-3 text-3xl font-semibold">
+                    {decisionView?.title ?? presentation.title}
+                  </h2>
+                  <p className="mt-4 max-w-2xl text-base leading-8">
+                    {decisionView?.summary ?? presentation.summary}
                   </p>
-                  <h2 className="mt-3 text-3xl font-semibold">{decisionView.title}</h2>
-                  <p className="mt-4 max-w-2xl text-base leading-8">{decisionView.summary}</p>
+                  {isUnavailable && presentation.disclaimer ? (
+                    <p className="mt-3 max-w-2xl text-base leading-8">
+                      {presentation.disclaimer}
+                    </p>
+                  ) : null}
                 </div>
 
-                <div className="rounded-2xl bg-white/80 px-4 py-3 text-base font-medium">
-                  {statusBadgeCopy[result.status]}
-                </div>
+                {displayStatus ? (
+                  <div className="rounded-2xl bg-white/80 px-4 py-3 text-base font-medium">
+                    {statusBadgeCopy[displayStatus]}
+                  </div>
+                ) : null}
               </div>
 
+              {!isUnavailable && decisionView ? (
+              <>
               <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
                 <div className="rounded-2xl bg-white/70 p-5">
                   <h3 className="text-lg font-semibold">Bu sonuç ne anlatıyor?</h3>
                   {decisionView.primaryReason ? (
-                    <div className="mt-4 rounded-2xl border border-white/70 bg-white/70 p-4">
+                    <div className="mt-4 rounded-2xl border border-white/70 bg-white/70 p-4" data-presentation-section="reasons">
                       <p className="text-base font-medium">{decisionView.primaryReason.title}</p>
                       <p className="mt-2 text-base leading-8">{decisionView.primaryReason.body}</p>
                     </div>
@@ -356,8 +370,18 @@ export function OldAgeToolPageClient() {
                     </ul>
                   ) : null}
 
+                  {presentation.ruleCriteria.length > 0 ? (
+                    <ul className="mt-4 space-y-3 text-base leading-8" data-presentation-section="rule-criteria">
+                      {presentation.ruleCriteria.map((criterion) => (
+                        <li key={criterion.code} className="rounded-2xl bg-white/70 p-4">
+                          {criterion.message}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+
                   {decisionView.missingInformation.length > 0 ? (
-                    <div className="mt-4 rounded-2xl bg-white/70 p-4">
+                    <div className="mt-4 rounded-2xl bg-white/70 p-4" data-presentation-section="missing-information">
                       <h4 className="text-base font-medium">Tamamlanması iyi olacak bilgiler</h4>
                       <ul className="mt-3 space-y-3 text-base leading-8">
                         {decisionView.missingInformation.map((fact) => (
@@ -395,6 +419,8 @@ export function OldAgeToolPageClient() {
               </div>
 
               <ToolGuidanceSurface model={guidanceModel} tool="old-age" />
+              </>
+              ) : null}
             </section>
           ) : null}
         </section>
