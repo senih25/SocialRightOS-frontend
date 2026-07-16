@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
+import { LegalReviewNotice } from "@/components/ui/LegalReviewNotice";
 import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 import { siteOperations } from "@/lib/site-operations";
@@ -36,6 +37,8 @@ export default function LegalNoticePage() {
           </p>
         </section>
 
+        <LegalReviewNotice />
+
         <section className="grid gap-6 lg:grid-cols-2">
           <article className="card-panel">
             <h2 className="text-2xl font-semibold text-slate-950">Kullanım sınırı</h2>
@@ -70,6 +73,10 @@ export default function LegalNoticePage() {
             <p>
               Buradaki sayfalar planlama, hazırlık ve ön okuma amaçlıdır. Resmî başvuru ve sonuç
               teyidi için kurum kanallarını kullanın.
+            </p>
+            <p>
+              Sağlık raporu, kimlik belgesi, teşhis, açık adres veya başka özel nitelikli kişisel
+              veri girmeyin.
             </p>
           </div>
         </section>

@@ -177,6 +177,10 @@ export function OldAgeToolPageClient() {
             daha belirgindir. Emin olmadığınız sorularda Bilmiyorum seçeneğini kullanabilirsiniz.
           </div>
 
+          <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-base leading-8 text-amber-950" role="note">
+            T.C. kimlik numarası, sağlık raporu, teşhis, belge veya başka özel nitelikli kişisel veri girmeyin.
+          </div>
+
           <div id="form-start" className="mt-8 grid gap-6">
             <label className="form-field text-lg">
               <span>Yaşınız</span>

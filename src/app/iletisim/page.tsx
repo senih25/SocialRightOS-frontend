@@ -42,7 +42,7 @@ export default function ContactPage() {
               key={channel.kind}
               href={channel.href}
               target={channel.kind === "email" ? undefined : "_blank"}
-              rel={channel.kind === "email" ? undefined : "noreferrer"}
+              rel={channel.kind === "email" ? undefined : "noopener noreferrer"}
               className="card-panel transition hover:-translate-y-0.5"
             >
               <p className="eyebrow">{channel.label}</p>
@@ -50,6 +50,14 @@ export default function ContactPage() {
               <p className="mt-3 text-sm leading-7 text-slate-700">{channel.note}</p>
             </a>
           ))}
+        </section>
+
+        <section className="card-panel" role="note" aria-label="Geri bildirim gizlilik notu">
+          <h2 className="text-2xl font-semibold text-slate-950">Güvenli geri bildirim</h2>
+          <p className="mt-3 text-sm leading-7 text-slate-700">
+            Mesajınıza T.C. kimlik numarası, sağlık raporu, teşhis, gelir belgesi, açık adres veya
+            başka özel nitelikli kişisel veri eklemeyin.
+          </p>
         </section>
 
         <section className="card-panel">

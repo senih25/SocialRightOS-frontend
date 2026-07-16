@@ -178,6 +178,10 @@ export function GssToolPageClient() {
             güvence durumu. Emin olmadığınız sorularda Bilmiyorum seçeneğini kullanabilirsiniz.
           </div>
 
+          <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-7 text-amber-950" role="note">
+            T.C. kimlik numarası, sağlık raporu, teşhis, belge veya başka özel nitelikli kişisel veri girmeyin.
+          </div>
+
           <div id="form-start" className="mt-8 grid gap-5 md:grid-cols-2">
             <label className="form-field">
               <span>Brüt toplam hane geliri (aylık)</span>
