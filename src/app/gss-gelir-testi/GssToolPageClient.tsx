@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ToolGuidanceSurface } from "@/components/ToolGuidanceSurface";
 import { ApiClientError, checkEligibility } from "@/lib/api";
-import { buildGssDecisionViewModel } from "@/lib/gss-explanations";
+import { buildGssPilotPresentationViewModel } from "@/lib/gss-assessment-presentation";
+import { getGssResultPrimaryAction } from "@/lib/gss-explanations";
 import { createToolAnalyticsSession } from "@/lib/tool-analytics";
 import { getToolGuidanceModel } from "@/lib/tool-guidance";
 import {
@@ -38,20 +39,6 @@ const triStateOptions: Array<{ label: string; value: TriStateAttestation }> = [
   { label: "Hayır", value: false },
   { label: "Bilmiyorum", value: null },
 ];
-
-function resultPrimaryAction(status: EligibilityStatus) {
-  if (status === "NEEDS_INFO") {
-    return {
-      label: "Eksik bilgileri tamamla",
-      href: "#form-start",
-    };
-  }
-
-  return {
-    label: "Ana sayfada diğer testleri gör",
-    href: "/#hangi-testi-secmeliyim",
-  };
-}
 
 type TriStateFieldProps = {
   legend: string;
@@ -140,14 +127,22 @@ export function GssToolPageClient() {
   };
 
   const hasConfigError = Boolean(error?.includes("NEXT_PUBLIC_API_BASE_URL"));
-  const decisionView = result
-    ? buildGssDecisionViewModel({
-        status: result.status,
-        reasons: result.reasons,
-        missingFacts: result.missing_facts,
-      })
+  const pilotView = result
+    ? buildGssPilotPresentationViewModel(
+        result,
+        result.request_id || result.decision_id,
+      )
     : null;
-  const primaryAction = result ? resultPrimaryAction(result.status) : null;
+  const decisionView = pilotView?.decisionView ?? null;
+  const presentation = pilotView?.presentation ?? null;
+  const displayStatus = presentation?.status ?? null;
+  const isUnavailable = presentation?.outcome === "UNAVAILABLE";
+  const displayTone = displayStatus
+    ? statusTone[displayStatus]
+    : "border-slate-200 bg-slate-50 text-slate-950";
+  const displayStatusLabel = displayStatus ? statusLabelCopy[displayStatus] : null;
+  const displayBadgeCopy = displayStatus ? statusBadgeCopy[displayStatus] : null;
+  const primaryAction = displayStatus ? getGssResultPrimaryAction(displayStatus) : null;
   const guidanceModel = getToolGuidanceModel("gss");
   const displayError = hasConfigError
     ? "Değerlendirme sistemi şu anda hazır değil. Lütfen daha sonra tekrar deneyin."
@@ -302,36 +297,56 @@ export function GssToolPageClient() {
             </div>
           ) : null}
 
-          {result && decisionView ? (
-            <section className={`mt-6 rounded-3xl border p-6 ${statusTone[result.status]}`}>
+          {result && presentation ? (
+            <section
+              className={`mt-6 rounded-3xl border p-6 ${displayTone}`}
+              aria-live="polite"
+              aria-atomic="true"
+              aria-label={presentation.title}
+              data-presentation-outcome={presentation.outcome}
+            >
               <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em]">
-                    {statusLabelCopy[result.status]}
+                  {displayStatusLabel ? (
+                    <p className="text-sm font-semibold uppercase tracking-[0.22em]">
+                      {displayStatusLabel}
+                    </p>
+                  ) : null}
+                  <h2 className="mt-3 text-2xl font-semibold">
+                    {decisionView?.title ?? presentation.title}
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-sm leading-7">
+                    {decisionView?.summary ?? presentation.summary}
                   </p>
-                  <h2 className="mt-3 text-2xl font-semibold">{decisionView.title}</h2>
-                  <p className="mt-3 max-w-2xl text-sm leading-7">{decisionView.summary}</p>
+                  {isUnavailable && presentation.disclaimer ? (
+                    <p className="mt-3 max-w-2xl text-sm leading-7">
+                      {presentation.disclaimer}
+                    </p>
+                  ) : null}
                 </div>
 
-                <div className="rounded-2xl bg-white/80 px-4 py-3 text-sm font-medium">
-                  {statusBadgeCopy[result.status]}
-                </div>
+                {displayBadgeCopy ? (
+                  <div className="rounded-2xl bg-white/80 px-4 py-3 text-sm font-medium">
+                    {displayBadgeCopy}
+                  </div>
+                ) : null}
               </div>
 
-              <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-                <div className="rounded-2xl bg-white/70 p-5">
+              {!isUnavailable && decisionView ? (
+                <>
+                  <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+                    <div className="rounded-2xl bg-white/70 p-5">
                   <h3 className="font-semibold">Bu sonuç ne anlatıyor?</h3>
-                  {decisionView.primaryReason ? (
-                    <div className="mt-4 rounded-2xl border border-white/70 bg-white/70 p-4">
-                      <p className="text-sm font-medium">{decisionView.primaryReason.title}</p>
-                      <p className="mt-2 text-sm leading-7">{decisionView.primaryReason.body}</p>
-                    </div>
-                  ) : null}
-
-                  {decisionView.secondaryReasons.length > 0 ? (
-                    <ul className="mt-4 space-y-3 text-sm leading-7">
-                      {decisionView.secondaryReasons.map((reason) => (
-                        <li key={`${reason.title}-${reason.body}`} className="rounded-2xl bg-white/70 p-4">
+                  {decisionView?.primaryReason ? (
+                    <ul
+                      className="mt-4 space-y-3 text-sm leading-7"
+                      data-presentation-section="reasons"
+                    >
+                      {[decisionView.primaryReason, ...decisionView.secondaryReasons].map((reason) => (
+                        <li
+                          key={`${reason.title}-${reason.body}`}
+                          className="rounded-2xl border border-white/70 bg-white/70 p-4"
+                        >
                           <span className="font-medium">{reason.title}</span>
                           <p className="mt-1">{reason.body}</p>
                         </li>
@@ -339,8 +354,24 @@ export function GssToolPageClient() {
                     </ul>
                   ) : null}
 
-                  {decisionView.missingInformation.length > 0 ? (
-                    <div className="mt-4 rounded-2xl bg-white/70 p-4">
+                  {presentation.ruleCriteria.length > 0 ? (
+                    <ul
+                      className="mt-4 space-y-3 text-sm leading-7"
+                      data-presentation-section="rule-criteria"
+                    >
+                      {presentation.ruleCriteria.map((criterion) => (
+                        <li key={criterion.code} className="rounded-2xl bg-white/70 p-4">
+                          {criterion.message}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+
+                  {decisionView && decisionView.missingInformation.length > 0 ? (
+                    <div
+                      className="mt-4 rounded-2xl bg-white/70 p-4"
+                      data-presentation-section="missing-information"
+                    >
                       <h4 className="text-sm font-medium">Tamamlanması iyi olacak bilgiler</h4>
                       <ul className="mt-3 space-y-3 text-sm leading-7">
                         {decisionView.missingInformation.map((fact) => (
@@ -352,11 +383,15 @@ export function GssToolPageClient() {
                       </ul>
                     </div>
                   ) : null}
-                </div>
+                    </div>
 
-                <div className="rounded-2xl bg-white/70 p-5">
-                  <h3 className="font-semibold">{decisionView.nextStepTitle}</h3>
-                  <p className="mt-3 text-sm leading-7">{decisionView.nextStepBody}</p>
+                    <div className="rounded-2xl bg-white/70 p-5">
+                  {decisionView ? (
+                    <>
+                      <h3 className="font-semibold">{decisionView.nextStepTitle}</h3>
+                      <p className="mt-3 text-sm leading-7">{decisionView.nextStepBody}</p>
+                    </>
+                  ) : null}
                   {primaryAction ? (
                     <Link href={primaryAction.href} className="secondary-link mt-4 inline-flex">
                       {primaryAction.label}
@@ -364,16 +399,18 @@ export function GssToolPageClient() {
                   ) : null}
 
                   <div className="mt-5 flex flex-col gap-3">
-                    {decisionView.helperLinks.map((link) => (
+                    {(decisionView?.helperLinks ?? []).map((link) => (
                       <Link key={`${link.href}-${link.label}`} href={link.href} className="secondary-link inline-flex">
                         {link.label}
                       </Link>
                     ))}
                   </div>
-                </div>
-              </div>
+                    </div>
+                  </div>
 
-              <ToolGuidanceSurface model={guidanceModel} tool="gss" />
+                  <ToolGuidanceSurface model={guidanceModel} tool="gss" />
+                </>
+              ) : null}
             </section>
           ) : null}
         </section>
