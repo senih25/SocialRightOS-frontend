@@ -30,6 +30,22 @@ test("security exposure counters remain zero and rollback is explicit", () => {
   }
 });
 
+test("M2.2 closes the runtime P0 locally without claiming controlled beta readiness", () => {
+  for (const marker of [
+    "P0_RUNTIME_001=CLOSED",
+    "P0_OPEN_COUNT=0",
+    "M2_2_TESTS=195/195_PASS",
+    "M2_2_LOCAL_PRODUCTION_RUNTIME=PASS",
+    "M2_2_RUNTIME_500_COUNT=0",
+    "M2_2_TYPEERROR_COUNT=0",
+    "PRODUCTION_DEPLOY_COUNT_THIS_MILESTONE=0",
+    "RELEASE_DECISION=READY_FOR_REDEPLOYMENT_APPROVAL",
+  ]) {
+    assert.ok(gate.includes(marker));
+  }
+  assert.doesNotMatch(gate, /RELEASE_DECISION=READY_FOR_CONTROLLED_BETA/);
+});
+
 test("completion report covers M2.0A through M2.0F exactly once", () => {
   for (const milestone of ["M2.0A", "M2.0B", "M2.0C", "M2.0D", "M2.0E", "M2.0F"]) {
     assert.equal(completion.split(`| ${milestone} |`).length - 1, 1);

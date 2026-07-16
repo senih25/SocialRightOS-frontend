@@ -17,6 +17,13 @@ type LocalApiResponse =
   | LeadCreateResponse
   | { message: string; error: string; status: number; correlation_id: string };
 
+const ELIGIBILITY_BENEFIT_CODES = new Set<EligibilityCheckRequest["benefit_code"]>([
+  "TR_HOME_CARE_ALLOWANCE",
+  "TR_GSS",
+  "TR_OLD_AGE_PENSION",
+  "TR_BIRTH_GRANT",
+]);
+
 const ENGINE_VERSION = "local-fallback-v1";
 const GSS_THRESHOLD = 6667;
 const OLD_AGE_THRESHOLD = 10000;
@@ -164,6 +171,91 @@ function missingResponse(routeKey: string): LocalApiResponse {
     error: "unsupported_route",
     status: 503,
     correlation_id: "",
+  };
+}
+
+export function invalidEligibilityRequestResponse(): LocalApiResponse {
+  return {
+    message: "Uygunluk değerlendirme isteği geçerli değil.",
+    error: "invalid_request",
+    status: 400,
+    correlation_id: "",
+  };
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function isFactValue(value: unknown): boolean {
+  return (
+    value === null ||
+    typeof value === "string" ||
+    (typeof value === "number" && Number.isFinite(value)) ||
+    typeof value === "boolean"
+  );
+}
+
+export function normalizeEligibilityCheckRequest(
+  payload: unknown,
+): EligibilityCheckRequest | null {
+  if (!isRecord(payload)) {
+    return null;
+  }
+
+  const benefitCode = payload.benefit_code;
+  if (
+    typeof benefitCode !== "string" ||
+    !ELIGIBILITY_BENEFIT_CODES.has(benefitCode as EligibilityCheckRequest["benefit_code"])
+  ) {
+    return null;
+  }
+
+  if (!isRecord(payload.facts) || !Object.values(payload.facts).every(isFactValue)) {
+    return null;
+  }
+
+  const context = payload.context;
+  if (context !== undefined) {
+    if (!isRecord(context)) {
+      return null;
+    }
+
+    const knownContextValues = [
+      context.jurisdiction,
+      context.evaluation_date,
+      context.request_id,
+      context.policy_version,
+    ];
+    if (knownContextValues.some((value) => value !== undefined && typeof value !== "string")) {
+      return null;
+    }
+    if (context.jurisdiction !== undefined && context.jurisdiction !== "TR") {
+      return null;
+    }
+  }
+
+  return {
+    benefit_code: benefitCode as EligibilityCheckRequest["benefit_code"],
+    facts: { ...payload.facts },
+    ...(context === undefined
+      ? {}
+      : {
+          context: {
+            ...(context.jurisdiction === undefined
+              ? {}
+              : { jurisdiction: context.jurisdiction as "TR" }),
+            ...(context.evaluation_date === undefined
+              ? {}
+              : { evaluation_date: context.evaluation_date as string }),
+            ...(context.request_id === undefined
+              ? {}
+              : { request_id: context.request_id as string }),
+            ...(context.policy_version === undefined
+              ? {}
+              : { policy_version: context.policy_version as string }),
+          },
+        }),
   };
 }
 
@@ -1065,14 +1157,12 @@ export function buildLocalApiPayload(
 ): LocalApiResponse | null {
   const routeKey = routeSegments.join("/");
 
-  const isRecord = typeof payload === "object" && payload !== null;
-
   if (routeKey === "v1/eligibility-check") {
-    if (!isRecord) {
-      return missingResponse(routeKey);
+    const request = normalizeEligibilityCheckRequest(payload);
+    if (!request) {
+      return invalidEligibilityRequestResponse();
     }
 
-    const request = payload as EligibilityCheckRequest;
     switch (request.benefit_code) {
       case "TR_HOME_CARE_ALLOWANCE":
         return buildHomeCare(request);
@@ -1087,7 +1177,7 @@ export function buildLocalApiPayload(
   }
 
   if (routeKey === "evaluate/income") {
-    if (!isRecord) {
+    if (!isRecord(payload)) {
       return missingResponse(routeKey);
     }
 

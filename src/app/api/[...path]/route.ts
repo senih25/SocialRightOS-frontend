@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
-import { buildLocalApiPayload } from "@/lib/local-api-fallback";
+import {
+  buildLocalApiPayload,
+  invalidEligibilityRequestResponse,
+  normalizeEligibilityCheckRequest,
+} from "@/lib/local-api-fallback";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -74,6 +78,20 @@ async function forward(request: Request, context: RouteContext): Promise<Respons
   const backendBaseUrl = getConfiguredBackendBaseUrl();
   const sourceUrl = new URL(request.url);
   const bodyState = await readRequestBody(request);
+  const routeKey = path.join("/");
+
+  if (
+    request.method === "POST" &&
+    routeKey === "v1/eligibility-check" &&
+    !normalizeEligibilityCheckRequest(bodyState.json)
+  ) {
+    return NextResponse.json(invalidEligibilityRequestResponse(), {
+      status: 400,
+      headers: {
+        "X-Local-Fallback": "1",
+      },
+    });
+  }
 
   if (backendBaseUrl) {
     const targetPath = path.length > 0 ? `/api/${path.join("/")}` : "/api";
