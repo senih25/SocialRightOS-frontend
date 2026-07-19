@@ -70,6 +70,7 @@ export type RightsGuidanceProviderResult = {
 
 export interface RightsGuidanceProvider {
   readonly mode: "MOCK" | "LIVE";
+  readonly budgetGuarded?: true;
   generate(input: RightsGuidanceInput): Promise<RightsGuidanceProviderResult>;
 }
 
@@ -502,7 +503,7 @@ export async function generateRightsGuidanceExplanation(
   provider: RightsGuidanceProvider,
   options: { enabled: boolean },
 ): Promise<RightsGuidanceRenderModel> {
-  if (!options.enabled || provider.mode === "LIVE") {
+  if (!options.enabled || (provider.mode === "LIVE" && provider.budgetGuarded !== true)) {
     return buildUnavailableRightsGuidanceExplanation();
   }
 

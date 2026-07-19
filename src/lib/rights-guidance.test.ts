@@ -392,7 +392,7 @@ test("kill switch suppresses generation without invoking provider", async () => 
   assert.equal(invocationCount, 0);
 });
 
-test("live providers remain disabled in the offline vertical slice", async () => {
+test("unguarded live providers remain fail-closed", async () => {
   let invocationCount = 0;
   const provider: RightsGuidanceProvider = {
     mode: "LIVE",
