@@ -82,11 +82,28 @@ not a globally durable budget across serverless instances or restarts. Public en
 therefore remains blocked until the same `RightsGuidanceAtomicBudgetStore` contract is
 backed by a durable transactional service.
 
+A driver-independent PostgreSQL adapter and migration now provide that durable service
+boundary in code. All reserve, settle, release, client-window and assessment-deduplication
+operations execute inside schema-owned PostgreSQL functions. This keeps atomicity in the
+database and allows either a Neon HTTP query function or a conventional server-side `pg`
+query function to be injected without importing database credentials into shared code.
+The functions use a fixed safe `search_path`; direct table access and default public
+function execution are revoked. Deployment must use a dedicated non-owner role granted
+only `USAGE` on the `socialright` schema and `EXECUTE` on the six named functions. Table
+permissions, schema creation, ownership and broad database privileges must not be granted.
+
+No Neon project, database credential or production resource was created in this phase.
+The migration has not yet been executed against a live PostgreSQL instance because no
+approved `DATABASE_URL`, local `psql`, or running Docker database was available. Runtime
+durability and concurrency therefore remain unverified rather than assumed.
+
 ```text
 ATOMIC_SINGLE_PROCESS_STORE=IMPLEMENTED
 DUPLICATE_ASSESSMENT_GENERATION_GUARD=IMPLEMENTED
 PER_CLIENT_ATTEMPT_WINDOW=IMPLEMENTED
-DURABLE_MULTI_INSTANCE_STORE=NOT_IMPLEMENTED
+DURABLE_MULTI_INSTANCE_STORE_CODE=IMPLEMENTED
+DURABLE_MULTI_INSTANCE_STORE_RUNTIME=NEEDS_VERIFICATION
+LIVE_POSTGRES_TRANSACTION_TEST=NOT_RUN
 PUBLIC_ENABLEMENT=BLOCKED_BY_DURABLE_BUDGET_STORE
 ```
 
@@ -109,8 +126,9 @@ RESPONSE_STORED=NO
 
 ## Next gate
 
-1. Back both atomic interfaces with one durable transactional store.
-2. Add one synthetic server route behind `AI_GUIDANCE_ENABLED=false` by default.
-3. Run semantic-fidelity and cost-exhaustion end-to-end tests.
-4. Add a single GSS pilot UI only after explicit approval.
-5. Keep production deployment and public AI enablement as separate approvals.
+1. Apply the migration to an isolated approved PostgreSQL branch/database.
+2. Run real concurrent reservation, deduplication and rollback tests.
+3. Add one synthetic server route behind `AI_GUIDANCE_ENABLED=false` by default.
+4. Run semantic-fidelity and cost-exhaustion end-to-end tests.
+5. Add a single GSS pilot UI only after explicit approval.
+6. Keep production deployment and public AI enablement as separate approvals.
