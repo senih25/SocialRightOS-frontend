@@ -92,7 +92,9 @@ export type RightsGuidanceValidationIssue =
   | "INVALID_RESPONSE_SHAPE"
   | "UNKNOWN_EVIDENCE_ID"
   | "DUPLICATE_EVIDENCE_ID"
+  | "EVIDENCE_COVERAGE_MISMATCH"
   | "UNSUPPORTED_CONCRETE_CLAIM"
+  | "SEMANTIC_FIDELITY_VIOLATION"
   | "PROHIBITED_CERTAINTY_CLAIM";
 
 export type RightsGuidanceValidationResult =
@@ -138,10 +140,37 @@ const applicationDisclaimer =
   "Bu açıklama resmî bir uygunluk kararı değildir ve ön değerlendirme sonucunu değiştirmez.";
 
 const prohibitedCertaintyPatterns = [
+  /\bkesin(?:dir|likle)?\b/iu,
+  /\bgaranti(?:dir|len(?:miştir|ir|iyor)?)?\b/iu,
+  /\b(?:mutlaka|şüphesiz|tartışmasız)\b/iu,
+  /\b(?:bağlayıcı(?:dır)?|nihai)\b/iu,
   /kesin(?:likle)?\s+hak\s+kazan/iu,
+  /hak\s+kazan/iu,
   /resm[iî]\s+(?:uygunluk|hak)\s+karar/iu,
+  /resm[iî]\s+(?:bir\s+)?karar/iu,
+  /(?:nihai|bağlayıcı)\s+(?:uygunluk|hak|başvuru|değerlendirme)\s+karar/iu,
   /başvurunuz\s+(?:kesin\s+)?onaylan/iu,
   /hukuken\s+hak\s+sahib/iu,
+  /\b(?:uygundur|uygun\s+değildir|hak\s+kazanmıştır|hak\s+kazanmamıştır)\b/iu,
+];
+
+const negativeMeaningPhrases = [
+  "sağlanmamış",
+  "sağlanmış değil",
+  "karşılanmamış",
+  "karşılanmış değil",
+  "uygun değil",
+  "mevcut değil",
+  "bulunmuyor",
+  "yok",
+];
+
+const positiveMeaningPhrases = [
+  "sağlanmış",
+  "karşılanmış",
+  "uygun görün",
+  "mevcut görün",
+  "bulunuyor",
 ];
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -280,6 +309,48 @@ function hasUnsupportedConcreteClaim(statement: string, approvedText: string): b
   return [...extractConcreteTokens(statement)].some((token) => !approved.has(token));
 }
 
+function meaningPolarity(value: string): "POSITIVE" | "NEGATIVE" | "UNKNOWN" {
+  const normalized = value.toLocaleLowerCase("tr-TR");
+  if (negativeMeaningPhrases.some((phrase) => normalized.includes(phrase))) {
+    return "NEGATIVE";
+  }
+  if (positiveMeaningPhrases.some((phrase) => normalized.includes(phrase))) {
+    return "POSITIVE";
+  }
+  return "UNKNOWN";
+}
+
+function reversesApprovedMeaning(statement: string, approvedText: string): boolean {
+  const approvedPolarity = meaningPolarity(approvedText);
+  const generatedPolarity = meaningPolarity(statement);
+  return (
+    approvedPolarity !== "UNKNOWN" &&
+    generatedPolarity !== "UNKNOWN" &&
+    approvedPolarity !== generatedPolarity
+  );
+}
+
+function hasExactEvidenceCoverage(
+  items: readonly { evidenceId: string }[],
+  allowed: ReadonlyMap<string, string>,
+): boolean {
+  return (
+    items.length === allowed.size &&
+    items.every((item) => allowed.has(item.evidenceId))
+  );
+}
+
+function deepFreeze<T>(value: T): T {
+  if (typeof value !== "object" || value === null || Object.isFrozen(value)) {
+    return value;
+  }
+
+  for (const nestedValue of Object.values(value)) {
+    deepFreeze(nestedValue);
+  }
+  return Object.freeze(value);
+}
+
 function parseExplanationItems(
   value: unknown,
   allowed: Map<string, string>,
@@ -316,6 +387,8 @@ function parseExplanationItems(
       issues.add("UNKNOWN_EVIDENCE_ID");
     } else if (hasUnsupportedConcreteClaim(plainLanguageText, approvedText)) {
       issues.add("UNSUPPORTED_CONCRETE_CLAIM");
+    } else if (reversesApprovedMeaning(plainLanguageText, approvedText)) {
+      issues.add("SEMANTIC_FIDELITY_VIOLATION");
     }
     if (prohibitedCertaintyPatterns.some((pattern) => pattern.test(plainLanguageText))) {
       issues.add("PROHIBITED_CERTAINTY_CLAIM");
@@ -349,6 +422,19 @@ export function validateRightsGuidanceExplanation(
     nextStepById,
     issues,
   );
+
+  if (
+    reasonExplanations &&
+    !hasExactEvidenceCoverage(reasonExplanations, reasonById)
+  ) {
+    issues.add("EVIDENCE_COVERAGE_MISMATCH");
+  }
+  if (
+    nextStepExplanations &&
+    !hasExactEvidenceCoverage(nextStepExplanations, nextStepById)
+  ) {
+    issues.add("EVIDENCE_COVERAGE_MISMATCH");
+  }
 
   if (issues.size > 0 || !reasonExplanations || !nextStepExplanations) {
     return { ok: false, issues: [...issues] };
@@ -421,8 +507,10 @@ export async function generateRightsGuidanceExplanation(
   }
 
   try {
-    const result = await provider.generate(input);
-    const validation = validateRightsGuidanceExplanation(result.output, input);
+    const validationInput = structuredClone(input);
+    const providerInput = deepFreeze(structuredClone(input));
+    const result = await provider.generate(providerInput);
+    const validation = validateRightsGuidanceExplanation(result.output, validationInput);
     return validation.ok ? validation.value : buildUnavailableRightsGuidanceExplanation();
   } catch {
     return buildUnavailableRightsGuidanceExplanation();

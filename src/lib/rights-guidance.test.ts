@@ -152,6 +152,73 @@ test("fails closed for prohibited certainty claims", async () => {
   }
 });
 
+test("fails closed when generated guidance reverses approved meaning", async () => {
+  const input = buildInput();
+  const raw = (await validRawOutput()) as {
+    reasonExplanations: Array<{ evidenceId: string; plainLanguageText: string }>;
+  };
+  raw.reasonExplanations[0].plainLanguageText =
+    "Sentetik koşul sağlanmamış görünüyor.";
+
+  const validation = validateRightsGuidanceExplanation(raw, input);
+  assert.equal(validation.ok, false);
+
+  const negativeCatalog: RightsGuidanceApprovedCatalog = {
+    ...syntheticCatalog,
+    reasons: [
+      {
+        evidenceId: "EVIDENCE_SYNTHETIC_REASON",
+        approvedText: "Sentetik koşul sağlanmamış görünüyor.",
+      },
+    ],
+  };
+  const negativeInput = buildRightsGuidanceInput(selection, negativeCatalog);
+  const reversedNegativeOutput = {
+    reasonExplanations: [
+      {
+        evidenceId: "EVIDENCE_SYNTHETIC_REASON",
+        plainLanguageText: "Sentetik koşul sağlanmış görünüyor.",
+      },
+    ],
+    nextStepExplanations: [
+      {
+        evidenceId: "SOURCE_SYNTHETIC_CHANNEL",
+        plainLanguageText: "Güncel adımı sentetik resmî kanaldan doğrulayın.",
+      },
+    ],
+  };
+
+  assert.equal(
+    validateRightsGuidanceExplanation(reversedNegativeOutput, negativeInput).ok,
+    false,
+  );
+
+  const negatedPositiveForm = structuredClone(raw);
+  negatedPositiveForm.reasonExplanations[0].plainLanguageText =
+    "Sentetik koşul sağlanmış değil.";
+  assert.equal(validateRightsGuidanceExplanation(negatedPositiveForm, input).ok, false);
+});
+
+test("fails closed for official eligibility decisions and guarantees", async () => {
+  const input = buildInput();
+
+  for (const plainLanguageText of [
+    "Resmî uygunluk kararı verilmiştir.",
+    "Bu ödeme garanti edilmiştir.",
+    "Başvuru sahibi uygundur.",
+    "Bu sonuç bağlayıcıdır.",
+    "Bu koşul nedeniyle hak kazandınız.",
+  ]) {
+    const raw = (await validRawOutput()) as {
+      reasonExplanations: Array<{ evidenceId: string; plainLanguageText: string }>;
+    };
+    raw.reasonExplanations[0].plainLanguageText = plainLanguageText;
+
+    const validation = validateRightsGuidanceExplanation(raw, input);
+    assert.equal(validation.ok, false, plainLanguageText);
+  }
+});
+
 test("rejects extra provider output keys including free-form summary and limitations", async () => {
   const input = buildInput();
   const raw = (await validRawOutput()) as Record<string, unknown>;
@@ -196,6 +263,46 @@ test("rejects duplicate evidence ids in provider output", async () => {
   }
 });
 
+test("rejects the entire output when any selected evidence id is omitted", async () => {
+  const catalog: RightsGuidanceApprovedCatalog = {
+    ...syntheticCatalog,
+    reasons: [
+      ...syntheticCatalog.reasons,
+      {
+        evidenceId: "EVIDENCE_SYNTHETIC_SECOND_REASON",
+        approvedText: "İkinci sentetik koşul da sağlanmış görünüyor.",
+      },
+    ],
+  };
+  const input = buildRightsGuidanceInput(
+    {
+      ...selection,
+      reasonEvidenceIds: [
+        "EVIDENCE_SYNTHETIC_REASON",
+        "EVIDENCE_SYNTHETIC_SECOND_REASON",
+      ],
+    },
+    catalog,
+  );
+  const raw = {
+    reasonExplanations: [
+      {
+        evidenceId: "EVIDENCE_SYNTHETIC_REASON",
+        plainLanguageText: "Sentetik koşul sağlanmış görünüyor.",
+      },
+    ],
+    nextStepExplanations: [
+      {
+        evidenceId: "SOURCE_SYNTHETIC_CHANNEL",
+        plainLanguageText: "Güncel adımı sentetik resmî kanaldan doğrulayın.",
+      },
+    ],
+  };
+
+  const validation = validateRightsGuidanceExplanation(raw, input);
+  assert.equal(validation.ok, false);
+});
+
 test("accepts empty approved evidence sections", () => {
   const emptyCatalog: RightsGuidanceApprovedCatalog = {
     ...syntheticCatalog,
@@ -234,6 +341,40 @@ test("generation cannot mutate the deterministic assessment input", async () => 
 
   assert.deepEqual(input, before);
   assert.equal(input.coarseDisplayStatus, "CONDITION_APPEARS_SATISFIED");
+});
+
+test("provider receives an isolated deeply frozen input", async () => {
+  const input = buildInput();
+  const before = structuredClone(input);
+  let providerInputWasRootFrozen = false;
+  let providerArrayWasFrozen = false;
+  let providerEvidenceWasFrozen = false;
+  let providerReceivedClone = false;
+  let mutationWasRejected = false;
+  const provider: RightsGuidanceProvider = {
+    mode: "MOCK",
+    async generate(providerInput) {
+      providerReceivedClone = providerInput !== input;
+      providerInputWasRootFrozen = Object.isFrozen(providerInput);
+      providerArrayWasFrozen = Object.isFrozen(providerInput.approvedReasons);
+      providerEvidenceWasFrozen = Object.isFrozen(providerInput.approvedReasons[0]);
+      try {
+        providerInput.approvedReasons[0].approvedText = "Mutated provider text";
+      } catch {
+        mutationWasRejected = true;
+      }
+      return new DeterministicRightsGuidanceMockProvider().generate(providerInput);
+    },
+  };
+
+  await generateRightsGuidanceExplanation(input, provider, { enabled: true });
+
+  assert.equal(providerInputWasRootFrozen, true);
+  assert.equal(providerArrayWasFrozen, true);
+  assert.equal(providerEvidenceWasFrozen, true);
+  assert.equal(providerReceivedClone, true);
+  assert.equal(mutationWasRejected, true);
+  assert.deepEqual(input, before);
 });
 
 test("kill switch suppresses generation without invoking provider", async () => {

@@ -13,6 +13,9 @@ DETERMINISTIC_ASSESSMENT_RESULT=UNCHANGED
 FREE_FORM_PROVIDER_SUMMARY=REMOVED
 PROVIDER_OWNED_LIMITATIONS=REMOVED
 APPLICATION_OWNED_COPY=PASS
+SEMANTIC_FIDELITY_GUARD=PASS
+EXACT_EVIDENCE_COVERAGE=PASS
+PROVIDER_INPUT_ISOLATION=PASS
 ```
 
 ## Güvenlik sınırı
@@ -30,8 +33,8 @@ explicit evidence-id selection
 → RightsGuidanceInput
 → provider
 → strict two-collection response-shape validation
-→ evidence-id validation
-→ concrete-claim and certainty scan
+→ exact selected-evidence coverage validation
+→ concrete-claim, semantic polarity and certainty scan
 → allowlisted render model or UNAVAILABLE
 ```
 
@@ -50,9 +53,33 @@ Live provider, mevcut offline orchestrator tarafından bilinçli olarak `UNAVAIL
 davranışına zorlanır.
 
 Provider çıktısında serbest özet, status, sınırlama veya disclaimer kabul edilmez. Ek alan,
-bilinmeyen/tekrarlanan/yanlış bölüme ait kanıt kimliği, desteklenmeyen somut iddia ve kesinlik
-dili fail-closed olarak reddedilir. Boş gerekçe veya sonraki-adım koleksiyonları geçerli bir
-durum olarak korunur.
+eksik/fazla/bilinmeyen/tekrarlanan/yanlış bölüme ait kanıt kimliği, desteklenmeyen somut
+iddia, onaylı anlamın tersine çevrilmesi, resmî karar ve kesinlik/garanti dili fail-closed
+olarak reddedilir. Boş gerekçe veya sonraki-adım koleksiyonları yalnız seçilen ilgili kanıt
+kümesi de boşsa geçerlidir.
+
+Provider girdisi ana girdiden iki ayrı `structuredClone()` ile ayrılır. Provider kopyası
+özyinelemeli olarak dondurulur; doğrulama ise provider'ın erişemediği ikinci kopyaya karşı
+yapılır. Böylece in-process provider mutasyon girişimi ana girdiyi veya doğrulama temelini
+değiştiremez.
+
+## Phase 1.1 güvenlik kapanışı
+
+Timestamp'li keşif, PoC, ledger ve ara raporlar yalnız işletim sistemi geçici dizininde
+üretildi; repository içine alınmadı. Kalıcı kaynak olarak bu küratörlü özet ve adversarial
+regresyon testleri korunur. Çalışma ortamı recursive temp silme komutunu çalıştırmadan
+engellediği için ham dizin repository dışında işletim sistemi temp yaşam döngüsüne bırakıldı.
+Repository köküne taşınmasını önlemek üzere hem `/.codex-security-scans/` hem de
+`/codex-security-scans/` ignore edildi.
+
+```text
+CURATED_SECURITY_REPORT=KEEP
+RAW_SCAN_ARTIFACTS=IGNORED_OUTSIDE_REPOSITORY
+RAW_SCAN_ARTIFACT_REPOSITORY_COUNT=0
+RAW_TEMP_REMOVAL=BLOCKED_BY_EXECUTION_POLICY
+LIVE_API_CALL_COUNT=0
+PAID_API_USAGE=0
+```
 
 ## Sonraki kapılar
 

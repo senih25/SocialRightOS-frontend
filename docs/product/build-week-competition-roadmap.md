@@ -201,7 +201,7 @@ Deterministic controls:
 
 - exact JSON schema and key set;
 - known and non-duplicated evidence IDs;
-- evidence-set membership;
+- exact selected-evidence set equality;
 - output length and collection limits;
 - prohibited output/action types;
 - no raw carrier fields;
@@ -278,6 +278,31 @@ ASSESSMENT_CONTRACT_CHANGE_COUNT=0
 EXISTING_USER_BEHAVIOR_CHANGE_COUNT=0
 NEW_GUIDANCE_TESTS=19/19_PASS
 LOCAL_QUALITY=PASS
+```
+
+### Phase 1.1 - Rights guidance hardening
+
+The pre-live security review produced three latent boundary findings. They are closed in
+the offline contract before any live model or user-facing integration is authorized:
+
+- bidirectional positive/negative meaning reversal is rejected;
+- official eligibility decisions, guarantees and elevated certainty are rejected;
+- returned evidence IDs must equal the selected reason and next-step evidence sets;
+- provider input is independently cloned and deeply frozen;
+- validation uses a second clone that the provider cannot access;
+- raw scan artifacts remain outside the repository and are covered by root ignore rules.
+
+Gate:
+
+```text
+PHASE_1_1_HARDENING=COMPLETED_LOCALLY
+SEMANTIC_FIDELITY_GUARD=PASS
+EXACT_EVIDENCE_COVERAGE=PASS
+PROVIDER_INPUT_ISOLATION=PASS
+RAW_SCAN_ARTIFACT_POLICY=PASS
+NEW_GUIDANCE_TESTS=23/23_PASS
+LIVE_API_CALL_COUNT=0
+PAID_API_USAGE=0
 ```
 
 ### Phase 2 - Live API and spend-control preflight
