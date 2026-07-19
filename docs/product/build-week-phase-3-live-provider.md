@@ -78,9 +78,9 @@ conservative per-request reservation that covers the fixed token limits.
 
 The reference store serializes reserve, settle and release operations inside one Node.js
 process. It is suitable for local evaluation and a single long-lived demo process. It is
-not a globally durable budget across serverless instances or restarts. Public enablement
-therefore remains blocked until the same `RightsGuidanceAtomicBudgetStore` contract is
-backed by a durable transactional service.
+not a globally durable budget across serverless instances or restarts. The PostgreSQL
+implementation below supplies the durable alternative, but public enablement remains
+blocked until it is connected to and verified on an approved isolated Neon runtime.
 
 A driver-independent PostgreSQL adapter and migration now provide that durable service
 boundary in code. All reserve, settle, release, client-window and assessment-deduplication
@@ -93,18 +93,27 @@ only `USAGE` on the `socialright` schema and `EXECUTE` on the six named function
 permissions, schema creation, ownership and broad database privileges must not be granted.
 
 No Neon project, database credential or production resource was created in this phase.
-The migration has not yet been executed against a live PostgreSQL instance because no
-approved `DATABASE_URL`, local `psql`, or running Docker database was available. Runtime
-durability and concurrency therefore remain unverified rather than assumed.
+The migration was executed against an ephemeral local PostgreSQL 16 container bound only
+to `127.0.0.1`, with no persistent volume. Six real integration tests verified concurrent
+hard-cap enforcement, actual-cost settlement, transactional rollback, one-generation-per-
+assessment behavior, per-client limiting and public privilege revocation. The container
+was removed immediately after the run.
+
+The repository includes a dedicated integration command, `npm run test:postgres-guidance`,
+which requires an explicit server-only `DATABASE_URL`. It applies the migration and verifies
+real concurrent hard-cap enforcement, settlement, rollback, assessment deduplication,
+per-client limiting and default-public privilege revocation. It is intentionally excluded
+from the ordinary unit suite so CI cannot silently point at an unintended database.
 
 ```text
 ATOMIC_SINGLE_PROCESS_STORE=IMPLEMENTED
 DUPLICATE_ASSESSMENT_GENERATION_GUARD=IMPLEMENTED
 PER_CLIENT_ATTEMPT_WINDOW=IMPLEMENTED
 DURABLE_MULTI_INSTANCE_STORE_CODE=IMPLEMENTED
-DURABLE_MULTI_INSTANCE_STORE_RUNTIME=NEEDS_VERIFICATION
-LIVE_POSTGRES_TRANSACTION_TEST=NOT_RUN
-PUBLIC_ENABLEMENT=BLOCKED_BY_DURABLE_BUDGET_STORE
+DURABLE_MULTI_INSTANCE_STORE_RUNTIME=LOCAL_POSTGRES_VERIFIED
+LOCAL_POSTGRES_TRANSACTION_TEST=6/6_PASS
+NEON_RUNTIME=NEEDS_VERIFICATION
+PUBLIC_ENABLEMENT=BLOCKED_BY_NEON_RUNTIME_AND_ROUTE_GATES
 ```
 
 ## Phase 2 preflight evidence
@@ -126,8 +135,8 @@ RESPONSE_STORED=NO
 
 ## Next gate
 
-1. Apply the migration to an isolated approved PostgreSQL branch/database.
-2. Run real concurrent reservation, deduplication and rollback tests.
+1. Apply the migration to an isolated approved Neon branch/database with a least-privilege role.
+2. Re-run the six integration tests against that isolated Neon branch.
 3. Add one synthetic server route behind `AI_GUIDANCE_ENABLED=false` by default.
 4. Run semantic-fidelity and cost-exhaustion end-to-end tests.
 5. Add a single GSS pilot UI only after explicit approval.

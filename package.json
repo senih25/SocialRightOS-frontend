@@ -14,6 +14,7 @@
     "start:next": "next start -H 0.0.0.0 -p 8080",
     "lint": "eslint src scripts next.config.ts eslint.config.mjs postcss.config.mjs",
     "test": "node --experimental-strip-types --test src/**/*.test.ts tests/validation/*.test.mjs",
+    "test:postgres-guidance": "node --experimental-strip-types --test tests/integration/postgres-guidance.integration.ts",
     "typecheck": "tsc --noEmit",
     "check:diff": "git diff --check",
     "check:secrets": "node scripts/verify-no-secrets.mjs",
@@ -22,12 +23,14 @@
   },
   "dependencies": {
     "next": "16.2.10",
+    "pg": "^8.22.0",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^25",
+    "@types/pg": "^8.20.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
