@@ -32,6 +32,17 @@ New work in this phase is limited to:
 - a mandatory budget-guard brand at the orchestrator boundary;
 - kill-switch-before-reservation and reservation-before-network ordering;
 - an atomic single-process reference budget store and adversarial tests.
+- an optional minimized operational-event hook with no prompt or identity fields.
+
+Phase 3.1 additionally provides a provider-independent atomic request guard. It accepts
+only HMAC-SHA-256-shaped pseudonymous client and assessment-version keys, enforces a bounded
+per-client attempt window, rejects concurrent duplicate assessment generations and keeps
+completed assessment versions closed to regeneration. Raw email addresses, backend
+decision identifiers and assessment payloads are not valid guard keys.
+
+The future server route must derive these keys with a dedicated server-only HMAC secret;
+plain SHA-256 of an email address, IP address or backend identifier is not permitted. The
+HMAC input and secret must not be recorded by the operational-event hook.
 
 ## Request minimization
 
@@ -54,6 +65,10 @@ coverage, semantic polarity, prohibited certainty language, concrete-claim conta
 the two-collection response shape. Any provider, budget or validation failure returns the
 existing synthetic `UNAVAILABLE` model.
 
+Operational events are opt-in and restricted to `DISABLED`, `BUDGET_BLOCKED`, `FAILED`,
+or `COMPLETED` with aggregate input/output token counts. The default hook writes nothing;
+prompt content, evidence IDs, client keys, assessment keys and provider errors are excluded.
+
 ## Spend-control boundary
 
 The accepted workspace ceiling is represented as `5_000_000` USD micros ($5). Prices are
@@ -69,6 +84,8 @@ backed by a durable transactional service.
 
 ```text
 ATOMIC_SINGLE_PROCESS_STORE=IMPLEMENTED
+DUPLICATE_ASSESSMENT_GENERATION_GUARD=IMPLEMENTED
+PER_CLIENT_ATTEMPT_WINDOW=IMPLEMENTED
 DURABLE_MULTI_INSTANCE_STORE=NOT_IMPLEMENTED
 PUBLIC_ENABLEMENT=BLOCKED_BY_DURABLE_BUDGET_STORE
 ```
@@ -92,7 +109,7 @@ RESPONSE_STORED=NO
 
 ## Next gate
 
-1. Back the budget interface with a durable transactional store.
+1. Back both atomic interfaces with one durable transactional store.
 2. Add one synthetic server route behind `AI_GUIDANCE_ENABLED=false` by default.
 3. Run semantic-fidelity and cost-exhaustion end-to-end tests.
 4. Add a single GSS pilot UI only after explicit approval.

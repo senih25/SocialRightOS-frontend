@@ -22,6 +22,12 @@ type OpenAIResponsePayload = {
   usage?: unknown;
 };
 
+export type RightsGuidanceOperationalEvent =
+  | { type: "DISABLED" }
+  | { type: "BUDGET_BLOCKED" }
+  | { type: "FAILED" }
+  | { type: "COMPLETED"; inputTokens: number; outputTokens: number };
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -215,12 +221,14 @@ export class BudgetedRightsGuidanceLiveProvider implements RightsGuidanceProvide
   private readonly budgetStore: RightsGuidanceAtomicBudgetStore;
   private readonly maximumRequestCostMicros: number;
   private readonly isEnabled: () => boolean;
+  private readonly observe: (event: RightsGuidanceOperationalEvent) => void;
 
   constructor(
     delegate: RightsGuidanceProvider,
     budgetStore: RightsGuidanceAtomicBudgetStore,
     maximumRequestCostMicros: number,
     isEnabled: () => boolean,
+    observe: (event: RightsGuidanceOperationalEvent) => void = () => undefined,
   ) {
     if (delegate.mode !== "LIVE") throw new Error("Live provider required");
     assertPositiveSafeInteger(maximumRequestCostMicros, "request cost reservation");
@@ -228,19 +236,40 @@ export class BudgetedRightsGuidanceLiveProvider implements RightsGuidanceProvide
     this.budgetStore = budgetStore;
     this.maximumRequestCostMicros = maximumRequestCostMicros;
     this.isEnabled = isEnabled;
+    this.observe = observe;
+  }
+
+  private emit(event: RightsGuidanceOperationalEvent): void {
+    try {
+      this.observe(event);
+    } catch {
+      // Observability must never change the fail-closed request outcome.
+    }
   }
 
   async generate(input: RightsGuidanceInput): Promise<RightsGuidanceProviderResult> {
-    if (!this.isEnabled()) throw new Error("AI guidance is disabled");
+    if (!this.isEnabled()) {
+      this.emit({ type: "DISABLED" });
+      throw new Error("AI guidance is disabled");
+    }
     const reservation = await this.budgetStore.reserve(this.maximumRequestCostMicros);
-    if (!reservation) throw new Error("AI guidance budget unavailable");
+    if (!reservation) {
+      this.emit({ type: "BUDGET_BLOCKED" });
+      throw new Error("AI guidance budget unavailable");
+    }
 
     try {
       const result = await this.delegate.generate(input);
       await this.budgetStore.settle(reservation.reservationId, result.usage);
+      this.emit({
+        type: "COMPLETED",
+        inputTokens: result.usage.inputTokens,
+        outputTokens: result.usage.outputTokens,
+      });
       return result;
     } catch {
       await this.budgetStore.release(reservation.reservationId).catch(() => undefined);
+      this.emit({ type: "FAILED" });
       throw new Error("AI guidance unavailable");
     }
   }

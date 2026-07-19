@@ -256,3 +256,33 @@ test("releases a reservation after provider failure without exposing details", a
   assert.equal(releaseCount, 1);
   assert.equal(JSON.stringify(result).includes("secret provider detail"), false);
 });
+
+test("operational events contain no prompt, identity or provider detail", async () => {
+  const events: unknown[] = [];
+  const store: RightsGuidanceAtomicBudgetStore = {
+    async reserve() { return { reservationId: "synthetic-reservation" }; },
+    async settle() {},
+    async release() {},
+  };
+  const delegate: RightsGuidanceProvider = {
+    mode: "LIVE",
+    async generate() {
+      return { output: validOutput, usage: { inputTokens: 210, outputTokens: 112 } };
+    },
+  };
+  const provider = new BudgetedRightsGuidanceLiveProvider(
+    delegate,
+    store,
+    1_000,
+    () => true,
+    (event) => events.push(event),
+  );
+
+  const result = await generateRightsGuidanceExplanation(input, provider, { enabled: true });
+  assert.equal(result.overallStatus, "EXPLANATION_AVAILABLE");
+  assert.deepEqual(events, [{ type: "COMPLETED", inputTokens: 210, outputTokens: 112 }]);
+  const serialized = JSON.stringify(events);
+  assert.equal(serialized.includes("EVIDENCE_SYNTHETIC_REASON"), false);
+  assert.equal(serialized.includes("synthetic-project-key"), false);
+  assert.equal(serialized.includes("assessment"), false);
+});
