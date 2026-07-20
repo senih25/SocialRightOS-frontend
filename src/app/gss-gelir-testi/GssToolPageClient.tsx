@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ToolGuidanceSurface } from "@/components/ToolGuidanceSurface";
+import { BuildWeekGuidancePanel } from "@/components/BuildWeekGuidancePanel";
 import { SafeErrorPanel } from "@/components/ui/SafeErrorPanel";
 import { checkEligibility } from "@/lib/api";
 import {
@@ -309,10 +310,11 @@ export function GssToolPageClient() {
           {error ? <SafeErrorPanel error={error} focusRef={errorRef} /> : null}
 
           {result && presentation ? (
-            <section
-              className={`mt-6 rounded-3xl border p-6 ${displayTone}`}
-              aria-live="polite"
-              aria-atomic="true"
+            <>
+              <section
+                className={`mt-6 rounded-3xl border p-6 ${displayTone}`}
+                aria-live="polite"
+                aria-atomic="true"
               aria-label={presentation.title}
               data-presentation-outcome={presentation.outcome}
             >
@@ -422,7 +424,9 @@ export function GssToolPageClient() {
                   <ToolGuidanceSurface model={guidanceModel} tool="gss" />
                 </>
               ) : null}
-            </section>
+              </section>
+              {!isUnavailable ? <BuildWeekGuidancePanel /> : null}
+            </>
           ) : null}
         </section>
 
