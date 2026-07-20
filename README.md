@@ -12,6 +12,85 @@ Bireylerin Türkiye’deki sosyal haklarını anlamalarına ve bu haklara erişm
 
 ---
 
+## OpenAI Build Week 2026
+
+SocialRightOS is being prepared for the **Apps for Your Life** category with a narrow,
+competition-period extension: an evidence-bound GPT-5.6 explanation layer for a
+deterministic social-rights preliminary assessment.
+
+**Public judge demo:** [https://social-right-os-frontend.vercel.app/gss-gelir-testi](https://social-right-os-frontend.vercel.app/gss-gelir-testi)
+
+### The problem
+
+Eligibility results can be difficult to understand. A generic model-generated answer is
+not safe enough for this domain because it can overstate certainty, invent evidence or
+appear to make an official decision.
+
+### The authority boundary
+
+The existing deterministic assessment remains the only source of the preliminary result.
+GPT-5.6 receives only approved synthetic evidence and may restate one reason and one next
+step in plain language. It cannot receive raw form answers, decision IDs or validation
+payloads, and it cannot make, reverse or upgrade the eligibility outcome. Invalid output
+is rejected as `UNAVAILABLE` while the deterministic result remains unchanged.
+
+### What was added during Build Week
+
+The product and its assessment tools existed before the competition extension. The
+competition work is the commit range
+[`1cee954...fd473bc`](https://github.com/senih25/SocialRightOS-frontend/compare/1cee954469bb9bf1c452271510c9f1a80afcc2b0...fd473bced8ddbe4cc6080648ae26542b82bcc284),
+which adds:
+
+- the evidence-bound explanation contract and adversarial semantic validation;
+- the server-only GPT-5.6 provider and fail-closed API route;
+- exact evidence-ID coverage and provider-input isolation;
+- atomic PostgreSQL request, idempotency and USD 5 hard-spend guards;
+- a public edge rate limit of 10 requests per 10 minutes per IP;
+- the accessible synthetic GSS explanation panel and cross-benefit contract proof.
+
+### Safe judge walkthrough
+
+1. Open the public GSS demo above.
+2. Use fabricated values only; do not enter a real name, identifier, health record or
+   application data.
+3. Complete the preliminary assessment.
+4. In the Build Week panel, select **Sentetik açıklamayı oluştur** once.
+5. Confirm that the explanation contains evidence-linked reason and next-step text and
+   still states that it is not an official eligibility decision.
+
+The Build Week panel uses a fixed synthetic evidence fixture. Form answers and the
+preliminary result are not sent to GPT-5.6.
+
+### Human, Codex and GPT-5.6 roles
+
+| Actor | Responsibility |
+| --- | --- |
+| Human | Product scope, legal and privacy boundaries, approved evidence, budget and release decisions |
+| Codex | Architecture, implementation, tests, security hardening and reproducible evidence |
+| GPT-5.6 | Plain-language restatement of approved synthetic evidence only |
+
+### Reproduce the quality gates
+
+```bash
+npm ci
+npm run lint
+npm test
+npm run typecheck
+npm run build
+npm run check:secrets
+npm run check:diff
+```
+
+The final implementation pipeline passed `276/276` tests on Node.js 22. Full deployment,
+provenance, cost-control and known-limitation evidence is recorded in
+[the Build Week submission evidence](docs/product/build-week-submission-evidence.md).
+
+Known limitations: this is preliminary guidance, not a government decision; only one
+synthetic GSS AI scenario is enabled; impact has not been measured at population scale;
+and no claim is made that every possible semantic violation or hallucination is detected.
+
+---
+
 ## 🌍 What is this?
 
 Sosyal Hak Rehberi, sosyal hakları:
@@ -217,4 +296,3 @@ npm run dev
 
 This repository is proprietary and distributed under an **All Rights Reserved** notice.
 See [LICENSE](LICENSE).
-
