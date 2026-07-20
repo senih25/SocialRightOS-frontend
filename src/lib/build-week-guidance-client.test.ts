@@ -96,6 +96,10 @@ test("panel preserves accessibility, one-attempt behavior and GSS integration bo
     new URL("../app/gss-gelir-testi/GssToolPageClient.tsx", import.meta.url),
     "utf8",
   );
+  const serverPage = readFileSync(
+    new URL("../app/gss-gelir-testi/page.tsx", import.meta.url),
+    "utf8",
+  );
   assert.match(panel, /aria-live="polite"/u);
   assert.match(panel, /aria-atomic="true"/u);
   assert.match(panel, /aria-busy=\{isLoading\}/u);
@@ -105,7 +109,18 @@ test("panel preserves accessibility, one-attempt behavior and GSS integration bo
   assert.match(panel, /if \(state\.status !== "IDLE"\) return/u);
   assert.match(panel, /Form yanıtlarınız ve\s+ön değerlendirme sonucunuz yapay zekâ modeline gönderilmez/u);
   assert.doesNotMatch(panel, /EligibilityCheckResponse|AssessmentResult|decision_id|request_id/u);
-  assert.match(page, /!isUnavailable \? <BuildWeekGuidancePanel \/> : null/u);
+  assert.match(
+    page,
+    /!isUnavailable && buildWeekGuidanceEnabled \? <BuildWeekGuidancePanel \/> : null/u,
+  );
+  assert.match(
+    serverPage,
+    /isBuildWeekGuidanceRuntimeEnabled\(process\.env\)/u,
+  );
+  assert.match(
+    serverPage,
+    /buildWeekGuidanceEnabled=\{buildWeekGuidanceEnabled\}/u,
+  );
   assert.match(page, /checkEligibility\(buildGssPayload\(form, crypto\.randomUUID\(\)\)\)/u);
   assert.match(page, /getGssResultPrimaryAction\(displayStatus\)/u);
 });

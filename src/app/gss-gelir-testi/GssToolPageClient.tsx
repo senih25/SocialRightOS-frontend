@@ -88,7 +88,11 @@ function TriStateField({ legend, name, value, onChange, errorId }: TriStateField
   );
 }
 
-export function GssToolPageClient() {
+export function GssToolPageClient({
+  buildWeekGuidanceEnabled = false,
+}: {
+  buildWeekGuidanceEnabled?: boolean;
+}) {
   const [form, setForm] = useState<GssFormState>(initialGssFormState);
   const [result, setResult] = useState<EligibilityCheckResponse | null>(null);
   const [error, setError] = useState<AssessmentErrorViewModel | null>(null);
@@ -425,7 +429,7 @@ export function GssToolPageClient() {
                 </>
               ) : null}
               </section>
-              {!isUnavailable ? <BuildWeekGuidancePanel /> : null}
+              {!isUnavailable && buildWeekGuidanceEnabled ? <BuildWeekGuidancePanel /> : null}
             </>
           ) : null}
         </section>

@@ -4,18 +4,19 @@
 
 The competition slice was reviewed against the repository's Next.js 16, React 19 and
 general browser-security boundaries. No critical or high-severity release-blocking
-finding remains in the reviewed local code. Three concrete gaps were remediated in this
+finding remains in the reviewed local code. Five concrete gaps were remediated in this
 slice: revoked/stale evidence acceptance, JSON-LD script-closing injection resilience and
-known dependency advisories. One CSP hardening item remains deliberately deferred to a
-report-only deployment exercise because changing the inline-script policy without runtime
-evidence can break the existing Next.js application.
+known dependency advisories, default-off UI enforcement and runtime kill-switch wiring.
+Strict CSP migration and an abuse-resistant public edge rate limit remain deliberately
+deferred to runtime deployment exercises.
 
 ```text
 CRITICAL_FINDING_COUNT=0
 HIGH_FINDING_COUNT=0
 RELEASE_BLOCKING_FINDING_COUNT=0
-REMEDIATED_FINDING_COUNT=3
-DEFERRED_HARDENING_COUNT=1
+REMEDIATED_FINDING_COUNT=5
+DEFERRED_HARDENING_COUNT=2
+PUBLIC_ENABLEMENT_BLOCKING_FINDING_COUNT=1
 ```
 
 ## Scope and evidence
@@ -103,6 +104,55 @@ exercise real-user data.
 - False-positive notes: removing `'unsafe-inline'` locally without a Next.js runtime
   report would be a breakage-prone change and is intentionally not attempted here.
 
+### BWSEC-005 — Competition UI was visible while the server feature was disabled
+
+- Rule ID: `NEXT-SECRETS-001 / FAIL-CLOSED-UI`
+- Severity: Medium
+- Status: Remediated
+- Location: `src/app/gss-gelir-testi/page.tsx:24-27`,
+  `src/app/gss-gelir-testi/GssToolPageClient.tsx:92-95,432`
+- Evidence: the server page now enables the panel only when the complete server runtime
+  configuration validates; the client component defaults its prop to `false`.
+- Impact: before remediation, production users could see a non-functional competition
+  panel even though the API route correctly returned the disabled response.
+- Fix: server-owned configuration controls rendering, while secrets remain server-only.
+- Mitigation: invalid or incomplete configuration fails closed and renders no panel.
+- False-positive notes: this is a visibility/control-plane issue, not secret exposure.
+
+### BWSEC-006 — Real service wiring bypassed the tested dynamic kill switch
+
+- Rule ID: `NEXT-DOS-001 / COST-GUARD-KILL-SWITCH`
+- Severity: Medium
+- Status: Remediated
+- Location: `src/lib/build-week-guidance-runtime.ts:162-198`
+- Evidence: the budgeted provider and request guard now share a runtime `isEnabled`
+  callback; disabling it blocks database reservation and provider network work.
+- Impact: before remediation, the assembled service passed a constant `true`, so the
+  provider-level mid-flight kill-switch tests did not represent actual runtime wiring.
+- Fix: runtime enablement is consulted before request work and again inside the budgeted
+  provider before and after the provider call.
+- Mitigation: all disabled paths return the application-owned `UNAVAILABLE` model.
+- False-positive notes: changing a hosted environment variable may still require the
+  platform's normal configuration rollout; this control does not claim an out-of-band
+  infrastructure kill switch.
+
+### BWSEC-007 — Client nonce is not an abuse-resistant client identity
+
+- Rule ID: `NEXT-DOS-001 / PUBLIC-RATE-LIMIT-IDENTITY`
+- Severity: Medium
+- Status: Deferred public-enablement blocker; not a default-off merge blocker
+- Location: `src/lib/build-week-guidance-runtime.ts:142-149`
+- Evidence: the HMAC prevents raw nonce disclosure but the browser chooses the nonce, so
+  a hostile caller can rotate UUIDs and avoid the per-nonce attempt window.
+- Impact: the atomic global hard budget still prevents spend above the accepted cap, but
+  an attacker could exhaust judge-demo availability within that cap.
+- Fix: add an abuse-resistant edge/platform rate limit before public enablement without
+  sending IP addresses or other identity data to OpenAI.
+- Mitigation: feature and UI remain default-off, each normal UI session attempts once,
+  and the global database budget is atomic and fail-closed.
+- False-positive notes: do not describe the current nonce window as strong per-user
+  authentication or identity enforcement.
+
 ## Route and data-boundary verification
 
 The synthetic route has a 1,024-byte body cap, exact JSON content type, exact key set,
@@ -120,6 +170,8 @@ CACHE_CONTROL_NO_STORE=PASS
 RAW_ERROR_EXPOSURE_COUNT=0
 COOKIE_AUTH_DEPENDENCY=NO
 CORS_ENABLEMENT=NO
+COMPLETE_RUNTIME_UI_GATE=PASS
+RUNTIME_KILL_SWITCH_WIRING=PASS
 ```
 
 ## Adversarial evaluation coverage
@@ -164,7 +216,7 @@ technical inventory, not a legal opinion.
 The complete repository pipeline was rerun after remediation:
 
 ```text
-ALL_TESTS=274/274_PASS
+ALL_TESTS=276/276_PASS
 TYPECHECK=PASS
 LINT=PASS
 PRODUCTION_BUILD=PASS
@@ -190,8 +242,9 @@ Phase 6A is local-only. Release-candidate status still requires:
 1. a clean GitHub PR and Node 22 CI run;
 2. independent review of the exact head SHA;
 3. report-only/runtime CSP evidence before strict-CSP migration;
-4. approved isolated PostgreSQL runtime verification;
-5. one explicitly authorized synthetic live GPT-5.6 call and budget-settlement proof;
-6. final deployment SHA, judge access and rollback verification.
+4. abuse-resistant edge/platform rate limiting before public enablement;
+5. approved isolated PostgreSQL runtime verification;
+6. one explicitly authorized synthetic live GPT-5.6 call and budget-settlement proof;
+7. final deployment SHA, judge access and rollback verification.
 
 No local result in this report authorizes public enablement.

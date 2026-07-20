@@ -123,6 +123,16 @@ export function readBuildWeekGuidanceRuntimeConfig(
   };
 }
 
+export function isBuildWeekGuidanceRuntimeEnabled(
+  environment: RuntimeEnvironment,
+): boolean {
+  try {
+    return readBuildWeekGuidanceRuntimeConfig(environment).enabled;
+  } catch {
+    return false;
+  }
+}
+
 export function deriveBuildWeekGuidanceScope(
   request: BuildWeekGuidanceRequest,
   hmacSecret: string,
@@ -146,8 +156,11 @@ export function createBuildWeekGuidanceService(
   query: RightsGuidancePostgresQuery,
   dependencies: {
     fetchImplementation?: typeof fetch;
+    isEnabled?: () => boolean;
   } = {},
 ): BuildWeekGuidanceService {
+  const isEnabled = dependencies.isEnabled ??
+    (() => process.env.AI_GUIDANCE_ENABLED === "true");
   const calculateCostMicros = buildTokenUsageCostCalculator({
     inputMicrosPerMillionTokens: config.inputMicrosPerMillionTokens,
     outputMicrosPerMillionTokens: config.outputMicrosPerMillionTokens,
@@ -165,7 +178,7 @@ export function createBuildWeekGuidanceService(
 
   return {
     async generate(request) {
-      if (request.scenario !== "GSS_SYNTHETIC_ELIGIBLE") {
+      if (!isEnabled() || request.scenario !== "GSS_SYNTHETIC_ELIGIBLE") {
         return buildUnavailableRightsGuidanceExplanation();
       }
       const scope = deriveBuildWeekGuidanceScope(request, config.hmacSecret);
@@ -177,12 +190,12 @@ export function createBuildWeekGuidanceService(
         openAIProvider,
         budgetStore,
         config.maximumRequestCostMicros,
-        () => true,
+        isEnabled,
       );
       return generateRequestGuardedRightsGuidanceExplanation(
         buildRightsGuidanceInput(selection, catalog),
         provider,
-        { enabled: true, scope, requestGuard },
+        { enabled: isEnabled(), scope, requestGuard },
       );
     },
   };

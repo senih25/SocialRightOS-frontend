@@ -3,6 +3,7 @@ import test from "node:test";
 import {
   createBuildWeekGuidanceService,
   deriveBuildWeekGuidanceScope,
+  isBuildWeekGuidanceRuntimeEnabled,
   readBuildWeekGuidanceRuntimeConfig,
 } from "./build-week-guidance-runtime.ts";
 import type { RightsGuidancePostgresQuery } from "./postgres-rights-guidance-store.ts";
@@ -53,6 +54,15 @@ test("enabled runtime accepts only complete bounded server configuration", () =>
   }
 });
 
+test("UI enablement requires the complete valid server configuration", () => {
+  assert.equal(isBuildWeekGuidanceRuntimeEnabled({}), false);
+  assert.equal(
+    isBuildWeekGuidanceRuntimeEnabled({ AI_GUIDANCE_ENABLED: "true" }),
+    false,
+  );
+  assert.equal(isBuildWeekGuidanceRuntimeEnabled(enabledEnvironment), true);
+});
+
 test("HMAC scopes are deterministic, separated and contain no raw nonce", () => {
   const request = {
     scenario: "GSS_SYNTHETIC_ELIGIBLE" as const,
@@ -94,6 +104,7 @@ test("assembled service sends only the fixed synthetic evidence catalog", async 
   };
   let providerRequest = "";
   const service = createBuildWeekGuidanceService(config, query, {
+    isEnabled: () => true,
     fetchImplementation: async (_url, init) => {
       providerRequest = String(init?.body);
       return Response.json({
@@ -140,4 +151,34 @@ test("assembled service sends only the fixed synthetic evidence catalog", async 
   assert.equal(providerRequest.includes("basisVersion"), false);
   assert.equal(providerRequest.includes("EVIDENCE_SYNTHETIC_GSS_REASON"), true);
   assert.equal(providerRequest.includes("SOURCE_SYNTHETIC_GSS_CHANNEL"), true);
+});
+
+test("runtime kill switch blocks database and provider work", async () => {
+  const config = readBuildWeekGuidanceRuntimeConfig(enabledEnvironment);
+  assert.equal(config.enabled, true);
+  if (!config.enabled) return;
+  let queryCount = 0;
+  let providerCount = 0;
+  const service = createBuildWeekGuidanceService(
+    config,
+    async () => {
+      queryCount += 1;
+      return { rows: [] };
+    },
+    {
+      isEnabled: () => false,
+      fetchImplementation: async () => {
+        providerCount += 1;
+        throw new Error("provider must not run");
+      },
+    },
+  );
+
+  const result = await service.generate({
+    scenario: "GSS_SYNTHETIC_ELIGIBLE",
+    clientNonce: "018f47a2-4d6c-7b8e-9f01-23456789abcd",
+  });
+  assert.equal(result.overallStatus, "UNAVAILABLE");
+  assert.equal(queryCount, 0);
+  assert.equal(providerCount, 0);
 });
