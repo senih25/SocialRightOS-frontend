@@ -94,19 +94,23 @@ GENERIC_CONTROL_PLANE_IMPLEMENTED=NO
 ## 4. Current verified state
 
 ```text
-BASE_SHA=1cee954469bb9bf1c452271510c9f1a80afcc2b0
-FEATURE_BRANCH=feat/build-week-rights-guidance-explanation
+COMPETITION_BASE_SHA=1cee954469bb9bf1c452271510c9f1a80afcc2b0
+CURRENT_SLICE_PARENT_SHA=167d47e68330e272b6bf85c80a401bdf24f93320
+FEATURE_BRANCH=sr/build-week-live-provider-cost-guard
 OFFLINE_CORE_IMPLEMENTED=YES
 OFFLINE_CONTRACT_NARROWED=YES
-LOCAL_TESTS=221/221_PASS
-NEW_GUIDANCE_TESTS=19/19_PASS
+LIVE_GPT_5_6_PROVIDER=IMPLEMENTED_LOCALLY
+DURABLE_POSTGRES_GUARDS=LOCAL_POSTGRES_VERIFIED
+SYNTHETIC_SERVER_ROUTE=IMPLEMENTED_LOCALLY_DEFAULT_OFF
+LOCAL_TESTS=259/259_PASS
+OFFLINE_GUIDANCE_TESTS=23/23_PASS
+NEW_ROUTE_RUNTIME_TESTS=10/10_PASS
 TYPECHECK=PASS
 LINT=PASS
 PRODUCTION_BUILD=PASS
 UNEXPECTED_CHANGE_COUNT=0
 SECRET_EXPOSURE_COUNT=0
 
-LIVE_GPT_5_6_PROVIDER=NOT_IMPLEMENTED
 COMPETITION_UI=NOT_IMPLEMENTED
 FINAL_COMPETITION_COMMIT=NOT_CREATED
 GITHUB_CI=NOT_RUN_FOR_COMPETITION_SLICE
@@ -116,15 +120,20 @@ DEVPOST_SUBMISSION=NOT_CREATED
 PRIMARY_CODEX_SESSION_ID=NOT_CAPTURED
 ```
 
-Existing offline files:
+Core competition files include:
 
 - `src/lib/rights-guidance.ts`
 - `src/lib/rights-guidance.test.ts`
+- `src/lib/openai-rights-guidance.ts`
+- `src/lib/build-week-guidance-route.ts`
+- `src/lib/build-week-guidance-runtime.ts`
+- `src/app/api/build-week/rights-guidance/route.ts`
 - `docs/product/build-week-rights-guidance-explanation.md`
 
 The provider output contract has been narrowed to evidence-bound reason and next-step
 collections. Application-owned copy is kept outside the model input and output. Live
-provider, UI and deployment work remain gated.
+provider and default-off synthetic route are implemented locally; UI, remote durable
+runtime, deployment and public enablement remain gated.
 
 ## 5. Locked product contract
 
@@ -351,7 +360,7 @@ Tasks:
 - Enforce kill switch before reservation or network access.
 - Atomically reserve worst-case request cost before the call.
 - Settle the reservation using actual usage after success.
-- Release or reconcile reservations after controlled failures.
+- Keep uncertain failed-call reservations counted until verified operator reconciliation.
 - Enforce global budget, per-client limit and one generation per assessment version.
 - Log minimized operational metadata only.
 - Map timeout, quota, provider, schema and validation failures to `UNAVAILABLE`.
@@ -366,6 +375,19 @@ KILL_SWITCH_TEST=PASS
 RAW_PROMPT_LOG_COUNT=0
 SECRET_EXPOSURE_COUNT=0
 DETERMINISTIC_ASSESSMENT_STATUS=UNCHANGED
+```
+
+Current local implementation adds the provider, atomic in-memory reference guards,
+PostgreSQL-backed durable adapters/migration and a default-off synthetic-only server
+route. Public enablement is still blocked until an approved remote PostgreSQL runtime,
+route-level cost-exhaustion verification and release review are complete.
+
+```text
+SYNTHETIC_SERVER_ROUTE=IMPLEMENTED_LOCALLY
+ROUTE_DEFAULT_STATE=OFF
+ROUTE_REAL_USER_DATA_ACCEPTANCE=NO
+REMOTE_DURABLE_RUNTIME=NOT_CONFIGURED
+PUBLIC_ENABLEMENT=NO
 ```
 
 ### Phase 4 - GSS competition integration

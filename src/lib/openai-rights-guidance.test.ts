@@ -233,7 +233,7 @@ test("reserves before the live call and settles only validated token usage", asy
   ]);
 });
 
-test("releases a reservation after provider failure without exposing details", async () => {
+test("keeps a reservation after an uncertain provider failure", async () => {
   let releaseCount = 0;
   const store: RightsGuidanceAtomicBudgetStore = {
     async reserve() { return { reservationId: "synthetic-reservation" }; },
@@ -253,7 +253,7 @@ test("releases a reservation after provider failure without exposing details", a
 
   const result = await generateRightsGuidanceExplanation(input, provider, { enabled: true });
   assert.equal(result.overallStatus, "UNAVAILABLE");
-  assert.equal(releaseCount, 1);
+  assert.equal(releaseCount, 0);
   assert.equal(JSON.stringify(result).includes("secret provider detail"), false);
 });
 

@@ -268,7 +268,8 @@ export class BudgetedRightsGuidanceLiveProvider implements RightsGuidanceProvide
       });
       return result;
     } catch {
-      await this.budgetStore.release(reservation.reservationId).catch(() => undefined);
+      // A failed or aborted provider response may still be billable. Keep its maximum-cost
+      // reservation in the hard-cap calculation until verified operator reconciliation.
       this.emit({ type: "FAILED" });
       throw new Error("AI guidance unavailable");
     }

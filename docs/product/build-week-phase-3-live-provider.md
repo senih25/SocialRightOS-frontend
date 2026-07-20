@@ -2,10 +2,10 @@
 
 ## Scope
 
-This phase adds a server-only GPT-5.6 Luna provider and an application-side atomic
-reservation boundary. It does not add a route, UI integration, deployment, or public AI
-enablement. Existing `AssessmentResult` contracts and deterministic eligibility behavior
-remain unchanged.
+This phase adds a server-only GPT-5.6 Luna provider, atomic cost/request guards and one
+default-off synthetic competition route. It does not add UI integration, deployment, or
+public AI enablement. Existing `AssessmentResult` contracts and deterministic eligibility
+behavior remain unchanged.
 
 ```text
 BASE_SHA=a278981fdda7456cfaf8e8c996278680f056f661
@@ -15,6 +15,45 @@ AI_GUIDANCE_ENABLED_DEFAULT=false
 PUBLIC_AI_ENABLEMENT=NO
 ASSESSMENT_CONTRACT_CHANGE_COUNT=0
 USER_VISIBLE_BEHAVIOR_CHANGE_COUNT=0
+```
+
+## Synthetic route boundary
+
+`POST /api/build-week/rights-guidance` is a new isolated competition endpoint. It accepts
+exactly two fields: the fixed `GSS_SYNTHETIC_ELIGIBLE` scenario and a UUID nonce. It does
+not accept form answers, eligibility status, evidence text, decision identifiers, contact
+details, backend payloads or validation carriers. The application constructs the approved
+synthetic evidence catalog on the server.
+
+The endpoint is inert unless `AI_GUIDANCE_ENABLED=true`. Disabled or invalid runtime
+configuration is resolved before parsing the request body and before database or provider
+access. Enabled operation requires PostgreSQL, a dedicated HMAC secret, explicit token
+prices, a hard budget ceiling and a per-request reservation. There is no production
+in-memory fallback.
+
+The client nonce is transformed into domain-separated HMAC-SHA-256 request keys. It is
+never sent to OpenAI or returned in the response. The nonce is an abuse-reduction input,
+not authenticated identity; the durable global spend cap remains the authoritative cost
+boundary. The only provider identifier is a pseudonymous HMAC-derived safety identifier.
+
+Every response is `no-store` and copied through a fixed allowlist. Provider/database
+exceptions, invalid bodies, unknown evidence IDs and unsafe runtime output return the same
+detail-free `UNAVAILABLE` model. HTTP status codes may distinguish invalid input from
+temporary unavailability, but never expose provider, database or configuration details.
+
+An interrupted or failed provider request may still be billable. Its maximum-cost
+reservation therefore remains counted against the hard ceiling instead of being released
+automatically. This deliberately prefers budget safety over availability; reconciliation
+is a separate operator action after usage data is verified.
+
+```text
+SYNTHETIC_ROUTE_IMPLEMENTED=YES
+AI_GUIDANCE_ENABLED_DEFAULT=false
+REAL_USER_DATA_ACCEPTED=NO
+RAW_BACKEND_RESPONSE_ACCEPTED=NO
+PRODUCTION_IN_MEMORY_FALLBACK=NO
+LIVE_API_CALLS_IN_ROUTE_TESTS=0
+DEPLOYMENT=NO
 ```
 
 ## New Build Week work versus prior work
@@ -113,7 +152,7 @@ DURABLE_MULTI_INSTANCE_STORE_CODE=IMPLEMENTED
 DURABLE_MULTI_INSTANCE_STORE_RUNTIME=LOCAL_POSTGRES_VERIFIED
 LOCAL_POSTGRES_TRANSACTION_TEST=6/6_PASS
 NEON_RUNTIME=NEEDS_VERIFICATION
-PUBLIC_ENABLEMENT=BLOCKED_BY_NEON_RUNTIME_AND_ROUTE_GATES
+PUBLIC_ENABLEMENT=BLOCKED_BY_REMOTE_DURABLE_RUNTIME_UI_AND_RELEASE_GATES
 ```
 
 ## Phase 2 preflight evidence
@@ -135,9 +174,8 @@ RESPONSE_STORED=NO
 
 ## Next gate
 
-1. Apply the migration to an isolated approved Neon branch/database with a least-privilege role.
-2. Re-run the six integration tests against that isolated Neon branch.
-3. Add one synthetic server route behind `AI_GUIDANCE_ENABLED=false` by default.
-4. Run semantic-fidelity and cost-exhaustion end-to-end tests.
-5. Add a single GSS pilot UI only after explicit approval.
-6. Keep production deployment and public AI enablement as separate approvals.
+1. Apply the migration to an isolated approved PostgreSQL runtime with a least-privilege role.
+2. Re-run the six integration tests against that isolated runtime.
+3. Run semantic-fidelity and cost-exhaustion end-to-end tests through the synthetic route.
+4. Add a single GSS competition UI only after explicit approval.
+5. Keep production deployment and public AI enablement as separate approvals.
