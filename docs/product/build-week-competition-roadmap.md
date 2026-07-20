@@ -96,22 +96,24 @@ GENERIC_CONTROL_PLANE_IMPLEMENTED=NO
 ```text
 COMPETITION_BASE_SHA=1cee954469bb9bf1c452271510c9f1a80afcc2b0
 CURRENT_SLICE_PARENT_SHA=167d47e68330e272b6bf85c80a401bdf24f93320
+PHASE_4_IMPLEMENTATION_SHA=b9e349613706677c1845530c5fdef996f45d7a71
 FEATURE_BRANCH=sr/build-week-live-provider-cost-guard
 OFFLINE_CORE_IMPLEMENTED=YES
 OFFLINE_CONTRACT_NARROWED=YES
 LIVE_GPT_5_6_PROVIDER=IMPLEMENTED_LOCALLY
 DURABLE_POSTGRES_GUARDS=LOCAL_POSTGRES_VERIFIED
 SYNTHETIC_SERVER_ROUTE=IMPLEMENTED_LOCALLY_DEFAULT_OFF
-LOCAL_TESTS=259/259_PASS
+COMPETITION_UI=IMPLEMENTED_LOCALLY_DEFAULT_OFF
+LOCAL_TESTS=264/264_PASS
 OFFLINE_GUIDANCE_TESTS=23/23_PASS
 NEW_ROUTE_RUNTIME_TESTS=10/10_PASS
+NEW_GSS_UI_TESTS=5/5_PASS
 TYPECHECK=PASS
 LINT=PASS
 PRODUCTION_BUILD=PASS
 UNEXPECTED_CHANGE_COUNT=0
 SECRET_EXPOSURE_COUNT=0
 
-COMPETITION_UI=NOT_IMPLEMENTED
 FINAL_COMPETITION_COMMIT=NOT_CREATED
 GITHUB_CI=NOT_RUN_FOR_COMPETITION_SLICE
 JUDGE_DEPLOYMENT=NOT_CREATED
@@ -132,8 +134,41 @@ Core competition files include:
 
 The provider output contract has been narrowed to evidence-bound reason and next-step
 collections. Application-owned copy is kept outside the model input and output. Live
-provider and default-off synthetic route are implemented locally; UI, remote durable
-runtime, deployment and public enablement remain gated.
+provider, default-off synthetic route and competition UI are implemented locally; remote
+durable runtime, deployment and public enablement remain gated.
+
+### 4.1 Codex Desktop session continuity
+
+Development continued in a newly authenticated Codex Desktop operator session after the
+previous application sign-in became unavailable. This is an operator-session continuity
+event only: it does not change the entrant, repository, product ownership, Git history,
+competition scope or technical authority boundaries.
+
+No account email, account identifier, credential, token, billing detail or authentication
+artifact is stored in the repository. Repository commits, verified test output and the
+final Codex session evidence remain the authoritative provenance chain.
+
+Controls for all subsequent work:
+
+- continue only from the verified branch and commit recorded above;
+- treat the original dirty worktree as user-owned and keep competition work isolated;
+- re-check GitHub, OpenAI API and deployment authentication independently before any
+  external write, because Codex Desktop authentication does not prove those sessions;
+- never copy secrets or browser-session material between accounts through repository
+  files, chat, logs or screenshots;
+- record the final primary Codex Session ID and exact commit range at submission time;
+- stop on repository/SHA mismatch, unexpected worktree changes or uncertain external
+  account authorization.
+
+```text
+CODEX_DESKTOP_SESSION_CONTINUITY=VERIFIED
+ENTRANT_CHANGE_COUNT=0
+REPOSITORY_CHANGE_COUNT=0
+OWNERSHIP_CHANGE_COUNT=0
+SCOPE_CHANGE_COUNT=0
+CREDENTIAL_MIGRATION_VIA_REPOSITORY=NO
+EXTERNAL_ACCOUNT_AUTHORIZATION=REVERIFY_BEFORE_WRITE
+```
 
 ## 5. Locked product contract
 
