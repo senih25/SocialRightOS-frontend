@@ -20,6 +20,8 @@ const fixtures: readonly GeneralizationFixture[] = [
   {
     catalog: {
       assessmentType: "GSS_PRELIMINARY_GUIDANCE",
+      catalogState: "ACTIVE",
+      validThrough: "2026-07-31",
       reasons: [
         {
           evidenceId: "EVIDENCE_SYNTHETIC_GSS_GENERALIZATION",
@@ -46,6 +48,8 @@ const fixtures: readonly GeneralizationFixture[] = [
   {
     catalog: {
       assessmentType: "OLD_AGE_PENSION_PRELIMINARY_GUIDANCE",
+      catalogState: "ACTIVE",
+      validThrough: "2026-07-31",
       reasons: [
         {
           evidenceId: "EVIDENCE_SYNTHETIC_OLD_AGE_GENERALIZATION",

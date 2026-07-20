@@ -14,6 +14,8 @@ import {
 
 const catalog: RightsGuidanceApprovedCatalog = {
   assessmentType: "GSS_PRELIMINARY_GUIDANCE",
+  catalogState: "ACTIVE",
+  validThrough: "2026-07-31",
   reasons: [
     {
       evidenceId: "EVIDENCE_SYNTHETIC_REASON",
@@ -141,6 +143,27 @@ test("rejects HTTP failures, refusals, model drift and malformed usage", async (
   }
 });
 
+test("aborts a provider request after the configured timeout", async () => {
+  let abortObserved = false;
+  const provider = new OpenAIRightsGuidanceProvider("synthetic-project-key", {
+    timeoutMs: 10,
+    fetchImplementation: async (_url, init) =>
+      await new Promise<Response>((_resolve, reject) => {
+        init?.signal?.addEventListener(
+          "abort",
+          () => {
+            abortObserved = true;
+            reject(new DOMException("Aborted", "AbortError"));
+          },
+          { once: true },
+        );
+      }),
+  });
+
+  await assert.rejects(() => provider.generate(input), /OpenAI guidance unavailable/u);
+  assert.equal(abortObserved, true);
+});
+
 test("kill switch blocks reservation and network access", async () => {
   let reserveCount = 0;
   let delegateCount = 0;
@@ -170,6 +193,36 @@ test("kill switch blocks reservation and network access", async () => {
   assert.equal(result.overallStatus, "UNAVAILABLE");
   assert.equal(reserveCount, 0);
   assert.equal(delegateCount, 0);
+});
+
+test("suppresses a completed response when the kill switch closes in flight", async () => {
+  let enabled = true;
+  let settleCount = 0;
+  const events: unknown[] = [];
+  const store: RightsGuidanceAtomicBudgetStore = {
+    async reserve() { return { reservationId: "synthetic-reservation" }; },
+    async settle() { settleCount += 1; },
+    async release() {},
+  };
+  const delegate: RightsGuidanceProvider = {
+    mode: "LIVE",
+    async generate() {
+      enabled = false;
+      return { output: validOutput, usage: { inputTokens: 21, outputTokens: 12 } };
+    },
+  };
+  const provider = new BudgetedRightsGuidanceLiveProvider(
+    delegate,
+    store,
+    100,
+    () => enabled,
+    (event) => events.push(event),
+  );
+
+  const result = await generateRightsGuidanceExplanation(input, provider, { enabled: true });
+  assert.equal(result.overallStatus, "UNAVAILABLE");
+  assert.equal(settleCount, 1);
+  assert.deepEqual(events, [{ type: "DISABLED" }]);
 });
 
 test("budget denial prevents the live provider call", async () => {

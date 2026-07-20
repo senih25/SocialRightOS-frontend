@@ -20,6 +20,8 @@ const ASSESSMENT_3 = "3".repeat(64);
 
 const catalog: RightsGuidanceApprovedCatalog = {
   assessmentType: "GSS_PRELIMINARY_GUIDANCE",
+  catalogState: "ACTIVE",
+  validThrough: "2026-07-31",
   reasons: [{ evidenceId: "EVIDENCE_SYNTHETIC", approvedText: "Sentetik koşul." }],
   nextSteps: [],
   limitations: ["Sentetik sınırlama."],

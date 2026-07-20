@@ -40,6 +40,8 @@ export type BuildWeekGuidanceRuntimeConfig =
 
 const catalog: RightsGuidanceApprovedCatalog = {
   assessmentType: "GSS_PRELIMINARY_GUIDANCE",
+  catalogState: "ACTIVE",
+  validThrough: "2026-07-31",
   reasons: [
     {
       evidenceId: "EVIDENCE_SYNTHETIC_GSS_REASON",

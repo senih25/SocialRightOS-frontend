@@ -258,9 +258,15 @@ export class BudgetedRightsGuidanceLiveProvider implements RightsGuidanceProvide
       throw new Error("AI guidance budget unavailable");
     }
 
+    let disabledAfterProviderCall = false;
     try {
       const result = await this.delegate.generate(input);
       await this.budgetStore.settle(reservation.reservationId, result.usage);
+      if (!this.isEnabled()) {
+        disabledAfterProviderCall = true;
+        this.emit({ type: "DISABLED" });
+        throw new Error("AI guidance is disabled");
+      }
       this.emit({
         type: "COMPLETED",
         inputTokens: result.usage.inputTokens,
@@ -270,7 +276,7 @@ export class BudgetedRightsGuidanceLiveProvider implements RightsGuidanceProvide
     } catch {
       // A failed or aborted provider response may still be billable. Keep its maximum-cost
       // reservation in the hard-cap calculation until verified operator reconciliation.
-      this.emit({ type: "FAILED" });
+      if (!disabledAfterProviderCall) this.emit({ type: "FAILED" });
       throw new Error("AI guidance unavailable");
     }
   }

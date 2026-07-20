@@ -15,6 +15,8 @@ import {
 
 const syntheticCatalog: RightsGuidanceApprovedCatalog = {
   assessmentType: "GSS_PRELIMINARY_GUIDANCE",
+  catalogState: "ACTIVE",
+  validThrough: "2026-07-31",
   reasons: [
     { evidenceId: "EVIDENCE_SYNTHETIC_REASON", approvedText: "Sentetik koşul sağlanmış görünüyor." },
   ],
@@ -94,6 +96,31 @@ test("rejects malformed validity metadata", () => {
   assert.throws(() =>
     buildRightsGuidanceInput({ ...selection, basisVersion: "" }, syntheticCatalog),
   );
+});
+
+test("rejects revoked or stale evidence catalogs before provider construction", () => {
+  assert.throws(() =>
+    buildRightsGuidanceInput(
+      selection,
+      { ...syntheticCatalog, catalogState: "REVOKED" },
+    ),
+  );
+  assert.throws(() =>
+    buildRightsGuidanceInput(
+      { ...selection, validAsOf: "2026-08-01" },
+      syntheticCatalog,
+    ),
+  );
+  assert.throws(() =>
+    buildRightsGuidanceInput(
+      selection,
+      { ...syntheticCatalog, validThrough: "2026-02-30" },
+    ),
+  );
+
+  const input = buildInput();
+  assert.equal("catalogState" in input, false);
+  assert.equal("validThrough" in input, false);
 });
 
 test("validates deterministic mock output", async () => {

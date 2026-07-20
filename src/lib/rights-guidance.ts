@@ -14,6 +14,8 @@ export type RightsGuidanceEvidence = {
 
 export type RightsGuidanceApprovedCatalog = {
   assessmentType: RightsGuidanceAssessmentType;
+  catalogState: "ACTIVE" | "REVOKED";
+  validThrough: string;
   reasons: readonly RightsGuidanceEvidence[];
   nextSteps: readonly RightsGuidanceEvidence[];
   limitations: readonly string[];
@@ -203,9 +205,19 @@ function assertUnique(values: readonly string[], label: string): void {
   }
 }
 
+function isIsoDate(value: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}$/u.test(value)) return false;
+  const parsed = new Date(`${value}T00:00:00.000Z`);
+  return !Number.isNaN(parsed.valueOf()) && parsed.toISOString().slice(0, 10) === value;
+}
+
 function validateCatalog(catalog: RightsGuidanceApprovedCatalog): void {
-  if (!assessmentTypes.includes(catalog.assessmentType)) {
-    throw new Error("Unsupported guidance assessment type");
+  if (
+    !assessmentTypes.includes(catalog.assessmentType) ||
+    catalog.catalogState !== "ACTIVE" ||
+    !isIsoDate(catalog.validThrough)
+  ) {
+    throw new Error("Invalid guidance catalog");
   }
 
   const evidence = [...catalog.reasons, ...catalog.nextSteps];
@@ -270,6 +282,8 @@ export function buildRightsGuidanceInput(
     !nextStepEvidenceIds ||
     !isSafeText(value.validAsOf, 40) ||
     !/^\d{4}-\d{2}-\d{2}(?:T[^\s]{1,30})?$/u.test(value.validAsOf) ||
+    !isIsoDate(value.validAsOf.slice(0, 10)) ||
+    value.validAsOf.slice(0, 10) > catalog.validThrough ||
     !isSafeText(value.basisVersion, 80)
   ) {
     throw new Error("Invalid guidance input selection");
