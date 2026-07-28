@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ToolGuidanceSurface } from "@/components/ToolGuidanceSurface";
+import { BuildWeekGuidancePanel } from "@/components/BuildWeekGuidancePanel";
 import { SafeErrorPanel } from "@/components/ui/SafeErrorPanel";
 import { checkEligibility } from "@/lib/api";
 import {
@@ -87,7 +88,11 @@ function TriStateField({ legend, name, value, onChange, errorId }: TriStateField
   );
 }
 
-export function GssToolPageClient() {
+export function GssToolPageClient({
+  buildWeekGuidanceEnabled = false,
+}: {
+  buildWeekGuidanceEnabled?: boolean;
+}) {
   const [form, setForm] = useState<GssFormState>(initialGssFormState);
   const [result, setResult] = useState<EligibilityCheckResponse | null>(null);
   const [error, setError] = useState<AssessmentErrorViewModel | null>(null);
@@ -309,10 +314,11 @@ export function GssToolPageClient() {
           {error ? <SafeErrorPanel error={error} focusRef={errorRef} /> : null}
 
           {result && presentation ? (
-            <section
-              className={`mt-6 rounded-3xl border p-6 ${displayTone}`}
-              aria-live="polite"
-              aria-atomic="true"
+            <>
+              <section
+                className={`mt-6 rounded-3xl border p-6 ${displayTone}`}
+                aria-live="polite"
+                aria-atomic="true"
               aria-label={presentation.title}
               data-presentation-outcome={presentation.outcome}
             >
@@ -422,7 +428,9 @@ export function GssToolPageClient() {
                   <ToolGuidanceSurface model={guidanceModel} tool="gss" />
                 </>
               ) : null}
-            </section>
+              </section>
+              {!isUnavailable && buildWeekGuidanceEnabled ? <BuildWeekGuidancePanel /> : null}
+            </>
           ) : null}
         </section>
 

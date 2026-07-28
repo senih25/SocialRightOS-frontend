@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
+import { isBuildWeekGuidanceRuntimeEnabled } from "@/lib/build-week-guidance-runtime";
 import { GssToolPageClient } from "./GssToolPageClient";
 
 export const metadata: Metadata = {
@@ -20,9 +21,10 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 ]);
 
 export default function GssGelirTestiPage() {
+  const buildWeekGuidanceEnabled = isBuildWeekGuidanceRuntimeEnabled(process.env);
   return (
     <>
-      <GssToolPageClient />
+      <GssToolPageClient buildWeekGuidanceEnabled={buildWeekGuidanceEnabled} />
       <JsonLd data={breadcrumbJsonLd} id="gss-breadcrumb-jsonld" />
     </>
   );

@@ -94,37 +94,86 @@ GENERIC_CONTROL_PLANE_IMPLEMENTED=NO
 ## 4. Current verified state
 
 ```text
-BASE_SHA=1cee954469bb9bf1c452271510c9f1a80afcc2b0
-FEATURE_BRANCH=feat/build-week-rights-guidance-explanation
+COMPETITION_BASE_SHA=1cee954469bb9bf1c452271510c9f1a80afcc2b0
+CURRENT_SLICE_PARENT_SHA=167d47e68330e272b6bf85c80a401bdf24f93320
+PHASE_4_IMPLEMENTATION_SHA=b9e349613706677c1845530c5fdef996f45d7a71
+FINAL_IMPLEMENTATION_SHA=fd473bced8ddbe4cc6080648ae26542b82bcc284
+IMPLEMENTATION_PR=https://github.com/senih25/SocialRightOS-frontend/pull/30
+IMPLEMENTATION_CI=PASS
 OFFLINE_CORE_IMPLEMENTED=YES
 OFFLINE_CONTRACT_NARROWED=YES
-LOCAL_TESTS=221/221_PASS
-NEW_GUIDANCE_TESTS=19/19_PASS
+LIVE_GPT_5_6_PROVIDER=DEPLOYED_AND_SYNTHETICALLY_VERIFIED
+DURABLE_POSTGRES_GUARDS=NEON_VERIFIED
+SYNTHETIC_SERVER_ROUTE=PUBLIC_FAIL_CLOSED
+COMPETITION_UI=PUBLIC_SYNTHETIC_DEMO
+LOCAL_TESTS=276/276_PASS
+OFFLINE_GUIDANCE_TESTS=23/23_PASS
+NEW_ROUTE_RUNTIME_TESTS=10/10_PASS
+NEW_GSS_UI_TESTS=5/5_PASS
 TYPECHECK=PASS
 LINT=PASS
 PRODUCTION_BUILD=PASS
 UNEXPECTED_CHANGE_COUNT=0
 SECRET_EXPOSURE_COUNT=0
 
-LIVE_GPT_5_6_PROVIDER=NOT_IMPLEMENTED
-COMPETITION_UI=NOT_IMPLEMENTED
-FINAL_COMPETITION_COMMIT=NOT_CREATED
-GITHUB_CI=NOT_RUN_FOR_COMPETITION_SLICE
-JUDGE_DEPLOYMENT=NOT_CREATED
+FINAL_COMPETITION_COMMIT=PENDING_PHASE_8_MERGE
+GITHUB_CI=PASS_PR_30
+JUDGE_DEPLOYMENT=READY
+JUDGE_ACCESS=PASS
+DEPLOYMENT_ID=dpl_G1FE5GMrW7MLaYAR2SzKX6ce5gYS
+DEPLOYMENT_SOURCE_SHA=LOCAL_VERIFIED_PROVIDER_METADATA_PENDING
 YOUTUBE_DEMO=NOT_CREATED
 DEVPOST_SUBMISSION=NOT_CREATED
 PRIMARY_CODEX_SESSION_ID=NOT_CAPTURED
 ```
 
-Existing offline files:
+Core competition files include:
 
 - `src/lib/rights-guidance.ts`
 - `src/lib/rights-guidance.test.ts`
+- `src/lib/openai-rights-guidance.ts`
+- `src/lib/build-week-guidance-route.ts`
+- `src/lib/build-week-guidance-runtime.ts`
+- `src/app/api/build-week/rights-guidance/route.ts`
 - `docs/product/build-week-rights-guidance-explanation.md`
 
 The provider output contract has been narrowed to evidence-bound reason and next-step
 collections. Application-owned copy is kept outside the model input and output. Live
-provider, UI and deployment work remain gated.
+provider, default-off synthetic route and competition UI are implemented locally; remote
+durable runtime, deployment and public enablement remain gated.
+
+### 4.1 Codex Desktop session continuity
+
+Development continued in a newly authenticated Codex Desktop operator session after the
+previous application sign-in became unavailable. This is an operator-session continuity
+event only: it does not change the entrant, repository, product ownership, Git history,
+competition scope or technical authority boundaries.
+
+No account email, account identifier, credential, token, billing detail or authentication
+artifact is stored in the repository. Repository commits, verified test output and the
+final Codex session evidence remain the authoritative provenance chain.
+
+Controls for all subsequent work:
+
+- continue only from the verified branch and commit recorded above;
+- treat the original dirty worktree as user-owned and keep competition work isolated;
+- re-check GitHub, OpenAI API and deployment authentication independently before any
+  external write, because Codex Desktop authentication does not prove those sessions;
+- never copy secrets or browser-session material between accounts through repository
+  files, chat, logs or screenshots;
+- record the final primary Codex Session ID and exact commit range at submission time;
+- stop on repository/SHA mismatch, unexpected worktree changes or uncertain external
+  account authorization.
+
+```text
+CODEX_DESKTOP_SESSION_CONTINUITY=VERIFIED
+ENTRANT_CHANGE_COUNT=0
+REPOSITORY_CHANGE_COUNT=0
+OWNERSHIP_CHANGE_COUNT=0
+SCOPE_CHANGE_COUNT=0
+CREDENTIAL_MIGRATION_VIA_REPOSITORY=NO
+EXTERNAL_ACCOUNT_AUTHORIZATION=REVERIFY_BEFORE_WRITE
+```
 
 ## 5. Locked product contract
 
@@ -351,7 +400,7 @@ Tasks:
 - Enforce kill switch before reservation or network access.
 - Atomically reserve worst-case request cost before the call.
 - Settle the reservation using actual usage after success.
-- Release or reconcile reservations after controlled failures.
+- Keep uncertain failed-call reservations counted until verified operator reconciliation.
 - Enforce global budget, per-client limit and one generation per assessment version.
 - Log minimized operational metadata only.
 - Map timeout, quota, provider, schema and validation failures to `UNAVAILABLE`.
@@ -366,6 +415,19 @@ KILL_SWITCH_TEST=PASS
 RAW_PROMPT_LOG_COUNT=0
 SECRET_EXPOSURE_COUNT=0
 DETERMINISTIC_ASSESSMENT_STATUS=UNCHANGED
+```
+
+Current local implementation adds the provider, atomic in-memory reference guards,
+PostgreSQL-backed durable adapters/migration and a default-off synthetic-only server
+route. Public enablement is still blocked until an approved remote PostgreSQL runtime,
+route-level cost-exhaustion verification and release review are complete.
+
+```text
+SYNTHETIC_SERVER_ROUTE=IMPLEMENTED_LOCALLY
+ROUTE_DEFAULT_STATE=OFF
+ROUTE_REAL_USER_DATA_ACCEPTANCE=NO
+REMOTE_DURABLE_RUNTIME=NOT_CONFIGURED
+PUBLIC_ENABLEMENT=NO
 ```
 
 ### Phase 4 - GSS competition integration
@@ -414,6 +476,20 @@ COMMON_CONTRACT_FORK_COUNT=0
 GENERALIZATION_TEST=PASS
 ```
 
+Current local implementation status:
+
+```text
+PHASE_5_GENERALIZATION_PROOF=IMPLEMENTED_LOCALLY
+SECONDARY_PILOT=TR_OLD_AGE_PENSION
+SECOND_FULL_UI_FLOW=NO
+SECOND_RUNTIME_SCENARIO=NO
+COMMON_CONTRACT_FORK_COUNT=0
+ASSESSMENT_CONTRACT_CHANGE_COUNT=0
+LIVE_API_CALL_COUNT=0
+GENERALIZATION_TESTS=5/5_PASS
+LOCAL_QUALITY=PASS
+```
+
 ### Phase 6 - Security, evaluation and release candidate
 
 Adversarial suite:
@@ -451,6 +527,29 @@ Release process:
 - Re-run the complete quality pipeline on the merge SHA.
 - Record final main SHA, CI URL, test count and changed-file scope.
 
+Current local Phase 6A status:
+
+```text
+PHASE_6A_SECURITY_EVALUATION=IMPLEMENTED_LOCALLY
+STALE_REVOKED_EVIDENCE_GUARD=PASS
+PROVIDER_TIMEOUT_GUARD=PASS
+IN_FLIGHT_KILL_SWITCH=PASS
+DEFAULT_OFF_UI_GATE=PASS
+JSON_LD_SCRIPT_CLOSING_GUARD=PASS
+PRODUCTION_AUDIT_VULNERABILITY_COUNT=0
+FULL_AUDIT_VULNERABILITY_COUNT=0
+MISSING_LICENSE_METADATA_COUNT=0
+RELEASE_BLOCKING_FINDING_COUNT=0
+DEFERRED_CSP_HARDENING_COUNT=1
+CLIENT_NONCE_SECURITY_IDENTITY=NO
+PUBLIC_EDGE_RATE_LIMIT=PASS_10_REQUESTS_PER_600_SECONDS_PER_IP
+PUBLIC_ENABLEMENT_BLOCKING_FINDING_COUNT=0
+LOCAL_NODE_VERSION=24.14.0
+REQUIRED_CI_NODE_VERSION=22.x
+NODE22_CI_VERIFICATION=PASS
+PUBLIC_ENABLEMENT=YES_SYNTHETIC_DEMO_ONLY
+```
+
 ### Phase 7 - Judge deployment
 
 Tasks:
@@ -474,6 +573,28 @@ SYNTHETIC_DEMO_ONLY=YES
 REAL_USER_DATA_COUNT=0
 UNEXPECTED_DEPLOYMENT_COUNT=0
 ```
+
+Executed Phase 7 status on 2026-07-20:
+
+```text
+DEPLOYMENT_ID=dpl_G1FE5GMrW7MLaYAR2SzKX6ce5gYS
+DEPLOYMENT_STATE=READY
+PUBLIC_ALIAS=https://social-right-os-frontend.vercel.app
+LOCAL_DEPLOYMENT_SOURCE_SHA=fd473bced8ddbe4cc6080648ae26542b82bcc284
+VERCEL_GIT_SOURCE_SHA=NEEDS_VERIFICATION
+JUDGE_ACCESS=PASS
+SYNTHETIC_DEMO_ONLY=YES
+REAL_USER_DATA_COUNT=0
+UNEXPECTED_DEPLOYMENT_COUNT=0
+HARD_SPEND_LIMIT_USD=5.00
+VERIFIED_COMMITTED_COST_USD=0.000850
+OPEN_BUDGET_RESERVATION_USD=0
+```
+
+The deployment was created once from a clean local `main` matching `origin/main`. Because
+the Vercel CLI deployment does not expose Git source metadata, provider-side SHA matching
+remains a final evidence gate. See
+[`build-week-submission-evidence.md`](build-week-submission-evidence.md).
 
 ### Phase 8 - Repository and submission evidence
 
@@ -502,6 +623,18 @@ PRIMARY_CODEX_SESSION_ID
 KEY_HUMAN_DECISIONS
 FINAL_TEST_COUNT
 FINAL_CI_URL
+```
+
+Current Phase 8 preparation status:
+
+```text
+README_COMPETITION_SECTION=IMPLEMENTED_LOCALLY
+SUBMISSION_EVIDENCE_RECORD=IMPLEMENTED_LOCALLY
+PUBLIC_REPOSITORY=PASS
+REPOSITORY_LICENSE=ALL_RIGHTS_RESERVED
+LICENSE_EVALUATION_PERMISSION=NEEDS_OWNER_CONFIRMATION
+FINAL_SUBMISSION_SHA=PENDING_PHASE_8_MERGE
+PRIMARY_CODEX_SESSION_ID=NEEDS_USER_ACTION
 ```
 
 Run `/feedback` only after the majority of core competition functionality is complete and

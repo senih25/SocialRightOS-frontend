@@ -14,6 +14,20 @@ export type HowToStep = {
   url?: string;
 };
 
+const jsonLdEscapes: Record<string, string> = {
+  "<": "\\u003c",
+  ">": "\\u003e",
+  "&": "\\u0026",
+  "\u2028": "\\u2028",
+  "\u2029": "\\u2029",
+};
+
+export function serializeJsonLd(data: unknown): string {
+  const serialized = JSON.stringify(data);
+  if (typeof serialized !== "string") return "null";
+  return serialized.replace(/[<>&\u2028\u2029]/gu, (character) => jsonLdEscapes[character]);
+}
+
 export function buildBreadcrumbJsonLd(items: BreadcrumbItem[]) {
   return {
     "@context": "https://schema.org",
