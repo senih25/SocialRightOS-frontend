@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RightFlow Autopilot Architecture</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#fdf8ee;color:#111c3b;font-family:Segoe UI,Arial,sans-serif}.canvas{width:1600px;min-height:900px;padding:70px 76px;background:radial-gradient(circle at 50% 10%,#dff8f3 0,transparent 32%),linear-gradient(135deg,#fffaf0,#f7f5ff)}h1{font-size:56px;margin:0;letter-spacing:-2px}.lead{font-size:22px;color:#526071;margin:12px 0 55px}.flow{display:grid;grid-template-columns:1fr 90px 1.2fr 90px 1.05fr 90px 1.05fr;align-items:center}.node{min-height:250px;border:2px solid #d8e0e3;border-radius:28px;background:#fff;padding:30px;box-shadow:0 18px 55px #1d35571a}.node.ai{color:white;border-color:#3547a7;background:linear-gradient(145deg,#13255a,#4538b9)}.node.guard{border-color:#f1b66d;background:#fff7e9}.node.result{border-color:#54aaa2;background:#effcf9}.tag{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#078174}.ai .tag{color:#83fff0}.node h2{font-size:30px;margin:18px 0 12px}.node p{font-size:18px;line-height:1.55;margin:0;color:#526071}.ai p{color:#e2e7ff}.arrow{text-align:center;font-size:58px;color:#0d9488}.boundary{margin-top:55px;display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:22px}.rule{border-radius:20px;padding:24px;border:1px solid #dbe3e6;background:#ffffffb8}.rule strong{display:block;font-size:19px;margin-bottom:8px}.rule span{font-size:16px;color:#526071}.footer{display:flex;justify-content:space-between;margin-top:40px;padding-top:25px;border-top:1px solid #ced9db;color:#526071;font-size:16px}.badge{color:#075f58;font-weight:800}
+  </style>
+</head>
+<body><main class="canvas">
+  <h1>RightFlow Autopilot — System Architecture</h1>
+  <p class="lead">Qwen understands and orchestrates. Deterministic policy tools decide. Humans remain in control.</p>
+  <section class="flow">
+    <article class="node"><span class="tag">1 · Frontend</span><h2>Citizen / Caseworker</h2><p>Natural-language intake in a Next.js workspace. Raw narrative is processed in memory and not persisted.</p></article>
+    <div class="arrow">→</div>
+    <article class="node ai"><span class="tag">2 · Qwen Cloud</span><h2>Bounded Orchestrator</h2><p>Extracts explicit facts through the Alibaba Cloud DashScope API. Strict schema, temperature 0, 12-second timeout.</p></article>
+    <div class="arrow">→</div>
+    <article class="node guard"><span class="tag">3 · Safety Gate</span><h2>Human Approval</h2><p>Reviews extracted facts, missing information and conflicts. Consequential tools remain locked until approval.</p></article>
+    <div class="arrow">→</div>
+    <article class="node result"><span class="tag">4 · Tool Layer</span><h2>Deterministic Engine</h2><p>Runs eligibility rules and returns a versioned rule trace, verified sources and safe next steps.</p></article>
+  </section>
+  <section class="boundary">
+    <div class="rule"><strong>Fail closed</strong><span>Invalid or unavailable model output enters a clearly labelled demo path; it never becomes an AI claim.</span></div>
+    <div class="rule"><strong>Trace every stage</strong><span>Case ID, model mode, guardrail outcome and approval state are visible in the audit timeline.</span></div>
+    <div class="rule"><strong>Alibaba Cloud ready</strong><span>Containerized backend on ECS; Qwen is called through the international DashScope endpoint.</span></div>
+  </section>
+  <footer class="footer"><span>Autopilot Agent Track · Global AI Hackathon with Qwen Cloud</span><span class="badge">RIGHTFLOW AUTOPILOT</span></footer>
+</main></body></html>
