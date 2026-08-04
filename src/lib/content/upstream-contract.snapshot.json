@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/content/frontmatter-nextjs.schema.json",
+  "title": "NextjsArticleFrontmatter",
+  "description": "Contract for files written by adapters/github-nextjs to SocialRightOS-frontend content/articles/. verificationState governs indexability: only 'publishable' may ever be indexed, and removing noindex is a human-only operation outside automation scope.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "slug", "description", "publishedAt", "updatedAt", "status", "author", "reviewer", "jurisdiction", "benefitOrRight", "contentType", "legalStatus", "effectiveDate", "sourceCheckedAt", "primarySources", "secondarySources", "aiAssistance", "disclaimer", "draft", "noindex", "verificationState"],
+  "properties": {
+    "title": { "type": "string", "minLength": 10, "maxLength": 160 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "description": { "type": "string", "minLength": 50, "maxLength": 300 },
+    "publishedAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "status": { "enum": ["draft", "review", "published", "archived"] },
+    "author": { "type": "string", "minLength": 2 },
+    "reviewer": { "type": ["string", "null"] },
+    "jurisdiction": { "enum": ["TR", "EU", "US", "GLOBAL"] },
+    "benefitOrRight": { "type": "string", "minLength": 3 },
+    "contentType": { "enum": ["analysis", "news_brief", "guide", "reference"] },
+    "legalStatus": { "enum": ["in_force", "proposed", "amended", "repealed", "guidance", "not_applicable", "unknown"] },
+    "effectiveDate": { "type": ["string", "null"], "format": "date" },
+    "sourceCheckedAt": { "type": "string", "format": "date-time" },
+    "primarySources": { "type": "array", "items": { "type": "string", "pattern": "^https://" }, "minItems": 1 },
+    "secondarySources": { "type": "array", "items": { "type": "string", "pattern": "^https://" } },
+    "aiAssistance": { "type": "string", "minLength": 10 },
+    "disclaimer": { "type": "string", "minLength": 20 },
+    "draft": { "type": "boolean" },
+    "noindex": { "type": "boolean" },
+    "verificationState": { "enum": ["quarantined", "research_required", "verified", "editorial_approved", "publishable", "archived"] }
+  }
+}

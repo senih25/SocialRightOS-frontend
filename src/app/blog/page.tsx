@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { contentRegistry } from "@/lib/content-registry";
+import { loadArticles } from "@/lib/content/articles.server";
+import { buildArticleIndexCards } from "@/lib/content/blog-index-projection";
 import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
 
@@ -35,6 +37,13 @@ const contentTopics = [
 const publishedEntries = [...contentRegistry]
   .filter((entry) => entry.status === "published" && entry.section === "blog" && entry.slug !== "blog")
   .sort((left, right) => right.updated_at.localeCompare(left.updated_at));
+
+// Additional cards for publishable Markdown articles. Empty while the article
+// collection is empty, so the production blog index is unchanged by Stage 4.
+const markdownCards = buildArticleIndexCards(
+  loadArticles(),
+  publishedEntries.map((entry) => entry.canonical_path),
+);
 
 const siteUrl = getSiteUrl();
 const breadcrumbJsonLd = buildBreadcrumbJsonLd([
@@ -94,6 +103,23 @@ export default function BlogPage() {
             ))}
           </div>
         </section>
+
+        {markdownCards.length > 0 ? (
+          <section className="card-panel">
+            <h2 className="text-2xl font-semibold text-slate-950">Kaynağı doğrulanmış makaleler</h2>
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
+              {markdownCards.map((card) => (
+                <article key={card.href} className="rounded-2xl bg-slate-50 p-5">
+                  <h3 className="mt-3 text-lg font-semibold text-slate-950">{card.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-700">{card.description}</p>
+                  <Link href={card.href} className="secondary-link mt-4 inline-flex">
+                    Yazıyı aç
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <section className="card-panel">
           <h2 className="text-2xl font-semibold text-slate-950">Tüm yayınlanan içerikler</h2>
