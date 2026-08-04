@@ -108,24 +108,22 @@ export function assertUniqueArticleIdentity(entries: readonly ArticleEntry[]): v
 }
 
 /**
- * Discovery eligibility (selector only — no discovery UI exists at this stage).
+ * NO DISCOVERY SELECTOR EXISTS AT THIS STAGE — deliberately.
  *
- * A record is eligible for a future discovery engine only when it is publishable
- * AND carries the provenance a discovery index requires. `contentRegistry`
- * `status: "published"` is an editorial CMS flag; it is deliberately NOT accepted
- * as evidence of source verification or indexability, and is not consulted here.
- * Empty input yields an empty result. No DiscoveryIndexDocument is fabricated.
+ * ContentOps `schemas/discovery/discovery-index-document.schema.json` requires a
+ * complete `publication_provenance` (`content_id`, `merged_pr_url`,
+ * `published_at`), a `content_hash` and `primary_source_ids` before any record
+ * may enter a discovery index. None of that data exists yet: it is produced by
+ * the Stage 5 human approval record, the Stage 6 verified source events and the
+ * Stage 7 draft-PR merge. An `ArticleEntry` alone can never satisfy it.
+ *
+ * A selector that took `ArticleEntry` and ignored those fields would be a false
+ * gate — it would report "eligible" for records that a real discovery index must
+ * reject. A selector that always returned an empty list would be dead code that
+ * invites the same mistake later. Both were rejected; the function was removed.
+ *
+ * When discovery is built (after Stages 5–7), its input must be a distinct,
+ * fully typed record carrying real publication provenance, and every mandatory
+ * provenance field must be validated with a single missing field rejecting the
+ * record. Never synthesize a content_hash, content_id or PR URL.
  */
-export function selectDiscoveryEligibleArticles<T extends ArticleEntry>(entries: readonly T[]): T[] {
-  return selectPublishableArticles(entries).filter((entry) => {
-    const data = entry.frontmatter;
-    return (
-      typeof data.sourceCheckedAt === "string" &&
-      data.sourceCheckedAt.length > 0 &&
-      Array.isArray(data.primarySources) &&
-      data.primarySources.length > 0 &&
-      typeof data.benefitOrRight === "string" &&
-      data.benefitOrRight.length > 0
-    );
-  });
-}

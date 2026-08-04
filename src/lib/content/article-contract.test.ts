@@ -301,18 +301,100 @@ test("live upstream digest equals the approved digest when the sibling repo is r
 // ----------------------------------------------------- frontmatter parsing ---
 test("frontmatter parser reads scalars, arrays and body deterministically", () => {
   const parsed = parseFrontmatterFile(
-    ['---', 'title: "Bir başlık"', "draft: true", "reviewer: null", 'topics: ["a", "b"]', "sources:", "  - https://a.gov.tr/1", "---", "", "# Gövde", ""].join("\n"),
+    [
+      "---",
+      'title: "Bir başlık"',
+      "draft: true",
+      "reviewer: null",
+      'topics: ["a", "b"]',
+      "sources:",
+      "  - https://a.gov.tr/1",
+      "  - https://b.gov.tr/2",
+      "plain: https://c.gov.tr/3?x=1&y=2",
+      "---",
+      "",
+      "# Gövde",
+      "",
+    ].join("\n"),
   );
   assert.equal(parsed.frontmatter.title, "Bir başlık");
   assert.equal(parsed.frontmatter.draft, true);
   assert.equal(parsed.frontmatter.reviewer, null);
   assert.deepEqual(parsed.frontmatter.topics, ["a", "b"]);
-  assert.deepEqual(parsed.frontmatter.sources, ["https://a.gov.tr/1"]);
+  assert.deepEqual(parsed.frontmatter.sources, ["https://a.gov.tr/1", "https://b.gov.tr/2"]);
+  // A URL keeps its colon and query string: plain scalars are taken verbatim.
+  assert.equal(parsed.frontmatter.plain, "https://c.gov.tr/3?x=1&y=2");
   assert.equal(parsed.body.startsWith("# Gövde"), true);
 });
 
-test("frontmatter parser rejects malformed input instead of guessing", () => {
+test("frontmatter parser rejects malformed documents instead of guessing", () => {
   assert.throws(() => parseFrontmatterFile("no frontmatter here"), /must start with/);
   assert.throws(() => parseFrontmatterFile("---\ntitle: x\n"), /not closed/);
   assert.throws(() => parseFrontmatterFile("---\ntitle: a\ntitle: b\n---\n"), /Duplicate/);
+  assert.throws(() => parseFrontmatterFile("---\ntitle x\n---\n"), /missing ":"/);
+  assert.throws(() => parseFrontmatterFile("---\n  title: x\n---\n"), /Unexpected indentation/);
+});
+
+// ----- REGRESSION: the two verified malformed inputs must now be rejected -----
+const header = (line: string) => `---\n${line}\n---\n\nGövde.\n`;
+
+test("REGRESSION: an unterminated double quote is rejected", () => {
+  assert.throws(() => parseFrontmatterFile(header('title: "kapanmamis baslik')), /Unterminated double quote/);
+});
+
+test("REGRESSION: an unterminated quote inside an inline array is rejected", () => {
+  assert.throws(
+    () => parseFrontmatterFile(header('primarySources: ["https://a.example, "https://b.example"]')),
+    /Unterminated double quote inside the array value/,
+  );
+});
+
+test("an unterminated single quote is rejected", () => {
+  assert.throws(() => parseFrontmatterFile(header("title: 'kapanmamis")), /Single-quoted scalars are not supported/);
+  assert.throws(() => parseFrontmatterFile(header("tags: ['a, 'b']")), /Unterminated single quote inside the array value/);
+});
+
+test("single-quoted scalars are rejected by design, with an actionable message", () => {
+  assert.throws(() => parseFrontmatterFile(header("title: 'tam kapali'")), /Single-quoted scalars are not supported/);
+});
+
+test("trailing characters after a closed quoted scalar are rejected", () => {
+  assert.throws(() => parseFrontmatterFile(header('title: "kapali" artik')), /Unexpected characters after the closing quote/);
+  assert.throws(() => parseFrontmatterFile(header('title: "kapali"x')), /Unexpected characters after the closing quote/);
+});
+
+test("a stray quote inside an unquoted scalar is rejected", () => {
+  assert.throws(() => parseFrontmatterFile(header('title: bozuk"deger')), /Unexpected quote character/);
+});
+
+test("escaped double quotes do not terminate the value early", () => {
+  const parsed = parseFrontmatterFile(header('title: "Alintili \\"deger\\" icerir"'));
+  assert.equal(parsed.frontmatter.title, 'Alintili "deger" icerir');
+});
+
+test("commas inside a quoted value do not split an array", () => {
+  const parsed = parseFrontmatterFile(header('topics: ["bir, iki", "uc"]'));
+  assert.deepEqual(parsed.frontmatter.topics, ["bir, iki", "uc"]);
+});
+
+test("colons inside quoted and unquoted URLs survive intact", () => {
+  const parsed = parseFrontmatterFile(
+    header('primarySources: ["https://www.aile.gov.tr/a:b", "https://www.resmigazete.gov.tr/c"]'),
+  );
+  assert.deepEqual(parsed.frontmatter.primarySources, [
+    "https://www.aile.gov.tr/a:b",
+    "https://www.resmigazete.gov.tr/c",
+  ]);
+});
+
+test("unsupported escape sequences are rejected, JSON escapes are accepted", () => {
+  assert.throws(() => parseFrontmatterFile(header('title: "kotu \\q kacis"')), /Invalid quoted string/);
+  assert.throws(() => parseFrontmatterFile(header('title: "kotu \\x41 kacis"')), /Invalid quoted string/);
+  const parsed = parseFrontmatterFile(header('title: "satir\\nsonu ve \\u0041"'));
+  assert.equal(parsed.frontmatter.title, "satir\nsonu ve A");
+});
+
+test("an empty inline array and an empty block sequence both yield []", () => {
+  assert.deepEqual(parseFrontmatterFile(header("secondarySources: []")).frontmatter.secondarySources, []);
+  assert.deepEqual(parseFrontmatterFile("---\nsecondarySources:\n---\n\nx\n").frontmatter.secondarySources, []);
 });

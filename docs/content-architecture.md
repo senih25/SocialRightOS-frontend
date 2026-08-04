@@ -92,10 +92,26 @@ ne sitemap, ne de discovery seçicisinde kullanılır (testle zorlanır).
 `docs/architecture/discovery-engines.md` (ContentOps) go/no-go kapıları henüz
 aşılmadı: doğrulanmış/publishable makale sayısı sıfır, resmî route allowlist'i
 tamamlanmadı ve Stage 6 kaynak izleme 14 gün çalışmadı. Bu nedenle hiçbir
-discovery UI, programatik SEO veya facet sayfası üretilmemiştir. Yalnız saf ve
-test edilebilir bir **uygunluk seçicisi** (`selectDiscoveryEligibleArticles`)
-vardır; sahte `DiscoveryIndexDocument` veya publication provenance üretmez ve boş
-veriyle boş sonuç döndürür.
+discovery UI, programatik SEO veya facet sayfası üretilmemiştir.
+
+**Discovery uygunluk seçicisi de yoktur - bilincli olarak.** ContentOps'un
+`schemas/discovery/discovery-index-document.schema.json` sozlesmesi bir kaydin
+indekse girebilmesi icin tam `publication_provenance` (`content_id`,
+`merged_pr_url`, `published_at`), `content_hash` ve `primary_source_ids` ister.
+Bu verilerin hicbiri Asama 4'te mevcut degildir: sirasiyla Asama 5 insan onay
+kaydi, Asama 6 dogrulanmis kaynak olaylari ve Asama 7 draft-PR merge'i tarafindan
+uretilir. Bir `ArticleEntry` bunlari tek basina asla karsilayamaz.
+
+Bu alanlari yok sayan bir secici **yaniltici bir kapi** olurdu: gercek bir
+discovery indeksinin reddetmesi gereken kayitlar icin "uygun" derdi. "Simdilik
+hep bos donen" bir secici ise ayni hatayi davet eden olu kod olurdu. Ikisi de
+reddedildi; fonksiyon **kaldirildi** ve bir test artik modulde discovery ile
+ilgili hicbir disa aktarim bulunmadigini dogruluyor.
+
+Discovery, Asama 5/6/7 tamamlandiktan sonra kurulacaktir. Girdisi `ArticleEntry`
+degil, gercek publication provenance tasiyan ayri ve tam tipli bir kayit olmali;
+zorunlu provenance alanlarinin her biri dogrulanmali ve **tek bir eksik alan bile
+kaydi reddetmelidir**. Sahte `content_hash`, `content_id` veya PR URL'i uretilmez.
 
 ## 7. Sahte güncellik yasağı
 
@@ -106,8 +122,16 @@ alanından gelir; ayrıştırılamayan tarih taşıyan kayıt bugünle damgalanm
 
 ## 8. Bilinen sınırlar
 
-- Frontmatter ayrıştırıcı YAML'ın küçük bir alt kümesini destekler (skaler, tek
-  satır ve blok dizi). Desteklenmeyen yapı sessizce yorumlanmaz, hata verir.
+- Frontmatter ayristirici YAML'in **acikca tanimlanmis** kucuk bir alt kumesini
+  destekler; `frontmatter-parse.ts` dosyasinin basindaki blok yorumda tam gramer
+  yazilidir. Cift tirnakli degerler **JSON string semantigiyle** dogrulanir
+  (yalniz JSON kacislari; desteklenmeyen kacis dizileri reddedilir), kapanmamis
+  tirnak ve kapanan tirnaktan sonra kalan karakterler hata verir, dizi bolme
+  yalniz tirnak disindaki virgullerde yapilir, tirnaksiz degerdeki basibos tirnak
+  reddedilir. **Tek tirnakli skalerler bilincli olarak reddedilir**: YAML'in ikinci
+  tirnak dialektini desteklemek kacis yuzeyini iki katina cikarirdi ve uretici
+  adaptor zaten cift tirnak yaziyor. Desteklenmeyen hicbir yapi sessizce
+  yorumlanmaz.
 - Görsel (`image`) düğümü şimdilik reddedilir: uzak görsel referansı ek bir
   güvenilmeyen bağlantıdır ve MVP içerik modelinde gerekli değildir.
 - `http://` bağlantılar reddedilir (downgrade); yalnız HTTPS/mailto/iç bağlantı

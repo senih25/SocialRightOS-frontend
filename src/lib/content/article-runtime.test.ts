@@ -17,7 +17,6 @@ import {
 import {
   assertUniqueArticleIdentity,
   isPublishableArticle,
-  selectDiscoveryEligibleArticles,
   selectPublishableArticles,
   sortArticles,
   type ArticleEntry,
@@ -105,7 +104,6 @@ test("an empty collection produces no routes, cards or sitemap entries", () => {
   assert.deepEqual(selectPublishableArticles([]), []);
   assert.deepEqual(buildArticleIndexCards([]), []);
   assert.deepEqual(buildArticleSitemapEntries([], siteUrl), []);
-  assert.deepEqual(selectDiscoveryEligibleArticles([]), []);
 });
 
 test("a quarantined collection leaks into no surface", () => {
@@ -114,7 +112,6 @@ test("a quarantined collection leaks into no surface", () => {
   assert.deepEqual(selectPublishableArticles(entries), []);
   assert.deepEqual(buildArticleIndexCards(entries), []);
   assert.deepEqual(buildArticleSitemapEntries(entries, siteUrl), []);
-  assert.deepEqual(selectDiscoveryEligibleArticles(entries), []);
 });
 
 test("ordering is deterministic: publishedAt desc, then slug asc", () => {
@@ -182,19 +179,46 @@ test("blog index cards skip URLs that already exist", () => {
   assert.equal(fresh[0].href, "/blog/yayimlanabilir-ornek");
 });
 
-test("contentRegistry status=published is not sufficient for discovery eligibility", () => {
-  // A contentRegistry row, in its real shape: an editorial CMS flag and nothing
+test("contentRegistry status=published grants no route, card or sitemap entry", () => {
+  // A contentRegistry row in its real shape: an editorial CMS flag and nothing
   // else. It carries no verificationState, reviewer or source provenance, so it
-  // can never satisfy the discovery gate — `status: "published"` is not evidence.
+  // can never reach any public surface — `status: "published"` is not evidence
+  // of source verification or indexability.
+  const siteUrl = new URL("https://www.sosyalhakrehberi.com");
   const registryShaped = [
-    { id: "content-blog", slug: "blog", section: "blog", title: "Blog", body: "…", canonical_path: "/blog", status: "published", updated_at: "2026-04-02" },
-  ];
-  assert.deepEqual(selectDiscoveryEligibleArticles(registryShaped as unknown as ArticleEntry[]), []);
-  assert.deepEqual(selectPublishableArticles(registryShaped as unknown as ArticleEntry[]), []);
-  // A quarantined article is not eligible even though the registry would call its section "published".
-  assert.deepEqual(selectDiscoveryEligibleArticles([entry()]), []);
-  // Only a genuinely publishable article with provenance is eligible.
-  assert.equal(selectDiscoveryEligibleArticles([publishable()]).length, 1);
+    {
+      id: "content-blog",
+      slug: "blog",
+      section: "blog",
+      title: "Blog",
+      body: "…",
+      canonical_path: "/blog",
+      status: "published",
+      updated_at: "2026-04-02",
+    },
+  ] as unknown as ArticleEntry[];
+  assert.deepEqual(selectPublishableArticles(registryShaped), []);
+  assert.deepEqual(buildArticleIndexCards(registryShaped), []);
+  assert.deepEqual(buildArticleSitemapEntries(registryShaped, siteUrl), []);
+});
+
+test("no discovery selector is exported: provenance does not exist yet", async () => {
+  // ContentOps' discovery contract requires publication_provenance
+  // (content_id, merged_pr_url, published_at), content_hash and
+  // primary_source_ids. None of that is available at Stage 4, so no selector may
+  // claim eligibility for anything. Removal is the gate.
+  const publishabilityModule = await import("./publishability.ts");
+  assert.equal("selectDiscoveryEligibleArticles" in publishabilityModule, false);
+  assert.equal(
+    Object.keys(publishabilityModule).some((name) => /discovery/i.test(name)),
+    false,
+    "no discovery-eligibility helper may exist before real publication provenance does",
+  );
+  // And the article record itself carries none of the required provenance fields.
+  const record = publishable().frontmatter as unknown as Record<string, unknown>;
+  for (const requiredByDiscovery of ["publication_provenance", "content_hash", "primary_source_ids"]) {
+    assert.equal(requiredByDiscovery in record, false, `article frontmatter must not fake ${requiredByDiscovery}`);
+  }
 });
 
 // ----------------------------------------------------------- markdown trust ---
