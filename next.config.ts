@@ -54,7 +54,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  // Vercel emits its own Build Output API artifacts; standalone remains for Docker/self-hosting.
+  output: process.env.VERCEL === "1" ? undefined : "standalone",
   reactStrictMode: true,
   poweredByHeader: false,
   turbopack: {
