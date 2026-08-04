@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { loadArticles } from "@/lib/content/articles.server";
+import { buildArticleSitemapEntries } from "@/lib/content/sitemap-projection";
 import { getSiteUrl, isProductionSite } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -36,9 +38,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/yasal-uyari",
   ];
 
-  return routes.map((route) => ({
+  const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
     url: new URL(route, siteUrl).toString(),
     changeFrequency: route === "/" ? "weekly" : "daily",
     priority: route === "/" ? 1 : 0.8,
   }));
+
+  // Markdown articles: only publishable ones, `lastModified` from frontmatter
+  // `updatedAt` alone. The nine quarantined legacy /blog pages are not part of
+  // this collection and stay out of the sitemap.
+  const staticUrls = new Set(staticEntries.map((entry) => entry.url));
+  const articleEntries = buildArticleSitemapEntries(loadArticles(), siteUrl).filter(
+    (entry) => !staticUrls.has(entry.url),
+  );
+
+  return [...staticEntries, ...articleEntries];
 }
