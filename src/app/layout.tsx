@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   description:
     "Sosyal hak testleri ve başvuru rehberleri için güven veren, sade ve açıklayıcı bir başlangıç deneyimi. Resmî karar vermez; yol gösterir.",
   applicationName: "Dijital Sosyal Hak Rehberi",
+  other: {
+    "google-adsense-account": "ca-pub-1598904485109890",
+  },
   keywords: [
     "sosyal hak testi",
     "sosyal yardım uygunluk testi",
