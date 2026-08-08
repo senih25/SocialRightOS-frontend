@@ -45,7 +45,7 @@ Yazar: Senih Bayankulu.
 Evde bakım yardımı, bakıma ihtiyacı olan engelli bireylerin ailelerinin yanında desteklenmesi için verilen nakdi bir yardımdır.
 2026 yılında yardımın temel koşulları; hane içi kişi başına düşen gelirinin net asgari ücretin 2/3'ünden az olması, yetkili sağlık kuruluşu raporu ve bakım ihtiyacının resmî değerlendirme ile doğrulanmasıdır.
 18 yaş üstü bireylerde raporda ağır engelli veya tam bağımlı ibaresi, 18 yaş altı bireylerde ise ilgili ÇÖZGER ibareleri aranır.
-Başvurular il müdürlüğü veya sosyal hizmet merkezi üzerinden yapılabilir; e-Devlet başvuruları da alınmaktadır.
+Başvurular il müdürlüğü veya sosyal hizmet merkezi üzerinden yapılır.
 `;
 
 const ARTICLE_JSON_LD = {
@@ -253,8 +253,8 @@ export default function Page() {
                 <p className="text-slate-700 mb-4">
                   Başvurular ikametgâh adresindeki Aile ve Sosyal Hizmetler İl
                   Müdürlüğü veya Sosyal Hizmet Merkezi Müdürlüğüne yapılır.
-                  Yönetmeliğe göre başvurular e-Devlet kapısı üzerinden de
-                  alınabilmektedir.
+                  Yönetmeliğe göre başvurular il müdürlüğü veya sosyal
+                  hizmet merkezi üzerinden yapılır.
                 </p>
                 <ol className="space-y-3 text-slate-700 list-decimal list-inside">
                   <li>
@@ -297,16 +297,15 @@ export default function Page() {
                     <strong className="text-orange-700">
                       İtiraz hakkı:
                     </strong>{" "}
-                    Sağlık kurulu raporlarına teslim alındığı veya e-Devlet&apos;te
-                    göründüğü tarihten itibaren 30 gün içinde İl Sağlık
-                    Müdürlüğüne itiraz edilebilir.
+                    Sağlık kurulu raporlarına ilişkin itirazlar ilgili
+                    mevzuattaki süre ve usule göre İl Sağlık Müdürlüğüne
+                    yapılır.
                   </p>
                   <p>
                     <strong className="text-orange-700">
                       Başvuru kanalı:
                     </strong>{" "}
-                    İl müdürlüğü, sosyal hizmet merkezi ve e-Devlet kanalları
-                    birlikte kullanılabilir.
+                    İl müdürlüğü ve sosyal hizmet merkezi kanalları kullanılır.
                   </p>
                 </div>
               </section>
