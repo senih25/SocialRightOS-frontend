@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "research_id": "P1-B04-VATANDASLIK-MAASI-S01",
+  "generated_at": "2026-08-08T00:00:00.000Z",
+  "claimed_source": {
+    "title": "2026 Yılı Cumhurbaşkanlığı Yıllık Programı",
+    "claimed_year": 2025,
+    "claimed_official_gazette_number": null
+  },
+  "verification_result": {
+    "source_exists_as_cited": true,
+    "claimed_title_verified": true,
+    "claimed_year_verified": true,
+    "claimed_official_gazette_number_verified": null,
+    "source_level_decision": "KEEP",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "2026 Yılı Cumhurbaşkanlığı Yıllık Programı",
+      "publication_date": null,
+      "official_gazette_number": null,
+      "relevant_article": "Yoksullukla Mücadele ve sosyal politika bölümü",
+      "relevant_heading": "Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı yıllık programı",
+      "role": "Sosyal politika öncelikleri, yoksullukla mücadele yaklaşımı ve mevcut sosyal yardım mimarisini gösteren resmî üst politika belgesi",
+      "source_classification": "OFFICIAL_POLICY_PROGRAM"
+    },
+    "supporting_administrative_source": {
+      "title": "Yoksullukla Mücadele ve Sosyal Yardımlar",
+      "publication_date": null,
+      "official_gazette_number": null,
+      "relevant_article": "Yoksullukla mücadele, sosyal yardım sisteminin etkinliği, hedefleme ve kurumsal koordinasyon",
+      "relevant_heading": "On İkinci Kalkınma Planı özel ihtisas komisyonu raporu",
+      "role": "Vatandaşlık maaşı gibi önerilerin hangi sosyal politika çerçevesinde tartışıldığını açıklayan destekleyici referans",
+      "source_classification": "OFFICIAL_POLICY_STUDY"
+    }
+  },
+  "material_findings": [
+    "2026 Yılı Cumhurbaşkanlığı Yıllık Programı resmî sitede mevcuttur ve yoksullukla mücadele / sosyal politika çerçevesi içerir.",
+    "Program, yürürlüğe girmiş bir 'Vatandaşlık Maaşı' programı oluşturmaz; bu isimde resmî bir hak veya ödeme kalemi doğrulanmadı.",
+    "Blog sayfası zaten resmî yürürlük olmadığını belirttiği için kaynak, politika bağlamı sağlamak üzere tutulabilir.",
+    "Kaynak, vatandaşlık maaşını mevcut ve uygulanmakta olan bir program gibi sunmak için kullanılmamalıdır."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": false,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "2026 Yılı Cumhurbaşkanlığı Yıllık Programı, 'Vatandaşlık Maaşı' adlı yürürlükte bir hak veya ödeme programı olarak sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Kaynak doğrulanmıştır ancak yalnızca politika ve yoksullukla mücadele bağlamı sağlar. 'Vatandaşlık Maaşı' adıyla yürürlükte bir resmî program doğrulanmadığı için sayfadaki ifade politika önerisi olarak kalmalıdır. Kaynak, programın resmî durumunu göstermek için değil, sosyal politika çerçevesini anlatmak için tutulabilir.",
+  "evidence_inventory": {
+    "official_source_urls": [
+      "https://www.sbb.gov.tr/wp-content/uploads/2025/10/2026-Yili-Cumhurbaskanligi-Yillik-Programi.pdf",
+      "https://www.sbb.gov.tr/wp-content/uploads/2025/08/Yoksullukla-Mucadele-ve-Sosyal-Yardimlar-OIK-Raporu_01082025.pdf"
+    ]
+  },
+  "validation_checks": {
+    "annual_program_verified": true,
+    "social_policy_section_verified": true,
+    "yoksullukla_mucadele_context_verified": true,
+    "citizenship_income_program_not_verified": true,
+    "policy_context_only": true
+  },
+  "limitations": [
+    "Bu karar, vatandaşlık maaşının resmî bir program olmadığı sonucunu güçlendiren politika bağlamı sağlar; yeni bir yasal düzenleme yayımlanırsa değerlendirme yenilenmelidir.",
+    "Bu karar kaynak 1 düzeyindedir; sayfadaki diğer kaynak numaraları ayrıca doğrulanmalıdır."
+  ]
+}

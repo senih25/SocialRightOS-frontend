@@ -341,7 +341,7 @@ export default function Page() {
                   <li>
                     [1] Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı. (2025).{" "}
                     <em>2026 Yılı Cumhurbaşkanlığı Yıllık Programı</em>. Sosyal
-                    politikalar bölümü, Ankara.
+                    politikalar ve yoksullukla mücadele çerçevesi, Ankara.
                   </li>
                   <li>
                     [2] Aile ve Sosyal Hizmetler Bakanlığı. (2025).{" "}
