@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     follow: false,
   },
   title:
-    "Vatandaşlık Maaşı 2026: Resmî Durum ve Kamuoyundaki Politika Önerileri",
+    "Vatandaşlık Maaşı 2026: Resmî Durum ve Politika Çerçevesi",
   description:
     "2026 Vatandaşlık Maaşı hakkında resmî durum ve kamuoyundaki politika önerilerine ilişkin açıklamalar. Bilgilendirme amacıyla hazırlanmış rehber.",
   keywords: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Vatandaşlık Maaşı 2026: Resmî Durum ve Kamuoyundaki Politika Önerileri",
+      "Vatandaşlık Maaşı 2026: Resmî Durum ve Politika Çerçevesi",
     description:
       "2026 Vatandaşlık Maaşı hakkında resmî durum ve kamuoyundaki politika önerilerine ilişkin açıklamalar.",
     type: "article",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 };
 
 const VOICE_TEXT = `
-Vatandaşlık Maaşı 2026: Resmî Durum ve Kamuoyundaki Politika Önerileri.
+Vatandaşlık Maaşı 2026: Resmî Durum ve Politika Çerçevesi.
 Yazar: Senih Bayankulu.
 
 Vatandaşlık Maaşı, bu sayfada yalnızca kamuoyundaki sosyal politika tartışmaları ve önerileri kapsamında ele alınmaktadır.
@@ -55,7 +55,7 @@ const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline:
-    "Vatandaşlık Maaşı 2026: Resmî Durum ve Kamuoyundaki Politika Önerileri",
+    "Vatandaşlık Maaşı 2026: Resmî Durum ve Politika Çerçevesi",
   author: {
     "@type": "Person",
     name: "Senih Bayankulu",
@@ -143,8 +143,7 @@ export default function Page() {
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 leading-tight mb-5">
-                Vatandaşlık Maaşı 2026: Resmî Durum, Taslak Çerçeve ve
-                Uygulama Notları
+                Vatandaşlık Maaşı 2026: Resmî Durum ve Politika Çerçevesi
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="font-bold text-slate-700">
@@ -335,21 +334,21 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Doğrulama Bekleyen Kaynak Notları
+                  Resmî Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
                     [1] Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı. (2025).{" "}
-                    <em>2026 Yılı Cumhurbaşkanlığı Yıllık Programı</em>. Sosyal
-                    politikalar ve yoksullukla mücadele çerçevesi, Ankara.
+                    <em>2026 Yılı Cumhurbaşkanlığı Yıllık Programı</em>. Resmî
+                    Gazete&apos;de yayımlanan yıllık program.
                   </li>
                   <li>
-                    [2] Aile ve Sosyal Hizmetler Bakanlığı. (2025).{" "}
+                    [2] Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı. (2025).{" "}
                     <em>
-                      Sosyal Yardım Reformu ve Vatandaşlık Maaşı Modeli
-                      Çalışma Raporu
+                      Yoksullukla Mücadele ve Sosyal Yardımlar Özel İhtisas
+                      Komisyonu Raporu
                     </em>
-                    . SYGM Yayınları.
+                    . Politika çerçevesi ve sosyal yardım sistemi analizi.
                   </li>
                 </ul>
               </footer>
