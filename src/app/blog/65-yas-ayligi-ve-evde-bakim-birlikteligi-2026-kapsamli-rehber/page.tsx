@@ -204,8 +204,8 @@ export default function Page() {
                             <h3 className="font-black text-amber-800 mb-2">ℹ️ Güncel Bilgi</h3>
                             <p className="text-sm text-amber-700">
                               Sosyal yardım hakları yıl içinde enflasyon farkı ve diğer düzenlemelerle değişebilir.
-                              Güncel durumu öğrenmek için <strong>e-Devlet</strong> üzerinden sorgulama yapabilir
-                              veya ikametinizdeki <strong>SYDV</strong>&apos;ye danışabilirsiniz.
+                              Güncel durumu öğrenmek için resmî program sayfasını
+                              inceleyebilir veya ikametinizdeki <strong>SYDV</strong>&apos;ye danışabilirsiniz.
                             </p>
                           </div>
                         </td>
@@ -313,7 +313,7 @@ export default function Page() {
                   <h3 className="font-black text-amber-800 mb-2">ℹ️ Güncel Bilgi</h3>
                   <p className="text-sm text-amber-700">
                     Sosyal yardım hakları yıl içinde mevzuat değişiklikleri ve kurum değerlendirmeleriyle güncellenebilir.
-                    Güncel durumu öğrenmek için <strong>e-Devlet</strong> üzerinden sorgulama yapabilir
+                    Güncel durumu öğrenmek için resmî program sayfasını inceleyebilir
                     veya ikametinizdeki <strong>SYDV</strong>&apos;ye danışabilirsiniz.
                   </p>
                 </div>
