@@ -47,7 +47,7 @@ Yazar: Senih Bayankulu.
 Engelli aylığı, 2022 sayılı Kanun kapsamında sosyal güvencesi olmayan ve gelir kriterini sağlayan 18 yaş üstü engelli bireylere ödenen nakdi bir sosyal yardımdır.
 2026 yılı tutarları %40-%69 engelliler için 5.793,31 TL, %70 ve üzeri engelliler için 8.689,97 TL olarak program tablosunda yer almaktadır.
 Başvuru için engelli sağlık kurulu raporu gerekir; rapor yetkili sağlık kuruluşlarınca düzenlenir.
-Hak ve başvuru bilgileri için e-Devlet, SYDV ve Bakanlığın resmî SSS sayfaları takip edilmelidir.
+Hak ve başvuru bilgileri için SYDV, Bakanlığın program tablosu ve resmî SSS sayfaları takip edilmelidir.
 `;
 
 const ARTICLE_JSON_LD = {
@@ -213,7 +213,7 @@ export default function Page() {
                       Başvuru kanalı
                     </h3>
                     <p className="text-sm text-purple-700 font-bold">
-                      e-Devlet / SYDV
+                      SYDV / Bakanlık SSS
                     </p>
                     <p className="text-xs text-slate-500 mt-1">
                       Resmî başvuru
@@ -224,7 +224,7 @@ export default function Page() {
                   <h3 className="font-black text-amber-800 mb-2 text-sm text-center">ℹ️ Güncel Bilgi</h3>
                   <p className="text-sm text-amber-700 text-center">
                     Sosyal yardım hakları resmî program tablosunda yayımlanır.
-                    Güncel durum için <strong>e-Devlet</strong>, <strong>SYDV</strong> ve Bakanlığın resmî SSS sayfaları takip edilmelidir.
+                    Güncel durum için <strong>SYDV</strong> ve Bakanlığın resmî SSS sayfaları takip edilmelidir.
                   </p>
                 </div>
               </section>
@@ -340,9 +340,8 @@ export default function Page() {
                     <strong className="text-orange-700">
                       İtiraz hakkı:
                     </strong>{" "}
-                    Sağlık kurulu raporlarına teslim alındığı ya da e-Devlet&apos;te
-                    göründüğü tarihten itibaren 30 gün içinde İl Sağlık
-                    Müdürlüğü&apos;ne itiraz edilebilir.
+                    Sağlık kurulu raporlarına ilişkin itirazlar mevzuattaki
+                    süre ve usule göre İl Sağlık Müdürlüğü&apos;ne yapılır.
                   </p>
                   <p>
                     <strong className="text-orange-700">
