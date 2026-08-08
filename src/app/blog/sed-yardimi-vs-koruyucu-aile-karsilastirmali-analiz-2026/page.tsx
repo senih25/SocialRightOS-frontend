@@ -371,10 +371,9 @@ export default function Page() {
                       Koruyucu aile bakım ücreti:
                     </strong>{" "}
                     Koruyucu aileye baktığı her çocuk için aylık bakım ücreti
-                    ödenir. 2026 Temmuz-Aralık döneminde resmî tabloda yaş ve
-                    okul durumuna göre ödeme miktarları yayımlanmıştır; özel
-                    zorlukları veya engeli bulunan çocuklarda aylık bakım
-                    ücreti yüzde 50 artırılarak uygulanır.
+                    ödenir. Tutarlar çocuğun yaş ve okul durumuna göre
+                    farklılaşır; özel zorlukları veya engeli bulunan
+                    çocuklarda aylık bakım ücreti artırımlı uygulanır.
                   </p>
                   <p>
                     <strong className="text-orange-700">
@@ -418,16 +417,16 @@ export default function Page() {
                   <li>
                     [2] Aile ve Sosyal Hizmetler Bakanlığı. (2025).{" "}
                     <em>
-                      SED Hizmetleri ve Koruyucu Aile Uygulama Yönergeleri
+                      Sosyal ve Ekonomik Destek (SED) Hizmeti
                     </em>
-                    . SHÇEK Yayınları, Ankara.
+                    . Resmî hizmet sayfası.
                   </li>
                   <li>
                     [3] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
-                      Koruyucu Aile
+                      Koruyucu Aile Hizmeti
                     </em>
-                    . Resmî ödeme tablosu ve başvuru sayfası.
+                    . Resmî hizmet sayfası ve başvuru kanalları.
                   </li>
                   <li>
                     [4] UNICEF Türkiye. (2025).{" "}
