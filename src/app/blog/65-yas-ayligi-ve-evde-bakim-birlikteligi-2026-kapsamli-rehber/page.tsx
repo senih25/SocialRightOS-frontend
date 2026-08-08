@@ -385,11 +385,10 @@ export default function Page() {
                     . Sayı: 31857.
                   </li>
                   <li>
-                    [2] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
-                    <em>
-                      2026 Yılı Sosyal Yardım Programları Uygulama Talimatı
-                    </em>
-                    . SYGM Yayınları, Ankara.
+                    [2] T.C. Aile ve Sosyal Hizmetler Bakanlığı.{" "}
+                    <em>Sosyal Yardım Programlarımız</em>;{" "}
+                    <em>2022 Sayılı Kanun Kapsamındaki Engelli ve Yaşlı Aylıkları</em>;{" "}
+                    <em>Evde Bakım Yardımı ve Gündüz Hizmetleri</em>.
                   </li>
                   <li>
                     [3] Aile ve Sosyal Hizmetler Bakanlığı. (2025).{" "}
@@ -442,4 +441,3 @@ export default function Page() {
     </main>
   );
 }
-
