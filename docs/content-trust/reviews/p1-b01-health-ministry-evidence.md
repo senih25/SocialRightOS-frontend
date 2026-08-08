@@ -125,15 +125,15 @@ ve kaynak değişikliği uygulanmayacaktır.
 - İddia edilen yıl: 2026
 - İddia edilen Resmî Gazete sayısı: Yok
 - Kayıt sayısı: 1
-- Araştırma durumu: NOT_STARTED
+- Araştırma durumu: COMPLETED
 
 #### Zorunlu kontroller
 
-- [ ] Exact title search on Sağlık Bakanlığı domains
-- [ ] Search ministry publications, guides and announcements
-- [ ] Check publication date and document ownership
-- [ ] Locate a direct PDF or official HTML source
-- [ ] Determine whether the guide supports the cited objection process
+- [x] Exact title search on Sağlık Bakanlığı domains
+- [x] Search ministry publications, guides and announcements
+- [x] Check publication date and document ownership
+- [x] Locate a direct PDF or official HTML source
+- [x] Determine whether the guide supports the cited objection process
 
 #### Bağlı kayıtlar
 
@@ -144,10 +144,20 @@ ve kaynak değişikliği uygulanmayacaktır.
 
 #### Araştırma sonucu
 
-- Doğrudan resmî kaynak: Henüz araştırılmadı
-- Kesin başlık eşleşmesi: Henüz araştırılmadı
-- İddia desteği: Henüz araştırılmadı
-- Önerilen karar: PENDING
+- Doğrudan resmî kaynak: Var
+- Kesin başlık eşleşmesi: Yok
+- İddia desteği: Kısmen
+- Önerilen karar: REPLACE
+
+Resmî arama ve güncel bakanlık sayfaları, "2026 Yılı Engelli Sağlık Kurulu Raporu İtiraz Başvuru Kılavuzu" başlığını doğrulamadı. Buna karşın Aile ve Sosyal Hizmetler Bakanlığı'nın güncel SSS sayfası, engelli sağlık kurulu raporlarına itirazın otuz gün içinde İl Sağlık Müdürlüğüne yapılacağını açıkça belirtmektedir. Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik de itirazların bu Yönetmelik hükümlerine göre sonuçlandırılacağını söylemektedir.
+
+Blogdaki önceki "hastane başhekimliği" ifadesi resmî kaynaklarla birebir örtüşmediği için metin, daha genel ve doğrulanmış başvuru diliyle revize edilmelidir.
+
+### Doğrulanmış kaynaklar
+
+1. Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik, ilgili itiraz hükümleri.
+2. Aile ve Sosyal Hizmetler Bakanlığı SSS: Engelliler İçin Sağlık Kurulu Raporları, Soru 10.
+3. Nihai araştırma karar paketi: `p1-b01-t03-final-decision.json`.
 
 ## P1-B01-T02 — İtiraz Tebliği Kaynak Doğrulaması
 

@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title:
     "Engelli Raporu İtiraz Süreci 2026: Hukuki Yol Haritası ve Başvuru Rehberi",
   description:
-    "2026 engelli sağlık kurulu raporu itiraz süreci, hastane başhekimliği ve il sağlık müdürlüğü başvuru adımları. Bilgilendirme amacıyla hazırlanmış rehber.",
+    "2026 engelli sağlık kurulu raporu itiraz süreci, İl Sağlık Müdürlüğü başvuru akışı ve hakem hastane yönlendirmesi. Bilgilendirme amacıyla hazırlanmış rehber.",
   keywords: [
     "engelli raporu itiraz 2026",
     "sağlık kurulu raporu itiraz",
     "engelli oranı itiraz süreci",
-    "hastane başhekimliği itiraz",
+    "il sağlık müdürlüğü itiraz",
     "il sağlık müdürlüğü engelli raporu",
     "çalışma gücü kaybı itiraz",
     "engelli raporu yenileme 2026",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title:
       "Engelli Raporu İtiraz Süreci 2026: Hukuki Yol Haritası ve Başvuru Rehberi",
     description:
-      "2026 engelli sağlık kurulu raporu itiraz süreci, hastane başhekimliği ve il sağlık müdürlüğü başvuru adımları.",
+      "2026 engelli sağlık kurulu raporu itiraz süreci, İl Sağlık Müdürlüğü başvuru akışı ve hakem hastane yönlendirmesi.",
     type: "article",
     authors: ["Senih Bayankulu"],
     publishedTime: "2026-05-04",
@@ -45,8 +45,8 @@ Engelli Raporu İtiraz Süreci 2026: Hukuki Yol Haritası ve Başvuru Rehberi.
 Yazar: Senih Bayankulu.
 
 Engelli Sağlık Kurulu raporundaki çalışma gücü kaybı oranını yetersiz bulan bireylerin itiraz hakkı vardır.
-İtiraz süreci iki aşamadan oluşur: Birinci aşamada hastane başhekimliğine, ikinci aşamada il sağlık müdürlüğüne başvuru yapılır.
-Başhekimliğe itiraz 30 gün içinde yapılmalıdır.
+İtiraz süreci, raporun teslim alındığı veya e-Devlet'te göründüğü tarihten itibaren otuz gün içinde İl Sağlık Müdürlüğüne yapılan başvuruyla başlar.
+Müdürlük, başvuruyu yetkili sağlık kuruluşuna yönlendirir ve gerekirse hakem hastane aşaması uygulanır.
 İtiraz dilekçesinde rapordaki hangi bölüme itiraz edildiği ve nedenleri ayrıntılı olarak belirtilmelidir.
 `;
 
@@ -74,7 +74,7 @@ const ARTICLE_JSON_LD = {
   articleSection: "Sosyal Hak Analizi",
   inLanguage: "tr-TR",
   keywords:
-    "engelli raporu itiraz, sağlık kurulu raporu, çalışma gücü kaybı, hastane başhekimliği, il sağlık müdürlüğü",
+    "engelli raporu itiraz, sağlık kurulu raporu, çalışma gücü kaybı, il sağlık müdürlüğü, hakem hastane",
 };
 
 const HASHTAGS = [
@@ -185,11 +185,14 @@ export default function Page() {
               {/* İtiraz Süreci Adımları */}
               <section className="bg-indigo-50/60 p-6 md:p-8 rounded-2xl border border-indigo-100">
                 <h2 className="text-xl font-black text-slate-950 mb-4">
-                  İtiraz Süreci: İki Aşamalı Yol Haritası
+                  İtiraz Süreci: Resmî Başvuru Akışı
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Engelli raporuna itiraz süreci, hastane başhekimliği ve il
-                  sağlık müdürlüğü olmak üzere iki aşamadan oluşur:
+                  Engelli raporuna itiraz, raporun teslim alındığı veya
+                  e-Devlet&apos;te göründüğü tarihten itibaren 30 gün içinde
+                  İl Sağlık Müdürlüğüne başvuru ile başlar. Müdürlük, başvuruyu
+                  yetkili sağlık kuruluşuna yönlendirir ve süreç gerekirse
+                  hakem hastane aşamasına taşınır:
                 </p>
                 <div className="space-y-4">
                   <div className="bg-white p-5 rounded-2xl border border-indigo-100">
@@ -198,7 +201,7 @@ export default function Page() {
                         1
                       </span>
                       <h3 className="font-black text-indigo-800">
-                        Hastane Başhekimliği İtirazı
+                        İl Sağlık Müdürlüğü Başvurusu
                       </h3>
                     </div>
                     <ul className="text-sm text-slate-700 space-y-2 ml-11">
@@ -207,20 +210,20 @@ export default function Page() {
                         <strong>30 gün</strong> içinde
                       </li>
                       <li>
-                        ▸ <strong>Başvuru yeri:</strong> Raporu düzenleyen
-                        hastanenin başhekimliği
+                        ▸ <strong>Başvuru yeri:</strong> İkamet edilen ya da
+                        raporun alındığı ilin İl Sağlık Müdürlüğü
                       </li>
                       <li>
                         ▸ <strong>Gerekli evrak:</strong> İtiraz dilekçesi,
-                        nüfus cüzdanı fotokopisi, raporun aslı veya onaylı
-                        sureti
+                        kimlik belgesi ve raporun aslı veya ibrazı
                       </li>
                       <li>
-                        ▸ <strong>Dilekçe içeriği:</strong> Hangi bölüme itiraz
-                        edildiği, nedenleri ve talep edilen düzeltme
+                        ▸ <strong>Dilekçe içeriği:</strong> Hangi bulguya veya
+                        rapor sonucuna itiraz edildiği ve gerekçesi
                       </li>
                       <li>
-                        ▸ <strong>Sonuç süresi:</strong> Ortalama 30-60 gün
+                        ▸ <strong>İşlem:</strong> Başvuru kayıt altına alınır ve
+                        yetkili sağlık kuruluşuna yönlendirme yapılır
                       </li>
                     </ul>
                   </div>
@@ -230,29 +233,30 @@ export default function Page() {
                         2
                       </span>
                       <h3 className="font-black text-indigo-800">
-                        İl Sağlık Müdürlüğü İtirazı
+                        Yeniden Değerlendirme ve Hakem Hastane
                       </h3>
                     </div>
                     <ul className="text-sm text-slate-700 space-y-2 ml-11">
                       <li>
-                        ▸ <strong>Süre:</strong> Başhekimlik kararının
-                        tebliğinden itibaren <strong>30 gün</strong> içinde
+                        ▸ <strong>İnceleme:</strong> Başvuru, ilgili sağlık
+                        kuruluşu veya rapor itiraz birimi tarafından
+                        değerlendirilir
                       </li>
                       <li>
-                        ▸ <strong>Başvuru yeri:</strong> İl Sağlık
-                        Müdürlüğü&apos;nün Halk Sağlığı Başkanlığı
+                        ▸ <strong>Yönlendirme:</strong> Gerekirse daha yakın
+                        yetkili sağlık kuruluşuna veya hakem hastaneye sevk
                       </li>
                       <li>
-                        ▸ <strong>Gerekli evrak:</strong> İkinci itiraz
-                        dilekçesi, başhekimlik kararı, tüm önceki evraklar
+                        ▸ <strong>Gerekli evrak:</strong> Önceki rapor, sevk
+                        yazısı ve başvuruya eklenen tıbbi belgeler
                       </li>
                       <li>
-                        ▸ <strong>İnceleme:</strong> İl sağlık müdürlüğü
-                        uzmanları tarafından dosya üzerinden veya ek tetkik
-                        istenerek değerlendirme
+                        ▸ <strong>Karar:</strong> Sonuç, ilgili mevzuat ve
+                        kurul değerlendirmesine göre kesinleşir
                       </li>
                       <li>
-                        ▸ <strong>Sonuç süresi:</strong> Ortalama 60-90 gün
+                        ▸ <strong>Not:</strong> Bölgesel uygulama adımları il
+                        sağlık müdürlükleri arasında detay farkı gösterebilir
                       </li>
                     </ul>
                   </div>
@@ -429,12 +433,9 @@ export default function Page() {
                     .
                   </li>
                   <li>
-                    [4] Sağlık Bakanlığı. (2026).{" "}
-                    <em>
-                      2026 Yılı Engelli Sağlık Kurulu Raporu İtiraz Başvuru
-                      Kılavuzu
-                    </em>
-                    . Ankara.
+                    [4] T.C. Aile ve Sosyal Hizmetler Bakanlığı.{" "}
+                    <em>Engelliler İçin Sağlık Kurulu Raporları</em>. Engelli
+                    ve Yaşlı Hizmetleri Genel Müdürlüğü, SSS.
                   </li>
                 </ul>
               </footer>
@@ -472,4 +473,3 @@ export default function Page() {
     </main>
   );
 }
-
