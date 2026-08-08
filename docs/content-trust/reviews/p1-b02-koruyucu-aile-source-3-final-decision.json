@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "research_id": "P1-B02-KORUYUCU-AILE-S03",
+  "generated_at": "2026-08-08T00:00:00.000Z",
+  "claimed_source": {
+    "title": "2026 Yılı Koruyucu Aile Bakım Ücreti ve Değerlendirme Kriterleri",
+    "claimed_year": 2026,
+    "claimed_official_gazette_number": null
+  },
+  "verification_result": {
+    "source_exists_as_cited": false,
+    "claimed_title_verified": false,
+    "claimed_year_verified": false,
+    "claimed_official_gazette_number_verified": null,
+    "source_level_decision": "REPLACE",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "Koruyucu Aile",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "Koruyucu Aile Temmuz - Aralık Aylık Ödeme Miktarları; Başvuru Yeri; Koruyucu Aile Bakım Modelleri; İstenen Belgeler",
+      "relevant_heading": "Aile ve Sosyal Hizmetler Bakanlığı koruyucu aile program sayfası",
+      "role": "Koruyucu aile için 2026 Temmuz-Aralık aylık bakım ücretlerini, başvuru yerini ve başvuru şartlarını yayımlayan resmî program sayfası",
+      "source_classification": "OFFICIAL_MINISTRY_PROGRAM_PAGE"
+    },
+    "supporting_administrative_source": {
+      "title": "Koruyucu Aile Hizmeti",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "Soru 18: Koruyucu Ailelere Ve Yerleştirilen Çocuğa Sağlanan Olanaklar Nelerdir?",
+      "relevant_heading": "Koruyucu aile SSS sayfası",
+      "role": "Aylık bakım ücreti, %50 artış, eğitim masrafı için üç kat ödeme ve giyim ödemesi gibi uygulama ayrıntılarını doğrulayan resmî açıklama",
+      "source_classification": "OFFICIAL_MINISTRY_GUIDANCE_PAGE"
+    }
+  },
+  "material_findings": [
+    "İddia edilen 2026 bakım ücreti ve değerlendirme kriterleri başlığı resmî domainde doğrulanmadı.",
+    "Resmî program sayfası koruyucu aile bakım ücretini yaş ve okul durumuna göre aylık olarak listeliyor ve başvuru yerini il müdürlüğü/e-Devlet olarak veriyor.",
+    "Resmî SSS sayfası, koruyucu ailelere baktıkları her çocuk için aylık ücret ödendiğini; özel zorlukları veya engelli çocuklarda aylık bakım ücretinin yüzde 50 artırıldığını; eğitim masrafları için üç kat ödeme yapıldığını doğruluyor.",
+    "Bu nedenle blogdaki kaynak notu tek bir 2026 talimatı olarak değil, resmî program sayfası ve SSS birlikte olacak şekilde kullanılmalıdır."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": true,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "2026 Yılı Koruyucu Aile Bakım Ücreti ve Değerlendirme Kriterleri, resmî ve doğrulanmış bir bakanlık yayını olarak sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Kaynak 3 doğrulanamayan bir 2026 talimat atfı olduğu için değiştirilmelidir. Yerine Aile ve Sosyal Hizmetler Bakanlığı’nın koruyucu aile program sayfası ile koruyucu aile SSS sayfası kullanılmalıdır. Bakım ücreti, yaş ve okul durumuna göre resmî tablodan verilmeli; artış ve destek hükümleri SSS ile desteklenmelidir.",
+  "evidence_inventory": {
+    "official_source_urls": [
+      "https://aile.gov.tr/koruyucuaile/koruyucu-aile",
+      "https://www.aile.gov.tr/sss/cocuk-hizmetleri-genel-mudurlugu/koruyucu-aile-hizmeti/q-0018/"
+    ]
+  },
+  "validation_checks": {
+    "program_page_verified": true,
+    "faq_page_verified": true,
+    "monthly_payment_table_verified": true,
+    "fifty_percent_increase_verified": true,
+    "educational_multiplier_verified": true,
+    "claimed_talimat_not_verified": true
+  },
+  "limitations": [
+    "Resmî program sayfası 2026 Temmuz-Aralık dönemine ait güncel ödeme tablosunu verir; ayrı bir '2026 talimat' başlığı doğrulanmamıştır.",
+    "Bu karar kaynak 3 düzeyindedir; sayfadaki diğer kaynak numaraları ayrıca doğrulanmalıdır."
+  ]
+}

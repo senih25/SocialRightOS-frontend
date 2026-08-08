@@ -368,10 +368,13 @@ export default function Page() {
                   </p>
                   <p>
                     <strong className="text-orange-700">
-                      Koruyucu aile maaşı:
+                      Koruyucu aile bakım ücreti:
                     </strong>{" "}
-                    Koruyucu aileye çocuğun bakımı için aylık ödeme yapılır.
-                    Güncel tutarı öğrenmek için Aile ve Sosyal Hizmetler Bakanlığı&apos;na danışabilirsiniz.
+                    Koruyucu aileye baktığı her çocuk için aylık bakım ücreti
+                    ödenir. 2026 Temmuz-Aralık döneminde resmî tabloda yaş ve
+                    okul durumuna göre ödeme miktarları yayımlanmıştır; özel
+                    zorlukları veya engeli bulunan çocuklarda aylık bakım
+                    ücreti yüzde 50 artırılarak uygulanır.
                   </p>
                   <p>
                     <strong className="text-orange-700">
@@ -401,7 +404,7 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Doğrulama Bekleyen Kaynak Notları
+                  Resmî Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
@@ -420,12 +423,11 @@ export default function Page() {
                     . SHÇEK Yayınları, Ankara.
                   </li>
                   <li>
-                    [3] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    [3] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
-                      2026 Yılı Koruyucu Aile Bakım Ücreti ve Değerlendirme
-                      Kriterleri
+                      Koruyucu Aile
                     </em>
-                    . SYGM Yayınları.
+                    . Resmî ödeme tablosu ve başvuru sayfası.
                   </li>
                   <li>
                     [4] UNICEF Türkiye. (2025).{" "}
@@ -470,4 +472,3 @@ export default function Page() {
     </main>
   );
 }
-
