@@ -11,17 +11,17 @@ export const metadata: Metadata = {
     follow: false,
   },
   title:
-    "65 Yaş Aylığı ve Evde Bakım Maaşı Birlikteliği 2026: Kapsamlı Rehber ve Uygulama İpuçları",
+    "65 Yaş Aylığı ve Evde Bakım Yardımı 2026: Başvuru ve Çakışma Rehberi",
   description:
-    "2026'da 65 yaş aylığı ve evde bakım maaşı birlikte alınabilir mi? Gelir testi, başvuru şartları ve pratik uygulama rehberi. Bilgilendirme amacıyla hazırlanmış rehber.",
+    "2026'da 65 yaş aylığı ile evde bakım yardımının ayrı başvuru şartları, gelir kriterleri ve çakışma değerlendirmesi. Bilgilendirme amaçlı rehber.",
   keywords: [
-    "65 yaş aylığı evde bakım birlikte",
+    "65 yaş aylığı evde bakım yardımı",
     "yaşlılık maaşı bakım parası 2026",
-    "65 yaş aylığı evde bakım maaşı aynı anda",
-    "ikili yardım başvurusu 2026",
+    "65 yaş aylığı başvuru şartları",
+    "evde bakım yardımı başvuru şartları",
     "yaşlı bakım ücreti 2026",
-    "65 yaş aylığı gelir sınırı evde bakım",
-    "sosyal yardım birleştirme 2026",
+    "65 yaş aylığı gelir sınırı",
+    "sosyal yardım çakışma 2026",
     "yaşlı ve engelli bakım desteği",
   ],
   alternates: {
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "65 Yaş Aylığı ve Evde Bakım Maaşı Birlikteliği 2026: Kapsamlı Rehber ve Uygulama İpuçları",
+      "65 Yaş Aylığı ve Evde Bakım Yardımı 2026: Başvuru ve Çakışma Rehberi",
     description:
-      "2026'da 65 yaş aylığı ve evde bakım maaşı birlikte alınabilir mi? Gelir testi, başvuru şartları ve pratik uygulama rehberi.",
+      "2026'da 65 yaş aylığı ile evde bakım yardımının ayrı başvuru şartları, gelir kriterleri ve çakışma değerlendirmesi.",
     type: "article",
     authors: ["Senih Bayankulu"],
     publishedTime: "2026-05-04",
@@ -41,20 +41,20 @@ export const metadata: Metadata = {
 };
 
 const VOICE_TEXT = `
-65 Yaş Aylığı ve Evde Bakım Maaşı Birlikteliği 2026: Kapsamlı Rehber ve Uygulama İpuçları.
+65 Yaş Aylığı ve Evde Bakım Yardımı 2026: Başvuru ve Çakışma Rehberi.
 Yazar: Senih Bayankulu.
 
-65 yaş aylığı ve evde bakım maaşı birbirini engellemeyen iki ayrı sosyal yardımdır.
-2026 yılında her iki yardımı aynı anda almak mümkündür ancak her biri için ayrı başvuru ve ayrı değerlendirme yapılır.
-65 yaş aylığı için hane içi kişi başına düşen gelirin asgari ücretin üçte birinden az olması gerekirken, evde bakım maaşı için bu oran net asgari ücretin üçte ikisinden azdır.
-Her iki yardımın birlikte alınması durumunda toplam haklar, güncel mevzuat ve kurum değerlendirmesine göre şekillenir.
+65 yaş aylığı ile evde bakım yardımı ayrı mevzuatlara dayanır.
+2026 uygulamalarında her iki yardım için ayrı başvuru, ayrı gelir değerlendirmesi ve çakışma kontrolü yapılır.
+Evde bakım yardımı alan kişi 2022 sayılı Kanun kapsamındaki aylıklara başvurabilir; ancak nihai hak sahipliği SYDV incelemesi ile belirlenir.
+Bu rehber, birlikte alınabilirlik iddiasını değil, çakışma değerlendirmesini açıklar.
 `;
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline:
-    "65 Yaş Aylığı ve Evde Bakım Maaşı Birlikteliği 2026: Kapsamlı Rehber ve Uygulama İpuçları",
+    "65 Yaş Aylığı ve Evde Bakım Yardımı 2026: Başvuru ve Çakışma Rehberi",
   author: {
     "@type": "Person",
     name: "Senih Bayankulu",
@@ -74,13 +74,13 @@ const ARTICLE_JSON_LD = {
   articleSection: "Sosyal Hak Analizi",
   inLanguage: "tr-TR",
   keywords:
-    "65 yaş aylığı evde bakım birlikteliği, ikili yardım, yaşlı bakım desteği, gelir testi, 2026",
+    "65 yaş aylığı evde bakım yardımı, yaşlı bakım desteği, gelir testi, çakışma, 2026",
 };
 
 const HASHTAGS = [
-  "#65YaşAylığıNeKadar",
-  "#EvdeBakımMaaşı2026",
-  "#İkiliYardım",
+  "#65YaşAylığı",
+  "#EvdeBakımYardımı2026",
+  "#ÇakışmaKontrolü",
   "#YaşlıBakımDesteği",
   "#2026Güncel",
   "#SosyalHaklar",
@@ -94,7 +94,7 @@ export default function Page() {
     { name: "Ana sayfa", url: new URL("/", siteUrl).toString() },
     { name: "Blog ve Analiz", url: new URL("/blog", siteUrl).toString() },
     {
-      name: "65 Yaş Aylığı ve Evde Bakım Birlikteliği 2026",
+      name: "65 Yaş Aylığı ve Evde Bakım Yardımı 2026",
       url: new URL(
         "/blog/65-yas-ayligi-ve-evde-bakim-birlikteligi-2026-kapsamli-rehber",
         siteUrl,
@@ -120,7 +120,7 @@ export default function Page() {
             </Link>
             <span className="mx-2">/</span>
             <span className="text-slate-900 font-bold">
-              65 Yaş Aylığı ve Evde Bakım Birlikteliği 2026
+              65 Yaş Aylığı ve Evde Bakım Yardımı 2026
             </span>
           </div>
           <div className="flex items-center gap-3">
@@ -142,8 +142,8 @@ export default function Page() {
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 leading-tight mb-5">
-                65 Yaş Aylığı ve Evde Bakım Maaşı Birlikteliği 2026: Kapsamlı
-                Rehber ve Uygulama İpuçları
+                65 Yaş Aylığı ve Evde Bakım Yardımı 2026: Başvuru ve Çakışma
+                Rehberi
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="font-bold text-slate-700">
@@ -167,16 +167,12 @@ export default function Page() {
                   Giriş ve Temel Soru: İki Yardım Birlikte Alınabilir mi?
                 </h2>
                 <p className="text-slate-700">
-                  65 yaş aylığı ile evde bakım maaşı, Türkiye&apos;deki sosyal
-                  yardım sisteminin en sık karıştırılan iki unsurudur. Birçok
-                  vatandaş, bu iki yardımın birbirini engellediğini
-                  düşünmektedir. Oysa 2022 sayılı Kanun ve ilgili
-                  yönetmeliklerde bu iki yardım birbirinden bağımsız
-                  düzenlenmiştir. 2026 yılı uygulamalarında, belirli şartları
-                  sağlayan yaşlı bireyler her iki yardımı da aynı anda
-                  alabilmektedir. Bu makale, bu birlikteliğin hukuki
-                  çerçevesini, başvuru şartlarını ve pratik uygulama
-                  yönergelerini akademik düzeyde analiz etmektedir.
+                  65 yaş aylığı ile evde bakım yardımı, benzer sosyal politika
+                  alanlarında yer alsa da aynı hukuki mantıkla bağlanmaz. 2026
+                  uygulamalarında her iki yardım için ayrı mevzuat, ayrı gelir
+                  değerlendirmesi ve ayrı başvuru süreci vardır. Bu rehber,
+                  birlikte alınabilirlik iddiasını değil, çakışma
+                  değerlendirmesini ve başvuru mantığını özetler.
                 </p>
               </section>
 
@@ -223,7 +219,7 @@ export default function Page() {
                         <td className="py-3 px-2 font-bold">Engellilik</td>
                         <td className="py-3 px-2">Şart değil</td>
                         <td className="py-3 px-2">
-                          Ağır engelli raporu (%50+)
+                          Ağır engelli / tam bağımlı rapor
                         </td>
                       </tr>
                       <tr className="border-b border-teal-100">
@@ -252,17 +248,17 @@ export default function Page() {
                 </div>
               </section>
 
-              {/* Birlikte Alma Şartları */}
+              {/* Birlikte Alma / Çakışma */}
               <section>
                 <h2 className="text-2xl font-black text-slate-950 mb-4">
-                  Her İki Yardımı Birlikte Alma Şartları
+                  Başvuru ve Çakışma Değerlendirmesi
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  65 yaşını doldurmuş, ağır engelli raporu olan ve gelir
-                  kriterlerini sağlayan bir birey, her iki yardımı da aynı anda
-                  alabilir. Ancak burada kritik bir nokta vardır: Her iki
-                  yardım için de ayrı başvuru yapılması ve ayrı değerlendirme
-                  sürecinden geçilmesi gerekir.
+                  Resmî kaynaklar, 65 yaş aylığı ile evde bakım yardımının
+                  otomatik olarak birlikte bağlandığını söylemez. Evde bakım
+                  yardımı alan kişiler 2022 sayılı Kanun kapsamındaki aylıklara
+                  başvurabilir; ancak nihai hak sahipliği, muhtaçlık hesabı ve
+                  çakışan yardım kuralları SYDV tarafından ayrıca değerlendirilir.
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="bg-emerald-50 p-5 rounded-2xl border border-emerald-100">
@@ -284,13 +280,23 @@ export default function Page() {
                       Evde Bakım İçin
                     </h3>
                     <ul className="text-sm text-cyan-700 space-y-2">
-                      <li>▸ Ağır engelli raporu (%50+ bakım muhtaçlığı)</li>
+                      <li>▸ Ağır engelli / tam bağımlı rapor</li>
                       <li>▸ T.C. vatandaşı olmak</li>
                       <li>▸ SSK/Bağ-Kur/Emekli Sandığı geliri olmamak</li>
                       <li>▸ Hane geliri kişi başı net asgari ücretin 2/3&apos;ünden az</li>
                       <li>▸ Bakımın aile içinde yapılması</li>
                     </ul>
                   </div>
+                </div>
+                <div className="mt-4 bg-white p-5 rounded-2xl border border-teal-100">
+                  <h3 className="font-black text-teal-800 mb-2">
+                    Birlikte Alınabilirlik
+                  </h3>
+                  <p className="text-sm text-slate-700">
+                    Otomatik değildir. 65 yaş aylığı için 2022 sayılı Kanun,
+                    evde bakım yardımı için ise Evde Bakım Yardımı Yönetmeliği
+                    ve SYDV muhtaçlık incelemesi birlikte değerlendirilir.
+                  </p>
                 </div>
               </section>
 
@@ -300,8 +306,8 @@ export default function Page() {
                   Toplam Aylık Gelir Hesaplama
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Her iki yardımı birlikte alan bir bireyin aylık toplam hak
-                  durumu, güncel mevzuat ve kurum incelemesine göre değişebilir:
+                  Hak durumu, başvuru sırasına ve muhtaçlık hesabının sonucuna
+                  göre değişebilir:
                 </p>
                 <div className="bg-amber-50/60 p-6 rounded-2xl border border-amber-100 text-center">
                   <h3 className="font-black text-amber-800 mb-2">ℹ️ Güncel Bilgi</h3>
@@ -332,18 +338,19 @@ export default function Page() {
                     <strong className="text-orange-700">
                       Gelir testi farkı:
                     </strong>{" "}
-                    65 yaş aylığı daha dar gelir kriterine sahiptir. Evde bakım
-                    maaşı alan bir birey, 65 yaş aylığı için daha katı gelir
-                    testinden geçemeyebilir. Bu durumda sadece evde bakım
-                    maaşı alınmaya devam edilir.
+                    Evde bakım yardımı muhtaçlık hesabına dâhildir; bu nedenle
+                    65 yaş aylığı değerlendirmesinde hane geliri sonucu değişebilir.
+                    Hak kaybı olmaması için başvuru sırası ve gelir hesabı
+                    SYDV ile kontrol edilmelidir.
                   </p>
                   <p>
                     <strong className="text-orange-700">
                       Rapor sürekliliği:
                     </strong>{" "}
-                    Evde bakım maaşı için kullanılan engelli raporunun süresi
-                    dolarsa, 65 yaş aylığı ödenmeye devam eder ancak evde bakım
-                    ödemesi durur. Rapor yenileme takvimine dikkat edilmelidir.
+                    Evde bakım yardımı için kullanılan raporun süresi dolarsa,
+                    evde bakım dosyası yeniden değerlendirilir. 65 yaş aylığı
+                    dosyası ayrıca kontrol edilir; iki dosya aynı işlemle
+                    sonuçlandırılmaz.
                   </p>
                   <p>
                     <strong className="text-orange-700">
@@ -373,37 +380,23 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Doğrulama Bekleyen Kaynak Notları
+                  Resmî Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
-                    [1] T.C. Resmî Gazete. (2022).{" "}
-                    <em>
-                      2022 Sayılı Kanun: Sosyal Hizmetler Kanunu, Md. 14 ve Md.
-                      16
-                    </em>
-                    . Sayı: 31857.
+                    [1] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    <em>Sosyal Yardım Programlarımız</em>. Engelli-yaşlı
+                    yardımları ve 2026 tutarları.
                   </li>
                   <li>
-                    [2] T.C. Aile ve Sosyal Hizmetler Bakanlığı.{" "}
-                    <em>Sosyal Yardım Programlarımız</em>;{" "}
-                    <em>2022 Sayılı Kanun Kapsamındaki Engelli ve Yaşlı Aylıkları</em>;{" "}
-                    <em>Evde Bakım Yardımı ve Gündüz Hizmetleri</em>.
+                    [2] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    <em>2022 Sayılı Kanun Kapsamındaki Engelli ve Yaşlı Aylıkları</em>.{" "}
+                    Sıkça sorulan sorular.
                   </li>
                   <li>
-                    [3] Aile ve Sosyal Hizmetler Bakanlığı. (2025).{" "}
-                    <em>
-                      Birden Fazla Sosyal Yardım Alma Durumları ve
-                      Değerlendirme Kılavuzu
-                    </em>
-                    . Ankara.
-                  </li>
-                  <li>
-                    [4] Sağlık Bakanlığı. (2023).{" "}
-                    <em>
-                      Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği
-                    </em>
-                    . Resmî Gazete, Sayı: 32344.
+                    [3] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    <em>Evde Bakım Yardımı ve Gündüz Hizmetleri</em>. Hizmet
+                    açıklaması.
                   </li>
                 </ul>
               </footer>

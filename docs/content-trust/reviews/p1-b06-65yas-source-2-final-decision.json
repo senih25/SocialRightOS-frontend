@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "research_id": "P1-B06-65YAS-S02",
+  "generated_at": "2026-08-08T00:00:00.000Z",
+  "claimed_source": {
+    "title": "2026 Yılı Sosyal Yardım Programları Uygulama Talimatı",
+    "claimed_year": 2026,
+    "claimed_official_gazette_number": null
+  },
+  "verification_result": {
+    "source_exists_as_cited": false,
+    "claimed_title_verified": false,
+    "claimed_year_verified": false,
+    "claimed_official_gazette_number_verified": null,
+    "source_level_decision": "REPLACE",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "Sosyal Yardım Programlarımız",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "Yaşlı Aylığı satırında 65 yaş üstü vatandaşlar için gelir ve sosyal güvence şartları ile 2026 dönemi tutarı veriliyor; Evde Bakım Yardımı satırında gelir ve bakım şartları tanımlanıyor.",
+      "relevant_heading": "ENGELLİ - YAŞLI / Sosyal Yardım Programlarımız",
+      "role": "65 yaş aylığı ve evde bakım yardımının güncel program bazlı koşullarını ve tutarlarını gösteren resmî program sayfası",
+      "source_classification": "OFFICIAL_MINISTRY_PROGRAM_PAGE"
+    },
+    "supporting_administrative_source": {
+      "title": "2022 Sayılı Kanun Kapsamındaki Engelli ve Yaşlı Aylıkları",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "Soru 7'de evde bakım yardımı alan kişilerin 2022 sayılı Kanun kapsamındaki aylıklara başvuruda bulunabileceği ve evde bakım yardımının muhtaçlık hesaplamasına dahil edildiği; Soru 15'te yaşlılık aylığı ile engelli aylığının birlikte alınamayacağı belirtiliyor.",
+      "relevant_heading": "Sıkça Sorular",
+      "role": "Çakışma, başvuru ve muhtaçlık hesabı mantığını açıklayan resmî FAQ kaynağı",
+      "source_classification": "OFFICIAL_MINISTRY_FAQ_PAGE"
+    }
+  },
+  "material_findings": [
+    "İddia edilen '2026 Yılı Sosyal Yardım Programları Uygulama Talimatı' başlığı resmî kaynaklarda doğrulanmadı.",
+    "Aile ve Sosyal Hizmetler Bakanlığı'nın 'Sosyal Yardım Programlarımız' sayfası, 65 yaş üstü vatandaşlar için Yaşlı Aylığı koşullarını ve 2026 dönemi tutarını açıkça veriyor.",
+    "Aynı program sayfası, Evde Bakım Yardımı için gelir ve bakım şartlarını ayrı bir yardım kalemi olarak tanımlıyor.",
+    "Bakanlığın 2022 sayılı Kanun FAQ sayfası, evde bakım yardımı alan kişilerin 2022 aylıklarına başvurabileceğini ve evde bakım yardımının muhtaçlık hesabına dahil edildiğini belirtiyor.",
+    "Bu nedenle sayfadaki 'otomatik birliktelik' dili korunmamalı; içerik çakışma değerlendirmesi ve ayrı başvuru mantığına çevrilmelidir."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": true,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "2026 Yılı Sosyal Yardım Programları Uygulama Talimatı, resmî ve doğrulanmış bir Bakanlık yayımları olarak sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Kaynak 2 doğrulanamadı ve kaldırılmalıdır. İçerik, Bakanlığın sosyal yardım programları sayfası ile 2022 sayılı Kanun FAQ'sına dayandırılmalı; 65 yaş aylığı ve evde bakım yardımı için otomatik birlikte alma iddiası yerine ayrı başvuru ve çakışma değerlendirmesi anlatılmalıdır.",
+  "evidence_inventory": {
+    "official_source_urls": [
+      "https://www.aile.gov.tr/sygm/programlarimiz/sosyal-yardim-programlarimiz/",
+      "https://www.aile.gov.tr/sss/sosyal-yardimlar-genel-mudurlugu/2022-kanun-kapsaminda-yurutulen-ayliklar/",
+      "https://www.aile.gov.tr/sss/engelli-ve-yasli-hizmetleri-genel-mudurlugu/evde-bakim-yardimi-ve-gunduz-hizmetleri/"
+    ]
+  },
+  "validation_checks": {
+    "claimed_talimat_not_verified": true,
+    "program_page_verified": true,
+    "faq_page_verified": true,
+    "home_care_page_verified": true,
+    "automatic_combination_not_supported": true
+  },
+  "limitations": [
+    "Bu karar kaynak 2 düzeyindedir; sayfadaki diğer kaynak numaraları ayrıca doğrulanmalıdır.",
+    "Yaşlı aylığı ile evde bakım yardımı birlikte alınabilirlik konusu, haneye ve diğer aylıklara göre değişebileceğinden nihai karar SYDV incelemesiyle teyit edilmelidir."
+  ]
+}
