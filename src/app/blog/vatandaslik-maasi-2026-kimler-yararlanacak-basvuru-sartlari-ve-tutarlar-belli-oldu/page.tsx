@@ -351,14 +351,6 @@ export default function Page() {
                     </em>
                     . SYGM Yayınları.
                   </li>
-                  <li>
-                    [3] Dünya Bankası. (2024).{" "}
-                    <em>
-                      Turkey Social Protection System Review: Consolidation
-                      and Efficiency Report
-                    </em>
-                    . Washington DC.
-                  </li>
                 </ul>
               </footer>
             </div>
@@ -395,4 +387,3 @@ export default function Page() {
     </main>
   );
 }
-
