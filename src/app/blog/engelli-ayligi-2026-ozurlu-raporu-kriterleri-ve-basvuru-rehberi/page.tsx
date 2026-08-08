@@ -11,9 +11,9 @@ export const metadata: Metadata = {
     follow: false,
   },
   title:
-    "Engelli Aylığı 2026: Özürlü Raporu Kriterleri ve Başvuru Rehberi",
+    "Engelli Aylığı 2026: Resmî Şartlar, Rapor ve Başvuru Rehberi",
   description:
-    "2026 engelli aylığı oran temelli şartlar, Sağlık Bakanlığı Özürlü Sağlık Kurulu raporu kriterleri ve SYDV başvuru süreci. Bilgilendirme rehberi.",
+    "Aile ve Sosyal Hizmetler Bakanlığı’nın resmî kaynaklarına göre 2026 engelli aylığı tutarları, %40 ve üzeri rapor şartı ve SYDV başvuru süreci.",
   keywords: [
     "engelli aylığı 2026",
     "engelli maaşı 2026 ne kadar",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Engelli Aylığı 2026: Özürlü Raporu Kriterleri ve Başvuru Rehberi",
+      "Engelli Aylığı 2026: Resmî Şartlar, Rapor ve Başvuru Rehberi",
     description:
-      "2026 engelli aylığı oran temelli şartlar, Sağlık Bakanlığı Özürlü Sağlık Kurulu raporu kriterleri ve SYDV başvuru süreci.",
+      "Aile ve Sosyal Hizmetler Bakanlığı’nın resmî kaynaklarına göre 2026 engelli aylığı tutarları, %40 ve üzeri rapor şartı ve SYDV başvuru süreci.",
     type: "article",
     authors: ["Senih Bayankulu"],
     publishedTime: "2026-05-04",
@@ -41,14 +41,13 @@ export const metadata: Metadata = {
 };
 
 const VOICE_TEXT = `
-Engelli Aylığı 2026: Özürlü Raporu Kriterleri ve Başvuru Rehberi.
+Engelli Aylığı 2026: Resmî Şartlar, Rapor ve Başvuru Rehberi.
 Yazar: Senih Bayankulu.
 
-Engelli aylığı, 2022 sayılı Kanun kapsamında çalışma gücü kaybı oranı yüzde 40 ve üzerinde olan bireylere ödenen nakdi bir sosyal yardımdır.
-2026 yılında engelli aylığı hak değerlendirmesi, ağır engelli, orta engelli ve hafif engelli kategorilerine göre farklılaşmaktadır.
-Güncel hak bilgisini öğrenmek için e-Devlet üzerinden sorgulama yapabilir veya ikametinizdeki SYDV'ye danışabilirsiniz.
-Başvuru için Sağlık Bakanlığı Engelli Sağlık Kurulu tarafından düzenlenen raporda çalışma gücü kaybı oranının belirtilmesi zorunludur.
-Gelir testi şartı da aranır; hane içi kişi başına düşen gelir net asgari ücretin 1/3'ünden az olmalıdır.
+Engelli aylığı, 2022 sayılı Kanun kapsamında sosyal güvencesi olmayan ve gelir kriterini sağlayan 18 yaş üstü engelli bireylere ödenen nakdi bir sosyal yardımdır.
+2026 yılı tutarları %40-%69 engelliler için 5.793,31 TL, %70 ve üzeri engelliler için 8.689,97 TL olarak program tablosunda yer almaktadır.
+Başvuru için engelli sağlık kurulu raporu gerekir; rapor yetkili sağlık kuruluşlarınca düzenlenir.
+Hak ve başvuru bilgileri için e-Devlet, SYDV ve Bakanlığın resmî SSS sayfaları takip edilmelidir.
 `;
 
 const ARTICLE_JSON_LD = {
@@ -75,7 +74,7 @@ const ARTICLE_JSON_LD = {
   articleSection: "Sosyal Hak Analizi",
   inLanguage: "tr-TR",
   keywords:
-    "engelli aylığı 2026, özürlü raporu kriterleri, sağlık kurulu raporu, engelli maaşı başvurusu",
+    "engelli aylığı 2026, engelli sağlık kurulu raporu, engelli maaşı başvurusu, 2022 sayılı kanun, sydv",
 };
 
 const HASHTAGS = [
@@ -142,8 +141,7 @@ export default function Page() {
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 leading-tight mb-5">
-                Engelli Aylığı 2026: Özürlü Raporu Kriterleri ve Başvuru
-                Rehberi
+                Engelli Aylığı 2026: Resmî Şartlar, Rapor ve Başvuru Rehberi
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="font-bold text-slate-700">
@@ -168,69 +166,65 @@ export default function Page() {
                 </h2>
                 <p className="text-slate-700">
                   Engelli aylığı, 2022 sayılı Kanun&apos;un 17. maddesi
-                  kapsamında düzenlenen, çalışma gücü kaybı oranı yüzde 40 ve
-                  üzerinde olan bireylerin ekonomik desteklenmesi amacıyla
-                  ödenen nakdi bir sosyal yardımdır. Bu yardımın 2026 yılı
-                  uygulamalarında temel belirleyici unsur, Sağlık Bakanlığı
-                  Engelli Sağlık Kurulu tarafından düzenlenen raporda tespit
-                  edilen çalışma gücü kaybı oranı ile hane içi gelir testi
-                  sonuçlarıdır. Akademik literatürde engelli aylığı, sosyal
-                  devlet ilkesinin en somut göstergelerinden biri olarak
-                  değerlendirilmektedir.
+                  kapsamında düzenlenen, sosyal güvencesi olmayan ve gelir
+                  kriterini sağlayan 18 yaş üstü engelli bireyler için
+                  ödenen nakdi bir sosyal yardımdır.
+                  Başvuru değerlendirmesinde engelli sağlık kurulu raporu,
+                  yüzde 40 ve üzeri engel oranı ve hane içi gelir kriteri esas
+                  alınır.
                 </p>
               </section>
 
               {/* 2026 Güncel Bilgi */}
               <section className="bg-purple-50/60 p-6 md:p-8 rounded-2xl border border-purple-100">
                 <h2 className="text-xl font-black text-slate-950 mb-4">
-                  2026 Yılı Engelli Aylığı Hak Kategorileri
+                  2026 Yılı Engelli Aylığı Hak Yapısı
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Aile ve Sosyal Hizmetler Bakanlığı 2026 yılı bütçe
-                  uygulamalarına göre engelli aylığı hakları kategorilere göre
-                  belirlenmektedir:
+                  Aile ve Sosyal Hizmetler Bakanlığı’nın resmî program
+                  tablosuna göre engelli aylığı, engel oranına ve gelir
+                  kriterine göre iki ana tutar üzerinden uygulanmaktadır:
                 </p>
                 <div className="grid gap-4 md:grid-cols-3">
                   <div className="bg-white p-5 rounded-2xl border border-purple-100 text-center">
                     <h3 className="font-black text-purple-800 mb-1 text-sm">
-                      Ağır Engelli
+                      %40-%69
                     </h3>
                     <p className="text-sm text-purple-700 font-bold">
-                      Güncel hak bilgisini öğreniniz
+                      5.793,31 TL
                     </p>
                     <p className="text-xs text-slate-500 mt-1">
-                      (%70+ çalışma gücü kaybı)
+                      Aylık ödeme
                     </p>
                   </div>
                   <div className="bg-white p-5 rounded-2xl border border-purple-100 text-center">
                     <h3 className="font-black text-purple-800 mb-1 text-sm">
-                      Orta Engelli
+                      %70 ve üzeri
                     </h3>
                     <p className="text-sm text-purple-700 font-bold">
-                      Güncel hak bilgisini öğreniniz
+                      8.689,97 TL
                     </p>
                     <p className="text-xs text-slate-500 mt-1">
-                      (%50-69 çalışma gücü kaybı)
+                      Aylık ödeme
                     </p>
                   </div>
                   <div className="bg-white p-5 rounded-2xl border border-purple-100 text-center">
                     <h3 className="font-black text-purple-800 mb-1 text-sm">
-                      Hafif Engelli
+                      Başvuru kanalı
                     </h3>
                     <p className="text-sm text-purple-700 font-bold">
-                      Güncel hak bilgisini öğreniniz
+                      e-Devlet / SYDV
                     </p>
                     <p className="text-xs text-slate-500 mt-1">
-                      (%40-49 çalışma gücü kaybı)
+                      Resmî başvuru
                     </p>
                   </div>
                 </div>
                 <div className="bg-amber-50/60 p-4 rounded-2xl border border-amber-100 mt-4">
                   <h3 className="font-black text-amber-800 mb-2 text-sm text-center">ℹ️ Güncel Bilgi</h3>
                   <p className="text-sm text-amber-700 text-center">
-                    Sosyal yardım hakları yıl içinde enflasyon farkı ve diğer düzenlemelerle değişebilir.
-                    Güncel durumu öğrenmek için <strong>e-Devlet</strong> üzerinden sorgulama yapabilir
-                    veya ikametinizdeki <strong>SYDV</strong>&apos;ye danışabilirsiniz.
+                    Sosyal yardım hakları resmî program tablosunda yayımlanır.
+                    Güncel durum için <strong>e-Devlet</strong>, <strong>SYDV</strong> ve Bakanlığın resmî SSS sayfaları takip edilmelidir.
                   </p>
                 </div>
               </section>
@@ -241,9 +235,9 @@ export default function Page() {
                   Sağlık Kurulu Raporu Kriterleri ve Engellilik Dereceleri
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Engelli aylığı başvurusu için düzenlenen Sağlık Bakanlığı
-                  Engelli Sağlık Kurulu raporunda aşağıdaki unsurların net
-                  şekilde belirtilmesi zorunludur:
+                  Engelli aylığı başvurusu için düzenlenen engelli sağlık
+                  kurulu raporu, yetkili sağlık kuruluşlarınca hazırlanır ve
+                  başvuru değerlendirmesinde temel belgedir:
                 </p>
                 <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
@@ -251,9 +245,8 @@ export default function Page() {
                       ▸
                     </span>
                     <span>
-                      <strong>Çalışma gücü kaybı oranı:</strong> Raporun en
-                      kritik bölümüdür. Yüzde 40&apos;ın altında olanlar
-                      engelli aylığından yararlanamaz.
+                      <strong>Engel oranı:</strong> Yüzde 40 ve üzeri oran
+                      engelli aylığı için temel eşiktir.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -261,8 +254,8 @@ export default function Page() {
                       ▸
                     </span>
                     <span>
-                      <strong>Hastalık tanısı:</strong> ICD-10 kodu ile
-                      uluslararası standartlarda tanımlanmış olmalıdır
+                      <strong>Yetkili kurum:</strong> Rapor, Bakanlıkça
+                      yetkilendirilmiş sağlık kuruluşlarınca düzenlenmelidir.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -270,9 +263,9 @@ export default function Page() {
                       ▸
                     </span>
                     <span>
-                      <strong>Bakım muhtaçlığı:</strong> Günlük yaşam
-                      aktivitelerini bağımsız yapabilme durumu ayrıca
-                      belirtilmelidir (evde bakım maaşı için ayrı değerlendirme)
+                      <strong>Diğer kullanım alanları:</strong> Aynı rapor
+                      engelli aylığı dışında bakım hizmetleri, eğitim ve
+                      istihdam süreçlerinde de kullanılabilir.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -280,9 +273,9 @@ export default function Page() {
                       ▸
                     </span>
                     <span>
-                      <strong>Rapor geçerlilik süresi:</strong> Sürekli
-                      engellilik hali belirtilmelidir; süreli raporlar aylık
-                      bağlanması için yetersizdir
+                      <strong>İtiraz ve yenileme:</strong> Raporlara 30 gün
+                      içinde İl Sağlık Müdürlüğü üzerinden itiraz edilebilir;
+                      değişiklik halinde rapor yenileme süreci başlatılabilir.
                     </span>
                   </li>
                 </ul>
@@ -304,9 +297,9 @@ export default function Page() {
                       1. Yaş ve Vatandaşlık Şartı
                     </h3>
                     <p className="text-sm text-slate-700">
-                      18 yaşını doldurmuş olmak ve T.C. vatandaşı olmak
-                      gerekir. 18 yaş altı engelli çocuklar için aile bireyi
-                      adına başvuru yapılır.
+                      18 yaşından büyük engelli bireyler ile 18 yaşından
+                      küçük engelli yakını bulunanlar için ayrı başvuru imkânı
+                      vardır.
                     </p>
                   </div>
                   <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100">
@@ -314,9 +307,8 @@ export default function Page() {
                       2. Gelir Testi Şartı
                     </h3>
                     <p className="text-sm text-slate-700">
-                      Hane içi kişi başına düşen aylık gelirin net asgari
-                      ücretin 1/3&apos;ünden az olması gerekir. Engelli bireyin
-                      kendi geliri varsa bu gelir de hesaplamaya dahil edilir.
+                      Hane içinde kişi başına düşen aylık gelir net asgari
+                      ücretin 1/3&apos;ünü geçmemelidir.
                     </p>
                   </div>
                   <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100">
@@ -324,9 +316,8 @@ export default function Page() {
                       3. Sosyal Güvence Şartı
                     </h3>
                     <p className="text-sm text-slate-700">
-                      SSK, Bağ-Kur veya Emekli Sandığı&apos;ndan gelir/aylık
-                      alınmaması gerekir. Engelli emeklisi olanlar bu yardımdan
-                      yararlanamaz.
+                      Sosyal güvenlik kurumlarından gelir veya aylık
+                      alınmaması gerekir.
                     </p>
                   </div>
                 </div>
@@ -340,36 +331,26 @@ export default function Page() {
                 <div className="space-y-3 text-slate-700">
                   <p>
                     <strong className="text-orange-700">
-                      Rapor sürekliliği:
+                      Rapor kullanımı:
                     </strong>{" "}
-                    Süreli raporlarla başvuru yapılabilir ancak rapor süresi
-                    dolunca ödeme kesilir. Sürekli engellilik hali belirtilen
-                    rapor alınması uzun vadede avantajlıdır.
+                    Engelli sağlık kurulu raporu başvuru için temel belgedir;
+                    raporun yetkili kuruluşlardan alınmış olması gerekir.
                   </p>
                   <p>
                     <strong className="text-orange-700">
                       İtiraz hakkı:
                     </strong>{" "}
-                    Sağlık Kurulu raporundaki çalışma gücü kaybı oranını
-                    yetersiz bulanlar, 30 gün içinde hastane başhekimliğine
-                    itiraz edebilir. İtiraz sonucu hâlâ tatmin edici değilse
-                    İl Sağlık Müdürlüğü&apos;ne ikinci itiraz hakkı vardır.
+                    Sağlık kurulu raporlarına teslim alındığı ya da e-Devlet&apos;te
+                    göründüğü tarihten itibaren 30 gün içinde İl Sağlık
+                    Müdürlüğü&apos;ne itiraz edilebilir.
                   </p>
                   <p>
                     <strong className="text-orange-700">
-                      Engelli aylığı + evde bakım birlikteliği:
+                      Rapor güncelleme:
                     </strong>{" "}
-                    Aynı birey hem engelli aylığı hem de evde bakım maaşı
-                    alabilir. Bu iki yardım birbirini engellemez. Ancak her
-                    ikisi için de ayrı başvuru ve ayrı değerlendirme yapılır.
-                  </p>
-                  <p>
-                    <strong className="text-orange-700">
-                      Adres değişikliği:
-                    </strong>{" "}
-                    İkametgah değişikliğinde yeni adresin bulunduğu SYDV&apos;ye
-                    transfer başvurusu yapılmalıdır. Aksi halde ödeme
-                    kesintiye uğrayabilir.
+                    Yeni bir engel durumunun ortaya çıkması veya mevcut
+                    durumun değişmesi halinde rapor yenileme süreci
+                    başlatılabilir.
                   </p>
                 </div>
               </section>
@@ -395,35 +376,32 @@ export default function Page() {
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
-                    [1] T.C. Resmî Gazete. (2022).{" "}
+                    [1] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
-                      2022 Sayılı Kanun: Sosyal Hizmetler Kanunu, Md. 17 —
-                      Engelli Aylığı
+                      2022 Sayılı Kanun Kapsamındaki Engelli ve Yaşlı Aylıkları
                     </em>
-                    . Sayı: 31857.
+                    . Resmî SSS sayfası.
                   </li>
                   <li>
-                    [2] Sağlık Bakanlığı. (2023).{" "}
+                    [2] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
-                      Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği
+                      Sosyal Yardım Programlarımız
                     </em>
-                    . Resmî Gazete, Sayı: 32344.
+                    . SYGM program tablosu.
                   </li>
                   <li>
-                    [3] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    [3] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
-                      2026 Yılı Engelli Aylığı Ödeme Cetveli ve Uygulama
-                      Talimatı
+                      Engelliler İçin Sağlık Kurulu Raporları
                     </em>
-                    . SYGM Yayınları, Ankara.
+                    . Resmî SSS sayfası.
                   </li>
                   <li>
-                    [4] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    [4] T.C. Sağlık Bakanlığı. (2019).{" "}
                     <em>
-                      Engelli Bireylere Yönelik Sosyal Yardım Programları
-                      Değerlendirme Raporu
+                      Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik
                     </em>
-                    . Ankara.
+                    . Resmî Gazete, Sayı: 30692.
                   </li>
                 </ul>
               </footer>
@@ -461,4 +439,3 @@ export default function Page() {
     </main>
   );
 }
-
