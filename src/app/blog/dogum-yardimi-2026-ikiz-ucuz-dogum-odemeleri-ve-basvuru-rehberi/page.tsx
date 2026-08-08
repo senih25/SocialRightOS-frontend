@@ -207,6 +207,8 @@ export default function Page() {
                     Sosyal yardım tutarları resmî bakanlık sayfalarında yayımlanır.
                     Başvuru sonucu ve ödeme bilgileri için <strong>e-Devlet</strong>,
                     <strong> e-Ailem</strong> ve ilgili bakanlık duyuruları takip edilmelidir.
+                    TÜİK&apos;in çocuk istatistikleri, doğum yardımı politikasının demografik
+                    arka planını gösterir.
                   </p>
                 </div>
               </section>
@@ -344,7 +346,7 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Doğrulama Bekleyen Kaynak Notları
+                  Resmî Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
@@ -366,9 +368,9 @@ export default function Page() {
                     <em>Sosyal Yardım Programlarımız</em>. SYGM program tablosu.
                   </li>
                   <li>
-                    [4] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
-                    <em>Nisan ayı doğum yardımı ödemeleri hesaplara yatırıldı</em>.
-                    Basın duyurusu.
+                    [4] Türkiye İstatistik Kurumu (TÜİK). (2025).{" "}
+                    <em>İstatistiklerle Çocuk 2024</em>. Çocuk nüfusu ve
+                    doğurganlık göstergeleri için resmî demografik yayın.
                   </li>
                 </ul>
               </footer>

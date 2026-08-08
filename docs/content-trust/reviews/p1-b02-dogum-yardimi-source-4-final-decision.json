@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "research_id": "P1-B02-DOGUM-S04",
+  "generated_at": "2026-08-08T00:00:00.000Z",
+  "claimed_source": {
+    "title": "Türkiye'de Çocuk İstatistikleri 2024",
+    "claimed_year": 2025,
+    "claimed_official_gazette_number": null
+  },
+  "verification_result": {
+    "source_exists_as_cited": false,
+    "claimed_title_verified": false,
+    "claimed_year_verified": true,
+    "claimed_official_gazette_number_verified": null,
+    "source_level_decision": "REPLACE",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "İstatistiklerle Çocuk 2024",
+      "publication_date": "2025-04-15",
+      "official_gazette_number": null,
+      "relevant_article": "Çocuk nüfusu, doğurganlık, yaş grupları ve çocuk bakımına ilişkin demografik göstergeler.",
+      "relevant_heading": "Çocukların Demografik Özellikleri / Çocuk ve Sağlık",
+      "role": "Doğum yardımı politikalarının çocuk nüfusu ve doğurganlık bağlamını gösteren resmî TÜİK yayını",
+      "source_classification": "OFFICIAL_TUIK_PUBLICATION"
+    },
+    "supporting_administrative_source": {
+      "title": "İstatistiklerle Aile - 2024",
+      "publication_date": "2025-05-14",
+      "official_gazette_number": null,
+      "relevant_article": "Ortalama hanehalkı büyüklüğü, geniş aile yapısı ve aile kompozisyonu göstergeleri.",
+      "relevant_heading": "Hanehalkı ve aile yapısı",
+      "role": "Doğum yardımı ve çocuk desteklerinin aile yapısı bağlamını açıklayan tamamlayıcı TÜİK yayını",
+      "source_classification": "OFFICIAL_TUIK_PUBLICATION"
+    }
+  },
+  "material_findings": [
+    "İddia edilen 'Türkiye'de Çocuk İstatistikleri 2024' başlığı, resmî TÜİK yayınında bire bir bu biçimde doğrulanmadı.",
+    "Resmî yayın başlığı 'İstatistiklerle Çocuk 2024' olup çocuk nüfusu, doğurganlık ve çocuk bakımına ilişkin güncel demografik veriler sunuyor.",
+    "TÜİK'in 'İstatistiklerle Aile - 2024' yayını, aile/hane yapısını ve ortalama hanehalkı büyüklüğünü açıklayarak doğum yardımı bağlamını destekliyor.",
+    "Bu nedenle kaynak notu, başlık düzeyinde düzeltilerek TÜİK'in resmî çocuk ve aile istatistikleri birlikte kullanılmalıdır."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": true,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "Türkiye'de Çocuk İstatistikleri 2024, resmî TÜİK yayını olarak bire bir bu başlıkla sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Kaynak 4 başlığı bire bir doğrulanamadı ve TÜİK'in 'İstatistiklerle Çocuk 2024' yayınına çevrilmelidir. Aile yapısı bağlamı için 'İstatistiklerle Aile - 2024' destekleyici olarak kullanılabilir. Böylece doğum yardımı içeriği resmî çocuk ve aile istatistiklerine yaslanır.",
+  "evidence_inventory": {
+    "official_source_urls": [
+      "https://www.tuik.gov.tr/media/announcements/istcocuk_2024.pdf",
+      "https://veriportali.tuik.gov.tr/tr/press/53898/metadata"
+    ]
+  },
+  "validation_checks": {
+    "child_stats_verified": true,
+    "family_stats_verified": true,
+    "claimed_title_not_exactly_verified": true,
+    "demographic_context_verified": true
+  },
+  "limitations": [
+    "Bu karar kaynak 4 düzeyindedir; sayfadaki diğer kaynak numaraları ayrıca doğrulanmalıdır.",
+    "TÜİK yayını doğum yardımı miktarını değil demografik arka planı destekler."
+  ]
+}
