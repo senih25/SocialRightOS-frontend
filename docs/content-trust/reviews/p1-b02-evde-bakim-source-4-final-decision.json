@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "research_id": "P1-B02-EVDE-BAKIM-S04",
+  "generated_at": "2026-08-08T00:00:00.000Z",
+  "claimed_source": {
+    "title": "2026 Yılı Sosyal Yardım Programları Bütçe Raporu ve Ödeme Takvimi",
+    "claimed_year": 2026,
+    "claimed_official_gazette_number": null
+  },
+  "verification_result": {
+    "source_exists_as_cited": false,
+    "claimed_title_verified": false,
+    "claimed_year_verified": false,
+    "claimed_official_gazette_number_verified": null,
+    "source_level_decision": "REPLACE",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "Sosyal yardım programlarının aylık ödemeleri artırıldı",
+      "publication_date": "2026-07-13",
+      "official_gazette_number": null,
+      "relevant_article": "Evde Bakım Yardımı'nın 15 bin 755 liraya yükseldiği ve temmuz-aralık dönemi için aylık ödeme seviyesinin açıklandığı bölüm",
+      "relevant_heading": "Aile ve Sosyal Hizmetler Bakanlığı haber duyurusu",
+      "role": "2026 yılı için güncel Evde Bakım Yardımı tutarını ve artış bilgisini veren resmî duyuru",
+      "source_classification": "OFFICIAL_MINISTRY_NEWS_RELEASE"
+    },
+    "supporting_administrative_source": {
+      "title": "Evde Bakım Yardımı ve Gündüz Hizmetleri",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "Soru 1, Soru 2, Soru 3",
+      "relevant_heading": "Engelli ve Yaşlı Hizmetleri Genel Müdürlüğü SSS sayfası",
+      "role": "Evde bakım yardımının kapsamı, gelir kriteri ve başvuru kanallarını doğrulayan resmî idari kaynak",
+      "source_classification": "OFFICIAL_MINISTRY_GUIDANCE_PAGE"
+    }
+  },
+  "material_findings": [
+    "İddia edilen 2026 bütçe raporu ve ödeme takvimi başlığı resmî domainde doğrulanmadı.",
+    "Resmî haber duyurusu evde bakım yardımının temmuz-aralık 2026 dönemi için 15.755 TL seviyesine yükseldiğini bildiriyor.",
+    "Evde bakım yardımının kapsamı ve başvuru kanalları resmî SSS sayfasında ayrıca doğrulanıyor.",
+    "Bu nedenle blogdaki kaynak notu bütçe raporu olarak değil, resmî haber duyurusu ve SSS birlikte olacak şekilde kullanılmalıdır."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": true,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "2026 Yılı Sosyal Yardım Programları Bütçe Raporu ve Ödeme Takvimi, resmî ve doğrulanmış bir bakanlık yayını olarak sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Kaynak 4 doğrulanamayan bir bütçe raporu atfı olduğu için değiştirilmelidir. Yerine resmî haber duyurusu ile evde bakım yardımı SSS sayfası birlikte kullanılmalıdır. Güncel tutar ve ödeme bilgisi yalnız resmî duyuru üzerinden verilmelidir.",
+  "evidence_inventory": {
+    "official_source_urls": [
+      "https://www.aile.gov.tr/haberler/sosyal-yardim-programlarinin-aylik-odemeleri-artirildi-1/",
+      "https://www.aile.gov.tr/sss/engelli-ve-yasli-hizmetleri-genel-mudurlugu/evde-bakim-yardimi-ve-gunduz-hizmetleri/"
+    ]
+  },
+  "validation_checks": {
+    "news_release_verified": true,
+    "current_amount_verified": true,
+    "sss_page_verified": true,
+    "claimed_budget_report_not_verified": true
+  },
+  "limitations": [
+    "Resmî haber duyurusu güncel tutarı verir; ayrı bir 2026 bütçe raporu doğrulanmamıştır.",
+    "Bu karar kaynak 4 düzeyindedir; sayfadaki diğer kaynak numaraları ayrıca doğrulanmalıdır."
+  ]
+}
