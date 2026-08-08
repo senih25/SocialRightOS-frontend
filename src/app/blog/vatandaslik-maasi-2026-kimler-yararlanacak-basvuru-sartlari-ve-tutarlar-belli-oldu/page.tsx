@@ -46,8 +46,8 @@ Yazar: Senih Bayankulu.
 
 Vatandaşlık Maaşı, bu sayfada yalnızca kamuoyundaki sosyal politika tartışmaları ve önerileri kapsamında ele alınmaktadır.
 Şu an için yürürlüğe girmiş resmî bir program bulunmamaktadır.
-Bu nedenle aşağıdaki içerik, kesin hak veya resmî taslak anlatımı değil, kamuoyundaki olası politika yaklaşımlarına ilişkin bilgilendirmedir.
-Kesin şartlar ve tutarlar ancak resmî düzenleme yayımlandığında geçerli olur.
+Bu nedenle aşağıdaki içerik, kesin hak veya resmî düzenleme anlatımı değil, kamuoyundaki öneri ve politika yaklaşımlarına ilişkin bilgilendirmedir.
+Kesin şartlar, kapsam ve tutarlar ancak resmî bir düzenleme yayımlandığında geçerli olur.
 Şimdilik vatandaşların mevcut sosyal yardım programları için resmî kurum duyurularını esas alması gerekir.
 `;
 
@@ -168,14 +168,12 @@ export default function Page() {
                 </h2>
                 <p className="text-slate-700">
                   Vatandaşlık Maaşı, Türkiye&apos;deki mevcut sosyal yardım
-                  programlarını tek bir çatı altında toplayarak daha düzenli,
-                  erişilebilir ve kapsayıcı bir sosyal koruma sistemine geçişi
-                  hedefleyen yeni bir sosyal politika aracıdır. Bu model,
-                  özellikle yoksulluk riski altındaki hane halklarını korumayı,
-                  sosyal yardım harcamalarının etkinliğini artırmayı ve
-                  bürokratik süreçleri basitleştirmeyi amaçlayan bir politika
-                  önerisi olarak tartışılmaktadır. Resmî yürürlükten söz etmek
-                  için ilgili mevzuatın yayımlanması gerekir.
+                  programlarını tek bir çatı altında toplama fikriyle
+                  tartışılan bir sosyal politika önerisidir. Bu içerik,
+                  uygulamada yürürlükte bir hak veya kesinleşmiş bir program
+                  olduğunu söylemez. Amaç, önerinin hangi yönde
+                  tartışıldığını ve resmî düzenleme olmadan neyin kesin
+                  kabul edilemeyeceğini göstermektir.
                 </p>
               </section>
 
@@ -187,8 +185,8 @@ export default function Page() {
                 <p className="text-slate-700 mb-4">
                   Vatandaşlık Maaşı&apos;nın kesin tutarları, kapsamı ve başvuru
                   mekanizması hakkında yürürlükte bir mevzuat yoktur. Bu
-                  nedenle herhangi bir ödeme tutarı veya hak sahipliği bilgisi
-                  resmî kabul edilemez.
+                  nedenle herhangi bir ödeme tutarı, hak sahipliği bilgisi
+                  veya başvuru kanalı resmî kabul edilemez.
                 </p>
                 <div className="bg-amber-50/60 p-6 rounded-2xl border border-amber-100 text-center">
                   <h3 className="font-black text-amber-800 mb-2">ℹ️ Resmî Uyarı</h3>
@@ -207,7 +205,7 @@ export default function Page() {
                 </h2>
                 <p className="text-slate-700 mb-4">
                   Kamuoyundaki tartışmalarda geçen bazı yaklaşım başlıkları
-                  şunlardır; bunlar resmî hak, resmî taslak veya başvuru şartı değildir:
+                  şunlardır; bunlar resmî hak, onaylı taslak veya başvuru şartı değildir:
                 </p>
                 <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
@@ -303,8 +301,9 @@ export default function Page() {
                     <strong className="text-orange-700">
                       e-Devlet entegrasyonu:
                     </strong>{" "}
-                    Başvuru mekanizması resmî düzenlemeyle belirlenir. Şimdilik
-                    e-Devlet üzerinden başvuru varmış gibi işlem yapmayın.
+                    Başvuru mekanizması resmî düzenlemeyle belirlenir.
+                    Şimdilik e-Devlet üzerinden başvuru varmış gibi işlem
+                    yapmayın.
                   </p>
                   <p>
                     <strong className="text-orange-700">
