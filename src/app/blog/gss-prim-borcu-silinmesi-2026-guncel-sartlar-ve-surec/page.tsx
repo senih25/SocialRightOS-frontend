@@ -367,13 +367,6 @@ export default function Page() {
                     </em>
                     . SGK resmî bilgi sayfası.
                   </li>
-                  <li>
-                    [4] Sosyal Güvenlik Kurumu. (2022).{" "}
-                    <em>
-                      7326 Sayılı Yapılandırma Kanunu Hakkında Duyuru
-                    </em>
-                    . SGK duyurusu.
-                  </li>
                 </ul>
               </footer>
             </div>
