@@ -11,16 +11,16 @@ export const metadata: Metadata = {
     follow: false,
   },
   title:
-    "Sosyal Hizmetler ve KVKK 2026: Kişisel Veri Koruması Rehberi ve Hasta Hakları",
+    "Sosyal Hizmetler ve KVKK 2026: Özel Nitelikli Veri Koruması Rehberi",
   description:
-    "2026 sosyal hizmetlerde KVKK uyumu, kişisel veri koruma hakları, aydınlatma metni ve rıza süreçleri. Bilgilendirme amacıyla hazırlanmış rehber.",
+    "KVKK'nın resmî rehberi ve Kurul kararı temelinde sosyal hizmetlerde özel nitelikli kişisel veri işleme, aydınlatma ve güvenlik yükümlülükleri.",
   keywords: [
     "sosyal hizmetler kvkk 2026",
     "kişisel veri koruma sosyal hizmet",
     "kvkk aydınlatma metni sosyal hizmet",
-    "hasta hakları kişisel veri",
+    "özel nitelikli kişisel veri",
     "sosyal hizmet danışmanlığı gizlilik",
-    "kvkk açık rıza sosyal yardım",
+    "kvkk veri güvenliği sosyal yardım",
     "kişisel veri işleme sosyal hizmetler",
     "sosyal hizmetler gizlilik ilkeleri",
   ],
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Sosyal Hizmetler ve KVKK 2026: Kişisel Veri Koruması Rehberi ve Hasta Hakları",
+      "Sosyal Hizmetler ve KVKK 2026: Özel Nitelikli Veri Koruması Rehberi",
     description:
-      "2026 sosyal hizmetlerde KVKK uyumu, kişisel veri koruma hakları, aydınlatma metni ve rıza süreçleri.",
+      "KVKK'nın resmî rehberi ve Kurul kararı temelinde sosyal hizmetlerde özel nitelikli kişisel veri işleme, aydınlatma ve güvenlik yükümlülükleri.",
     type: "article",
     authors: ["Senih Bayankulu"],
     publishedTime: "2026-05-04",
@@ -41,20 +41,20 @@ export const metadata: Metadata = {
 };
 
 const VOICE_TEXT = `
-Sosyal Hizmetler ve KVKK 2026: Kişisel Veri Koruması Rehberi ve Hasta Hakları.
+Sosyal Hizmetler ve KVKK 2026: Özel Nitelikli Veri Koruması Rehberi.
 Yazar: Senih Bayankulu.
 
-Sosyal hizmetler alanında kişisel veri işleme faaliyetleri, 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında düzenlenmektedir.
-Sosyal hizmet uzmanları, danışanların sağlık durumu, gelir bilgisi, aile yapısı ve diğer hassas verilerini işlerken amaçla sınırlılık ilkesine uymak zorundadır.
-Aydınlatma metni, danışanın bilgilendirilmesi ve açık rıza alınması zorunludur.
-Danışanlar, kişisel verilerine erişme, düzeltme ve silme haklarına sahiptir.
+Sosyal hizmetler alanında veri işleme faaliyetleri, 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında düzenlenmektedir.
+Özel nitelikli kişisel veriler yalnızca Kanunda sayılan sınırlı işleme şartları ve Kurul tarafından belirlenen yeterli önlemlerle işlenebilir.
+Aydınlatma yükümlülüğü ile veri güvenliği tedbirleri, sosyal hizmet kurumları için temel uyum alanlarıdır.
+Danışanlar kişisel verilerine erişme, düzeltme ve silme gibi haklarını kullanabilir.
 `;
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline:
-    "Sosyal Hizmetler ve KVKK 2026: Kişisel Veri Koruması Rehberi ve Hasta Hakları",
+    "Sosyal Hizmetler ve KVKK 2026: Özel Nitelikli Veri Koruması Rehberi",
   author: {
     "@type": "Person",
     name: "Senih Bayankulu",
@@ -74,18 +74,18 @@ const ARTICLE_JSON_LD = {
   articleSection: "Sosyal Hak Analizi",
   inLanguage: "tr-TR",
   keywords:
-    "KVKK, kişisel veri koruma, sosyal hizmetler, aydınlatma metni, hasta hakları, 6698 sayılı kanun",
+    "KVKK, kişisel veri koruma, sosyal hizmetler, özel nitelikli veri, aydınlatma metni, 6698 sayılı kanun",
 };
 
 const HASHTAGS = [
   "#KVKK",
   "#KişiselVeriKoruma",
   "#SosyalHizmetler",
-  "#HastaHakları",
+  "#ÖzelNitelikliVeri",
   "#AydınlatmaMetni",
   "#2026Güncel",
   "#SosyalHaklar",
-  "#SosyalYardımTutarları",
+  "#VeriGüvenliği",
 ];
 
 export default function Page() {
@@ -142,8 +142,7 @@ export default function Page() {
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 leading-tight mb-5">
-                Sosyal Hizmetler ve KVKK 2026: Kişisel Veri Koruması Rehberi ve
-                Hasta Hakları
+                Sosyal Hizmetler ve KVKK 2026: Özel Nitelikli Veri Koruması Rehberi
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="font-bold text-slate-700">
@@ -171,14 +170,12 @@ export default function Page() {
                   6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK)
                   kapsamında düzenlenmektedir. Sosyal hizmet uzmanları,
                   danışanların sağlık durumu, gelir bilgisi, aile yapısı,
-                  psikososyal geçmişi ve diğer hassas verilerini işlerken
-                  &quot;amaçla sınırlılık&quot; ilkesine uymak zorundadır. 2026
-                  yılı itibarıyla Kişisel Verileri Koruma Kurumu (KVKK),
-                  sosyal hizmet kurumlarına yönelik denetimlerini artırmış ve
-                  veri ihlali bildirimlerinde sıkı yaptırımlar uygulamaya
-                  başlamıştır. Bu makale, sosyal hizmetlerde KVKK uyumunu,
-                  danışan haklarını ve pratik uygulama yönergelerini akademik
-                  düzeyde analiz etmektedir.
+                  psikososyal geçmişi ve diğer özel nitelikli verilerini
+                  işlerken kanundaki işleme şartlarına, amaçla sınırlılık
+                  ilkesine ve Kurulun belirlediği yeterli önlemlere uymak
+                  zorundadır. 2025 tarihli KVKK rehberi, 12.03.2024 tarihli
+                  7499 sayılı Kanun değişiklikleri sonrasında özel nitelikli
+                  veri işleme şartlarını güncellenmiş şekilde özetlemektedir.
                 </p>
               </section>
 
@@ -196,15 +193,16 @@ export default function Page() {
                     <span className="text-lime-600 font-black mt-0.5">▸</span>
                     <span>
                       <strong>Hukuka ve dürüstlük kuralına uygunluk:</strong>{" "}
-                      Veriler, yasal dayanak olmadan ve danışanın haberi
-                      olmadan işlenemez
+                      Veriler, kanundaki işleme şartlarından biri olmadan
+                      işlenemez
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-lime-600 font-black mt-0.5">▸</span>
                     <span>
                       <strong>Doğru ve güncel olma:</strong> Yanlış veya eski
-                      verilerin düzeltilmesi veya silinmesi gerekir
+                      veriler güncellenmeli ya da mevzuata uygun şekilde
+                      silinmelidir
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -240,8 +238,9 @@ export default function Page() {
                 <p className="text-slate-700 mb-4">
                   Sosyal hizmetler alanında işlenen verilerin büyük çoğunluğu
                   KVKK kapsamında &quot;özel nitelikli kişisel veri&quot;
-                  kategorisine girer. Bu veriler için açık rıza alınması
-                  zorunludur:
+                  kategorisine girer. Bu veriler için yalnızca Kanunda
+                  belirtilen işleme şartları ve Kurulun belirlediği yeterli
+                  önlemler uygulanabilir:
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="bg-red-50 p-5 rounded-2xl border border-red-100">
@@ -274,13 +273,15 @@ export default function Page() {
               {/* Aydınlatma ve Rıza */}
               <section>
                 <h2 className="text-2xl font-black text-slate-950 mb-4">
-                  Aydınlatma Metni ve Açık Rıza Süreci
+                  Aydınlatma Metni ve Hukuki İşleme Şartları
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Sosyal hizmet kurumları, danışanlarından veri işleme öncesinde
-                  aydınlatma metni ile bilgilendirme yapmalı ve açık rıza
-                  almalıdır. 2026 uygulamalarında aydınlatma metni şunları
-                  içermelidir:
+                  Sosyal hizmet kurumları, veri işleme öncesinde ilgili kişiyi
+                  aydınlatmalı ve özel nitelikli veriler için Kanun&apos;daki
+                  sınırlı işleme şartlarından uygun olanına dayanmalıdır. Açık
+                  rıza, her durumda tek seçenek değildir; hukuki sebep ve
+                  alınan önlemler birlikte değerlendirilir. Aydınlatma metni
+                  şunları içermelidir:
                 </p>
                 <ol className="space-y-3 text-slate-700 list-decimal list-inside">
                   <li>
@@ -305,7 +306,7 @@ export default function Page() {
                   </li>
                   <li>
                     <strong>Saklama süresi:</strong> Verilerin ne kadar süreyle
-                    tutulacağı
+                    tutulacağı ve imha politikası
                   </li>
                 </ol>
               </section>
@@ -360,18 +361,18 @@ export default function Page() {
                     <strong className="text-orange-700">
                       Üçüncü kişi bilgisi:
                     </strong>{" "}
-                    Danışan hakkında toplanan veriler, danışanın rızası olmadan
+                    Danışan hakkında toplanan veriler, hukuki dayanak olmadan
                     üçüncü kişilerle (aile üyeleri dahil) paylaşılamaz. Ancak
-                    çocuğun yararı gerektirdiğinde yetkili mercilere bildirim
-                    yapılabilir.
+                    kanuni bildirim yükümlülüğü doğduğunda yetkili mercilere
+                    bildirim yapılabilir.
                   </p>
                   <p>
                     <strong className="text-orange-700">
                       Veri ihlali bildirimi:
                     </strong>{" "}
-                    Kişisel veri ihlali durumunda, kurum 72 saat içinde KVKK
-                    Kurumu&apos;na ve ilgili kişilere bildirim yapmak
-                    zorundadır. Bildirim yapılmazsa idari para cezası uygulanır.
+                    Kişisel veri ihlali durumunda, kurum vakit kaybetmeden
+                    gerekli bildirim ve önlemleri almalıdır; iç prosedürler
+                    gecikmeden işletilmelidir.
                   </p>
                   <p>
                     <strong className="text-orange-700">
@@ -402,39 +403,30 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Doğrulama Bekleyen Kaynak Notları
+                  Resmî Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
-                    [1] T.C. Resmî Gazete. (2016).{" "}
+                    [1] Kişisel Verileri Koruma Kurumu. (2025).{" "}
                     <em>
-                      6698 Sayılı Kanun: Kişisel Verilerin Korunması Kanunu
+                      Özel Nitelikli Kişisel Verilerin İşlenmesine İlişkin Rehber
                     </em>
-                    . Sayı: 29677.
+                    . Resmî rehber.
                   </li>
                   <li>
-                    [2] Kişisel Verileri Koruma Kurumu. (2024).{" "}
+                    [2] Kişisel Verileri Koruma Kurumu. (2018).{" "}
                     <em>
-                      Sosyal Hizmet Kurumları İçin Kişisel Veri Koruması
-                      Rehberi
+                      Özel Nitelikli Kişisel Verilerin İşlenmesinde Veri
+                      Sorumlularınca Alınması Gereken Yeterli Önlemler
                     </em>
-                    . Ankara.
+                    . Kurul Kararı 2018/10.
                   </li>
                   <li>
                     [3] Kişisel Verileri Koruma Kurumu. (2025).{" "}
                     <em>
-                      Özel Nitelikli Kişisel Verilerin İşlenmesinde Alınacak
-                      Tedbirler Tebliği
+                      Veri Güvenliğine İlişkin Yükümlülükler
                     </em>
-                    . Resmî Gazete, Sayı: 33600.
-                  </li>
-                  <li>
-                    [4] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
-                    <em>
-                      Sosyal Hizmet Kurumları Veri Güvenliği ve KVKK Uyum
-                      Kılavuzu
-                    </em>
-                    . SYGM Yayınları, Ankara.
+                    . Kurum rehberi.
                   </li>
                 </ul>
               </footer>
@@ -472,4 +464,3 @@ export default function Page() {
     </main>
   );
 }
-
