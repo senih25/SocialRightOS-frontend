@@ -415,25 +415,54 @@ export default function Page() {
                   <li>
                     [1] Aile, Çalışma ve Sosyal Hizmetler Bakanlığı; Sağlık
                     Bakanlığı. (2019).{" "}
-                    <em>
-                      Erişkinler İçin Engellilik Değerlendirmesi Hakkında
-                      Yönetmelik
-                    </em>
+                    <a
+                      href="https://www.resmigazete.gov.tr/eskiler/2019/02/20190220-2.htm"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium text-cyan-700 hover:underline"
+                    >
+                      <em>
+                        Erişkinler İçin Engellilik Değerlendirmesi Hakkında
+                        Yönetmelik
+                      </em>
+                    </a>
                     . Resmî Gazete, Sayı: 30692.
                   </li>
                   <li>
-                    [2] Sağlık Raporları Usul ve Esasları Hakkında Yönerge.
-                    Madde 36, Ek-12 ve Ek-13.
+                    [2]{" "}
+                    <a
+                      href="https://shgmsgudb.saglik.gov.tr/TR-85392/saglik-raporlari-usul-ve-esaslari-hakkinda-yonerge--ve-hakem-hastane-listeleri.html"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium text-cyan-700 hover:underline"
+                    >
+                      Sağlık Raporları Usul ve Esasları Hakkında Yönerge
+                    </a>
+                    . Madde 36, Ek-12 ve Ek-13.
                   </li>
                   <li>
                     [3] T.C. Aile ve Sosyal Hizmetler Bakanlığı.{" "}
-                    <em>Engelliler İçin Sağlık Kurulu Raporları</em>. SSS
-                    sayfası.
+                    <a
+                      href="https://www.aile.gov.tr/sss/engelli-ve-yasli-hizmetleri-genel-mudurlugu/engelliler-icin-saglik-kurulu-raporlari/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium text-cyan-700 hover:underline"
+                    >
+                      <em>Engelliler İçin Sağlık Kurulu Raporları</em>
+                    </a>
+                    . SSS sayfası.
                   </li>
                   <li>
                     [4] T.C. Aile ve Sosyal Hizmetler Bakanlığı.{" "}
-                    <em>Engellilere Sağlanan Diğer İndirim ve Muafiyetler</em>.
-                    Engelli raporu kullanım alanları.
+                    <a
+                      href="https://www.aile.gov.tr/sss/engelli-ve-yasli-hizmetleri-genel-mudurlugu/engellilere-saglanan-diger-indirim-ve-muafiyetler/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium text-cyan-700 hover:underline"
+                    >
+                      <em>Engellilere Sağlanan Diğer İndirim ve Muafiyetler</em>
+                    </a>
+                    . Engelli raporu kullanım alanları.
                   </li>
                 </ul>
               </footer>
