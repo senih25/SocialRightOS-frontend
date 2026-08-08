@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "research_id": "P1-B02-DOGUM-S02",
+  "generated_at": "2026-08-08T00:00:00.000Z",
+  "claimed_source": {
+    "title": "2026 Yılı Doğum Yardımı Uygulama Talimatı ve Ödeme Cetveli",
+    "claimed_year": 2026,
+    "claimed_official_gazette_number": null
+  },
+  "verification_result": {
+    "source_exists_as_cited": false,
+    "claimed_title_verified": false,
+    "claimed_year_verified": false,
+    "claimed_official_gazette_number_verified": null,
+    "source_level_decision": "REPLACE",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "Sosyal Yardım Programlarımız",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "AİLE / Yeni Doğum Yardımı satırı",
+      "relevant_heading": "Sosyal Yardımlar Genel Müdürlüğü program tablosu",
+      "role": "2026 yılı doğum yardımı tutarlarını, başvuru kanalını ve çocuk sırasına bağlı ödeme yapısını veren resmî program sayfası",
+      "source_classification": "OFFICIAL_MINISTRY_PROGRAM_TABLE"
+    },
+    "supporting_administrative_source": {
+      "title": "Doğum Yardımı",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "Doğum Yardımı Uygulaması, e-Devlet aracılığıyla e-Ailem üzerinden başvurular alınmakta; başvuru ve ödeme süreçleri anlık olarak izlenmekte",
+      "relevant_heading": "Bilgi Teknolojileri Genel Müdürlüğü e-Hizmet sayfası",
+      "role": "Başvuru, değerlendirme ve ödeme takibinin dijital kanallarla yürütüldüğünü doğrulayan resmî e-hizmet sayfası",
+      "source_classification": "OFFICIAL_MINISTRY_E_SERVICE_PAGE"
+    }
+  },
+  "material_findings": [
+    "İddia edilen 2026 talimat başlığı resmî domainde doğrulanmadı.",
+    "Bakanlığın resmî program tablosu doğum yardımı için 1. çocukta 5.000 TL tek seferlik, 2. çocukta çocuk 5 yaşını tamamlayana kadar aylık 1.500 TL ve 3. ve üzeri çocuklarda aylık 5.000 TL ödeme yapıldığını belirtiyor.",
+    "Resmî e-hizmet sayfası başvuruların e-Devlet aracılığıyla e-Ailem üzerinden alındığını ve ödeme/takip süreçlerinin dijital ortamda yönetildiğini doğruluyor.",
+    "Dolayısıyla blogdaki kaynak notu, tek başına bir '2026 Yılı Doğum Yardımı Uygulama Talimatı ve Ödeme Cetveli' olarak sunulmamalı; resmî program tablosu ve e-hizmet sayfası birlikte kullanılmalıdır."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": true,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "2026 Yılı Doğum Yardımı Uygulama Talimatı ve Ödeme Cetveli, resmî ve doğrulanmış bir bakanlık yayını olarak sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Kaynak 2 doğrulanamayan bir 2026 talimat atfı olduğu için değiştirilmelidir. Yerine Aile ve Sosyal Hizmetler Bakanlığı’nın resmî program tablosu ile doğum yardımı e-hizmet sayfası birlikte kullanılmalıdır. Ödeme tutarları çocuk sırasına göre yazılmalı, başvuru ve takip süreci e-Devlet/e-Ailem üzerinden anlatılmalıdır.",
+  "evidence_inventory": {
+    "official_source_urls": [
+      "https://www.aile.gov.tr/sygm/programlarimiz/sosyal-yardim-programlarimiz/",
+      "https://www.aile.gov.tr/btgmd/e-hizmetler-yeni/dogum-yardimi/"
+    ]
+  },
+  "validation_checks": {
+    "program_page_verified": true,
+    "e_service_page_verified": true,
+    "birth_aid_amounts_verified": true,
+    "e_ailem_tracking_verified": true,
+    "claimed_talimat_not_verified": true
+  },
+  "limitations": [
+    "Resmî program tablosu güncel ödeme yapısını verir; ayrı bir 2026 'uygulama talimatı' başlığı doğrulanmamıştır.",
+    "Bu karar kaynak 2 düzeyindedir; sayfadaki diğer kaynak numaraları ayrıca doğrulanmalıdır."
+  ]
+}

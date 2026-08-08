@@ -11,9 +11,9 @@ export const metadata: Metadata = {
     follow: false,
   },
   title:
-    "Doğum Yardımı 2026: 1 Ocak 2025 Sonrası Doğumlar, Başvuru Rehberi ve Güncel Tutarlar",
+    "Doğum Yardımı 2026: Resmî Başvuru Rehberi ve Güncel Tutarlar",
   description:
-    "2026 doğum yardımı, 01.01.2025 sonrası canlı doğan çocuklar için güncel tutarlar, ikiz/üçüz doğum ödemeleri ve e-Devlet başvuru süreci. Bilgilendirme amacıyla hazırlanmış rehber.",
+    "Aile ve Sosyal Hizmetler Bakanlığı’nın resmî doğum yardımı sayfalarına göre 2026 güncel tutarlar, başvuru kanalları ve çocuk sırasına bağlı ödeme yapısı.",
   keywords: [
     "doğum yardımı 2026",
     "doğum yardımı ne kadar 2026",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Doğum Yardımı 2026: 1 Ocak 2025 Sonrası Doğumlar, Başvuru Rehberi ve Güncel Tutarlar",
+      "Doğum Yardımı 2026: Resmî Başvuru Rehberi ve Güncel Tutarlar",
     description:
-      "2026 doğum yardımı, 01.01.2025 sonrası canlı doğan çocuklar için güncel tutarlar, ikiz/üçüz doğum ödemeleri ve e-Devlet başvuru süreci.",
+      "Aile ve Sosyal Hizmetler Bakanlığı’nın resmî doğum yardımı sayfalarına göre 2026 güncel tutarlar, başvuru kanalları ve çocuk sırasına bağlı ödeme yapısı.",
     type: "article",
     authors: ["Senih Bayankulu"],
     publishedTime: "2026-05-04",
@@ -41,20 +41,19 @@ export const metadata: Metadata = {
 };
 
 const VOICE_TEXT = `
-Doğum Yardımı 2026: 1 Ocak 2025 Sonrası Doğumlar, Başvuru Rehberi ve Güncel Tutarlar.
+Doğum Yardımı 2026: Resmî Başvuru Rehberi ve Güncel Tutarlar.
 Yazar: Senih Bayankulu.
 
 Doğum yardımı, 01.01.2025 tarihi ve sonrasında canlı doğan çocuklar için verilen nakdi bir sosyal yardımdır.
-2026 yılında tek çocuk, ikiz ve üçüz doğumlar için farklı ödeme tutarları uygulanmaktadır.
-Güncel tutarları öğrenmek için e-Devlet üzerinden sorgulama yapabilir veya Aile ve Sosyal Hizmetler İl Müdürlüklerine danışabilirsiniz.
-Ödeme çocuğun doğumundan sonra bir defaya mahsus olarak yapılır.
+2026 yılında ödeme çocuk sırasına göre belirlenir: ilk çocuk için tek seferlik ödeme, ikinci çocuk için aylık ödeme ve üçüncü ile sonraki çocuklar için daha yüksek aylık ödeme uygulanır.
+Başvurular e-Devlet üzerinden yapılır; ödeme ve süreç bilgileri resmî bakanlık sayfaları ile e-Ailem üzerinden izlenebilir.
 `;
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline:
-    "Doğum Yardımı 2026: 1 Ocak 2025 Sonrası Doğumlar, Başvuru Rehberi ve Güncel Tutarlar",
+    "Doğum Yardımı 2026: Resmî Başvuru Rehberi ve Güncel Tutarlar",
   author: {
     "@type": "Person",
     name: "Senih Bayankulu",
@@ -74,7 +73,7 @@ const ARTICLE_JSON_LD = {
   articleSection: "Sosyal Hak Analizi",
   inLanguage: "tr-TR",
   keywords:
-    "doğum yardımı 2026, ikiz doğum ödemesi, üçüz doğum yardımı, e-devlet başvuru, 2022 sayılı kanun",
+    "doğum yardımı 2026, doğum yardımı başvuru, e-devlet, e-ailem, çocuk sırası, aile ve sosyal hizmetler bakanlığı",
 };
 
 const HASHTAGS = [
@@ -140,8 +139,7 @@ export default function Page() {
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 leading-tight mb-5">
-                Doğum Yardımı 2026: 1 Ocak 2025 Sonrası Doğumlar, Başvuru
-                Rehberi ve Güncel Tutarlar
+                Doğum Yardımı 2026: Resmî Başvuru Rehberi ve Güncel Tutarlar
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="font-bold text-slate-700">
@@ -168,49 +166,47 @@ export default function Page() {
                   Doğum yardımı, 01.01.2025 tarihi ve sonrasında canlı doğan
                   çocuklar için aileye bir defaya mahsus ödenen nakdi bir
                   sosyal yardımdır.
-                  Bu yardım, nüfus politikasının sosyal politika araçlarıyla
-                  desteklenmesi, çocuk yoksulluğunun önlenmesi ve ailelerin
-                  doğum sonrası ilk dönemdeki ekonomik yükünün hafifletilmesi
-                  amacıyla tasarlanmıştır. 2026 yılı uygulamalarında ikiz,
-                  üçüz ve daha fazla çoğul doğumlar için artırılmış ödemeler
-                  söz konusudur.
+                  Bu yardım, ailelerin doğum sonrası ilk dönemdeki ekonomik
+                  yükünü hafifletmeyi amaçlar. 2026 yılı uygulamalarında
+                  ödeme çocuk sırasına göre belirlenir; çoğul doğumlarda sıra
+                  esaslı tutar uygulanır.
                 </p>
               </section>
 
               {/* 2026 Güncel Tutarlar */}
               <section className="bg-pink-50/60 p-6 md:p-8 rounded-2xl border border-pink-100">
                 <h2 className="text-xl font-black text-slate-950 mb-4">
-                  2026 Yılı Doğum Yardımı Tutarları
+                  2026 Yılı Doğum Yardımı Tutar Yapısı
                 </h2>
                 <div className="grid gap-4 md:grid-cols-3 mb-6">
                   <div className="bg-white p-5 rounded-2xl border border-pink-100 text-center">
-                    <p className="text-xs text-slate-500 mb-1">Tek Çocuk</p>
+                    <p className="text-xs text-slate-500 mb-1">İlk Çocuk</p>
                     <p className="text-sm font-black text-pink-700">
-                      Güncel tutarı öğreniniz
+                      5.000 TL
                     </p>
-                    <p className="text-xs text-slate-400 mt-1">Bir defaya mahsus</p>
+                    <p className="text-xs text-slate-400 mt-1">Tek seferlik ödeme</p>
                   </div>
                   <div className="bg-white p-5 rounded-2xl border border-pink-100 text-center">
-                    <p className="text-xs text-slate-500 mb-1">İkiz Doğum</p>
+                    <p className="text-xs text-slate-500 mb-1">İkinci Çocuk</p>
                     <p className="text-sm font-black text-pink-700">
-                      Güncel tutarı öğreniniz
+                      Aylık 1.500 TL
                     </p>
-                    <p className="text-xs text-slate-400 mt-1">Her çocuk için ayrı</p>
+                    <p className="text-xs text-slate-400 mt-1">60 aya kadar</p>
                   </div>
                   <div className="bg-white p-5 rounded-2xl border border-pink-100 text-center">
-                    <p className="text-xs text-slate-500 mb-1">Üçüz Doğum</p>
+                    <p className="text-xs text-slate-500 mb-1">Üçüncü ve Sonraki</p>
                     <p className="text-sm font-black text-pink-700">
-                      Güncel tutarı öğreniniz
+                      Aylık 5.000 TL
                     </p>
-                    <p className="text-xs text-slate-400 mt-1">Her çocuk için ayrı</p>
+                    <p className="text-xs text-slate-400 mt-1">60 aya kadar</p>
                   </div>
                 </div>
                 <div className="bg-amber-50/60 p-4 rounded-2xl border border-amber-100">
                   <h3 className="font-black text-amber-800 mb-2 text-sm text-center">ℹ️ Güncel Tutar Bilgisi</h3>
                   <p className="text-sm text-amber-700 text-center">
-                    Sosyal yardım tutarları yıl içinde enflasyon farkı ve diğer düzenlemelerle değişebilir.
-                    Güncel ödeme tutarlarınızı öğrenmek için <strong>e-Devlet</strong> üzerinden sorgulama yapabilir
-                    veya Aile ve Sosyal Hizmetler İl Müdürlüklerine danışabilirsiniz.
+                    Sosyal yardım tutarları resmî bakanlık sayfalarında yayımlanır.
+                    Başvuru sonucu ve ödeme bilgileri için <strong>e-Devlet</strong>,
+                    <strong> e-Ailem</strong> ve ilgili bakanlık duyuruları takip edilmelidir.
                   </p>
                 </div>
               </section>
@@ -228,30 +224,30 @@ export default function Page() {
                   <li className="flex items-start gap-3">
                     <span className="text-pink-600 font-black mt-0.5">▸</span>
                     <span>
-                      <strong>T.C. vatandaşlığı:</strong> Çocuğun Türkiye
-                      Cumhuriyeti vatandaşı olması ve 01.01.2025 tarihi
-                      sonrasında canlı doğmuş olması
+                      <strong>Vatandaşlık ve doğum tarihi:</strong> Çocuğun
+                      01.01.2025 sonrasında canlı doğmuş olması ve resmî
+                      kayıtla doğrulanması
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-pink-600 font-black mt-0.5">▸</span>
                     <span>
-                      <strong>Annenin ikameti:</strong> Annenin Türkiye&apos;de
-                      kanuni ikametgahının bulunması
+                      <strong>Başvuru kanalı:</strong> Başvurunun başvuru
+                      sahibinin kendi e-Devlet hesabı üzerinden yapılması
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-pink-600 font-black mt-0.5">▸</span>
                     <span>
-                      <strong>Süre sınırı:</strong> Doğumdan sonra 1 yıl
-                      içinde başvuru yapılması
+                      <strong>Takip imkânı:</strong> Başvuru ve ödeme
+                      sürecinin e-Devlet ile e-Ailem üzerinden izlenebilmesi
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-pink-600 font-black mt-0.5">▸</span>
                     <span>
-                      <strong>Önceki ödeme kontrolü:</strong> Aynı çocuk için
-                      daha önce doğum yardımı alınmamış olması
+                      <strong>Sıra esaslı ödeme:</strong> Çocuk sırasına göre
+                      tek seferlik veya aylık ödeme uygulanması
                     </span>
                   </li>
                 </ul>
@@ -260,44 +256,43 @@ export default function Page() {
               {/* Başvuru Süreci ve Ödeme Takvimi */}
               <section>
                 <h2 className="text-2xl font-black text-slate-950 mb-4">
-                  Başvuru Süreci ve Ödeme Takvimi
+                  Başvuru Süreci ve İzleme Kanalları
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Doğum yardımı başvuruları e-Devlet üzerinden veya Aile ve
-                  Sosyal Hizmetler İl Müdürlükleri&apos;ne yapılır. e-Devlet
-                  başvuruları daha hızlı sonuçlanmaktadır.
+                  Doğum yardımı başvuruları e-Devlet üzerinden yürütülür.
+                  Başvuru sonucu ve ödeme bilgileri için e-Ailem ile resmî
+                  bakanlık duyuruları takip edilmelidir.
                 </p>
                 <ol className="space-y-3 text-slate-700 list-decimal list-inside">
                   <li>
-                    <strong>e-Devlet kapısına giriş</strong> (anne veya baba
-                    T.C. kimlik numarası ile)
+                    <strong>e-Devlet kapısına giriş</strong> (başvuru sahibinin
+                    kendi hesabı ile)
                   </li>
                   <li>
                     <strong>Aile ve Sosyal Hizmetler Bakanlığı hizmetleri</strong>{" "}
                     → &quot;Doğum Yardımı Başvurusu&quot;
                   </li>
                   <li>
-                    <strong>Çocuğun nüfus kaydı doğrulama</strong> (sistem
-                    otomatik çeker)
+                    <strong>Çocuk sırası ve kimlik doğrulama</strong> (nüfus
+                    kaydı üzerinden)
                   </li>
                   <li>
-                    <strong>Banka hesap bilgisi girme</strong> (ödemenin
-                    yatırılacağı IBAN)
+                    <strong>Başvuruyu tamamlama</strong> (gerekli bilgileri
+                    kontrol ederek)
                   </li>
                   <li>
-                    <strong>Başvuru onayı ve takip</strong> (SMS ile bildirim,
-                    ortalama 15-30 gün)
+                    <strong>Sonuç ve ödeme takibi</strong> (e-Devlet ve
+                    bakanlık duyuruları üzerinden)
                   </li>
                 </ol>
                 <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 mt-4">
                   <h3 className="font-black text-slate-900 mb-2">
-                    Ödeme Takvimi
+                    Ödeme Bilgisi
                   </h3>
                   <p className="text-sm text-slate-700">
-                    Başvurunun onaylanmasından sonra ödeme, genellikle aynı ay
-                    içinde veya takip eden ayın ilk haftasında yapılır. Ödeme
-                    doğrudan başvuru sahibinin banka hesabına EFT/HAVALE ile
-                    aktarılır.
+                    Ödeme takvimi ve hak ediş bilgileri resmî bakanlık
+                    duyurularında yayımlanır. Ödeme süreci çocuk sırasına göre
+                    hesaplanır ve başvuru sonucu dijital kanallardan izlenir.
                   </p>
                 </div>
               </section>
@@ -310,34 +305,24 @@ export default function Page() {
                 <div className="space-y-3 text-slate-700">
                   <p>
                     <strong className="text-orange-700">
-                      Süre aşımı:
+                      Başvuru süresi:
                     </strong>{" "}
-                    Doğum yardımı başvurusu çocuğun doğumundan sonra en geç 1
-                    yıl içinde yapılmalıdır. Süre aşımında başvuru reddedilir.
+                    Başvuru süresi resmî başvuru kılavuzunda belirtilen süre
+                    içinde tamamlanmalıdır.
                   </p>
                   <p>
                     <strong className="text-orange-700">
-                      İkametgah uyumsuzluğu:
+                      Kimlik ve kayıt uyumu:
                     </strong>{" "}
-                    e-Devlet&apos;teki adres ile nüfus kaydı adresi farklıysa
-                    sistem otomatik uyarı verir. Nüfus Müdürlüğü&apos;nden
-                    adres güncellemesi yapılmalıdır.
+                    Başvuru sahibinin ve çocuğun kimlik/kayıt bilgileri resmî
+                    kayıtlarda uyumlu değilse başvuru ek doğrulama gerektirebilir.
                   </p>
                   <p>
                     <strong className="text-orange-700">
-                      İkiz/üçüz doğum özel durumu:
+                      Çoğul doğum özel durumu:
                     </strong>{" "}
-                    Çoğul doğumlarda her çocuk için ayrı başvuru yapılmasına
-                    gerek yoktur. Sistem otomatik olarak çoğul doğumu tespit
-                    eder ve tutarı buna göre hesaplar.
-                  </p>
-                  <p>
-                    <strong className="text-orange-700">
-                      Doğum yardımı + diğer yardımlar:
-                    </strong>{" "}
-                    Doğum yardımı alan aileler, çocuk için SED yardımı, engelli
-                    aylığı (varsa) gibi diğer sosyal yardımlardan da
-                    yararlanabilir.
+                    Çoğul doğumlarda ödeme, çocuk sırasına göre hesaplanır;
+                    her çocuk için tutar ayrı değerlendirilir.
                   </p>
                 </div>
               </section>
@@ -363,30 +348,27 @@ export default function Page() {
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
-                    [1] T.C. Resmî Gazete. (2022).{" "}
+                    [1] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
-                      2022 Sayılı Kanun: Sosyal Hizmetler Kanunu, Md. 19 —
+                      Yeni Doğum Yardımı
+                    </em>
+                    . Resmî SSS sayfası.
+                  </li>
+                  <li>
+                    [2] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    <em>
                       Doğum Yardımı
                     </em>
-                    . Sayı: 31857.
+                    . e-Ailem / dijital başvuru ve takip bilgilendirmesi.
                   </li>
                   <li>
-                    [2] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
-                    <em>
-                      2026 Yılı Doğum Yardımı Uygulama Talimatı ve Ödeme
-                      Cetveli
-                    </em>
-                    . SYGM Yayınları, Ankara.
+                    [3] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    <em>Sosyal Yardım Programlarımız</em>. SYGM program tablosu.
                   </li>
                   <li>
-                    [3] Aile ve Sosyal Hizmetler Bakanlığı. (2025).{" "}
-                    <em>Doğum Yardımı Başvuru Kılavuzu</em>. e-Devlet entegre
-                    başvuru sistemi.
-                  </li>
-                  <li>
-                    [4] TÜİK. (2025).{" "}
-                    <em>Türkiye&apos;de Çocuk İstatistikleri 2024</em>.
-                    Ankara.
+                    [4] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    <em>Nisan ayı doğum yardımı ödemeleri hesaplara yatırıldı</em>.
+                    Basın duyurusu.
                   </li>
                 </ul>
               </footer>
@@ -424,4 +406,3 @@ export default function Page() {
     </main>
   );
 }
-
