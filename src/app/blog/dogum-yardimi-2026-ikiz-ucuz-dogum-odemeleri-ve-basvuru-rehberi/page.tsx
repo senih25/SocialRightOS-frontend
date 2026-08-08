@@ -352,16 +352,16 @@ export default function Page() {
                   <li>
                     [1] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
-                      Yeni Doğum Yardımı
+                      Doğum Yardımı
                     </em>
                     . Resmî SSS sayfası.
                   </li>
                   <li>
                     [2] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
-                      Doğum Yardımı
+                      e-Ailem
                     </em>
-                    . e-Ailem / dijital başvuru ve takip bilgilendirmesi.
+                    . Dijital başvuru ve takip bilgilendirmesi.
                   </li>
                   <li>
                     [3] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
