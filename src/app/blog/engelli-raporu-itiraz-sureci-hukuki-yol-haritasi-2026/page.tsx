@@ -44,7 +44,7 @@ const VOICE_TEXT = `
 Engelli Raporu İtiraz Süreci 2026: Hukuki Yol Haritası ve Başvuru Rehberi.
 Yazar: Senih Bayankulu.
 
-Engelli Sağlık Kurulu raporundaki çalışma gücü kaybı oranını yetersiz bulan bireylerin itiraz hakkı vardır.
+Engelli sağlık kurulu raporundaki oranı yetersiz bulan bireylerin itiraz hakkı vardır.
 İtiraz süreci, raporun teslim alındığı veya e-Devlet'te göründüğü tarihten itibaren otuz gün içinde İl Sağlık Müdürlüğüne yapılan başvuruyla başlar.
 Müdürlük, başvuruyu yetkili sağlık kuruluşuna yönlendirir ve gerekirse hakem hastane aşaması uygulanır.
 İtiraz dilekçesinde rapordaki hangi bölüme itiraz edildiği ve nedenleri ayrıntılı olarak belirtilmelidir.
@@ -169,16 +169,19 @@ export default function Page() {
                 <p className="text-slate-700">
                   Engelli Sağlık Kurulu raporu, engelli bireylerin sosyal hak
                   ve hizmetlere erişiminde en kritik belgedir. Raporda
-                  belirtilen çalışma gücü kaybı oranı, engelli aylığı, evde
+                  belirtilen engellilik oranı, engelli aylığı, evde
                   bakım maaşı, vergi indirimi, eğitim desteği ve istihdam
                   teşvikleri gibi birçok hakkın kapsamını doğrudan etkiler.
                   Ancak bazı durumlarda rapor, bireyin gerçek sağlık durumunu
-                  yansıtmayabilir veya çalışma gücü kaybı oranı düşük
-                  belirlenebilir. Bu durumda 2023 yılında yürürlüğe giren
-                  Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği,
-                  bireylere itiraz hakkı tanımaktadır. Bu makale, itiraz
-                  sürecinin hukuki yol haritasını adım adım analiz
-                  etmektedir.
+                  yansıtmayabilir veya oran düşük belirlenebilir. Bu durumda
+                  20 Şubat 2019 tarihli <em>
+                    Erişkinler İçin Engellilik Değerlendirmesi Hakkında
+                    Yönetmelik
+                  </em>{" "}
+                  ile Sağlık Bakanlığının itiraz ve değerlendirme usulüne
+                  ilişkin resmi rehberleri bireylere başvuru hakkı tanımaktadır.
+                  Bu makale, itiraz sürecinin hukuki yol haritasını adım adım
+                  analiz etmektedir.
                 </p>
               </section>
 
@@ -210,8 +213,8 @@ export default function Page() {
                         <strong>30 gün</strong> içinde
                       </li>
                       <li>
-                        ▸ <strong>Başvuru yeri:</strong> İkamet edilen ya da
-                        raporun alındığı ilin İl Sağlık Müdürlüğü
+                        ▸ <strong>Başvuru yeri:</strong> İlgili İl Sağlık
+                        Müdürlüğü
                       </li>
                       <li>
                         ▸ <strong>Gerekli evrak:</strong> İtiraz dilekçesi,
@@ -359,17 +362,17 @@ export default function Page() {
                     <strong className="text-orange-700">
                       İdari dava hakkı:
                     </strong>{" "}
-                    İl sağlık müdürlüğü kararı da tatmin edici değilse, 60 gün
-                    içinde idari mahkemeye dava açılabilir. Bu durumda bir
-                    avukatla çalışılması önerilir.
+                    İl sağlık müdürlüğü kararı da tatmin edici değilse, yasal
+                    süre içinde idari yargı yolu ayrıca değerlendirilir. Bu
+                    aşamada bir avukatla çalışılması önerilir.
                   </p>
                   <p>
                     <strong className="text-orange-700">
                       Rapor yenileme vs. itiraz:
                     </strong>{" "}
-                    Süreli raporların yenilenmesi sırasında itiraz hakkı da
-                    doğar. Sürekli raporlarda ise sadece itiraz yolu
-                    kullanılabilir.
+                    Raporun yenilenmesi ile itiraz süreci farklı başlıklardır;
+                    her iki durumda da başvuru öncesi dayanak belge ve süre
+                    kontrolü yapılmalıdır.
                   </p>
                   <p>
                     <strong className="text-orange-700">
@@ -406,36 +409,31 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Doğrulama Bekleyen Kaynak Notları
+                  Resmî Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
-                    [1] Sağlık Bakanlığı. (2023).{" "}
+                    [1] Aile, Çalışma ve Sosyal Hizmetler Bakanlığı; Sağlık
+                    Bakanlığı. (2019).{" "}
                     <em>
-                      Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği
+                      Erişkinler İçin Engellilik Değerlendirmesi Hakkında
+                      Yönetmelik
                     </em>
-                    . Resmî Gazete, Sayı: 32344.
+                    . Resmî Gazete, Sayı: 30692.
                   </li>
                   <li>
-                    [2] Sağlık Bakanlığı. (2024).{" "}
-                    <em>
-                      Engelli Sağlık Kurulu Raporu İtiraz ve Değerlendirme
-                      Usulü Tebliği
-                    </em>
-                    . Resmî Gazete, Sayı: 33100.
+                    [2] Sağlık Raporları Usul ve Esasları Hakkında Yönerge.
+                    Madde 36, Ek-12 ve Ek-13.
                   </li>
                   <li>
-                    [3] T.C. Anayasa Mahkemesi. (2024).{" "}
-                    <em>
-                      Engelli Raporu İtiraz Sürecine İlişkin Karar (E.
-                      2024/123)
-                    </em>
-                    .
+                    [3] T.C. Aile ve Sosyal Hizmetler Bakanlığı.{" "}
+                    <em>Engelliler İçin Sağlık Kurulu Raporları</em>. SSS
+                    sayfası.
                   </li>
                   <li>
                     [4] T.C. Aile ve Sosyal Hizmetler Bakanlığı.{" "}
-                    <em>Engelliler İçin Sağlık Kurulu Raporları</em>. Engelli
-                    ve Yaşlı Hizmetleri Genel Müdürlüğü, SSS.
+                    <em>Engellilere Sağlanan Diğer İndirim ve Muafiyetler</em>.
+                    Engelli raporu kullanım alanları.
                   </li>
                 </ul>
               </footer>
