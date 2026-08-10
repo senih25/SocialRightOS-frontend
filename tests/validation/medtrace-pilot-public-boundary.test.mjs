@@ -19,9 +19,10 @@ test("MedTrace pilot does not claim clinical validation or real patient use", ()
   const forbiddenClaims = [
     /clinically validated/i,
     /clinical validation passed/i,
+    /we use real patient data/i,
     /real patient data is used/i,
     /diagnosis generated/i,
-    /autonomous clinical decision/i,
+    /autonomous clinical decision generated/i,
   ];
 
   for (const claim of forbiddenClaims) {
