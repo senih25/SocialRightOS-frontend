@@ -4,6 +4,7 @@ import Link from "next/link";
 import { brandProfile } from "@/lib/brand-profile";
 import { buildBrandGraphJsonLd } from "@/lib/seo-json";
 import { JsonLd } from "@/components/seo/json-ld";
+import PageSummaryGuide from "@/components/ui/PageSummaryGuide";
 import { getSiteUrl, isProductionSite } from "@/lib/site";
 import { getRuntimeMarker } from "@/lib/observability";
 import "./globals.css";
@@ -72,7 +73,6 @@ const quickLinks = [
   { href: "/blog", label: "Rehber yazıları" },
   { href: "/hakkimizda", label: "Hakkımızda" },
   { href: brandProfile.organization.profilePath, label: "SocialRightLabs" },
-  { href: brandProfile.founder.profilePath, label: "Kurucu" },
   { href: "/iletisim", label: "İletişim" },
 ];
 
@@ -136,6 +136,8 @@ export default function RootLayout({
             </div>
           </div>
 
+          <PageSummaryGuide />
+
           {children}
 
           <footer className="site-footer">
@@ -196,15 +198,6 @@ export default function RootLayout({
                     {brandProfile.organization.name}
                   </Link>
                   {" "}tarafından geliştirilmektedir.
-                </p>
-                <p className="mt-2">
-                  Kurucu: {" "}
-                  <Link
-                    href={brandProfile.founder.profilePath}
-                    className="font-semibold text-slate-900 underline underline-offset-4"
-                  >
-                    {brandProfile.founder.name}
-                  </Link>
                 </p>
               </div>
             </div>

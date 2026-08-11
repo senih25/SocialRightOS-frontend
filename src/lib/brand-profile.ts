@@ -5,7 +5,6 @@ export const brandProfile = {
       "SocialRightLabs Kurucusu ve Dijital Sosyal Hak Sistemleri Geliştiricisi",
     summary:
       "Sosyal haklar, dijital kamu hizmetleri ve yapay zekâ destekli bilgi sistemleri üzerine projeler geliştirir.",
-    profilePath: "/senih-bayankulu",
   },
   organization: {
     name: "SocialRightLabs",
