@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "research_id": "P1-B01-T03",
+  "generated_at": "2026-08-08T00:00:00.000Z",
+  "claimed_source": {
+    "title": "2026 Yılı Engelli Sağlık Kurulu Raporu İtiraz Başvuru Kılavuzu",
+    "claimed_year": 2026,
+    "claimed_official_gazette_number": null
+  },
+  "verification_result": {
+    "source_exists_as_cited": false,
+    "claimed_title_verified": false,
+    "claimed_year_verified": false,
+    "claimed_official_gazette_number_verified": null,
+    "source_level_decision": "REPLACE",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik",
+      "publication_date": "2019-02-20",
+      "official_gazette_number": 30692,
+      "relevant_article": 15,
+      "relevant_heading": "Kazanılmış haklar",
+      "role": "Engelli sağlık kurulu raporlarına ilişkin itirazların bu Yönetmelik hükümlerine göre sonuçlandırıldığını belirleyen temel normatif kaynak"
+    },
+    "supporting_administrative_source": {
+      "title": "Engelliler İçin Sağlık Kurulu Raporları",
+      "publication_date": null,
+      "official_gazette_number": null,
+      "relevant_article": "Soru 10",
+      "relevant_heading": "Sağlık kurulu raporlarına itiraz nasıl yapılmaktadır?",
+      "role": "30 günlük itiraz süresini ve İl Sağlık Müdürlüğü başvurusunu açıklayan güncel resmî SSS sayfası",
+      "source_classification": "OFFICIAL_MINISTRY_GUIDANCE_PAGE"
+    }
+  },
+  "material_findings": [
+    "İddia edilen 2026 tarihli kılavuz başlığı resmi domainde doğrulanmadı.",
+    "Aile.gov.tr SSS sayfası, engelli sağlık kurulu raporlarına itirazın otuz gün içinde İl Sağlık Müdürlüğüne yapılacağını açıkça belirtmektedir.",
+    "Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik, engelli sağlık kurulu raporlarına ilişkin itirazların bu Yönetmelik hükümlerine göre sonuçlandırılacağını belirtmektedir.",
+    "Blogdaki önceki 'hastane başhekimliği' ifadesi resmî kaynaklarla tam örtüşmemektedir ve daha genel başvuru diliyle revize edilmelidir."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": true,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "2026 Yılı Engelli Sağlık Kurulu Raporu İtiraz Başvuru Kılavuzu, resmî ve doğrulanmış bir bakanlık yayını olarak sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Kaynak 4, doğrulanamayan bir 2026 kılavuz atfı olduğu için değiştirilmelidir. Yerine Aile ve Sosyal Hizmetler Bakanlığı'nın güncel SSS sayfası ve temel mevzuat kaynağı kullanılmalıdır. Metin, itirazın İl Sağlık Müdürlüğüne 30 gün içinde yapıldığını söyleyecek şekilde sadeleştirilmelidir; hastane başhekimliği ifadesi kaldırılmalıdır.",
+  "evidence_inventory": {
+    "official_source_urls": [
+      "https://www.aile.gov.tr/sss/engelli-ve-yasli-hizmetleri-genel-mudurlugu/engelliler-icin-saglik-kurulu-raporlari/",
+      "https://www.aile.gov.tr/eyhgm/mevzuat/ulusal-mevzuat/yonetmelikler/eriskinler-icin-engellilik-degerlendirmesi-hakkinda-yonetmelik/"
+    ]
+  },
+  "validation_checks": {
+    "official_sss_page_verified": true,
+    "official_regulation_page_verified": true,
+    "thirty_day_appeal_window_verified": true,
+    "il_saglik_mudurlugu_submission_verified": true,
+    "guidance_page_supports_claim": true,
+    "draft_kilavuz_not_verified": true
+  },
+  "limitations": [
+    "Resmî sayfalardaki başvuru akışı, kurum bazında ayrıntı farklılıkları gösterebilir.",
+    "Bu karar kaynak 4 düzeyindedir; ayrı içerik cümlesi düzeltmeleri ayrıca uygulanmalıdır."
+  ]
+}

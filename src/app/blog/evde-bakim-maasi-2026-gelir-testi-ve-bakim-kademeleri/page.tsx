@@ -10,9 +10,10 @@ export const metadata: Metadata = {
     index: false,
     follow: false,
   },
-  title: "Evde Bakım Maaşı 2026: Gelir Testi, Bakım Kademeleri ve Başvuru Rehberi",
+  title:
+    "Evde Bakım Yardımı 2026: Tam Bağımlı Rapor, Gelir Kriteri ve Başvuru Rehberi",
   description:
-    "2026 evde bakım maaşı gelir oranı, ağır-hafif engelli bakım kademeleri ve SYDV başvuru süreci. Bilgilendirme amacıyla hazırlanmış kapsamlı rehber.",
+    "Aile ve Sosyal Hizmetler Bakanlığı’nın resmî kaynaklarına göre 2026 evde bakım yardımı, gelir kriteri, tam bağımlı/ağır engelli rapor şartı ve başvuru süreci.",
   keywords: [
     "evde bakım maaşı 2026",
     "evde bakım gelir sınırı 2026",
@@ -26,9 +27,10 @@ export const metadata: Metadata = {
     canonical: "/blog/evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri",
   },
   openGraph: {
-    title: "Evde Bakım Maaşı 2026: Gelir Testi, Bakım Kademeleri ve Başvuru Rehberi",
+    title:
+      "Evde Bakım Yardımı 2026: Tam Bağımlı Rapor, Gelir Kriteri ve Başvuru Rehberi",
     description:
-      "2026 evde bakım maaşı güncel gelir sınırı, ağır-hafif engelli bakım kademeleri ve SYDV başvuru süreci. Bilgilendirme rehberi.",
+      "Aile ve Sosyal Hizmetler Bakanlığı’nın resmî kaynaklarına göre 2026 evde bakım yardımı, gelir kriteri, tam bağımlı/ağır engelli rapor şartı ve başvuru süreci.",
     type: "article",
     authors: ["Senih Bayankulu"],
     publishedTime: "2026-05-04",
@@ -37,21 +39,20 @@ export const metadata: Metadata = {
 };
 
 const VOICE_TEXT = `
-Evde Bakım Maaşı 2026: Gelir Testi, Bakım Kademeleri ve Başvuru Rehberi.
+Evde Bakım Yardımı 2026: Tam Bağımlı Rapor, Gelir Kriteri ve Başvuru Rehberi.
 Yazar: Senih Bayankulu.
 
-Evde bakım maaşı, 2022 sayılı Kanun kapsamında ağır engelli bireylerin bakım ihtiyacını karşılamak üzere hane halkına ödenen nakdi bir yardımdır.
-2026 yılında bu yardımın en kritik şartı hane içi kişi başına düşen gelirin net asgari ücretin 2/3'ünden az olmasıdır.
-Bakım ihtiyacı ise Sağlık Bakanlığı Engelli Sağlık Kurulu raporu ile belgelenir.
-Raporda bakım muhtaçlığı oranı yüzde ellinin üzerinde olan bireyler ağır engelli kapsamında değerlendirilir.
-Başvurular ikametgah adresindeki Sosyal Yardımlaşma ve Dayanışma Vakfına yapılır.
+Evde bakım yardımı, bakıma ihtiyacı olan engelli bireylerin ailelerinin yanında desteklenmesi için verilen nakdi bir yardımdır.
+2026 yılında yardımın temel koşulları; hane içi kişi başına düşen gelirinin net asgari ücretin 2/3'ünden az olması, yetkili sağlık kuruluşu raporu ve bakım ihtiyacının resmî değerlendirme ile doğrulanmasıdır.
+18 yaş üstü bireylerde raporda ağır engelli veya tam bağımlı ibaresi, 18 yaş altı bireylerde ise ilgili ÇÖZGER ibareleri aranır.
+Başvurular il müdürlüğü veya sosyal hizmet merkezi üzerinden yapılır.
 `;
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline:
-    "Evde Bakım Maaşı 2026: Gelir Testi, Bakım Kademeleri ve Başvuru Rehberi",
+    "Evde Bakım Yardımı 2026: Tam Bağımlı Rapor, Gelir Kriteri ve Başvuru Rehberi",
   author: {
     "@type": "Person",
     name: "Senih Bayankulu",
@@ -71,7 +72,7 @@ const ARTICLE_JSON_LD = {
   articleSection: "Sosyal Hak Analizi",
   inLanguage: "tr-TR",
   keywords:
-    "evde bakım maaşı 2026, evde bakım gelir sınırı, ağır engelli bakım ücreti, SYDV başvurusu",
+    "evde bakım yardımı 2026, evde bakım gelir sınırı, tam bağımlı rapor, SYDV başvurusu, e-devlet",
 };
 
 const HASHTAGS = [
@@ -90,7 +91,7 @@ export default function Page() {
     { name: "Ana sayfa", url: new URL("/", siteUrl).toString() },
     { name: "Blog ve Analiz", url: new URL("/blog", siteUrl).toString() },
     {
-      name: "Evde Bakım Maaşı 2026",
+      name: "Evde Bakım Yardımı 2026",
       url: new URL(
         "/blog/evde-bakim-maasi-2026-gelir-testi-ve-bakim-kademeleri",
         siteUrl,
@@ -116,7 +117,7 @@ export default function Page() {
             </Link>
             <span className="mx-2">/</span>
             <span className="text-slate-900 font-bold">
-              Evde Bakım Maaşı 2026
+              Evde Bakım Yardımı 2026
             </span>
           </div>
           <div className="flex items-center gap-3">
@@ -138,8 +139,7 @@ export default function Page() {
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 leading-tight mb-5">
-                Evde Bakım Maaşı 2026: Gelir Testi, Bakım Kademeleri ve Başvuru
-                Rehberi
+                Evde Bakım Yardımı 2026: Tam Bağımlı Rapor, Gelir Kriteri ve Başvuru Rehberi
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="font-bold text-slate-700">
@@ -163,51 +163,49 @@ export default function Page() {
                   Giriş ve Hukuki Çerçeve
                 </h2>
                 <p className="text-slate-700">
-                  Evde bakım yardımı, 2022 sayılı Kanun&apos;un 14. maddesi
-                  kapsamında düzenlenen, ağır engelli bireylerin bakım
-                  ihtiyacının aile içinde karşılanmasını desteklemek amacıyla
-                  hane halkına ödenen nakdi bir sosyal yardımdır. Bu yardımın
-                  2026 yılı uygulamalarında en kritik belirleyici faktör, hane
-                  içi gelir testi ile Sağlık Bakanlığı Engelli Sağlık Kurulu
-                  raporunda tespit edilen bakım muhtaçlık oranıdır.
+                  Evde bakım yardımı, bakıma ihtiyacı olan engelli bireylerin
+                  ailelerinin yanında desteklenmesi için verilen nakdi bir
+                  sosyal yardımdır. Yardımın hukuki dayanağı 2828 sayılı
+                  Sosyal Hizmetler Kanunu&apos;nun ek 7 nci maddesi ve buna
+                  dayanılarak çıkarılan Evde Bakım Yardımı Yönetmeliği&apos;dir.
+                  2026 uygulamasında temel belirleyici faktörler; gelir
+                  kriteri, sağlık kurulu raporu ve bakım ihtiyacının resmî
+                  değerlendirmesidir.
                 </p>
               </section>
 
               {/* Gelir Testi */}
               <section className="bg-cyan-50/60 p-6 md:p-8 rounded-2xl border border-cyan-100">
                 <h2 className="text-xl font-black text-slate-950 mb-4">
-                  2026 Gelir Testi Kriterleri
+                  2026 Gelir ve Yardım Kriterleri
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Aile ve Sosyal Hizmetler Bakanlığı 2026 yılı uygulama
-                  talimatına göre, evde bakım maaşı alabilmek için hane
+                  Resmî mevzuata göre, evde bakım yardımı alabilmek için hane
                   içindeki kişi başına düşen aylık gelirin{" "}
                   <strong>net asgari ücretin 2/3&apos;ünden az</strong> olması
-                  gerekmektedir. Bu hesaplamada hane halkındaki tüm bireylerin
-                  gelirleri dikkate alınır.
+                  gerekmektedir. Başvuruda ayrıca engelli sağlık kurulu
+                  raporundaki bakım ihtiyacı değerlendirilir.
                 </p>
                 <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
                     <span className="text-cyan-600 font-black mt-0.5">▸</span>
                     <span>
-                      <strong>Hane tanımı:</strong> Aynı konutta ikamet eden,
-                      ortalama geçim giderlerini birlikte karşılayan bireyler
+                      <strong>Hane tanımı:</strong> Aynı konutta ikamet eden
+                      bireylerin gelirleri birlikte değerlendirilir
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-cyan-600 font-black mt-0.5">▸</span>
                     <span>
                       <strong>Gelir kapsamı:</strong> Ücret, maaş, kira, tarım,
-                      hayvancılık ve benzeri tüm düzenli gelirler oran
-                      değerlendirmesine dahil edilir
+                      hayvancılık ve benzeri gelirler dikkate alınır
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-cyan-600 font-black mt-0.5">▸</span>
                     <span>
-                      <strong>Engelli maaşı hariç:</strong> Engelli aylığı
-                      alınıyor olsa bile evde bakım yardımı için ayrı değerlendirme
-                      yapılır
+                      <strong>Değerlendirme:</strong> Gelir kriteri ile
+                      sağlık kurulu değerlendirmesi birlikte yürütülür
                     </span>
                   </li>
                 </ul>
@@ -216,34 +214,32 @@ export default function Page() {
               {/* Bakım Kademeleri */}
               <section>
                 <h2 className="text-2xl font-black text-slate-950 mb-4">
-                  Bakım Muhtaçlık Kademeleri
+                  Bakım Muhtaçlığı ve Rapor Şartı
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Engelli Sağlık Kurulu raporunda belirtilen bakım muhtaçlık
-                  oranı, yardımın kapsamını doğrudan etkiler. 2026 uygulamasında
-                  iki temel kategori bulunmaktadır:
+                  Engelli sağlık kurulu raporunda yer alan ibareler, yardımın
+                  kapsamını doğrudan etkiler. Resmî metinlerde yetişkin ve çocuk
+                  için ayrı değerlendirme yapılır:
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="bg-red-50 p-5 rounded-2xl border border-red-100">
                     <h3 className="font-black text-red-800 mb-2">
-                      Ağır Engelli (%50+)
+                      18 Yaş Üstü
                     </h3>
                     <p className="text-sm text-red-700 leading-relaxed">
-                      Bakım muhtaçlık oranı yüzde 50 ve üzerinde olan bireyler.
-                      Günlük yaşam aktivitelerini (yıkanma, giyinme, beslenme,
-                      tuvalet ihtiyacı) kendi başlarına yerine getiremezler.
-                      Bu kategori evde bakım maaşı için esas kapsamdır.
+                      Raporda “ağır engelli” veya “tam bağımlı” ibaresi
+                      bulunmalıdır.
                     </p>
                   </div>
                   <div className="bg-amber-50 p-5 rounded-2xl border border-amber-100">
                     <h3 className="font-black text-amber-800 mb-2">
-                      Hafif-Orta Engelli (%50 altı)
+                      18 Yaş Altı
                     </h3>
                     <p className="text-sm text-amber-700 leading-relaxed">
-                      Bakım muhtaçlık oranı yüzde 50&apos;nin altında olan
-                      bireyler. Evde bakım maaşı kapsamına girmeyebilirler.
-                      Ancak engelli aylığı, eğitim desteği ve rehabilitasyon
-                      hizmetleri gibi diğer haklardan yararlanabilirler.
+                      ÇÖZGER raporunda “ağır engelli”, “Çok ileri düzeyde özel
+                      gereksinimi vardır”, “Belirgin özel gereksinimi vardır”
+                      veya “Özel koşul gereksinimi var” ifadelerinden biri
+                      aranır.
                     </p>
                   </div>
                 </div>
@@ -255,31 +251,30 @@ export default function Page() {
                   Başvuru Süreci ve Gerekli Evraklar
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Başvurular ikametgah adresindeki Sosyal Yardımlaşma ve
-                  Dayanışma Vakfı (SYDV)&apos;na yapılır. e-Devlet üzerinden
-                  ön başvuru mümkündür ancak nihai karar için yüz yüze
-                  değerlendirme zorunludur.
+                  Başvurular ikametgâh adresindeki Aile ve Sosyal Hizmetler İl
+                  Müdürlüğü veya Sosyal Hizmet Merkezi Müdürlüğüne yapılır.
+                  Yönetmeliğe göre başvurular il müdürlüğü veya sosyal
+                  hizmet merkezi üzerinden yapılır.
                 </p>
                 <ol className="space-y-3 text-slate-700 list-decimal list-inside">
                   <li>
                     <strong>Engelli Sağlık Kurulu Raporu</strong> (bakım
-                    muhtaçlığı belirtilmiş, aslı veya onaylı sureti)
+                    ihtiyacını gösteren rapor)
                   </li>
                   <li>
-                    <strong>Nüfus cüzdanı fotokopisi</strong> (engelli birey ve
-                    vasi/kanuni temsilci için)
+                    <strong>Kimlik bilgileri</strong> (başvuru sahibine ait)
                   </li>
                   <li>
-                    <strong>Gelir belgeleri</strong> (hane halkının tüm gelir
-                    kaynaklarını gösteren belgeler)
+                    <strong>Gelir ve varlık beyanı</strong> (hane içi kişi başı
+                    gelir değerlendirmesi için)
                   </li>
                   <li>
-                    <strong>İkametgah belgesi</strong> (e-Devlet&apos;ten alınan
-                    güncel belge)
+                    <strong>İkametgâh ve yerleşim bilgisi</strong> (yerleşim
+                    yeri doğrulaması için)
                   </li>
                   <li>
-                    <strong>Banka hesap bilgileri</strong> (yardımın yatırılacağı
-                    IBAN)
+                    <strong>Başvuru formu</strong> (il müdürlüğü veya sosyal
+                    hizmet merkezince yönlendirilir)
                   </li>
                 </ol>
               </section>
@@ -292,27 +287,25 @@ export default function Page() {
                 <div className="space-y-3 text-slate-700">
                   <p>
                     <strong className="text-orange-700">
-                      Rapor süresi takibi:
+                      Rapor kontrolü:
                     </strong>{" "}
-                    Engelli Sağlık Kurulu raporlarının süresi dolmadan yenileme
-                    başvurusu yapılmalıdır. Süresi dolan raporla ödeme
-                    durdurulur.
+                    Yönetmelik uyarınca evde bakım yardımı koşulları düzenli
+                    olarak kontrol edilir; koşul kaybı halinde yardım yeniden
+                    değerlendirilir.
                   </p>
                   <p>
                     <strong className="text-orange-700">
-                      Gelir değişikliği bildirimi:
+                      İtiraz hakkı:
                     </strong>{" "}
-                    Hane halkında gelir artışı (miras, iş değişikliği vb.)
-                    olduğunda 30 gün içinde SYDV&apos;ye bildirim yapılmalıdır.
-                    Bildirim yapılmazsa geriye dönük ödemeler talep edilebilir.
+                    Sağlık kurulu raporlarına ilişkin itirazlar ilgili
+                    mevzuattaki süre ve usule göre İl Sağlık Müdürlüğüne
+                    yapılır.
                   </p>
                   <p>
                     <strong className="text-orange-700">
-                      Vasi tayini:
+                      Başvuru kanalı:
                     </strong>{" "}
-                    Engelli bireyin kısıtlılık durumu varsa vasi tarafından
-                    başvuru yapılması gerekir. Vasi belgesi başvuru evraklarına
-                    eklenmelidir.
+                    İl müdürlüğü ve sosyal hizmet merkezi kanalları kullanılır.
                   </p>
                 </div>
               </section>
@@ -334,39 +327,36 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Doğrulama Bekleyen Kaynak Notları
+                  Resmî Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
                     [1] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
-                      Evde Bakım Yardımı Uygulama Talimatı ve 2026 Yılı Gelir
-                      Kriterleri
+                      Evde Bakım Yardımı ve Gündüz Hizmetleri
                     </em>
-                    . Ankara.
+                    . Resmî SSS sayfası.
                   </li>
                   <li>
-                    [2] T.C. Resmî Gazete. (2022).{" "}
+                    [2] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
-                      2022 Sayılı Kanun: Sosyal Hizmetler Kanunu, Md. 14 — Evde
-                      Bakım Yardımı
+                      Evde Bakım Yardımı Yönetmeliği
                     </em>
-                    . Sayı: 31857.
+                    . Mevzuat sayfası.
                   </li>
                   <li>
-                    [3] Sağlık Bakanlığı. (2023).{" "}
+                    [3] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
-                      Engelli Sağlık Kurulu Raporu Düzenleme Yönetmeliği
+                      Engelliler İçin Sağlık Kurulu Raporları
                     </em>
-                    . Resmî Gazete, Sayı: 32344.
+                    . Resmî SSS sayfası.
                   </li>
                   <li>
-                    [4] Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
+                    [4] T.C. Aile ve Sosyal Hizmetler Bakanlığı. (2026).{" "}
                     <em>
-                      2026 Yılı Sosyal Yardım Programları Bütçe Raporu ve
-                      Ödeme Takvimi
+                      Sosyal yardım programlarının aylık ödemeleri artırıldı
                     </em>
-                    . SYGM Yayınları.
+                    . Haber duyurusu.
                   </li>
                 </ul>
               </footer>
@@ -404,4 +394,3 @@ export default function Page() {
     </main>
   );
 }
-

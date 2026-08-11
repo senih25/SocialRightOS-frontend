@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "research_id": "P1-B05-KVKK-S03",
+  "generated_at": "2026-08-08T00:00:00.000Z",
+  "claimed_source": {
+    "title": "Özel Nitelikli Kişisel Verilerin İşlenmesinde Alınacak Tedbirler Tebliği",
+    "claimed_year": 2025,
+    "claimed_official_gazette_number": 33600
+  },
+  "verification_result": {
+    "source_exists_as_cited": false,
+    "claimed_title_verified": false,
+    "claimed_year_verified": false,
+    "claimed_official_gazette_number_verified": false,
+    "source_level_decision": "REPLACE",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "Özel Nitelikli Kişisel Verilerin İşlenmesine İlişkin Rehber",
+      "publication_date": "2025-02-26",
+      "official_gazette_number": null,
+      "relevant_article": "12.03.2024 tarihli 32487 sayılı Resmî Gazete'de yayımlanan 7499 sayılı Kanun ile KVKK'nın 6'ncı maddesinde yapılan değişiklikler sonrası özel nitelikli kişisel verilerin işlenmesine ilişkin güncel hukuki şartlar açıklanıyor.",
+      "relevant_heading": "Özel Nitelikli Kişisel Verilerin İşlenmesine İlişkin Rehber",
+      "role": "Özel nitelikli kişisel veriler için güncel işleme şartlarını ve hukuki dayanak çerçevesini açıklayan resmî KVKK rehberi",
+      "source_classification": "OFFICIAL_KVKK_GUIDANCE_PAGE"
+    },
+    "supporting_administrative_source": {
+      "title": "\"Özel Nitelikli Kişisel Verilerin İşlenmesinde Veri Sorumlularınca Alınması Gereken Yeterli Önlemler\" ile ilgili Kişisel Verileri Koruma Kurulunun 31/01/2018 Tarihli ve 2018/10 Sayılı Kararı",
+      "publication_date": "2018-01-31",
+      "official_gazette_number": null,
+      "relevant_article": "Kanunun 6'ncı maddesinin (4) numaralı fıkrası ile 22'nci maddesinin (1) numaralı fıkrasının (ç) ve (e) bentleri uyarınca özel nitelikli kişisel veri işleyen veri sorumlularınca alınması gereken yeterli önlemler belirlenmiştir.",
+      "relevant_heading": "Özel nitelikli kişisel verilerde yeterli önlemler",
+      "role": "Özel nitelikli veri işleyen veri sorumluları için zorunlu yeterli önlemleri belirleyen Kurul kararı",
+      "source_classification": "OFFICIAL_KVKK_BOARD_DECISION"
+    }
+  },
+  "material_findings": [
+    "İddia edilen 'Özel Nitelikli Kişisel Verilerin İşlenmesinde Alınacak Tedbirler Tebliği' başlığı KVKK'nın resmî kaynaklarında doğrulanmadı.",
+    "KVKK'nın 26.02.2025 tarihli 'Özel Nitelikli Kişisel Verilerin İşlenmesine İlişkin Rehber' sayfası, 12.03.2024 tarihli 32487 sayılı Resmî Gazete'de yayımlanan 7499 sayılı Kanun değişikliklerini esas alarak güncel işleme şartlarını açıklıyor.",
+    "31/01/2018 tarihli ve 2018/10 sayılı Kurul kararı, özel nitelikli kişisel veriler için veri sorumlularının alması gereken yeterli önlemleri belirliyor.",
+    "KVKK'nın 'Veri Güvenliğine İlişkin Yükümlülükler' sayfası, veri sorumlusunun 12'nci madde kapsamındaki teknik ve idari güvenlik yükümlülüklerini açık biçimde ortaya koyuyor.",
+    "Blog içeriği, doğrulanamayan bir 'tebliğ' atfı yerine resmî rehber + Kurul kararı + veri güvenliği yükümlülükleri ile sürdürülmelidir."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": true,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "Özel Nitelikli Kişisel Verilerin İşlenmesinde Alınacak Tedbirler Tebliği, resmî ve doğrulanmış bir KVKK yayını olarak sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Kaynak 3 doğrulanamadı ve 'tebliğ' olarak kullanılmamalıdır. İçerik, KVKK'nın 26.02.2025 tarihli özel nitelikli kişisel veriler rehberi ile 31/01/2018 tarihli 2018/10 sayılı Kurul kararı ve veri güvenliği yükümlülükleri temelinde yeniden kurulmalıdır.",
+  "evidence_inventory": {
+    "official_source_urls": [
+      "https://www.kvkk.gov.tr/Icerik/8184/Ozel-Nitelikli-Kisisel-Verilerin-Islenmesine-Iliskin-Rehber",
+      "https://www.kvkk.gov.tr/Icerik/4110/2018-10",
+      "https://www.kvkk.gov.tr/Icerik/2040/Veri-Guvenligine-Iliskin-Yukumlulukler"
+    ]
+  },
+  "validation_checks": {
+    "claimed_teblig_not_verified": true,
+    "guide_2025_verified": true,
+    "board_decision_2018_verified": true,
+    "data_security_page_verified": true,
+    "claimed_gazette_number_not_verified": true
+  },
+  "limitations": [
+    "Bu karar kaynak 3 düzeyindedir; sayfadaki diğer kaynak numaraları ayrıca doğrulanmalıdır.",
+    "KVKK sayfası güncellenirse tarih veya başlık ayrıntıları yeniden kontrol edilmelidir."
+  ]
+}

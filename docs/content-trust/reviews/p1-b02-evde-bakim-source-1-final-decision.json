@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "research_id": "P1-B02-EVDE-BAKIM-S01",
+  "generated_at": "2026-08-08T00:00:00.000Z",
+  "claimed_source": {
+    "title": "Evde Bakım Yardımı Uygulama Talimatı ve 2026 Yılı Gelir Kriterleri",
+    "claimed_year": 2026,
+    "claimed_official_gazette_number": null
+  },
+  "verification_result": {
+    "source_exists_as_cited": false,
+    "claimed_title_verified": false,
+    "claimed_year_verified": false,
+    "claimed_official_gazette_number_verified": null,
+    "source_level_decision": "REPLACE",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "Evde Bakım Yardımı ve Gündüz Hizmetleri",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "Soru 1, Soru 2, Soru 3",
+      "relevant_heading": "Engelli ve Yaşlı Hizmetleri Genel Müdürlüğü SSS sayfası",
+      "role": "Evde bakım yardımının tanımını, gelir kriterini, rapor şartını ve başvuru yerini doğrulayan resmî SSS kaynağı",
+      "source_classification": "OFFICIAL_MINISTRY_GUIDANCE_PAGE"
+    },
+    "supporting_administrative_source": {
+      "title": "Evde Bakım Yardımı Yönetmeliği",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "Madde 1, Madde 6, Madde 7, Madde 15, Madde 22-23",
+      "relevant_heading": "Evde bakım yardımının başvuru, değerlendirme ve ödeme usulü",
+      "role": "Başvuru kanalı, e-Devlet kabulü, belge teslim süresi ve idari kontrol hükümlerini açıklayan resmî mevzuat kaynağı",
+      "source_classification": "OFFICIAL_MINISTRY_REGULATION"
+    }
+  },
+  "material_findings": [
+    "İddia edilen 2026 talimat başlığı resmî domainde doğrulanmadı.",
+    "Resmî SSS sayfası evde bakım yardımının gelir kriterini net asgari ücretin 2/3'ü altı olarak belirtiyor ve başvuru için ağır engelli / tam bağımlı ibaresi arıyor.",
+    "Yönetmelik, başvuruların il müdürlüğü veya sosyal hizmet merkezi üzerinden yapılabildiğini ve e-Devlet kapısı üzerinden de alınabildiğini doğruluyor.",
+    "Bu nedenle blogdaki kaynak notu tek başına bir '2026 Yılı Gelir Kriterleri' talimatı olarak sunulmamalıdır."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": true,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "Evde Bakım Yardımı Uygulama Talimatı ve 2026 Yılı Gelir Kriterleri, resmî ve doğrulanmış bir bakanlık yayını olarak sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Kaynak 1 doğrulanamayan bir 2026 talimat atfı olduğu için değiştirilmelidir. Yerine resmî SSS sayfası ve Evde Bakım Yardımı Yönetmeliği birlikte kullanılmalıdır. Gelir, rapor ve başvuru bilgileri yalnız bu resmî kaynaklara dayandırılmalıdır.",
+  "evidence_inventory": {
+    "official_source_urls": [
+      "https://www.aile.gov.tr/sss/engelli-ve-yasli-hizmetleri-genel-mudurlugu/evde-bakim-yardimi-ve-gunduz-hizmetleri/",
+      "https://www.aile.gov.tr/eyhgm/mevzuat/ulusal-mevzuat/yonetmelikler/evde-bakim-yardimi-yonetmeligi-1/"
+    ]
+  },
+  "validation_checks": {
+    "sss_page_verified": true,
+    "regulation_verified": true,
+    "income_threshold_verified": true,
+    "e_devlet_acceptance_verified": true,
+    "claimed_talimat_not_verified": true
+  },
+  "limitations": [
+    "Resmî SSS sayfası yardımın şartlarını açıklar; ayrı bir 2026 uygulama talimatı doğrulanmamıştır.",
+    "Bu karar kaynak 1 düzeyindedir; sayfadaki diğer kaynak numaraları ayrıca doğrulanmalıdır."
+  ]
+}

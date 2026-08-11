@@ -11,27 +11,25 @@ export const metadata: Metadata = {
     follow: false,
   },
   title:
-    "GSS Gelir Testi 2026: Güncel Şartlar, Prim Durumu ve Başvuru Rehberi",
+    "GSS 2026: Gelir Testi, Prim Tutarı ve Başvuru Rehberi",
   description:
-    "2026 GSS prim borcu silinmesi şartları, 5510 sayılı Kanun kapsamında af süreci ve e-Devlet başvuru adımları. Bilgilendirme amacıyla hazırlanmış kapsamlı rehber.",
+    "SGK'nın resmî kaynaklarına göre GSS gelir testi, 2026 prim tutarı, başvuru yeri ve primin devlet tarafından karşılanma koşulları.",
   keywords: [
-    "gss prim borcu silinmesi 2026",
-    "gss borç affı 2026",
-    "5510 sayılı kanun gss borç silme",
-    "gss prim borcu nasıl silinir",
-    "e-devlet gss borç sorgulama",
-    "genel sağlık sigortası borç affı",
+    "gss 2026",
     "gss gelir testi 2026",
-    "gss borç yapılandırma",
+    "gss prim tutarı 2026",
+    "gss gelir testi başvurusu",
+    "genel sağlık sigortası nedir",
+    "gss prim devlet tarafından karşılanır mı",
   ],
   alternates: {
     canonical: "/blog/gss-prim-borcu-silinmesi-2026-guncel-sartlar-ve-surec",
   },
   openGraph: {
     title:
-      "GSS Gelir Testi 2026: Güncel Şartlar, Prim Durumu ve Başvuru Rehberi",
+      "GSS 2026: Gelir Testi, Prim Tutarı ve Başvuru Rehberi",
     description:
-      "2026 GSS prim borcu silinmesi şartları, 5510 sayılı Kanun kapsamında af süreci ve e-Devlet başvuru adımları.",
+      "SGK'nın resmî kaynaklarına göre GSS gelir testi, 2026 prim tutarı, başvuru yeri ve primin devlet tarafından karşılanma koşulları.",
     type: "article",
     authors: ["Senih Bayankulu"],
     publishedTime: "2026-05-04",
@@ -40,20 +38,20 @@ export const metadata: Metadata = {
 };
 
 const VOICE_TEXT = `
-GSS Gelir Testi 2026: Güncel Şartlar, Prim Durumu ve Başvuru Rehberi.
+GSS 2026: Gelir Testi, Prim Tutarı ve Başvuru Rehberi.
 Yazar: Senih Bayankulu.
 
-Genel Sağlık Sigortası primleri, 5510 sayılı Kanun'un 60. ve 61. maddeleri kapsamında gelir testine göre sınıflandırılır.
-2026 yılında en önemli uygulama, düşük gelirli bireylerin gelir testine başvurarak G0 kategorisine alınması ve primlerinin devlet tarafından karşılanmasıdır.
-Gelir testi sonucunda kişi başına düşen gelir asgari ücretin üçte birinin altında çıkanlar GSS primlerinden muaf tutulur.
-Geçmiş prim borçlarının silinmesi ise genel bir hak değil, yalnızca özel kanun ve yapılandırma düzenlemeleriyle mümkündür.
+Genel Sağlık Sigortası, sosyal güvencesi olmayan vatandaşlar için gelir testine bağlı olarak işler.
+SGK'ya göre gelir testi, prim ödeme gücü bulunmadığını beyan eden kişilerin durumunu belirlemek için yapılır.
+2026 yılında geliri brüt asgari ücretin üçte birinin üzerinde olanların ödemesi gereken aylık GSS primi 1.981,80 TL'dir.
+Gelir testi için başvuru, Adres Kayıt Sistemi'ndeki ikamet adresinin bulunduğu yerdeki Sosyal Yardımlaşma ve Dayanışma Vakfına yapılır.
 `;
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline:
-    "GSS Gelir Testi 2026: Güncel Şartlar, Prim Durumu ve Başvuru Rehberi",
+    "GSS 2026: Gelir Testi, Prim Tutarı ve Başvuru Rehberi",
   author: {
     "@type": "Person",
     name: "Senih Bayankulu",
@@ -73,7 +71,7 @@ const ARTICLE_JSON_LD = {
   articleSection: "Sosyal Hak Analizi",
   inLanguage: "tr-TR",
   keywords:
-    "gss prim borcu silinmesi 2026, 5510 sayılı kanun, genel sağlık sigortası borç affı, e-devlet gss başvurusu",
+    "gss 2026, gelir testi, genel sağlık sigortası prim tutarı, sydv başvuru, sgk",
 };
 
 const HASHTAGS = [
@@ -139,8 +137,7 @@ export default function Page() {
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 leading-tight mb-5">
-                GSS Gelir Testi 2026: Güncel Şartlar, Prim Durumu ve Başvuru
-                Rehberi
+                GSS 2026: Gelir Testi, Prim Tutarı ve Başvuru Rehberi
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span className="font-bold text-slate-700">
@@ -166,12 +163,13 @@ export default function Page() {
                 <p className="text-slate-700">
                   Genel Sağlık Sigortası (GSS) primleri, 5510 sayılı Sosyal
                   Sigortalar ve Genel Sağlık Sigortası Kanunu&apos;nun 60. ve
-                  61. maddeleri ile düzenlenmektedir. 2026 yılı itibarıyla
-                  gelir testi sonucuna göre G0 ve G1 sınıflandırması yapılır;
-                  bu sınıflandırma primin kim tarafından karşılanacağını
-                  belirler. Bu makale, güncel mevzuat çerçevesinde gelir testi
-                  sürecini, prim durumunu ve pratik yol haritasını akademik
-                  düzeyde analiz etmektedir.
+                  61. maddeleri ile düzenlenmektedir. SGK&apos;nın resmî
+                  açıklamalarına göre gelir testi, sosyal güvencesi olmayan
+                  vatandaşların prim ödeme gücünü belirlemek için yapılır.
+                  Gelir testine göre primin devlet tarafından karşılanması
+                  veya kişinin aylık prim ödemesi gerekir. Bu makale, güncel
+                  mevzuat çerçevesinde gelir testi sürecini ve 2026 prim
+                  tutarını özetlemektedir.
                 </p>
               </section>
 
@@ -181,9 +179,11 @@ export default function Page() {
                   2026 Gelir Testi ve Prim Durumu
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  SGK 2026 yılı uygulamasına göre, GSS gelir testi sonucunda
-                  başvuru sahibinin aşağıdaki şartlara göre G0 veya G1
-                  kategorisine yerleştirilmesi gerekir:
+                  SGK&apos;nın resmî açıklamasına göre, gelir testi sonucunda
+                  kişi başına düşen aylık gelir brüt asgari ücretin üçte
+                  birinin üzerinde ise 2026 yılı GSS primi ödenir. Geliri bu
+                  eşikten düşük olan kişiler için ise primin devlet tarafından
+                  karşılanması mümkündür:
                 </p>
                 <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
@@ -192,8 +192,8 @@ export default function Page() {
                     </span>
                     <span>
                       <strong>Gelir testi şartı:</strong> Hane içi kişi başına
-                      düşen aylık gelirin asgari ücretin üçte birinden az
-                      olması
+                      düşen aylık gelirin asgari ücretin üçte birinin altında
+                      olup olmadığının belirlenmesi
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -201,8 +201,8 @@ export default function Page() {
                       ▸
                     </span>
                     <span>
-                      <strong>Sosyal güvencesizlik:</strong> SSK, Bağ-Kur veya
-                      Emekli Sandığı kapsamında aktif sigortalılığın bulunmaması
+                      <strong>Sosyal güvencesizlik:</strong> Herhangi bir
+                      kapsamda sosyal güvencenin bulunmaması
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -210,8 +210,8 @@ export default function Page() {
                       ▸
                     </span>
                     <span>
-                      <strong>İkamet şartı:</strong> Türkiye&apos;de kanuni
-                      ikametgah adresinin bulunması
+                      <strong>İkamet şartı:</strong> Adres Kayıt Sistemi&apos;nde
+                      kayıtlı ikamet adresinin bulunması
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -219,9 +219,9 @@ export default function Page() {
                       ▸
                     </span>
                     <span>
-                      <strong>Prim durumu:</strong> G0 kategorisinde primler
-                      devlet tarafından karşılanır; G1 kategorisinde kişi
-                      prim öder
+                      <strong>2026 prim tutarı:</strong> Geliri brüt asgari
+                      ücretin üçte birinin üzerinde olanlar için aylık
+                      1.981,80 TL
                     </span>
                   </li>
                 </ul>
@@ -230,32 +230,31 @@ export default function Page() {
               {/* Gelir Testi ve Muafiyet Kategorileri */}
               <section>
                 <h2 className="text-2xl font-black text-slate-950 mb-4">
-                  Gelir Testi ve Muafiyet Kategorileri
+                  Gelir Testi Sonuçlarına Göre Uygulama
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  Gelir testi sonucuna göre GSS iki ana kategoriye ayrılır:
-                  G0 ve G1. Bu ayrım primin kim tarafından karşılanacağını
-                  belirler:
+                  SGK sonuçlarına göre gelir testi iki pratik sonuç üretir:
+                  primin devlet tarafından karşılanması veya aylık GSS
+                  priminin kişi tarafından ödenmesi:
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="bg-green-50 p-5 rounded-2xl border border-green-100">
                     <h3 className="font-black text-green-800 mb-2 text-sm">
-                      G0 - Devlet Tarafından Karşılanan
+                      Devlet Tarafından Karşılanan
                     </h3>
                     <p className="text-xs text-green-700 leading-relaxed">
-                      Aile içindeki kişi başına düşen gelir, brüt asgari
-                      ücretin üçte birinin altındadır. Prim devlet tarafından
-                      karşılanır.
+                      Kişi başına düşen gelir brüt asgari ücretin üçte birinin
+                      altındadır. Prim, SGK tescil süreci ve gelir testi
+                      sonucuna göre devlet tarafından karşılanabilir.
                     </p>
                   </div>
                   <div className="bg-blue-50 p-5 rounded-2xl border border-blue-100">
                     <h3 className="font-black text-blue-800 mb-2 text-sm">
-                      G1 - Kişi Tarafından Ödenen
+                      Kişi Tarafından Ödenen
                     </h3>
                     <p className="text-xs text-blue-700 leading-relaxed">
-                      Aile içindeki kişi başına düşen gelir, brüt asgari
-                      ücretin üçte biri ve üzerindedir. Prim kişi tarafından
-                      ödenir.
+                      Kişi başına düşen gelir brüt asgari ücretin üçte biri ve
+                      üzerindedir. 2026 yılı aylık GSS primi 1.981,80 TL&apos;dir.
                     </p>
                   </div>
                 </div>
@@ -264,36 +263,33 @@ export default function Page() {
               {/* Başvuru Süreci */}
               <section>
                 <h2 className="text-2xl font-black text-slate-950 mb-4">
-                  e-Devlet Başvuru Süreci Adım Adım
+                  Gelir Testi Başvuru Süreci
                 </h2>
                 <p className="text-slate-700 mb-4">
-                  GSS prim borcu silinmesi başvuruları tamamen dijital ortamda
-                  yapılabilmektedir. İşte 2026 güncel başvuru adımları:
+                  Gelir testi, SGK&apos;nın resmî açıklamasına göre ikamet
+                  adresinin bulunduğu yerdeki Sosyal Yardımlaşma ve
+                  Dayanışma Vakfına yapılır. Başvuru sonrası tescil
+                  tebligatından itibaren bir ay içinde gelir testine
+                  başvurulması halinde primin devlet tarafından karşılanması
+                  mümkündür.
                 </p>
                 <ol className="space-y-4 text-slate-700 list-decimal list-inside">
                   <li>
-                    <strong>e-Devlet kapısına giriş</strong> (T.C. kimlik
-                    numarası ve e-Devlet şifresi ile)
+                    <strong>Adres kayıt kontrolü</strong> (ikamet adresinizin
+                    güncel olduğundan emin olun)
                   </li>
                   <li>
-                    <strong>SGK hizmetleri menüsü</strong> → &quot;Genel Sağlık
-                    Sigortası&quot; → &quot;Gelir Testi Başvurusu&quot;
+                    <strong>SYDV başvurusu</strong> (ikamet adresinizin
+                    bulunduğu yerdeki Sosyal Yardımlaşma ve Dayanışma
+                    Vakfına müracaat)
                   </li>
                   <li>
-                    <strong>Adres bilgisi doğrulama</strong> (sistem otomatik
-                    çeker, güncel değilse Nüfus Müdürlüğü&apos;ne başvurulur)
+                    <strong>Tescil tebligatı takibi</strong> (tebligat
+                    tarihinden itibaren bir ay içinde gelir testi)
                   </li>
                   <li>
-                    <strong>Hane halkı bilgileri</strong> (ekmek elden ele
-                    geçiyorsa tüm bireylerin gelirleri beyan edilir)
-                  </li>
-                  <li>
-                    <strong>Gelir belgeleri yükleme</strong> (varsa maaş
-                    bordrosu, kira sözleşmesi, tarım gelir belgesi vb.)
-                  </li>
-                  <li>
-                    <strong>Başvuru onayı ve takip</strong> (SMS/e-posta ile
-                    sonuç bildirimi, ortalama 15-30 iş günü)
+                    <strong>Gelir durumu değişikliği</strong> (değişiklik
+                    halinde yeniden başvuru yapılabilir)
                   </li>
                 </ol>
               </section>
@@ -301,41 +297,31 @@ export default function Page() {
               {/* Pratik İpuçları */}
               <section className="bg-orange-50/60 p-6 md:p-8 rounded-2xl border border-orange-100">
                 <h2 className="text-xl font-black text-slate-950 mb-4">
-                  Pratik İpuçları ve Sık Karşılaşılan Sorunlar
+                  Pratik Notlar ve Sınırlar
                 </h2>
                 <div className="space-y-3 text-slate-700">
                   <p>
                     <strong className="text-orange-700">
-                      Sağlık hizmeti kesintisi:
+                      Borç silinmesi:
                     </strong>{" "}
-                    Gelir testi sonucunuz G0 değilse ve priminizi kendiniz
-                    ödemeniz gerekiyorsa sağlık hizmetlerinden yararlanma
-                    durumunuz prim tesciline bağlıdır. G0 olarak tespit edilen
-                    kişilerin primi devlet tarafından karşılanır.
+                    GSS prim borcunun silinmesi genel ve sürekli bir hak
+                    değildir; yalnızca özel kanun veya yapılandırma
+                    düzenlemeleriyle ortaya çıkabilir.
                   </p>
                   <p>
                     <strong className="text-orange-700">
-                      Adres uyumsuzluğu:
+                      Gelir değişikliği:
                     </strong>{" "}
-                    e-Devlet&apos;teki adres bilginiz ile nüfus kaydınızdaki
-                    adres farklıysa başvuru reddedilebilir. Önce Nüfus
-                    Müdürlüğü&apos;nden adres güncellemesi yapın.
+                    Gelir durumu değişenler yeniden gelir testi için SYDV&apos;ye
+                    başvurabilir.
                   </p>
                   <p>
                     <strong className="text-orange-700">
-                      Gelir testi yenileme:
+                      Başvuru süresi:
                     </strong>{" "}
-                    Gelir durumunuz değişirse bir ay içinde vakfa başvurmanız
-                    gerekir. Vakıf ve SGK, gerekli hallerde gelir testini
-                    yeniden değerlendirir.
-                  </p>
-                  <p>
-                    <strong className="text-orange-700">
-                      Borç yapılandırma alternatifi:
-                    </strong>{" "}
-                    GSS prim borçları varsa, yapılandırma veya taksitlendirme
-                    için SGK duyurularını takip edin. Bu, gelir testinden ayrı
-                    bir idari işlemdir.
+                    Tescil tebligatından sonra bir aylık süre kritik önemdedir;
+                    bu süre içinde başvuru yapılırsa devletin prim ödeme
+                    yükümlülüğü doğabilir.
                   </p>
                 </div>
               </section>
@@ -357,37 +343,29 @@ export default function Page() {
               {/* Kaynakça */}
               <footer className="mt-12 pt-8 border-t-2 border-slate-100">
                 <h3 className="text-sm font-black text-slate-500 uppercase tracking-wider mb-4">
-                  Doğrulama Bekleyen Kaynak Notları
+                  Resmî Kaynak Notları
                 </h3>
                 <ul className="text-sm text-slate-500 space-y-2 leading-relaxed">
                   <li>
-                    [1] T.C. Resmî Gazete. (2006).{" "}
+                    [1] Sosyal Güvenlik Kurumu. (2026).{" "}
                     <em>
-                      5510 Sayılı Kanun: Sosyal Sigortalar ve Genel Sağlık
-                      Sigortası Kanunu, Md. 60-61
+                      2026 yılı için genel sağlık sigortası prim tutarı ne kadardır?
                     </em>
-                    . Sayı: 26200.
+                    . SGK resmî bilgi sayfası.
                   </li>
                   <li>
                     [2] Sosyal Güvenlik Kurumu. (2026).{" "}
                     <em>
-                      2026 Yılı Genel Sağlık Sigortası Prim Tarifesi ve Gelir
-                      Testi Uygulama Tebliği
+                      Gelir testi nedir?
                     </em>
-                    . Ankara.
+                    . SGK resmî bilgi sayfası.
                   </li>
                   <li>
-                    [3] T.C. Resmî Gazete. (2025).{" "}
+                    [3] Sosyal Güvenlik Kurumu. (2026).{" "}
                     <em>
-                      GSS Prim Borçlarının Yeniden Yapılandırılmasına İlişkin
-                      Kanun Hükmünde Kararname
+                      Genel Sağlık Sigortası nedir?
                     </em>
-                    . Sayı: 33750.
-                  </li>
-                  <li>
-                    [4] SGK. (2026). <em>GSS Gelir Testi Başvuru Kılavuzu ve Sık
-                    Sorulan Sorular</em>. e-Devlet entegre başvuru sistemi
-                    kullanım kılavuzu.
+                    . SGK resmî bilgi sayfası.
                   </li>
                 </ul>
               </footer>
@@ -425,4 +403,3 @@ export default function Page() {
     </main>
   );
 }
-

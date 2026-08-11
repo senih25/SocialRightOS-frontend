@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "research_id": "P1-B03-ENGELLI-S03",
+  "generated_at": "2026-08-08T00:00:00.000Z",
+  "claimed_source": {
+    "title": "2026 Yılı Engelli Aylığı Ödeme Cetveli ve Uygulama Talimatı",
+    "claimed_year": 2026,
+    "claimed_official_gazette_number": null
+  },
+  "verification_result": {
+    "source_exists_as_cited": false,
+    "claimed_title_verified": false,
+    "claimed_year_verified": false,
+    "claimed_official_gazette_number_verified": null,
+    "source_level_decision": "REPLACE",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "Sosyal Yardım Programlarımız",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "ENGELLİ - YAŞLI bölümünde Engelli Aylığı satırı; 2026 yılı için gelir eşiği, aylık tutar ve hak sahipliği koşulları listeleniyor.",
+      "relevant_heading": "Sosyal Yardımlar Genel Müdürlüğü program tablosu",
+      "role": "2026 engelli aylığı tutarını, gelir eşiğini ve başvuru kanalını gösteren resmî program sayfası",
+      "source_classification": "OFFICIAL_MINISTRY_PROGRAM_TABLE"
+    },
+    "supporting_administrative_source": {
+      "title": "Engelliler İçin Sağlık Kurulu Raporları",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "Soru 1, Soru 2, Soru 3, Soru 7, Soru 10 ve Soru 12; sağlık kurulu raporunun ne olduğu, nereden alındığı, itiraz süreci ve engelli aylığı gibi haklarda kullanım alanları açıklanıyor.",
+      "relevant_heading": "Engelli ve Yaşlı Hizmetleri Genel Müdürlüğü SSS sayfası",
+      "role": "Engelli aylığı başvurularında kullanılan sağlık kurulu raporunun resmî tanımını ve itiraz sürecini açıklayan tamamlayıcı sayfa",
+      "source_classification": "OFFICIAL_MINISTRY_FAQ_PAGE"
+    }
+  },
+  "material_findings": [
+    "İddia edilen '2026 Yılı Engelli Aylığı Ödeme Cetveli ve Uygulama Talimatı' başlığı resmî domainde doğrulanmadı.",
+    "Aile ve Sosyal Hizmetler Bakanlığı'nın program tablosu engelli aylığını resmî olarak yayımlıyor; 2026 yılı gelir eşiğini ve %40 ve üzeri engel oranı şartını listeliyor.",
+    "Bakanlığın 'Engelliler İçin Sağlık Kurulu Raporları' sayfası, engelli aylığı dâhil olmak üzere hangi haklar için sağlık kurulu raporunun kullanıldığını ve itiraz sürecini açıklıyor.",
+    "Bu nedenle sayfadaki içerik, tek bir 2026 'uygulama talimatı' olarak değil, resmî program tablosu + sağlık kurulu raporu SSS + ilgili yönetmelik çerçevesinde tutulmalıdır."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": true,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "2026 Yılı Engelli Aylığı Ödeme Cetveli ve Uygulama Talimatı, resmî ve doğrulanmış bir Bakanlık yayımları olarak sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Kaynak 3 doğrulanamayan bir 2026 talimat atfı olduğu için değiştirilmelidir. Yerine Aile ve Sosyal Hizmetler Bakanlığı’nın resmî program tablosu ile Engelliler İçin Sağlık Kurulu Raporları sayfası kullanılmalıdır. Engelli aylığı, gelir eşiği ve rapor şartı bu iki resmî kaynakla anlatılmalıdır.",
+  "evidence_inventory": {
+    "official_source_urls": [
+      "https://www.aile.gov.tr/sygm/programlarimiz/sosyal-yardim-programlarimiz/",
+      "https://www.aile.gov.tr/sss/engelli-ve-yasli-hizmetleri-genel-mudurlugu/engelliler-icin-saglik-kurulu-raporlari/"
+    ]
+  },
+  "validation_checks": {
+    "claimed_talimat_not_verified": true,
+    "program_page_verified": true,
+    "health_report_page_verified": true,
+    "income_threshold_verified": true,
+    "report_use_verified": true
+  },
+  "limitations": [
+    "Bu karar kaynak 3 düzeyindedir; sayfadaki diğer kaynak numaraları ayrıca doğrulanmalıdır.",
+    "Sağlık kurulu raporu sayfası engelli aylığı şartlarını açıklar; ancak nihai hak sahipliği SYDV incelemesiyle belirlenir."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "research_id": "P1-B02-ENGELLI-S03",
+  "generated_at": "2026-08-08T00:00:00.000Z",
+  "claimed_source": {
+    "title": "2026 Yılı Engelli Aylığı Ödeme Cetveli ve Uygulama Talimatı",
+    "claimed_year": 2026,
+    "claimed_official_gazette_number": null
+  },
+  "verification_result": {
+    "source_exists_as_cited": false,
+    "claimed_title_verified": false,
+    "claimed_year_verified": false,
+    "claimed_official_gazette_number_verified": null,
+    "source_level_decision": "REPLACE",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "Sosyal Yardım Programlarımız",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "ENGELLİ - YAŞLI / Engelli Aylığı satırı",
+      "relevant_heading": "Sosyal Yardımlar Genel Müdürlüğü program tablosu",
+      "role": "2026 yılı engelli aylığı tutarlarını, gelir kriterini ve %40+ rapor eşiğini veren resmî program sayfası",
+      "source_classification": "OFFICIAL_MINISTRY_PROGRAM_TABLE"
+    },
+    "supporting_administrative_source": {
+      "title": "Sosyal Yardımlar",
+      "publication_date": "2026-08-08",
+      "official_gazette_number": null,
+      "relevant_article": "Engelli aylığı 2022 sayılı Kanun kapsamında; sosyal güvenlik kurumlarına tabi olmayan ve muhtaçlığı belgelenen 18 yaş üstü engellilere verilir; gelir kriteri aranır",
+      "relevant_heading": "Engelli ve Yaşlı Hizmetleri Genel Müdürlüğü SSS sayfası",
+      "role": "Engelli aylığının hukuki çerçevesini ve başvuru koşullarını açıklayan resmî SSS kaynağı",
+      "source_classification": "OFFICIAL_MINISTRY_GUIDANCE_PAGE"
+    }
+  },
+  "material_findings": [
+    "İddia edilen 2026 talimat başlığı resmî domainde doğrulanmadı.",
+    "Bakanlığın resmî program tablosu engelli aylığı için %40-%69 engellilerde 5.793,31 TL ve %70 ve üzeri engellilerde 8.689,97 TL aylık ödeme göstermektedir.",
+    "Resmî SSS sayfası engelli aylığının 2022 sayılı Kanun kapsamında, sosyal güvenlik kurumlarına tabi olmayan ve gelir kriterini sağlayan 18 yaş üstü engelliler için verildiğini açıklar.",
+    "Engelliler İçin Sağlık Kurulu Raporları sayfası, engelli sağlık kurulu raporunun temel belge olduğunu, yetkili sağlık kuruluşlarınca düzenlendiğini ve raporlara 30 gün içinde itiraz edilebildiğini doğrular.",
+    "Blogdaki ağır/orta/hafif kategori dili ve 'özürlü raporu' ifadesi resmî terminoloji ile değiştirilmelidir."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": true,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "2026 Yılı Engelli Aylığı Ödeme Cetveli ve Uygulama Talimatı, resmî ve doğrulanmış bir bakanlık yayını olarak sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Kaynak 3 doğrulanamayan bir 2026 talimat atfı olduğu için değiştirilmelidir. Yerine Aile ve Sosyal Hizmetler Bakanlığı’nın resmî program tablosu ile engelli aylığı SSS sayfası kullanılmalıdır. Rapor ve itiraz bilgileri ise engelliler için sağlık kurulu raporları sayfası ile desteklenmelidir.",
+  "evidence_inventory": {
+    "official_source_urls": [
+      "https://www.aile.gov.tr/sygm/programlarimiz/sosyal-yardim-programlarimiz/",
+      "https://www.aile.gov.tr/sss/engelli-ve-yasli-hizmetleri-genel-mudurlugu/sosyal-yardimlar/",
+      "https://www.aile.gov.tr/sss/engelli-ve-yasli-hizmetleri-genel-mudurlugu/engelliler-icin-saglik-kurulu-raporlari/"
+    ]
+  },
+  "validation_checks": {
+    "program_page_verified": true,
+    "monthly_page_verified": true,
+    "health_report_page_verified": true,
+    "engelli_ayligi_amounts_verified": true,
+    "rapor_appeal_window_verified": true,
+    "claimed_talimat_not_verified": true
+  },
+  "limitations": [
+    "Resmî program tablosu tutarları ve koşulları verir; ayrı bir 2026 'uygulama talimatı' başlığı doğrulanmamıştır.",
+    "Bu karar kaynak 3 düzeyindedir; sayfadaki diğer kaynak numaraları ayrıca doğrulanmalıdır."
+  ]
+}

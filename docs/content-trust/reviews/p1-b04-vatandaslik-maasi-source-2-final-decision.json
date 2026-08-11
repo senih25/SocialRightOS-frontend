@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "research_id": "P1-B04-VATANDASLIK-MAASI-S02",
+  "generated_at": "2026-08-08T00:00:00.000Z",
+  "claimed_source": {
+    "title": "Sosyal Yardım Reformu ve Vatandaşlık Maaşı Modeli Çalışma Raporu",
+    "claimed_year": 2025,
+    "claimed_official_gazette_number": null
+  },
+  "verification_result": {
+    "source_exists_as_cited": false,
+    "claimed_title_verified": false,
+    "claimed_year_verified": false,
+    "claimed_official_gazette_number_verified": null,
+    "source_level_decision": "REPLACE",
+    "confidence": "HIGH"
+  },
+  "replacement_sources": {
+    "primary_normative_source": {
+      "title": "2026 Yılı Cumhurbaşkanlığı Yıllık Programı",
+      "publication_date": "2025-10-30",
+      "official_gazette_number": "33062 (Mükerrer)",
+      "relevant_article": "Makroekonomik, mali ve sektörel politikalar ile uygulama adımlarını belirleyen yıllık programın yoksullukla mücadele ve sosyal politika çerçevesi.",
+      "relevant_heading": "Sosyal politika ve yoksullukla mücadele",
+      "role": "Vatandaşlık Maaşı gibi politika önerilerinin mevcut resmî ekonomik ve sosyal politika çerçevesini gösteren üst politika belgesi",
+      "source_classification": "OFFICIAL_POLICY_PROGRAM"
+    },
+    "supporting_administrative_source": {
+      "title": "Yoksullukla Mücadele ve Sosyal Yardımlar Özel İhtisas Komisyonu Raporu",
+      "publication_date": "2025-08-01",
+      "official_gazette_number": null,
+      "relevant_article": "Yoksullukla mücadelede daha etkin sosyal yardım programlarının tasarlanması, kurumlararası eşgüdüm ve sosyal yardım sisteminin güçlendirilmesi.",
+      "relevant_heading": "Yoksullukla mücadele ve sosyal yardımlar",
+      "role": "Vatandaşlık Maaşı benzeri politika tartışmalarına sosyal yardım sistemi perspektifi sağlayan resmî komisyon raporu",
+      "source_classification": "OFFICIAL_POLICY_STUDY"
+    }
+  },
+  "material_findings": [
+    "İddia edilen 'Sosyal Yardım Reformu ve Vatandaşlık Maaşı Modeli Çalışma Raporu' resmî kurum kaynaklarında doğrulanmadı.",
+    "2026 Yılı Cumhurbaşkanlığı Yıllık Programı, yoksullukla mücadele ve sosyal politika için resmî üst politika çerçevesi sağlıyor.",
+    "Yoksullukla Mücadele ve Sosyal Yardımlar Özel İhtisas Komisyonu Raporu, sosyal yardım sisteminin kurumsal kapasite ve hedefleme yönlerini açıklıyor.",
+    "Sayfadaki içerik, mevcut bir hak veya yürürlüğe girmiş bir program iddiası olarak değil, politika önerisi bağlamında kalmalıdır."
+  ],
+  "editorial_decision": {
+    "remove_claimed_source": true,
+    "use_primary_source": true,
+    "use_supporting_source": true,
+    "prohibited_representation": "Sosyal Yardım Reformu ve Vatandaşlık Maaşı Modeli Çalışma Raporu, resmî ve doğrulanmış bir Bakanlık veya SBB çalışması olarak sunulmamalıdır."
+  },
+  "approved_editorial_summary": "Kaynak 2 doğrulanamadı ve kaldırılmalıdır. İçerik, 2026 Yılı Cumhurbaşkanlığı Yıllık Programı ile Yoksullukla Mücadele ve Sosyal Yardımlar Özel İhtisas Komisyonu Raporu temelinde politika çerçevesi olarak tutulmalıdır.",
+  "evidence_inventory": {
+    "official_source_urls": [
+      "https://www.sbb.gov.tr/wp-content/uploads/2025/10/2026-Yili-Cumhurbaskanligi-Yillik-Programi.pdf",
+      "https://www.sbb.gov.tr/2026-yili-cumhurbaskanligi-yillik-programi-30-10-2025-tarih-ve-33062-mukerrer-sayili-resmi-gazetede-yayimlanmistir/",
+      "https://www.sbb.gov.tr/wp-content/uploads/2025/08/Yoksullukla-Mucadele-ve-Sosyal-Yardimlar-OIK-Raporu_01082025.pdf",
+      "https://www.sbb.gov.tr/ozel-ihtisas-komisyonu-raporlari/"
+    ]
+  },
+  "validation_checks": {
+    "claimed_report_not_verified": true,
+    "annual_program_verified": true,
+    "oik_report_verified": true,
+    "policy_context_only": true
+  },
+  "limitations": [
+    "Bu karar kaynak 2 düzeyindedir; sayfadaki diğer kaynak numaraları ayrıca doğrulanmalıdır.",
+    "Vatandaşlık Maaşı konusunda nihai mevzuat çıkmadıkça sayfa sadece politika tartışması olarak kullanılmalıdır."
+  ]
+}
