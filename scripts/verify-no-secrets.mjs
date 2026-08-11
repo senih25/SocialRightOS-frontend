@@ -1,9 +1,17 @@
 import { execFileSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 
 const trackedFiles = execFileSync("git", ["ls-files", "-z"], { encoding: "utf8" })
   .split("\0")
   .filter(Boolean);
+const untrackedFiles = execFileSync(
+  "git",
+  ["ls-files", "--others", "--exclude-standard", "-z"],
+  { encoding: "utf8" },
+)
+  .split("\0")
+  .filter(Boolean);
+const repositoryFiles = [...new Set([...trackedFiles, ...untrackedFiles])];
 const textExtensions = new Set([
   ".css", ".html", ".js", ".json", ".jsx", ".md", ".mjs", ".ts", ".tsx", ".txt", ".yml", ".yaml",
 ]);
@@ -16,7 +24,8 @@ const patterns = [
 ];
 
 const findings = [];
-for (const file of trackedFiles) {
+for (const file of repositoryFiles) {
+  if (!existsSync(file)) continue;
   const extension = file.slice(file.lastIndexOf("."));
   if (!textExtensions.has(extension)) continue;
   const content = readFileSync(file, "utf8");
