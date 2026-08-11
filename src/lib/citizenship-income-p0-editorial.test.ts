@@ -33,10 +33,9 @@ test("remaining bibliography entries are sequential", () => {
   );
   assert.match(
     page,
-    /\[2\]\s*Aile ve Sosyal Hizmetler Bakanlığı/,
+    /\[2\]\s*Cumhurbaşkanlığı Strateji ve Bütçe Başkanlığı/,
   );
-  assert.match(page, /\[3\]\s*Dünya Bankası/);
-  assert.doesNotMatch(page, /\[4\]\s*Dünya Bankası/);
+  assert.doesNotMatch(page, /\[3\]/);
 });
 
 test("article does not present an official draft or active program", () => {
@@ -46,11 +45,11 @@ test("article does not present an official draft or active program", () => {
   );
   assert.match(
     page,
-    /resmî hak,\s*resmî taslak veya başvuru şartı değildir:/,
+    /resmî hak,\s*onaylı taslak veya başvuru şartı değildir:/,
   );
   assert.match(
     page,
-    /Kamuoyundaki Politika Önerileri/,
+    /Kamuoyunda Konuşulan Yaklaşım Başlıkları/,
   );
   assert.doesNotMatch(
     page,
