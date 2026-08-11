@@ -2,7 +2,7 @@
 
 // Pencere API'si kullandığı için zorunlu olarak istemci bileşeni.
 // Sesli okuma başlayınca buton durumu değişir; erişilebilir aria-pressed ile bildirilir.
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface VoiceGuideProps {
   text: string;
@@ -14,6 +14,14 @@ export default function VoiceGuide({
   label = "Sayfayı sesli dinle",
 }: VoiceGuideProps) {
   const [speaking, setSpeaking] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
 
   const toggle = useCallback(() => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;

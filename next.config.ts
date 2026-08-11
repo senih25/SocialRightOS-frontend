@@ -69,6 +69,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/senih-bayankulu",
+        destination: "/hakkimizda",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

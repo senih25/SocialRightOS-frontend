@@ -46,8 +46,8 @@ export default function SocialRightLabsPage() {
           <Link href="/" className="primary-link">
             Sosyal Hak Rehberi
           </Link>
-          <Link href={brandProfile.founder.profilePath} className="secondary-link">
-            Kurucu profili
+          <Link href="/hakkimizda" className="secondary-link">
+            Hakkımızda
           </Link>
         </div>
       </section>

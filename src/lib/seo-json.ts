@@ -84,7 +84,6 @@ export function buildBrandGraphJsonLd(params: {
     name: string;
     role: string;
     summary: string;
-    profilePath: string;
   };
   organization: {
     name: string;
@@ -103,10 +102,7 @@ export function buildBrandGraphJsonLd(params: {
     `${params.organization.profilePath}#organization`,
     params.siteUrl,
   ).toString();
-  const founderId = new URL(
-    `${params.founder.profilePath}#person`,
-    params.siteUrl,
-  ).toString();
+  const founderId = new URL("/#founder", params.siteUrl).toString();
 
   return {
     "@context": "https://schema.org",
@@ -130,10 +126,6 @@ export function buildBrandGraphJsonLd(params: {
         name: params.founder.name,
         jobTitle: params.founder.role,
         description: params.founder.summary,
-        url: new URL(
-          params.founder.profilePath,
-          params.siteUrl,
-        ).toString(),
         worksFor: {
           "@id": organizationId,
         },
@@ -153,6 +145,21 @@ export function buildBrandGraphJsonLd(params: {
           "@id": founderId,
         },
         inLanguage: "tr-TR",
+        accessMode: ["textual", "visual"],
+        accessModeSufficient: [
+          {
+            "@type": "ItemList",
+            itemListElement: ["textual"],
+          },
+        ],
+        accessibilityFeature: [
+          "alternativeText",
+          "displayTransformability",
+          "readingOrder",
+          "structuralNavigation",
+        ],
+        accessibilitySummary:
+          "Her sayfada editoryal metadata ile üretilen kısa bir metin özeti ve tarayıcı destekliyorsa Türkçe seslendirme seçeneği sunulur.",
       },
     ],
   };
