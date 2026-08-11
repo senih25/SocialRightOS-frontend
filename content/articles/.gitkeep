@@ -1,0 +1,8 @@
+Bu dizin Markdown makale katmanının içerik kaynağıdır (content/articles/{slug}.md).
+
+Aşama 4 itibarıyla kasıtlı olarak boştur: bu aşamada hiçbir gerçek makale veya
+taslak fixture depoya işlenmez. İçerik buraya yalnız ContentOps insan onayı
+(Aşama 5) ve draft PR adaptörü (Aşama 7) üzerinden gelir.
+
+Yalnız .md kabul edilir; .mdx loader kapsamı dışındadır (gerekçe:
+docs/content-architecture.md).
