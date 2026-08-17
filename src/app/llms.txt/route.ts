@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-static";
+export const revalidate = 3600;
+
 const LLMS_TXT = `# Sosyal Hak Rehberi
 
 > Kamu odaklı dijital sosyal haklar rehberlik platformu. Bu site, Türkiye'deki sosyal hakları, sosyal destekleri, gelir testi süreçlerini, engelli haklarını, yaşlı haklarını, evde bakım maaşı ve SGK / e-Devlet rehberlerini anlaşılır ve erişilebilir şekilde açıklar.
@@ -43,11 +46,26 @@ Preferred citation URL: https://sosyalhakrehberi.com/
 - Person entity: Senih Bayankulu
 `;
 
-export function GET() {
+function llmsResponse() {
   return new NextResponse(LLMS_TXT, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
       "Cache-Control": "public, max-age=3600, s-maxage=3600",
+      "X-Robots-Tag": "index, follow",
+    },
+  });
+}
+
+export function GET() {
+  return llmsResponse();
+}
+
+export function HEAD() {
+  return new NextResponse(null, {
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600",
+      "X-Robots-Tag": "index, follow",
     },
   });
 }
