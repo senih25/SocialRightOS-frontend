@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Evde Bakım Maaşı gelir ve hane bilgisi | D-SHR",
+  title: "Evde Bakım Maaşı gelir ve hane bilgisi",
   description:
     "Evde bakım maaşı ön değerlendirmesinde toplam hane geliri ve kişi sayısının neden istendiğini açıklayan yardımcı rehber sayfası.",
   alternates: {
