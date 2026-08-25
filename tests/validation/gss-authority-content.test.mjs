@@ -18,7 +18,7 @@ test("GSS authority guide links to primary public sources", () => {
 test("GSS guide preserves the strict 2026 one-third boundary", () => {
   assert.match(guide, /33\.030 TL/);
   assert.match(guide, /11\.010 TL/);
-  assert.match(guide, /11\.010 TL'nin altı G0; 11\.010 TL ve üzeri G1/);
+  assert.match(guide, /11\.010 TL&apos;nin altı G0; 11\.010 TL ve üzeri G1/);
 });
 
 test("GSS guide clearly limits the local tool to preliminary guidance", () => {
