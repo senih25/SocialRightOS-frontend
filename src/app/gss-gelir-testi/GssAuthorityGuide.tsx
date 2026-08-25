@@ -100,7 +100,7 @@ export function GssAuthorityGuide() {
           </div>
           <div className="rounded-2xl bg-slate-50 p-5">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Sınıflandırma</p>
-            <p className="mt-2 text-sm leading-7 text-slate-700">11.010 TL'nin altı G0; 11.010 TL ve üzeri G1.</p>
+            <p className="mt-2 text-sm leading-7 text-slate-700">11.010 TL&apos;nin altı G0; 11.010 TL ve üzeri G1.</p>
           </div>
         </div>
         <p className="mt-4 text-sm leading-7 text-slate-700">
@@ -129,10 +129,10 @@ export function GssAuthorityGuide() {
         </article>
 
         <article className="card-panel">
-          <h3 className="text-xl font-semibold text-slate-950">e-Devlet'te ne yapılabilir?</h3>
+          <h3 className="text-xl font-semibold text-slate-950">e-Devlet&apos;te ne yapılabilir?</h3>
           <p className="mt-3 text-sm leading-7 text-slate-700">
-            Resmî gelir tespiti başvurusu SYD Vakfına yapılır. e-Devlet'teki “Gelir Testi Sonucu
-            Sorgulama” hizmeti sonuç kontrolü içindir. SGK'nın “Genel Sağlık Sigortası Tescil ve
+            Resmî gelir tespiti başvurusu SYD Vakfına yapılır. e-Devlet&apos;teki “Gelir Testi Sonucu
+            Sorgulama” hizmeti sonuç kontrolü içindir. SGK&apos;nın “Genel Sağlık Sigortası Tescil ve
             Prim Borcu Sorgulama” hizmeti ise tescil ve prim borcu durumunu görüntülemek için ayrı
             bir kanaldır. Bu ayrım, “online gelir testi” ile “online sonuç sorgulama” ifadelerinin
             birbirine karıştırılmasını önler.
