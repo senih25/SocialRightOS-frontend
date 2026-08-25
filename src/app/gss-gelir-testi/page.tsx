@@ -6,7 +6,7 @@ import { isBuildWeekGuidanceRuntimeEnabled } from "@/lib/build-week-guidance-run
 import { GssToolPageClient } from "./GssToolPageClient";
 
 export const metadata: Metadata = {
-  title: "GSS gelir testi ön değerlendirme | D-SHR",
+  title: "GSS gelir testi ön değerlendirme",
   description:
     "GSS gelir testi için anlaşılır, kolay kullanımlı ve kurumsal ön değerlendirme odaklı bir sayfa.",
   alternates: {
