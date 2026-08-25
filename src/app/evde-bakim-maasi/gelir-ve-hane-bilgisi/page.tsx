@@ -27,13 +27,13 @@ export default function HomeCareIncomeGuidePage() {
             Gelir ve hane bilgisi neden istenir?
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
-            Hesaplama ekranında toplam hane geliri ve kişi sayısı istenir; çünkü bu bilgiler ön
-            değerlendirme için temel giriş alanları arasındadır. Ancak burada görülen özetler
-            resmî gelir kararı değildir.
+            Ön değerlendirme aracında toplam hane geliri ve kişi sayısı istenir; çünkü bu bilgiler
+            temel giriş alanları arasındadır. Ancak burada görülen özetler resmî gelir kararı
+            değildir.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/start" className="primary-link">
-              Başlangıç sayfasına git
+            <Link href="/evde-bakim-maasi/hesaplama" className="primary-link">
+              Evde bakım maaşı hesaplama aracını aç
             </Link>
             <Link href="/evde-bakim-maasi" className="secondary-link">
               Ana rehbere dön
@@ -46,9 +46,9 @@ export default function HomeCareIncomeGuidePage() {
             <h2 className="text-2xl font-semibold text-slate-950">Nasıl okunmalı?</h2>
             <div className="mt-4 space-y-4 text-sm leading-7 text-slate-700">
               <p>
-                Gelir bilgisi, hanedeki kişi sayısıyla birlikte anlam kazanır. Bu nedenle hesaplama
-                ekranı bu iki veriyi birlikte ister ve kullanıcıya yalnızca rehberlik amaçlı kısa
-                bir kontrol adımı sunar.
+                Gelir bilgisi, hanedeki kişi sayısıyla birlikte anlam kazanır. Bu nedenle ön
+                değerlendirme aracı bu iki veriyi birlikte ister ve kullanıcıya yalnızca rehberlik
+                amaçlı kısa bir kontrol adımı sunar.
               </p>
               <p>
                 Nihai uygunluk ya da uygunsuzluk sonucu bu sayfada hesaplanmaz. Buradaki gelir

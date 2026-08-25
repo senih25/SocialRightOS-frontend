@@ -17,7 +17,7 @@ const promiseSections = [
   {
     title: "Bu sayfa ne sunar?",
     body:
-      "Evde bakım maaşı hakkında genel çerçeveyi açıklar ve hesaplama sayfasına geçmeden önce hangi bilgilerin önemli olduğunu gösterir.",
+      "Evde bakım maaşı hakkında genel çerçeveyi açıklar ve ön değerlendirme aracına geçmeden önce hangi bilgilerin önemli olduğunu gösterir.",
   },
   {
     title: "Ne sunmaz?",
@@ -99,12 +99,12 @@ export default function HomeCareAllowancePage() {
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
               Evde bakım maaşı, ağır engelli bireyin tam bağımlı bakım ihtiyacına ilişkin belirli
               koşullar altında değerlendirilen bir destek alanıdır. Bu sayfa, başvuru öncesi
-              hazırlık yapmanıza yardımcı olmak için sade açıklamalar ve hesaplama sayfasına geçiş
-              sunar.
+              hazırlık yapmanıza yardımcı olmak için sade açıklamalar ve ön değerlendirme aracına
+              doğrudan geçiş sunar.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/start" className="primary-link">
-                Ön değerlendirmeyi başlat
+              <Link href="/evde-bakim-maasi/hesaplama" className="primary-link">
+                Evde bakım maaşı hesaplama aracını aç
               </Link>
               <Link href="/" className="secondary-link">
                 Ana sayfaya dön
@@ -140,7 +140,7 @@ export default function HomeCareAllowancePage() {
         <section className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <article className="card-panel">
             <h2 className="text-2xl font-semibold text-slate-950">
-              Hesaplama sayfasına geçmeden önce hazırlamanız iyi olur
+              Ön değerlendirme aracına geçmeden önce hazırlamanız iyi olur
             </h2>
             <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-700">
               {checklist.map((item) => (
@@ -153,7 +153,7 @@ export default function HomeCareAllowancePage() {
 
           <article className="card-panel">
             <h2 className="text-2xl font-semibold text-slate-950">
-              Hesaplama sonucundan sonra ne beklersiniz?
+              Ön değerlendirme sonucundan sonra ne beklersiniz?
             </h2>
             <div className="mt-5 space-y-4 text-sm leading-7 text-slate-700">
               <p>
@@ -167,11 +167,14 @@ export default function HomeCareAllowancePage() {
               <div className="rounded-2xl bg-slate-50 p-4">
                 <p className="text-sm font-semibold text-slate-900">En hızlı geçiş yolu</p>
                 <p className="mt-2 text-sm leading-7 text-slate-700">
-                  Temel bilgileri biliyorsanız başlangıç sayfasından ilerleyerek aynı akışa
-                  güvenli biçimde geçebilirsiniz.
+                  Temel bilgileri biliyorsanız doğrudan evde bakım ön değerlendirme aracına
+                  geçebilirsiniz.
                 </p>
-                <Link href="/start" className="secondary-link mt-4 inline-flex">
-                  Başlangıç sayfasına git
+                <Link
+                  href="/evde-bakim-maasi/hesaplama"
+                  className="secondary-link mt-4 inline-flex"
+                >
+                  Hesaplama aracını aç
                 </Link>
               </div>
             </div>
