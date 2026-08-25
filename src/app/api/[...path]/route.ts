@@ -4,6 +4,7 @@ import {
   invalidEligibilityRequestResponse,
   normalizeEligibilityCheckRequest,
 } from "@/lib/local-api-fallback";
+import { shouldFailClosedHomeCareFallback } from "@/lib/home-care-fallback-guard";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -79,12 +80,12 @@ async function forward(request: Request, context: RouteContext): Promise<Respons
   const sourceUrl = new URL(request.url);
   const bodyState = await readRequestBody(request);
   const routeKey = path.join("/");
+  const isEligibilityPost = request.method === "POST" && routeKey === "v1/eligibility-check";
+  const normalizedEligibilityRequest = isEligibilityPost
+    ? normalizeEligibilityCheckRequest(bodyState.json)
+    : null;
 
-  if (
-    request.method === "POST" &&
-    routeKey === "v1/eligibility-check" &&
-    !normalizeEligibilityCheckRequest(bodyState.json)
-  ) {
+  if (isEligibilityPost && !normalizedEligibilityRequest) {
     return NextResponse.json(invalidEligibilityRequestResponse(), {
       status: 400,
       headers: {
@@ -131,10 +132,35 @@ async function forward(request: Request, context: RouteContext): Promise<Respons
         });
       }
     } catch {
-      // Fall back to the local deterministic engine below.
+      // Home-care eligibility fails closed below. Other routes retain their local fallback.
     } finally {
       clearTimeout(timeout);
     }
+  }
+
+  if (
+    shouldFailClosedHomeCareFallback(
+      routeKey,
+      request.method,
+      normalizedEligibilityRequest?.benefit_code,
+    )
+  ) {
+    return NextResponse.json(
+      {
+        message:
+          "Evde bakım ön değerlendirmesi şu anda güncel kural motoru üzerinden doğrulanamıyor. Yanlış sonuç üretmemek için yerel yedek değerlendirme kullanılmadı. Lütfen daha sonra tekrar deneyin.",
+        error: "home_care_backend_unavailable",
+        status: 503,
+        correlation_id: "",
+      },
+      {
+        status: 503,
+        headers: {
+          "X-Local-Fallback": "blocked",
+          "X-Eligibility-Fail-Closed": "1",
+        },
+      },
+    );
   }
 
   const fallbackPayload = buildLocalApiPayload(path, bodyState.json);
