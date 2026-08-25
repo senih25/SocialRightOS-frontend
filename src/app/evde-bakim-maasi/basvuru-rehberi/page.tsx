@@ -3,7 +3,7 @@ import Link from "next/link";
 import { homeCareApplicationGuide } from "@/lib/home-care-application-guide";
 
 export const metadata: Metadata = {
-  title: "Evde Bakım Maaşı başvuru rehberi | D-SHR",
+  title: "Evde Bakım Maaşı başvuru rehberi",
   description:
     "Evde bakım maaşı ön değerlendirmesinden sonra hangi kuruma hangi hazırlıkla gidileceğini sade ve kurumsal biçimde özetleyen başvuru rehberi.",
   alternates: {
