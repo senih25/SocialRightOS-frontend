@@ -14,7 +14,7 @@ const sections = [
   {
     title: "Vatandaşlık ve ikamet bilgisi",
     body:
-      "Ön değerlendirme akışında vatandaşlık ve Türkiye'de ikamet bilgisi temel doğrulama alanları arasındadır. Bu bilgilerden emin değilseniz hesaplama ekranında Bilmiyorum seçeneği kullanılabilir.",
+      "Ön değerlendirme akışında vatandaşlık ve Türkiye'de ikamet bilgisi temel doğrulama alanları arasındadır. Bu bilgilerden emin değilseniz ön değerlendirme aracında Bilmiyorum seçeneği kullanılabilir.",
   },
   {
     title: "Gelir ve hane bilgisi",
@@ -43,8 +43,8 @@ export default function HomeCareConditionsPage() {
             yardımcı olur.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/start" className="primary-link">
-              Ön değerlendirmeyi başlat
+            <Link href="/evde-bakim-maasi/hesaplama" className="primary-link">
+              Evde bakım maaşı hesaplama aracına geç
             </Link>
             <Link href="/evde-bakim-maasi" className="secondary-link">
               Ana rehbere dön
@@ -73,8 +73,8 @@ export default function HomeCareConditionsPage() {
           <article className="card-panel">
             <h2 className="text-2xl font-semibold text-slate-950">Sonraki adım</h2>
             <p className="mt-3 text-sm leading-7 text-slate-700">
-              Şart başlıklarını okuduktan sonra hesaplama aracında temel bilgileri girerek ön
-              değerlendirme alabilirsiniz.
+              Şart başlıklarını okuduktan sonra ön değerlendirme aracında temel bilgileri girerek
+              rehberlik amaçlı sonuç alabilirsiniz.
             </p>
           </article>
         </section>
