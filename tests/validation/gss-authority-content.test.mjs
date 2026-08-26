@@ -24,7 +24,7 @@ test("GSS guide preserves the strict 2026 one-third boundary", () => {
 test("GSS guide clearly limits the local tool to preliminary guidance", () => {
   assert.match(guide, /yalnız sınırlı bilgilerle bir ön/);
   assert.match(guide, /Resmî SYD gelir tespitindeki bütün/);
-  assert.match(guide, /resmî uygunluk kararı/);
+  assert.match(guide, /resmî\s+uygunluk kararı/);
 });
 
 test("GSS page exposes FAQ schema and focused metadata", () => {
