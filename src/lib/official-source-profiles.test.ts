@@ -3,7 +3,7 @@ import test from "node:test";
 import {
   OFFICIAL_SOURCE_PROFILES,
   type OfficialSourceProfileKey,
-} from "./official-source-profiles";
+} from "./official-source-profiles.ts";
 
 const expectedKeys: OfficialSourceProfileKey[] = ["home-care", "old-age", "birth-grant"];
 
