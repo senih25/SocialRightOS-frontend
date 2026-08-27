@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OfficialSourcesPanel } from "@/components/OfficialSourcesPanel";
 import { JsonLd } from "@/components/seo/json-ld";
 import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
@@ -33,6 +34,11 @@ export default function BirthGrantToolPage() {
   return (
     <>
       <BirthGrantToolPageClient />
+      <div className="px-6 pb-12 lg:px-10 lg:pb-16">
+        <div className="mx-auto max-w-6xl">
+          <OfficialSourcesPanel profileKey="birth-grant" />
+        </div>
+      </div>
       <JsonLd data={breadcrumbJsonLd} id="birth-grant-breadcrumb-jsonld" />
     </>
   );
