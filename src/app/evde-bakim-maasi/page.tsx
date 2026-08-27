@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { OfficialSourcesPanel } from "@/components/OfficialSourcesPanel";
 import { JsonLd } from "@/components/seo/json-ld";
 import { buildBreadcrumbJsonLd, buildFaqJsonLd } from "@/lib/seo-json";
 import { getSiteUrl } from "@/lib/site";
@@ -207,6 +208,10 @@ export default function HomeCareAllowancePage() {
             ))}
           </div>
         </section>
+
+        <div className="mt-8">
+          <OfficialSourcesPanel profileKey="home-care" />
+        </div>
 
         <JsonLd data={breadcrumbJsonLd} id="home-care-breadcrumb-jsonld" />
         <JsonLd data={faqJsonLd} id="home-care-faq-jsonld" />
