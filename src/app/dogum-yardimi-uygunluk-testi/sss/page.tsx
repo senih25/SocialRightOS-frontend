@@ -3,7 +3,7 @@ import Link from "next/link";
 import { birthGrantFaqItems } from "@/lib/birth-grant-content";
 
 export const metadata: Metadata = {
-  title: "Doğum yardımı sık sorulan sorular | D-SHR",
+  title: "Doğum yardımı sık sorulan sorular",
   description:
     "Doğum yardımı testi, KPS kaydı, vatandaşlık, ikamet ve ön değerlendirme sonucu hakkında sık sorulan sorular.",
   alternates: {
