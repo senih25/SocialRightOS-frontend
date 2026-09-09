@@ -46,19 +46,12 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Dijital Sosyal Hak Rehberi",
-    description:
-      "Sosyal hak testleri için açıklayıcı, güven veren ve anlaşılır bir rehber deneyimi.",
     type: "website",
     locale: "tr_TR",
     siteName: "Dijital Sosyal Hak Rehberi",
-    url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dijital Sosyal Hak Rehberi",
-    description:
-      "Sosyal hak testleri ve rehberleri için güven odaklı rehber deneyimi.",
   },
   robots: {
     index: allowIndexing,
