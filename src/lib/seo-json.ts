@@ -103,6 +103,7 @@ export function buildBrandGraphJsonLd(params: {
     params.siteUrl,
   ).toString();
   const founderId = new URL("/#founder", params.siteUrl).toString();
+  const organizationLogoUrl = new URL("/d-shr-logo.svg", params.siteUrl).toString();
 
   return {
     "@context": "https://schema.org",
@@ -116,6 +117,10 @@ export function buildBrandGraphJsonLd(params: {
           params.organization.profilePath,
           params.siteUrl,
         ).toString(),
+        logo: {
+          "@type": "ImageObject",
+          url: organizationLogoUrl,
+        },
         founder: {
           "@id": founderId,
         },
