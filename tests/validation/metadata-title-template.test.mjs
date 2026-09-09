@@ -9,6 +9,33 @@ const birthGrantPage = readFileSync(
   "utf8",
 );
 
+const routeTitleCases = [
+  {
+    path: "src/app/blog/page.tsx",
+    title: "Blog ve rehber yazıları",
+  },
+  {
+    path: "src/app/dogum-yardimi-uygunluk-testi/e-devlet-basvurusu/page.tsx",
+    title: "e-Devlet doğum yardımı başvurusu",
+  },
+  {
+    path: "src/app/dogum-yardimi-uygunluk-testi/odeme-takvimi/page.tsx",
+    title: "Doğum yardımı ödeme takvimi",
+  },
+  {
+    path: "src/app/dogum-yardimi-uygunluk-testi/rehber/page.tsx",
+    title: "Doğum yardımı başvuru rehberi",
+  },
+  {
+    path: "src/app/dogum-yardimi-uygunluk-testi/sss/page.tsx",
+    title: "Doğum yardımı sık sorulan sorular",
+  },
+].map(({ path, title }) => ({
+  path,
+  title,
+  source: readFileSync(path, "utf8"),
+}));
+
 test("root layout owns the D-SHR title suffix", () => {
   assert.ok(
     rootLayout.includes('template: "%s | D-SHR"'),
@@ -43,4 +70,18 @@ test("birth grant page does not duplicate the root title suffix", () => {
     false,
     "birth grant page must not embed the root D-SHR suffix",
   );
+});
+
+test("route metadata leaves the D-SHR suffix to the root template", () => {
+  for (const { path, title, source } of routeTitleCases) {
+    assert.ok(
+      source.includes(`title: "${title}"`),
+      `${path} must expose its unsuffixed route title`,
+    );
+    assert.equal(
+      source.includes(`title: "${title} | D-SHR"`),
+      false,
+      `${path} must not embed the root D-SHR suffix`,
+    );
+  }
 });

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { birthGrantEdevletGuide } from "@/lib/birth-grant-content";
 
 export const metadata: Metadata = {
-  title: "e-Devlet doğum yardımı başvurusu | D-SHR",
+  title: "e-Devlet doğum yardımı başvurusu",
   description:
     "Doğum yardımı için e-Devlet başvurusu öncesinde hangi bilgilere bakılması gerektiğini açıklayan kısa rehber.",
   alternates: {
