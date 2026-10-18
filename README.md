@@ -296,3 +296,5 @@ npm run dev
 
 This repository is proprietary and distributed under an **All Rights Reserved** notice.
 See [LICENSE](LICENSE).
+
+This frontend is **not an open-source distribution**. The independent RightFlow hackathon repository declares Apache-2.0 for its own distribution; identical source or assets are **not** automatic permission to relicense or merge the frontend. See [read-only shared-source and rights boundary](docs/licensing/rightflow-shared-source-boundary.md).
