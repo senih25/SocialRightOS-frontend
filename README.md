@@ -296,3 +296,5 @@ npm run dev
 
 This repository is proprietary and distributed under an **All Rights Reserved** notice.
 See [LICENSE](LICENSE).
+
+**Cross-repository provenance:** [RightFlow shared-file and Apache-2.0 / All Rights Reserved boundary](docs/G08_RIGHTFLOW_LICENSE_PROVENANCE.md). Matching code/assets do not by themselves grant redistribution rights; no project merge or relicensing has occurred.
