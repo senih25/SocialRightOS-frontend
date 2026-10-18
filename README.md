@@ -14,7 +14,7 @@ Bireylerin Türkiye’deki sosyal haklarını anlamalarına ve bu haklara erişm
 
 ## Source license boundary
 
-The frontend's root [LICENSE](LICENSE) is **All Rights Reserved**, including its images and source code; this public repository is **not generally open-source licensed**. The independent Apache-2.0 RightFlow hackathon repository shares some byte-identical files, but their source ownership and asset-redistribution permissions require written verification before any reuse, relicensing or consolidation. See the [G-08 shared-file provenance and license boundary](docs/licensing/rightflow-shared-file-boundary.md). This note changes no existing source license.
+The frontend's root [LICENSE](LICENSE) **declares All Rights Reserved** for its own material; this public repository is **not generally open-source licensed**. Third-party or separately licensed source/assets remain subject to their respective rights and are not automatically covered by the repository's notice. The independent Apache-2.0 RightFlow hackathon repository shares some byte-identical files, but their source ownership and asset-redistribution permissions require written verification before any reuse, relicensing or consolidation. See the [G-08 shared-file provenance and license boundary](docs/licensing/rightflow-shared-file-boundary.md). This note changes no existing source license.
 
 
 ## OpenAI Build Week 2026
