@@ -72,6 +72,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "sosyalhakrehberi.com" }],
+        destination: "https://www.sosyalhakrehberi.com/:path*",
+        permanent: true,
+      },
+      {
         source: "/senih-bayankulu",
         destination: "/hakkimizda",
         permanent: true,
