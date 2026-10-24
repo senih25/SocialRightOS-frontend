@@ -35,3 +35,11 @@ test("all llms.txt sources use the canonical www host", () => {
     assertCanonicalSignals(path);
   }
 });
+
+test("apex requests redirect to the canonical www host without changing unrelated paths", () => {
+  const config = readFileSync("next.config.ts", "utf8");
+  assert.ok(config.includes('source: "/:path*"'));
+  assert.ok(config.includes('has: [{ type: "host", value: "sosyalhakrehberi.com" }]'));
+  assert.ok(config.includes('destination: "https://www.sosyalhakrehberi.com/:path*"'));
+  assert.ok(config.includes("permanent: true"));
+});
